@@ -570,6 +570,19 @@
       document.getElementById('lightbox').classList.add('hidden');
       document.getElementById('lightbox').classList.remove('flex');
     }
+// Close lightbox when pressing the Esc key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
+    // Close lightbox when clicking the dark background outside the photo
+    document.getElementById('lightbox').addEventListener('click', function(event) {
+      if (event.target === this) {
+        closeLightbox();
+      }
+    });
   </script>
 </body>
 </html>
