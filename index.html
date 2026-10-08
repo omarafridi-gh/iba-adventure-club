@@ -46,38 +46,37 @@
 </head>
 <body class="bg-brand-charcoal text-brand-sand font-sans selection:bg-brand-maroon selection:text-brand-sand min-h-screen flex flex-col">
 
-  <!-- TOP HEADER / NAV -->
+<!-- TOP HEADER / NAV -->
   <header class="sticky top-0 z-40 glass-nav border-b border-brand-pine/50">
     <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- 1. Logo + IBA ADVENTURE CLUB (subtitle removed) -->
       <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
         <div class="w-10 h-10 rounded-lg bg-brand-maroon flex items-center justify-center font-display font-black text-brand-sand text-xl shadow-md border border-brand-sand/20">
           ▲
         </div>
-        <div>
-          <span class="font-display font-bold text-lg tracking-wider text-brand-sand block leading-none">IBA ADVENTURE</span>
-          <span class="text-[10px] tracking-widest uppercase text-brand-taupe">Student Expedition Society</span>
-        </div>
+        <span class="font-display font-bold text-lg tracking-wider text-brand-sand leading-none">
+          IBA ADVENTURE CLUB
+        </span>
       </div>
 
-      <!-- Desktop Navigation Tabs -->
+      <!-- Desktop Navigation Tabs (5. Upcoming Trips tab removed) -->
       <nav class="hidden md:flex items-center gap-1 bg-brand-darkcard p-1.5 rounded-full border border-brand-pine">
         <button onclick="showPage('home')" id="tab-home" class="nav-tab px-5 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition duration-150 bg-brand-maroon text-brand-sand shadow">Home & Council</button>
         <button onclick="showPage('scuba')" id="tab-scuba" class="nav-tab px-5 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition duration-150 text-brand-taupe hover:text-brand-sand">Scuba '26</button>
         <button onclick="showPage('gallery')" id="tab-gallery" class="nav-tab px-5 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition duration-150 text-brand-taupe hover:text-brand-sand">Gallery</button>
-        <button onclick="showPage('upcoming')" id="tab-upcoming" class="nav-tab px-5 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition duration-150 text-brand-taupe hover:text-brand-sand">Upcoming Trips</button>
       </nav>
 
+      <!-- 4. "Book Dive" changed to "Book Scuba" -->
       <button onclick="showPage('scuba')" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand-pine hover:bg-brand-pine/80 border border-brand-taupe/30 text-xs font-bold uppercase tracking-wider text-brand-sand transition">
-        Book Dive →
+        Book Scuba →
       </button>
     </div>
 
-    <!-- Mobile Nav Bar -->
+    <!-- Mobile Nav Bar (Upcoming Trips removed) -->
     <div class="flex md:hidden border-t border-brand-pine/40 bg-brand-darkcard px-3 py-2 justify-around">
       <button onclick="showPage('home')" class="nav-tab-m text-[11px] font-bold text-brand-sand px-2 py-1">Home</button>
       <button onclick="showPage('scuba')" class="nav-tab-m text-[11px] font-bold text-brand-taupe px-2 py-1">Scuba '26</button>
       <button onclick="showPage('gallery')" class="nav-tab-m text-[11px] font-bold text-brand-taupe px-2 py-1">Gallery</button>
-      <button onclick="showPage('upcoming')" class="nav-tab-m text-[11px] font-bold text-brand-taupe px-2 py-1">Trips</button>
     </div>
   </header>
 
@@ -85,10 +84,7 @@
   <main id="page-home" class="page-view flex-grow">
     <!-- Hero Banner -->
     <section class="relative px-6 pt-20 pb-24 max-w-5xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-pine/60 border border-brand-taupe/30 text-xs font-medium text-brand-sand mb-6">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        Fall 2026 Expedition Registrations Open
-      </div>
+      <!-- 2. "Fall 2026 Expedition Registrations Open" badge has been removed -->
       <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brand-sand leading-tight max-w-4xl mx-auto">
         Beyond Campus Gates, Into The Untamed.
       </h1>
@@ -96,8 +92,9 @@
         The official adventure and exploration society of the Institute of Business Administration. Redefining limits from Arabian Sea coral beds to Himalayan ridges.
       </p>
       <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <!-- 3. Changed to "Join Scuba Trip '26" -->
         <button onclick="showPage('scuba')" class="px-8 py-3.5 bg-brand-maroon hover:opacity-90 text-brand-sand font-bold text-sm tracking-wider uppercase rounded-lg shadow-lg border border-brand-sand/10 transition">
-          Join Scuba Expedition '26
+          Join Scuba Trip '26
         </button>
         <button onclick="showPage('gallery')" class="px-8 py-3.5 bg-brand-darkcard hover:bg-brand-pine/40 text-brand-taupe hover:text-brand-sand font-semibold text-sm tracking-wider uppercase rounded-lg border border-brand-pine transition">
           Explore Archive
@@ -409,148 +406,3 @@
       </div>
     </div>
   </main>
-
-  <!-- PAGE 4: UPCOMING TRIPS -->
-  <main id="page-upcoming" class="page-view hidden flex-grow px-6 py-12 max-w-5xl mx-auto w-full">
-    <div class="text-center max-w-xl mx-auto mb-12">
-      <span class="text-xs font-bold uppercase tracking-widest text-brand-taupe">Roadmap 2026–2027</span>
-      <h1 class="text-3xl sm:text-5xl font-display font-bold text-brand-sand mt-1">Upcoming Expeditions</h1>
-      <p class="text-xs sm:text-sm text-brand-taupe mt-2">Plan your academic calendar around our scheduled field journeys.</p>
-    </div>
-
-    <div class="space-y-6">
-      <!-- Trip Card 1 -->
-      <div class="bg-brand-darkcard rounded-2xl border border-brand-maroon/60 p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-brand-sand/40 transition">
-        <div>
-          <div class="flex items-center gap-3 mb-2">
-            <span class="px-2.5 py-0.5 rounded-full bg-brand-maroon text-[10px] font-bold text-brand-sand uppercase tracking-wider">Registration Open</span>
-            <span class="text-xs text-brand-taupe">October 25, 2026</span>
-          </div>
-          <h3 class="text-2xl font-display font-bold text-brand-sand">Mubarak Village & Churna Scuba Dive</h3>
-          <p class="text-xs text-brand-taupe mt-2 max-w-xl">Deep reef dives, underwater photography, speed boat charter, and cliff jumping. Certified dive masters provided.</p>
-          <div class="flex items-center gap-4 mt-4 text-[11px] text-brand-sand">
-            <span>📍 Mubarak Village, Sindh</span>
-            <span>💰 PKR 8,500</span>
-            <span>⏱️ 1 Full Day</span>
-          </div>
-        </div>
-        <button onclick="showPage('scuba')" class="px-6 py-3 bg-brand-maroon hover:opacity-90 text-brand-sand font-bold text-xs uppercase tracking-wider rounded-lg shrink-0 transition">
-          Book Slot →
-        </button>
-      </div>
-
-      <!-- Trip Card 2 -->
-      <div class="bg-brand-darkcard rounded-2xl border border-brand-pine p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-brand-taupe/40 transition">
-        <div>
-          <div class="flex items-center gap-3 mb-2">
-            <span class="px-2.5 py-0.5 rounded-full bg-brand-pine text-[10px] font-bold text-brand-taupe uppercase tracking-wider">Planning Stage</span>
-            <span class="text-xs text-brand-taupe">Late November 2026</span>
-          </div>
-          <h3 class="text-2xl font-display font-bold text-brand-sand">Gorakh Hills Star-Gazing & Bonfire Trek</h3>
-          <p class="text-xs text-brand-taupe mt-2 max-w-xl">5,688 feet above sea level. Sub-zero night camping, live acoustic bonfire sessions, and 4x4 off-road Kirthar trails.</p>
-          <div class="flex items-center gap-4 mt-4 text-[11px] text-brand-sand">
-            <span>📍 Dadu, Sindh</span>
-            <span>💰 Estimated PKR 14,000</span>
-            <span>⏱️ 2 Days, 1 Night</span>
-          </div>
-        </div>
-        <button class="px-6 py-3 bg-brand-pine text-brand-taupe font-bold text-xs uppercase tracking-wider rounded-lg cursor-not-allowed opacity-70 shrink-0">
-          Coming Soon
-        </button>
-      </div>
-
-      <!-- Trip Card 3 -->
-      <div class="bg-brand-darkcard rounded-2xl border border-brand-pine p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-brand-taupe/40 transition">
-        <div>
-          <div class="flex items-center gap-3 mb-2">
-            <span class="px-2.5 py-0.5 rounded-full bg-brand-pine text-[10px] font-bold text-brand-taupe uppercase tracking-wider">Winter Break</span>
-            <span class="text-xs text-brand-taupe">January 2027</span>
-          </div>
-          <h3 class="text-2xl font-display font-bold text-brand-sand">Astola Island Wild Sea Camping</h3>
-          <p class="text-xs text-brand-taupe mt-2 max-w-xl">Island of the Seven Hills. Pakistan's largest offshore island. Remote marine camping, green sea turtle spotting, and fishing.</p>
-          <div class="flex items-center gap-4 mt-4 text-[11px] text-brand-sand">
-            <span>📍 Pasni, Balochistan</span>
-            <span>💰 Estimated PKR 22,000</span>
-            <span>⏱️ 3 Days, 2 Nights</span>
-          </div>
-        </div>
-        <button class="px-6 py-3 bg-brand-pine text-brand-taupe font-bold text-xs uppercase tracking-wider rounded-lg cursor-not-allowed opacity-70 shrink-0">
-          Coming Soon
-        </button>
-      </div>
-    </div>
-  </main>
-
-  <!-- LIGHTBOX MODAL -->
-  <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden flex-col items-center justify-center p-4">
-    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-brand-sand hover:text-white text-2xl font-bold p-2">✕</button>
-    <img id="lightboxImg" src="" class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg border border-brand-pine">
-    <p id="lightboxCaption" class="mt-4 text-sm font-semibold text-brand-sand"></p>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="mt-auto border-t border-brand-pine/50 bg-brand-darkcard py-8 px-6 text-center text-xs text-brand-taupe">
-    <p>© 2026 IBA Adventure Club. Institute of Business Administration, Karachi.</p>
-    <p class="mt-1 text-[11px] text-brand-taupe/80">Affiliated with IBA Student Council • Certified Safety Protocols</p>
-  </footer>
-
-  <!-- SCRIPT FOR CLIENT-SIDE ROUTING & INTERACTIONS -->
-  <script>
-    function showPage(pageId) {
-      document.querySelectorAll('.page-view').forEach(el => el.classList.add('hidden'));
-      const active = document.getElementById('page-' + pageId);
-      if (active) active.classList.remove('hidden');
-
-      document.querySelectorAll('.nav-tab').forEach(btn => {
-        btn.classList.remove('bg-brand-maroon', 'text-brand-sand', 'shadow');
-        btn.classList.add('text-brand-taupe');
-      });
-      const activeTab = document.getElementById('tab-' + pageId);
-      if (activeTab) {
-        activeTab.classList.add('bg-brand-maroon', 'text-brand-sand', 'shadow');
-        activeTab.classList.remove('text-brand-taupe');
-      }
-
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function handleRegistration(e) {
-      e.preventDefault();
-      const code = '#IBA-SCUBA-' + Math.floor(100 + Math.random() * 900);
-      document.getElementById('bookingCode').innerText = code;
-      document.getElementById('formSuccess').classList.remove('hidden');
-      document.getElementById('scubaForm').reset();
-    }
-
-    function filterGallery(category) {
-      document.querySelectorAll('.gallery-filter').forEach(btn => {
-        btn.classList.remove('bg-brand-maroon', 'text-brand-sand');
-        btn.classList.add('bg-brand-darkcard', 'text-brand-taupe');
-      });
-      event.target.classList.remove('bg-brand-darkcard', 'text-brand-taupe');
-      event.target.classList.add('bg-brand-maroon', 'text-brand-sand');
-
-      const items = document.querySelectorAll('.gallery-item');
-      items.forEach(item => {
-        if (category === 'all' || item.getAttribute('data-category') === category) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-    }
-
-    function openLightbox(url, title) {
-      document.getElementById('lightboxImg').src = url;
-      document.getElementById('lightboxCaption').innerText = title;
-      document.getElementById('lightbox').classList.remove('hidden');
-      document.getElementById('lightbox').classList.add('flex');
-    }
-
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.add('hidden');
-      document.getElementById('lightbox').classList.remove('flex');
-    }
-  </script>
-</body>
-</html>
