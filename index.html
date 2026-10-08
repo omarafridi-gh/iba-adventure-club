@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBA Adventure Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              maroon: '#5A252D',
+              pine: '#293D32',
+              charcoal: '#1E1F1A',
+              taupe: '#A99D87',
+              sand: '#D8D0BD',
+              darkcard: '#161713',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-nav {
+      background: rgba(30, 31, 26, 0.88);
+      backdrop-filter: blur(12px);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #293D32;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-brand-charcoal text-brand-sand font-sans selection:bg-brand-maroon selection:text-brand-sand min-h-screen flex flex-col">
+
+  <!-- TOP HEADER / NAV -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-brand-pine/50">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
+        <div class="w-10 h-10 rounded-lg bg-brand-maroon flex items-center justify-center font-display font-black text-brand-sand text-xl shadow-md border border-brand-sand/20">
+          ▲
+        </div>
+        <div>
+          <span class="font-display font-bold text-lg tracking-wider text-brand-sand block leading-none">IBA ADVENTURE</span>
+          <span class="text-[10px] tracking-widest uppercase text-brand-taupe">Student Expedition Society</span>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation Tabs -->
+      <nav class="hidden md:flex items-center gap-1 bg-brand-darkcard p-1.5 rounded-full border border-brand-pine">
+        <button onclick="showPage('home')" id="tab-home" class="nav-tab px-5 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition duration-150 bg-brand-maroon text-brand-sand shadow">Home & Council</button>
+        <button onclick="showPage('scuba')" id="tab-scuba" class="nav-tab px-5 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition duration-150 text-brand-taupe hover:text-brand-sand">Scuba '26</button>
+        <button onclick="showPage('gallery')" id="tab-gallery" class="nav-tab px-5 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition duration-150 text-brand-taupe hover:text-brand-sand">Gallery</button>
+        <button onclick="showPage('upcoming')" id="tab-upcoming" class="nav-tab px-5 py-2 rounded-full text-xs font-semibold tracking-wide uppercase transition duration-150 text-brand-taupe hover:text-brand-sand">Upcoming Trips</button>
+      </nav>
+
+      <button onclick="showPage('scuba')" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand-pine hover:bg-brand-pine/80 border border-brand-taupe/30 text-xs font-bold uppercase tracking-wider text-brand-sand transition">
+        Book Dive →
+      </button>
+    </div>
+
+    <!-- Mobile Nav Bar -->
+    <div class="flex md:hidden border-t border-brand-pine/40 bg-brand-darkcard px-3 py-2 justify-around">
+      <button onclick="showPage('home')" class="nav-tab-m text-[11px] font-bold text-brand-sand px-2 py-1">Home</button>
+      <button onclick="showPage('scuba')" class="nav-tab-m text-[11px] font-bold text-brand-taupe px-2 py-1">Scuba '26</button>
+      <button onclick="showPage('gallery')" class="nav-tab-m text-[11px] font-bold text-brand-taupe px-2 py-1">Gallery</button>
+      <button onclick="showPage('upcoming')" class="nav-tab-m text-[11px] font-bold text-brand-taupe px-2 py-1">Trips</button>
+    </div>
+  </header>
+
+  <!-- PAGE 1: HOME & COUNCIL -->
+  <main id="page-home" class="page-view flex-grow">
+    <!-- Hero Banner -->
+    <section class="relative px-6 pt-20 pb-24 max-w-5xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-pine/60 border border-brand-taupe/30 text-xs font-medium text-brand-sand mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Fall 2026 Expedition Registrations Open
+      </div>
+      <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brand-sand leading-tight max-w-4xl mx-auto">
+        Beyond Campus Gates, Into The Untamed.
+      </h1>
+      <p class="mt-6 text-base sm:text-lg text-brand-taupe max-w-2xl mx-auto font-normal leading-relaxed">
+        The official adventure and exploration society of the Institute of Business Administration. Redefining limits from Arabian Sea coral beds to Himalayan ridges.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <button onclick="showPage('scuba')" class="px-8 py-3.5 bg-brand-maroon hover:opacity-90 text-brand-sand font-bold text-sm tracking-wider uppercase rounded-lg shadow-lg border border-brand-sand/10 transition">
+          Join Scuba Expedition '26
+        </button>
+        <button onclick="showPage('gallery')" class="px-8 py-3.5 bg-brand-darkcard hover:bg-brand-pine/40 text-brand-taupe hover:text-brand-sand font-semibold text-sm tracking-wider uppercase rounded-lg border border-brand-pine transition">
+          Explore Archive
+        </button>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-20 max-w-4xl mx-auto">
+        <div class="p-5 rounded-xl bg-brand-darkcard border border-brand-pine/50">
+          <div class="text-3xl font-display font-bold text-brand-sand">18+</div>
+          <div class="text-xs text-brand-taupe mt-1 uppercase tracking-wider">Major Expeditions</div>
+        </div>
+        <div class="p-5 rounded-xl bg-brand-darkcard border border-brand-pine/50">
+          <div class="text-3xl font-display font-bold text-brand-sand">650+</div>
+          <div class="text-xs text-brand-taupe mt-1 uppercase tracking-wider">IBA Adventurers</div>
+        </div>
+        <div class="p-5 rounded-xl bg-brand-darkcard border border-brand-pine/50">
+          <div class="text-3xl font-display font-bold text-brand-sand">100%</div>
+          <div class="text-xs text-brand-taupe mt-1 uppercase tracking-wider">Safety Record</div>
+        </div>
+        <div class="p-5 rounded-xl bg-brand-darkcard border border-brand-pine/50">
+          <div class="text-3xl font-display font-bold text-brand-sand">4</div>
+          <div class="text-xs text-brand-taupe mt-1 uppercase tracking-wider">Annual Terrains</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Council & Panel Section -->
+    <section class="px-6 py-20 bg-brand-darkcard/70 border-t border-brand-pine/50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-taupe">Leadership 2026–2027</span>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-brand-sand mt-2">Executive Council & Panel</h2>
+          <p class="text-sm text-brand-taupe mt-3">The students curating certified safety protocols, logistics, and visual coverage for every trip.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Member 1 -->
+          <div class="bg-brand-charcoal rounded-xl border border-brand-pine/70 p-6 flex flex-col justify-between hover:border-brand-taupe/50 transition">
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-display font-bold text-xl text-brand-sand">OA</div>
+                <div>
+                  <h3 class="font-bold text-base text-brand-sand">Omar Afridi</h3>
+                  <p class="text-xs font-semibold text-brand-maroon uppercase tracking-wide">President & Dive Lead</p>
+                </div>
+              </div>
+              <p class="text-xs text-brand-taupe leading-relaxed">Oversees expedition safety guidelines, navy boat charters, and deep-reef reconnaissance for all coastal excursions.</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-brand-pine/40 text-[11px] text-brand-taupe font-medium">BBA '26 • PADI Advanced Open Water</div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="bg-brand-charcoal rounded-xl border border-brand-pine/70 p-6 flex flex-col justify-between hover:border-brand-taupe/50 transition">
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-display font-bold text-xl text-brand-sand">SA</div>
+                <div>
+                  <h3 class="font-bold text-base text-brand-sand">Sarah Ahmed</h3>
+                  <p class="text-xs font-semibold text-brand-maroon uppercase tracking-wide">Vice President & Logistics</p>
+                </div>
+              </div>
+              <p class="text-xs text-brand-taupe leading-relaxed">Directs on-ground transit logistics, base camp setups, high-altitude gear rentals, and transport safety.</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-brand-pine/40 text-[11px] text-brand-taupe font-medium">BSCS '27 • Wilderness First Aid Certified</div>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="bg-brand-charcoal rounded-xl border border-brand-pine/70 p-6 flex flex-col justify-between hover:border-brand-taupe/50 transition">
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-display font-bold text-xl text-brand-sand">HK</div>
+                <div>
+                  <h3 class="font-bold text-base text-brand-sand">Hamza Khan</h3>
+                  <p class="text-xs font-semibold text-brand-maroon uppercase tracking-wide">Head of Media & Content</p>
+                </div>
+              </div>
+              <p class="text-xs text-brand-taupe leading-relaxed">Directs the creative storytelling crew, 4K underwater camera setups, and post-trip cinematic aftermovies.</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-brand-pine/40 text-[11px] text-brand-taupe font-medium">BS Eco '26 • Drone Pilot & Cinematographer</div>
+          </div>
+
+          <!-- Member 4 -->
+          <div class="bg-brand-charcoal rounded-xl border border-brand-pine/70 p-6 flex flex-col justify-between hover:border-brand-taupe/50 transition">
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-display font-bold text-xl text-brand-sand">ZM</div>
+                <div>
+                  <h3 class="font-bold text-base text-brand-sand">Zainab Malik</h3>
+                  <p class="text-xs font-semibold text-brand-maroon uppercase tracking-wide">Head of Registrations & Finance</p>
+                </div>
+              </div>
+              <p class="text-xs text-brand-taupe leading-relaxed">Coordinates ticketing, student verification, subsidy allocations, and transparent budgeting for all events.</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-brand-pine/40 text-[11px] text-brand-taupe font-medium">BS ACF '27 • Treasurer & Data Lead</div>
+          </div>
+
+          <!-- Member 5 -->
+          <div class="bg-brand-charcoal rounded-xl border border-brand-pine/70 p-6 flex flex-col justify-between hover:border-brand-taupe/50 transition">
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-display font-bold text-xl text-brand-sand">BR</div>
+                <div>
+                  <h3 class="font-bold text-base text-brand-sand">Bilal Raza</h3>
+                  <p class="text-xs font-semibold text-brand-maroon uppercase tracking-wide">Director of Operations</p>
+                </div>
+              </div>
+              <p class="text-xs text-brand-taupe leading-relaxed">Manages boat manifests, campsite safety clearances, and emergency evacuation drills.</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-brand-pine/40 text-[11px] text-brand-taupe font-medium">BBA '27 • Expedition Lead</div>
+          </div>
+
+          <!-- Member 6 -->
+          <div class="bg-brand-charcoal rounded-xl border border-brand-pine/70 p-6 flex flex-col justify-between hover:border-brand-taupe/50 transition">
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-display font-bold text-xl text-brand-sand">AY</div>
+                <div>
+                  <h3 class="font-bold text-base text-brand-sand">Ayesha Yousuf</h3>
+                  <p class="text-xs font-semibold text-brand-maroon uppercase tracking-wide">Member Outreach & Welfare</p>
+                </div>
+              </div>
+              <p class="text-xs text-brand-taupe leading-relaxed">Guarantees first-time camper safety, female dorm privacy on outstation journeys, and dietary requirements.</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-brand-pine/40 text-[11px] text-brand-taupe font-medium">BS SS '26 • Community Lead</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PAGE 2: SCUBA REGISTRATION -->
+  <main id="page-scuba" class="page-view hidden flex-grow px-6 py-12 max-w-5xl mx-auto w-full">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="inline-block px-3 py-1 rounded-full bg-brand-maroon/60 border border-brand-maroon text-xs font-semibold uppercase tracking-wider text-brand-sand mb-3">
+        Flagship Expedition
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-display font-bold text-brand-sand">Mubarak Village & Churna Reef Scuba '26</h1>
+      <p class="mt-3 text-sm text-brand-taupe">Certified scuba diving, underwater photo shoots, coastal cliff jumps, and marine ecology exploration.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Expedition Specs -->
+      <div class="lg:col-span-5 bg-brand-darkcard p-6 sm:p-8 rounded-2xl border border-brand-pine space-y-6">
+        <h3 class="font-display font-bold text-lg text-brand-sand border-b border-brand-pine/60 pb-3">Trip Overview</h3>
+        <ul class="space-y-4 text-xs">
+          <li class="flex justify-between py-1 border-b border-brand-pine/30">
+            <span class="text-brand-taupe">Date:</span>
+            <span class="font-semibold text-brand-sand">Sunday, 25 October 2026</span>
+          </li>
+          <li class="flex justify-between py-1 border-b border-brand-pine/30">
+            <span class="text-brand-taupe">Reporting Time:</span>
+            <span class="font-semibold text-brand-sand">5:30 AM (Aman CED Gate)</span>
+          </li>
+          <li class="flex justify-between py-1 border-b border-brand-pine/30">
+            <span class="text-brand-taupe">Location:</span>
+            <span class="font-semibold text-brand-sand">Churna Island & Mubarak Village</span>
+          </li>
+          <li class="flex justify-between py-1 border-b border-brand-pine/30">
+            <span class="text-brand-taupe">Package Fee:</span>
+            <span class="font-bold text-brand-maroon bg-brand-sand/90 px-2 py-0.5 rounded text-[11px]">PKR 8,500 (Subsidized)</span>
+          </li>
+          <li class="flex justify-between py-1 border-b border-brand-pine/30">
+            <span class="text-brand-taupe">Slots Remaining:</span>
+            <span class="font-semibold text-emerald-400">14 of 40 slots</span>
+          </li>
+        </ul>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-sand mb-2">Package Inclusions:</h4>
+          <div class="grid grid-cols-2 gap-2 text-[11px] text-brand-taupe">
+            <div>✓ PADI Dive Master</div>
+            <div>✓ 4K Underwater Video</div>
+            <div>✓ Full Wetsuit & Tank</div>
+            <div>✓ Hot Boat Lunch & Tea</div>
+            <div>✓ AC Coaster Transit</div>
+            <div>✓ First Aid & Lifejackets</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Registration Form -->
+      <div class="lg:col-span-7 bg-brand-charcoal p-6 sm:p-8 rounded-2xl border border-brand-pine">
+        <h3 class="font-display font-bold text-xl text-brand-sand mb-1">Student Registration Form</h3>
+        <p class="text-xs text-brand-taupe mb-6">Enter your details to reserve your dive slot. You will receive verification instructions immediately.</p>
+
+        <form id="scubaForm" onsubmit="handleRegistration(event)" class="space-y-4 text-xs">
+          <div>
+            <label class="block font-semibold text-brand-sand mb-1">Full Name</label>
+            <input type="text" required placeholder="e.g. Omar Afridi" class="w-full bg-brand-darkcard border border-brand-pine rounded-lg px-4 py-2.5 text-brand-sand focus:border-brand-taupe focus:outline-none">
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-semibold text-brand-sand mb-1">IBA ERP ID</label>
+              <input type="text" required pattern="[0-9]{5}" placeholder="e.g. 24471" class="w-full bg-brand-darkcard border border-brand-pine rounded-lg px-4 py-2.5 text-brand-sand focus:border-brand-taupe focus:outline-none">
+            </div>
+            <div>
+              <label class="block font-semibold text-brand-sand mb-1">WhatsApp Number</label>
+              <input type="tel" required placeholder="03XXXXXXXXX" class="w-full bg-brand-darkcard border border-brand-pine rounded-lg px-4 py-2.5 text-brand-sand focus:border-brand-taupe focus:outline-none">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-semibold text-brand-sand mb-1">Swimming Proficiency</label>
+              <select class="w-full bg-brand-darkcard border border-brand-pine rounded-lg px-3 py-2.5 text-brand-sand focus:border-brand-taupe focus:outline-none">
+                <option>Non-Swimmer (Standard Lifejacket Dive)</option>
+                <option>Basic / Recreational Swimmer</option>
+                <option>Advanced Swimmer</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-semibold text-brand-sand mb-1">Dietary Preference</label>
+              <select class="w-full bg-brand-darkcard border border-brand-pine rounded-lg px-3 py-2.5 text-brand-sand focus:border-brand-taupe focus:outline-none">
+                <option>Standard (Chicken Biryani / BBQ)</option>
+                <option>Vegetarian</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-semibold text-brand-sand mb-1">Emergency Contact & Relation</label>
+            <input type="text" required placeholder="Parent/Guardian Name & Number" class="w-full bg-brand-darkcard border border-brand-pine rounded-lg px-4 py-2.5 text-brand-sand focus:border-brand-taupe focus:outline-none">
+          </div>
+
+          <div class="pt-3">
+            <button type="submit" class="w-full py-3.5 bg-brand-maroon hover:opacity-90 text-brand-sand font-bold text-xs uppercase tracking-wider rounded-lg shadow transition">
+              Submit & Confirm Dive Slot →
+            </button>
+          </div>
+        </form>
+
+        <!-- Dynamic Success Box -->
+        <div id="formSuccess" class="hidden mt-6 p-5 rounded-xl bg-brand-pine/60 border border-brand-taupe/40 text-center">
+          <div class="w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold flex items-center justify-center mx-auto mb-2">✓</div>
+          <h4 class="font-bold text-sm text-brand-sand">Registration Pre-Approved!</h4>
+          <p class="text-xs text-brand-taupe mt-1">Booking ID: <span class="font-mono text-brand-sand font-bold" id="bookingCode">#IBA-DIVE-882</span></p>
+          <p class="text-[11px] text-brand-taupe mt-2">Check your WhatsApp for the payment verification link from the finance council.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- PAGE 3: MEDIA GALLERY -->
+  <main id="page-gallery" class="page-view hidden flex-grow px-6 py-12 max-w-6xl mx-auto w-full">
+    <div class="text-center max-w-xl mx-auto mb-10">
+      <span class="text-xs font-bold uppercase tracking-widest text-brand-taupe">Field Archives</span>
+      <h1 class="text-3xl sm:text-5xl font-display font-bold text-brand-sand mt-1">Expedition Gallery</h1>
+      <p class="text-xs sm:text-sm text-brand-taupe mt-2">High-resolution stills captured by the IBA Adventure Club media crew.</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+      <button onclick="filterGallery('all')" class="gallery-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-brand-maroon text-brand-sand border border-brand-sand/20">All</button>
+      <button onclick="filterGallery('scuba')" class="gallery-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-brand-darkcard text-brand-taupe hover:text-brand-sand border border-brand-pine">Scuba & Marine</button>
+      <button onclick="filterGallery('north')" class="gallery-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-brand-darkcard text-brand-taupe hover:text-brand-sand border border-brand-pine">Northern Treks</button>
+      <button onclick="filterGallery('desert')" class="gallery-filter px-4 py-1.5 rounded-full text-xs font-semibold bg-brand-darkcard text-brand-taupe hover:text-brand-sand border border-brand-pine">Gorakh & Desert</button>
+    </div>
+
+    <!-- Photo Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryGrid">
+      <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-darkcard border border-brand-pine/70 cursor-pointer aspect-video" data-category="scuba" onclick="openLightbox('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80', 'Churna Deep Reef Dive')">
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Scuba Dive" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent opacity-0 group-hover:opacity-100 transition p-4 flex flex-col justify-end">
+          <span class="text-[10px] text-brand-taupe uppercase tracking-widest font-bold">Scuba '25</span>
+          <span class="text-sm font-bold text-brand-sand">Coral Bed Exploration</span>
+        </div>
+      </div>
+
+      <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-darkcard border border-brand-pine/70 cursor-pointer aspect-video" data-category="north" onclick="openLightbox('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', 'Passu Cones Basecamp')">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Passu Cones" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent opacity-0 group-hover:opacity-100 transition p-4 flex flex-col justify-end">
+          <span class="text-[10px] text-brand-taupe uppercase tracking-widest font-bold">North '25</span>
+          <span class="text-sm font-bold text-brand-sand">Hunza Ridge Crossing</span>
+        </div>
+      </div>
+
+      <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-darkcard border border-brand-pine/70 cursor-pointer aspect-video" data-category="desert" onclick="openLightbox('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80', 'Gorakh Hill Station Night Sky')">
+        <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" alt="Gorakh Hill" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent opacity-0 group-hover:opacity-100 transition p-4 flex flex-col justify-end">
+          <span class="text-[10px] text-brand-taupe uppercase tracking-widest font-bold">Desert '26</span>
+          <span class="text-sm font-bold text-brand-sand">Milky Way Stargazing</span>
+        </div>
+      </div>
+
+      <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-darkcard border border-brand-pine/70 cursor-pointer aspect-video" data-category="scuba" onclick="openLightbox('https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=1200&q=80', 'Cliff Jump Mubarak Village')">
+        <img src="https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=600&q=80" alt="Cliff Jump" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent opacity-0 group-hover:opacity-100 transition p-4 flex flex-col justify-end">
+          <span class="text-[10px] text-brand-taupe uppercase tracking-widest font-bold">Scuba '25</span>
+          <span class="text-sm font-bold text-brand-sand">Cliff Jump & Boat Recon</span>
+        </div>
+      </div>
+
+      <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-darkcard border border-brand-pine/70 cursor-pointer aspect-video" data-category="north" onclick="openLightbox('https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', 'Fairy Meadows Alpine Trek')">
+        <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=600&q=80" alt="Fairy Meadows" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent opacity-0 group-hover:opacity-100 transition p-4 flex flex-col justify-end">
+          <span class="text-[10px] text-brand-taupe uppercase tracking-widest font-bold">North '25</span>
+          <span class="text-sm font-bold text-brand-sand">Nanga Parbat Glacier Camp</span>
+        </div>
+      </div>
+
+      <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-darkcard border border-brand-pine/70 cursor-pointer aspect-video" data-category="desert" onclick="openLightbox('https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?auto=format&fit=crop&w=1200&q=80', 'Hingol Princess of Hope Canyons')">
+        <img src="https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?auto=format&fit=crop&w=600&q=80" alt="Hingol" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent opacity-0 group-hover:opacity-100 transition p-4 flex flex-col justify-end">
+          <span class="text-[10px] text-brand-taupe uppercase tracking-widest font-bold">Coast '26</span>
+          <span class="text-sm font-bold text-brand-sand">Hingol Mud Volcanoes</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- PAGE 4: UPCOMING TRIPS -->
+  <main id="page-upcoming" class="page-view hidden flex-grow px-6 py-12 max-w-5xl mx-auto w-full">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <span class="text-xs font-bold uppercase tracking-widest text-brand-taupe">Roadmap 2026–2027</span>
+      <h1 class="text-3xl sm:text-5xl font-display font-bold text-brand-sand mt-1">Upcoming Expeditions</h1>
+      <p class="text-xs sm:text-sm text-brand-taupe mt-2">Plan your academic calendar around our scheduled field journeys.</p>
+    </div>
+
+    <div class="space-y-6">
+      <!-- Trip Card 1 -->
+      <div class="bg-brand-darkcard rounded-2xl border border-brand-maroon/60 p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-brand-sand/40 transition">
+        <div>
+          <div class="flex items-center gap-3 mb-2">
+            <span class="px-2.5 py-0.5 rounded-full bg-brand-maroon text-[10px] font-bold text-brand-sand uppercase tracking-wider">Registration Open</span>
+            <span class="text-xs text-brand-taupe">October 25, 2026</span>
+          </div>
+          <h3 class="text-2xl font-display font-bold text-brand-sand">Mubarak Village & Churna Scuba Dive</h3>
+          <p class="text-xs text-brand-taupe mt-2 max-w-xl">Deep reef dives, underwater photography, speed boat charter, and cliff jumping. Certified dive masters provided.</p>
+          <div class="flex items-center gap-4 mt-4 text-[11px] text-brand-sand">
+            <span>📍 Mubarak Village, Sindh</span>
+            <span>💰 PKR 8,500</span>
+            <span>⏱️ 1 Full Day</span>
+          </div>
+        </div>
+        <button onclick="showPage('scuba')" class="px-6 py-3 bg-brand-maroon hover:opacity-90 text-brand-sand font-bold text-xs uppercase tracking-wider rounded-lg shrink-0 transition">
+          Book Slot →
+        </button>
+      </div>
+
+      <!-- Trip Card 2 -->
+      <div class="bg-brand-darkcard rounded-2xl border border-brand-pine p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-brand-taupe/40 transition">
+        <div>
+          <div class="flex items-center gap-3 mb-2">
+            <span class="px-2.5 py-0.5 rounded-full bg-brand-pine text-[10px] font-bold text-brand-taupe uppercase tracking-wider">Planning Stage</span>
+            <span class="text-xs text-brand-taupe">Late November 2026</span>
+          </div>
+          <h3 class="text-2xl font-display font-bold text-brand-sand">Gorakh Hills Star-Gazing & Bonfire Trek</h3>
+          <p class="text-xs text-brand-taupe mt-2 max-w-xl">5,688 feet above sea level. Sub-zero night camping, live acoustic bonfire sessions, and 4x4 off-road Kirthar trails.</p>
+          <div class="flex items-center gap-4 mt-4 text-[11px] text-brand-sand">
+            <span>📍 Dadu, Sindh</span>
+            <span>💰 Estimated PKR 14,000</span>
+            <span>⏱️ 2 Days, 1 Night</span>
+          </div>
+        </div>
+        <button class="px-6 py-3 bg-brand-pine text-brand-taupe font-bold text-xs uppercase tracking-wider rounded-lg cursor-not-allowed opacity-70 shrink-0">
+          Coming Soon
+        </button>
+      </div>
+
+      <!-- Trip Card 3 -->
+      <div class="bg-brand-darkcard rounded-2xl border border-brand-pine p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-brand-taupe/40 transition">
+        <div>
+          <div class="flex items-center gap-3 mb-2">
+            <span class="px-2.5 py-0.5 rounded-full bg-brand-pine text-[10px] font-bold text-brand-taupe uppercase tracking-wider">Winter Break</span>
+            <span class="text-xs text-brand-taupe">January 2027</span>
+          </div>
+          <h3 class="text-2xl font-display font-bold text-brand-sand">Astola Island Wild Sea Camping</h3>
+          <p class="text-xs text-brand-taupe mt-2 max-w-xl">Island of the Seven Hills. Pakistan's largest offshore island. Remote marine camping, green sea turtle spotting, and fishing.</p>
+          <div class="flex items-center gap-4 mt-4 text-[11px] text-brand-sand">
+            <span>📍 Pasni, Balochistan</span>
+            <span>💰 Estimated PKR 22,000</span>
+            <span>⏱️ 3 Days, 2 Nights</span>
+          </div>
+        </div>
+        <button class="px-6 py-3 bg-brand-pine text-brand-taupe font-bold text-xs uppercase tracking-wider rounded-lg cursor-not-allowed opacity-70 shrink-0">
+          Coming Soon
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden flex-col items-center justify-center p-4">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-brand-sand hover:text-white text-2xl font-bold p-2">✕</button>
+    <img id="lightboxImg" src="" class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg border border-brand-pine">
+    <p id="lightboxCaption" class="mt-4 text-sm font-semibold text-brand-sand"></p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="mt-auto border-t border-brand-pine/50 bg-brand-darkcard py-8 px-6 text-center text-xs text-brand-taupe">
+    <p>© 2026 IBA Adventure Club. Institute of Business Administration, Karachi.</p>
+    <p class="mt-1 text-[11px] text-brand-taupe/80">Affiliated with IBA Student Council • Certified Safety Protocols</p>
+  </footer>
+
+  <!-- SCRIPT FOR CLIENT-SIDE ROUTING & INTERACTIONS -->
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.add('hidden'));
+      const active = document.getElementById('page-' + pageId);
+      if (active) active.classList.remove('hidden');
+
+      document.querySelectorAll('.nav-tab').forEach(btn => {
+        btn.classList.remove('bg-brand-maroon', 'text-brand-sand', 'shadow');
+        btn.classList.add('text-brand-taupe');
+      });
+      const activeTab = document.getElementById('tab-' + pageId);
+      if (activeTab) {
+        activeTab.classList.add('bg-brand-maroon', 'text-brand-sand', 'shadow');
+        activeTab.classList.remove('text-brand-taupe');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function handleRegistration(e) {
+      e.preventDefault();
+      const code = '#IBA-SCUBA-' + Math.floor(100 + Math.random() * 900);
+      document.getElementById('bookingCode').innerText = code;
+      document.getElementById('formSuccess').classList.remove('hidden');
+      document.getElementById('scubaForm').reset();
+    }
+
+    function filterGallery(category) {
+      document.querySelectorAll('.gallery-filter').forEach(btn => {
+        btn.classList.remove('bg-brand-maroon', 'text-brand-sand');
+        btn.classList.add('bg-brand-darkcard', 'text-brand-taupe');
+      });
+      event.target.classList.remove('bg-brand-darkcard', 'text-brand-taupe');
+      event.target.classList.add('bg-brand-maroon', 'text-brand-sand');
+
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    function openLightbox(url, title) {
+      document.getElementById('lightboxImg').src = url;
+      document.getElementById('lightboxCaption').innerText = title;
+      document.getElementById('lightbox').classList.remove('hidden');
+      document.getElementById('lightbox').classList.add('flex');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.getElementById('lightbox').classList.remove('flex');
+    }
+  </script>
+</body>
+</html>
