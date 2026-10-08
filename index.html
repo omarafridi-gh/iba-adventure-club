@@ -49,9 +49,10 @@
   <!-- TOP HEADER / NAV -->
   <header class="sticky top-0 z-40 glass-nav border-b border-brand-pine/50">
     <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      <!-- Logo + Name -->
+      <!-- Circular Logo + Club Name -->
       <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
-<img src="IAC%20Logo.PNG" alt="IAC Logo" class="w-11 h-11 rounded-full object-cover border border-brand-taupe/30 shadow-md">        <span class="font-display font-bold text-lg tracking-wider text-brand-sand leading-none">
+        <img src="IAC%20Logo.PNG" onerror="this.outerHTML='<div class=\'w-11 h-11 rounded-full bg-brand-maroon flex items-center justify-center font-display font-black text-brand-sand text-lg border border-brand-sand/30\'>IAC</div>'" alt="IAC Logo" class="w-11 h-11 rounded-full object-cover border border-brand-taupe/30 shadow-md">
+        <span class="font-display font-bold text-lg tracking-wider text-brand-sand leading-none">
           IBA ADVENTURE CLUB
         </span>
       </div>
@@ -80,7 +81,7 @@
   <!-- PAGE 1: HOME & COUNCIL -->
   <main id="page-home" class="page-view flex-grow">
     <!-- Hero Banner -->
-    <section class="relative px-6 pt-20 pb-24 max-w-5xl mx-auto text-center">
+    <section class="relative px-6 pt-20 pb-20 max-w-5xl mx-auto text-center">
       <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brand-sand leading-tight max-w-4xl mx-auto">
         Beyond Campus Gates, Into The Untamed.
       </h1>
@@ -95,38 +96,37 @@
           Explore Archive
         </button>
       </div>
+    </section>
 
-     </section>
-
-   <!-- Council & Panel Section -->
+    <!-- Council & Panel Section -->
     <section class="px-6 py-20 bg-brand-darkcard/70 border-t border-brand-pine/50">
       <div class="max-w-6xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-16">
-          <h2 class="text-3xl sm:text-5xl font-display font-bold text-brand-sand">Panel & Executive Council</h2>
-          <p class="text-sm font-semibold tracking-widest text-brand-taupe uppercase mt-2">Team Structure 2026–2027</p>
+          <h2 class="text-3xl sm:text-5xl font-display font-bold text-brand-sand">Panel and Executive Council</h2>
+          <p class="text-base sm:text-lg font-medium text-brand-taupe mt-2">2026-2027</p>
         </div>
 
         <!-- TIER 1: OFFICE BEARERS -->
-        <div class="max-w-3xl mx-auto mb-16 text-center">
-          <span class="inline-block px-4 py-1 rounded-full bg-brand-maroon/80 border border-brand-maroon text-xs font-bold uppercase tracking-wider text-brand-sand mb-6">
-            Tier 1: Office Bearers
+        <div class="max-w-4xl mx-auto mb-16 text-center">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-brand-maroon/80 border border-brand-maroon text-xs font-bold uppercase tracking-wider text-brand-sand mb-6 shadow">
+            Office Bearers (CEO, CFO, COO)
           </span>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
             <!-- CEO -->
             <div class="bg-brand-charcoal rounded-xl border border-brand-maroon/70 p-5 flex flex-col items-center text-center shadow-lg">
-              <img src="ceo.jpg" onerror="this.outerHTML='<div class=\'w-16 h-16 rounded-full bg-brand-pine border-2 border-brand-sand/30 flex items-center justify-center font-display font-bold text-lg text-brand-sand mb-3\'>CEO</div>'" alt="Chief Executive Officer" onclick="openLightbox(this.src, 'Chief Executive Officer (CEO)')" class="w-16 h-16 rounded-full object-cover border-2 border-brand-sand/40 hover:scale-105 transition cursor-pointer mb-3">
+              <img src="ceo.png" onerror="this.outerHTML='<div class=\'w-16 h-16 rounded-full bg-brand-pine border-2 border-brand-sand/30 flex items-center justify-center font-display font-bold text-base text-brand-sand mb-3\'>CEO</div>'" alt="Chief Executive Officer" onclick="openLightbox(this.src, 'Chief Executive Officer (CEO)')" class="w-16 h-16 rounded-full object-cover border-2 border-brand-sand/40 hover:scale-105 transition cursor-pointer mb-3">
               <h4 class="font-bold text-sm text-brand-sand">Panel President</h4>
               <p class="text-xs font-semibold text-brand-maroon uppercase tracking-wide mt-0.5">Chief Executive Officer (CEO)</p>
             </div>
             <!-- CFO -->
             <div class="bg-brand-charcoal rounded-xl border border-brand-maroon/70 p-5 flex flex-col items-center text-center shadow-lg">
-              <img src="cfo.jpg" onerror="this.outerHTML='<div class=\'w-16 h-16 rounded-full bg-brand-pine border-2 border-brand-sand/30 flex items-center justify-center font-display font-bold text-lg text-brand-sand mb-3\'>CFO</div>'" alt="Chief Financial Officer" onclick="openLightbox(this.src, 'Chief Financial Officer (CFO)')" class="w-16 h-16 rounded-full object-cover border-2 border-brand-sand/40 hover:scale-105 transition cursor-pointer mb-3">
+              <img src="cfo.png" onerror="this.outerHTML='<div class=\'w-16 h-16 rounded-full bg-brand-pine border-2 border-brand-sand/30 flex items-center justify-center font-display font-bold text-base text-brand-sand mb-3\'>CFO</div>'" alt="Chief Financial Officer" onclick="openLightbox(this.src, 'Chief Financial Officer (CFO)')" class="w-16 h-16 rounded-full object-cover border-2 border-brand-sand/40 hover:scale-105 transition cursor-pointer mb-3">
               <h4 class="font-bold text-sm text-brand-sand">Panel Treasurer</h4>
               <p class="text-xs font-semibold text-brand-maroon uppercase tracking-wide mt-0.5">Chief Financial Officer (CFO)</p>
             </div>
             <!-- COO -->
             <div class="bg-brand-charcoal rounded-xl border border-brand-maroon/70 p-5 flex flex-col items-center text-center shadow-lg">
-              <img src="coo.jpg" onerror="this.outerHTML='<div class=\'w-16 h-16 rounded-full bg-brand-pine border-2 border-brand-sand/30 flex items-center justify-center font-display font-bold text-lg text-brand-sand mb-3\'>COO</div>'" alt="Chief Operating Officer" onclick="openLightbox(this.src, 'Chief Operating Officer (COO)')" class="w-16 h-16 rounded-full object-cover border-2 border-brand-sand/40 hover:scale-105 transition cursor-pointer mb-3">
+              <img src="coo.png" onerror="this.outerHTML='<div class=\'w-16 h-16 rounded-full bg-brand-pine border-2 border-brand-sand/30 flex items-center justify-center font-display font-bold text-base text-brand-sand mb-3\'>COO</div>'" alt="Chief Operating Officer" onclick="openLightbox(this.src, 'Chief Operating Officer (COO)')" class="w-16 h-16 rounded-full object-cover border-2 border-brand-sand/40 hover:scale-105 transition cursor-pointer mb-3">
               <h4 class="font-bold text-sm text-brand-sand">Panel VP</h4>
               <p class="text-xs font-semibold text-brand-maroon uppercase tracking-wide mt-0.5">Chief Operating Officer (COO)</p>
             </div>
@@ -139,7 +139,7 @@
             Advisory
           </span>
           <div class="bg-brand-charcoal rounded-xl border border-brand-pine p-5 flex items-center gap-4 text-left">
-            <img src="advisor.jpg" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/40 flex items-center justify-center font-display font-bold text-brand-sand\'>ADV</div>'" alt="Advisor to the Panel" onclick="openLightbox(this.src, 'Advisor to the Panel')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-brand-taupe/40 hover:scale-105 transition cursor-pointer">
+            <img src="advisor.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/40 flex items-center justify-center font-display font-bold text-brand-sand\'>ADV</div>'" alt="Advisor to the Panel" onclick="openLightbox(this.src, 'Advisor to the Panel')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-brand-taupe/40 hover:scale-105 transition cursor-pointer">
             <div>
               <h4 class="font-bold text-sm text-brand-sand">Panel Advisor</h4>
               <p class="text-xs font-semibold text-brand-maroon uppercase tracking-wide">Advisor to the Panel</p>
@@ -151,7 +151,7 @@
         <!-- TIER 3: EXECUTIVE COUNCIL DEPARTMENTS & DIRECTORS -->
         <div class="border-t border-brand-pine/50 pt-12">
           <div class="text-center mb-10">
-            <span class="inline-block px-4 py-1 rounded-full bg-brand-pine border border-brand-taupe/40 text-xs font-bold uppercase tracking-wider text-brand-sand">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-brand-pine border border-brand-taupe/40 text-xs font-bold uppercase tracking-wider text-brand-sand shadow">
               Executive Council Breakdown
             </span>
           </div>
@@ -165,7 +165,7 @@
                 <div class="space-y-4">
                   <!-- EC -->
                   <div class="flex items-center gap-3">
-                    <img src="muntazir.jpg" onerror="this.outerHTML='<div class=\'w-11 h-11 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-xs text-brand-sand\'>MH</div>'" alt="Muntazir Hassan" onclick="openLightbox(this.src, 'Muntazir Hassan — Executive Council')" class="w-11 h-11 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
+                    <img src="muntazir.png" onerror="this.outerHTML='<div class=\'w-11 h-11 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-xs text-brand-sand\'>MH</div>'" alt="Muntazir Hassan" onclick="openLightbox(this.src, 'Muntazir Hassan — Executive Council')" class="w-11 h-11 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
                     <div>
                       <h4 class="font-bold text-sm text-brand-sand">Muntazir Hassan</h4>
                       <p class="text-[11px] font-semibold text-brand-maroon uppercase">Executive Council (EC)</p>
@@ -174,7 +174,7 @@
                   </div>
                   <!-- Director Media -->
                   <div class="flex items-center gap-3 pt-2 border-t border-brand-pine/30">
-                    <img src="rayyan.jpg" onerror="this.outerHTML='<div class=\'w-10 h-10 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-[10px] text-brand-sand\'>RR</div>'" alt="Rayyan Rafique" onclick="openLightbox(this.src, 'Rayyan Rafique — Director Media and Design')" class="w-10 h-10 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
+                    <img src="rayyan.png" onerror="this.outerHTML='<div class=\'w-10 h-10 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-[10px] text-brand-sand\'>RR</div>'" alt="Rayyan Rafique" onclick="openLightbox(this.src, 'Rayyan Rafique — Director Media and Design')" class="w-10 h-10 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
                     <div>
                       <h4 class="font-semibold text-xs text-brand-sand">Rayyan Rafique</h4>
                       <p class="text-[10px] text-brand-taupe uppercase">Director Media and Design</p>
@@ -183,7 +183,7 @@
                   </div>
                   <!-- Director Content -->
                   <div class="flex items-center gap-3 pt-2 border-t border-brand-pine/30">
-                    <img src="meerub.jpg" onerror="this.outerHTML='<div class=\'w-10 h-10 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-[10px] text-brand-sand\'>MH</div>'" alt="Meerub Haider" onclick="openLightbox(this.src, 'Meerub Haider — Director Content Planning')" class="w-10 h-10 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
+                    <img src="meerub.png" onerror="this.outerHTML='<div class=\'w-10 h-10 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-[10px] text-brand-sand\'>MH</div>'" alt="Meerub Haider" onclick="openLightbox(this.src, 'Meerub Haider — Director Content Planning')" class="w-10 h-10 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
                     <div>
                       <h4 class="font-semibold text-xs text-brand-sand">Meerub Haider</h4>
                       <p class="text-[10px] text-brand-taupe uppercase">Director Content Planning</p>
@@ -201,7 +201,7 @@
                 <div class="space-y-4">
                   <!-- EC -->
                   <div class="flex items-center gap-3">
-                    <img src="neetu.jpg" onerror="this.outerHTML='<div class=\'w-11 h-11 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-xs text-brand-sand\'>NK</div>'" alt="Neetu Kumari" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-11 h-11 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
+                    <img src="neetu.png" onerror="this.outerHTML='<div class=\'w-11 h-11 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-xs text-brand-sand\'>NK</div>'" alt="Neetu Kumari" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-11 h-11 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
                     <div>
                       <h4 class="font-bold text-sm text-brand-sand">Neetu Kumari</h4>
                       <p class="text-[11px] font-semibold text-brand-maroon uppercase">Executive Council (EC)</p>
@@ -210,7 +210,7 @@
                   </div>
                   <!-- Director Safety -->
                   <div class="flex items-center gap-3 pt-2 border-t border-brand-pine/30">
-                    <img src="alina.jpg" onerror="this.outerHTML='<div class=\'w-10 h-10 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-[10px] text-brand-sand\'>AK</div>'" alt="Alina Kashif" onclick="openLightbox(this.src, 'Alina Kashif — Director Safety')" class="w-10 h-10 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
+                    <img src="alina.png" onerror="this.outerHTML='<div class=\'w-10 h-10 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-[10px] text-brand-sand\'>AK</div>'" alt="Alina Kashif" onclick="openLightbox(this.src, 'Alina Kashif — Director Safety')" class="w-10 h-10 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
                     <div>
                       <h4 class="font-semibold text-xs text-brand-sand">Alina Kashif</h4>
                       <p class="text-[10px] text-brand-taupe uppercase">Director Safety</p>
@@ -228,7 +228,7 @@
                 <div class="space-y-4">
                   <!-- EC -->
                   <div class="flex items-center gap-3">
-                    <img src="kashaf.jpg" onerror="this.outerHTML='<div class=\'w-11 h-11 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-xs text-brand-sand\'>KS</div>'" alt="Kashaf" onclick="openLightbox(this.src, 'Kashaf — Executive Council')" class="w-11 h-11 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
+                    <img src="kashaf.png" onerror="this.outerHTML='<div class=\'w-11 h-11 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-xs text-brand-sand\'>KS</div>'" alt="Kashaf" onclick="openLightbox(this.src, 'Kashaf — Executive Council')" class="w-11 h-11 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
                     <div>
                       <h4 class="font-bold text-sm text-brand-sand">Kashaf</h4>
                       <p class="text-[11px] font-semibold text-brand-maroon uppercase">Executive Council (EC)</p>
@@ -237,7 +237,7 @@
                   </div>
                   <!-- Director Ops -->
                   <div class="flex items-center gap-3 pt-2 border-t border-brand-pine/30">
-                    <img src="najiba.jpg" onerror="this.outerHTML='<div class=\'w-10 h-10 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-[10px] text-brand-sand\'>NZ</div>'" alt="Najiba Zia" onclick="openLightbox(this.src, 'Najiba Zia — Director Ops and Logistics')" class="w-10 h-10 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
+                    <img src="najiba.png" onerror="this.outerHTML='<div class=\'w-10 h-10 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-[10px] text-brand-sand\'>NZ</div>'" alt="Najiba Zia" onclick="openLightbox(this.src, 'Najiba Zia — Director Ops and Logistics')" class="w-10 h-10 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
                     <div>
                       <h4 class="font-semibold text-xs text-brand-sand">Najiba Zia</h4>
                       <p class="text-[10px] text-brand-taupe uppercase">Director Ops and Logistics</p>
@@ -255,7 +255,7 @@
                 <div class="space-y-4">
                   <!-- EC -->
                   <div class="flex items-center gap-3">
-                    <img src="abdullah.jpg" onerror="this.outerHTML='<div class=\'w-11 h-11 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-xs text-brand-sand\'>AG</div>'" alt="Abdullah Asif Gul" onclick="openLightbox(this.src, 'Abdullah Asif Gul — Executive Council')" class="w-11 h-11 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
+                    <img src="abdullah.png" onerror="this.outerHTML='<div class=\'w-11 h-11 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-xs text-brand-sand\'>AG</div>'" alt="Abdullah Asif Gul" onclick="openLightbox(this.src, 'Abdullah Asif Gul — Executive Council')" class="w-11 h-11 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
                     <div>
                       <h4 class="font-bold text-sm text-brand-sand">Abdullah Asif Gul</h4>
                       <p class="text-[11px] font-semibold text-brand-maroon uppercase">Executive Council (EC)</p>
@@ -273,7 +273,7 @@
                 <div class="space-y-4">
                   <!-- EC -->
                   <div class="flex items-center gap-3">
-                    <img src="divyansh.jpg" onerror="this.outerHTML='<div class=\'w-11 h-11 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-xs text-brand-sand\'>DK</div>'" alt="Divyansh" onclick="openLightbox(this.src, 'Divyansh — Executive Council')" class="w-11 h-11 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
+                    <img src="divyansh.png" onerror="this.outerHTML='<div class=\'w-11 h-11 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-xs text-brand-sand\'>DK</div>'" alt="Divyansh" onclick="openLightbox(this.src, 'Divyansh — Executive Council')" class="w-11 h-11 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
                     <div>
                       <h4 class="font-bold text-sm text-brand-sand">Divyansh</h4>
                       <p class="text-[11px] font-semibold text-brand-maroon uppercase">Executive Council (EC)</p>
@@ -291,7 +291,7 @@
                 <div class="space-y-4">
                   <!-- EC -->
                   <div class="flex items-center gap-3">
-                    <img src="omar.jpg" onerror="this.outerHTML='<div class=\'w-11 h-11 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-xs text-brand-sand\'>OA</div>'" alt="Omar Afridi" onclick="openLightbox(this.src, 'Omar Afridi — Executive Council')" class="w-11 h-11 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
+                    <img src="omar.png" onerror="this.outerHTML='<div class=\'w-11 h-11 shrink-0 rounded-full bg-brand-pine border border-brand-taupe/30 flex items-center justify-center font-bold text-xs text-brand-sand\'>OA</div>'" alt="Omar Afridi" onclick="openLightbox(this.src, 'Omar Afridi — Executive Council')" class="w-11 h-11 shrink-0 rounded-full object-cover border border-brand-taupe/30 hover:scale-105 transition cursor-pointer">
                     <div>
                       <h4 class="font-bold text-sm text-brand-sand">Omar Afridi</h4>
                       <p class="text-[11px] font-semibold text-brand-maroon uppercase">Executive Council (EC)</p>
@@ -306,6 +306,7 @@
         </div>
       </div>
     </section>
+  </main>
 
   <!-- PAGE 2: SCUBA REGISTRATION -->
   <main id="page-scuba" class="page-view hidden flex-grow px-6 py-12 max-w-5xl mx-auto w-full">
@@ -490,9 +491,9 @@
 
   <!-- LIGHTBOX MODAL -->
   <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden flex-col items-center justify-center p-4">
-    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-brand-sand hover:text-white text-2xl font-bold p-2">✕</button>
-    <img id="lightboxImg" src="" class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg border border-brand-pine">
-    <p id="lightboxCaption" class="mt-4 text-sm font-semibold text-brand-sand"></p>
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-brand-sand hover:text-white text-3xl font-bold p-2 transition">✕</button>
+    <img id="lightboxImg" src="" class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg border border-brand-pine shadow-2xl">
+    <p id="lightboxCaption" class="mt-4 text-sm font-semibold text-brand-sand tracking-wide text-center"></p>
   </div>
 
   <!-- FOOTER -->
@@ -560,17 +561,22 @@
     }
 
     function openLightbox(url, title) {
+      if (!url) return;
       document.getElementById('lightboxImg').src = url;
-      document.getElementById('lightboxCaption').innerText = title;
-      document.getElementById('lightbox').classList.remove('hidden');
-      document.getElementById('lightbox').classList.add('flex');
+      document.getElementById('lightboxCaption').innerText = title || '';
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('hidden');
+      lb.classList.add('flex');
     }
 
     function closeLightbox() {
-      document.getElementById('lightbox').classList.add('hidden');
-      document.getElementById('lightbox').classList.remove('flex');
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
+      document.getElementById('lightboxImg').src = '';
     }
-// Close lightbox when pressing the Esc key
+
+    // Close lightbox on Escape key
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
         closeLightbox();
