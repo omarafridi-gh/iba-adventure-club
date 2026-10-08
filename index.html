@@ -51,9 +51,7 @@
     <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
       <!-- Logo + Name -->
       <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
-        <div class="w-10 h-10 rounded-lg bg-brand-maroon flex items-center justify-center font-display font-black text-brand-sand text-xl shadow-md border border-brand-sand/20">
-          ▲
-        </div>
+        <img src="IAC%20Logo.PNG" alt="IAC Logo" class="h-11 w-auto max-w-[48px] object-contain rounded drop-shadow">
         <span class="font-display font-bold text-lg tracking-wider text-brand-sand leading-none">
           IBA ADVENTURE CLUB
         </span>
@@ -421,14 +419,10 @@
   <!-- SCRIPT FOR ROUTING & INTERACTIONS -->
   <script>
     function showPage(pageId) {
-      // Hide all pages
       document.querySelectorAll('.page-view').forEach(el => el.classList.add('hidden'));
-      
-      // Show selected page
       const active = document.getElementById('page-' + pageId);
       if (active) active.classList.remove('hidden');
 
-      // Update Desktop Nav Tabs
       document.querySelectorAll('.nav-tab').forEach(btn => {
         btn.classList.remove('bg-brand-maroon', 'text-brand-sand', 'shadow');
         btn.classList.add('text-brand-taupe');
@@ -439,7 +433,6 @@
         activeTab.classList.remove('text-brand-taupe');
       }
 
-      // Update Mobile Nav Tabs
       document.querySelectorAll('.nav-tab-m').forEach(btn => {
         btn.classList.remove('text-brand-sand');
         btn.classList.add('text-brand-taupe');
