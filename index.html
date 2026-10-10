@@ -282,7 +282,7 @@
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-4">
                   <img src="coo.png" onerror="this.outerHTML='<div class=\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>COO</div>'" alt="Yusra - COO" onclick="openLightbox(this.src, 'Yusra — COO')" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
-                  <span class="absolute -bottom-1 -right-1 bg-scrap-teal text-white font-hand text-lg px-3 py-0.5 rounded-full shadow -rotate-6 border border-white font-bold">Yusra ♡</span>
+                  <span class="absolute -bottom-1 -right-1 bg-scrap-teal text-white font-hand text-lg px-3 py-0.5 rounded-full shadow border border-white font-bold">Yusra ♡</span>
                 </div>
                 <span class="font-display font-black text-3xl text-scrap-teal tracking-wider mt-1">COO</span>
                 <p class="text-sm text-scrap-ink/80 mt-2.5 font-normal leading-relaxed">Directs operations, ground logistics, fleet movements and basecamps.</p>
@@ -535,10 +535,8 @@
 
             <!-- DISTINCT DARK BULLETIN: ARCHIVES & EXPEDITIONS REEL EDIT -->
             <div class="rounded-2xl p-5 relative mt-8 bg-scrap-charcoal text-white shadow-2xl border-2 border-[#55564E] transform rotate-1 hover:rotate-0 transition duration-300">
-              <!-- Pushpin on Top -->
               <div class="pushpin"></div>
 
-              <!-- Header with vintage feel -->
               <div class="flex items-center justify-between border-b border-white/20 pb-3 mb-3">
                 <div class="flex items-center gap-2">
                   <span class="text-xs font-mono uppercase tracking-widest text-scrap-gold font-bold">IAC ARCHIVES</span>
@@ -566,7 +564,6 @@
                 </iframe>
               </div>
 
-              <!-- Bottom Scrap Stamp Badge -->
               <div class="mt-3 pt-2.5 border-t border-white/15 flex items-center justify-between text-[11px] text-white/70">
                 <span class="font-mono text-scrap-gold">● REEL ARCHIVE</span>
                 <span class="font-hand text-white/90 text-sm">Click play to watch with audio ♡</span>
@@ -577,18 +574,19 @@
 
         </div>
 
-        <!-- HIERARCHY LEVEL 3: MANAGEMENT TEAM (Bold Connector & Ample Spacing) -->
-        <div class="w-full max-w-5xl mx-auto mt-4">
-          <!-- BOLD MATCHING SVG CONNECTOR -->
-          <div class="w-full flex justify-center mb-1">
-            <svg class="w-8 h-12" viewBox="0 0 32 48" fill="none">
-              <path d="M 16 0 L 16 48" stroke="#A44200" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round" />
-              <circle cx="16" cy="46" r="4.5" fill="#A44200" />
+        <!-- HIERARCHY LEVEL 3: MANAGEMENT TEAM (Fixed Connector Distance, No Tape Collision) -->
+        <div class="w-full max-w-5xl mx-auto mt-6">
+          <!-- BOLD MATCHING SVG CONNECTOR TERMINATING ABOVE WASHI TAPE -->
+          <div class="w-full flex justify-center mb-0">
+            <svg class="w-8 h-10" viewBox="0 0 32 40" fill="none">
+              <!-- Line stops cleanly at y=32 so waypoint circle hovers right above the tape -->
+              <path d="M 16 0 L 16 32" stroke="#A44200" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round" />
+              <circle cx="16" cy="32" r="4.5" fill="#A44200" />
             </svg>
           </div>
 
-          <div class="field-card rounded-2xl p-8 text-center relative border-2 border-dashed border-scrap-kraft bg-[#FAF6EE]/90">
-            <!-- Ample margin to prevent tape collision -->
+          <!-- Card given generous top padding & margin so tape has its own space -->
+          <div class="field-card rounded-2xl p-8 pt-9 text-center relative border-2 border-dashed border-scrap-kraft bg-[#FAF6EE]/90 mt-2">
             <div class="washi-tape"></div>
             <div class="mt-2 mb-3">
               <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider shadow">
