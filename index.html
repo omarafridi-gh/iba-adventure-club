@@ -170,6 +170,54 @@
       transform: rotate(-4deg);
       user-select: none;
     }
+
+    /* 7. Realistic 3D Scrapbook Covers on Shelf */
+    .notebook-cover {
+      position: relative;
+      border-radius: 6px 16px 16px 6px;
+      box-shadow: 
+        -4px 0 8px rgba(0,0,0,0.2),
+        4px 8px 18px rgba(53,54,48,0.22),
+        inset 4px 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .notebook-cover:hover {
+      transform: translateY(-10px) rotate(-1deg);
+      box-shadow: 
+        -6px 0 12px rgba(0,0,0,0.25),
+        8px 16px 28px rgba(53,54,48,0.3);
+    }
+    .notebook-spine {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 22px;
+      background: rgba(0,0,0,0.2);
+      border-right: 2px dashed rgba(255,255,255,0.25);
+      border-radius: 6px 0 0 6px;
+    }
+
+    /* 8. Open Book Viewer */
+    .open-book-spread {
+      background-color: #FAF4E5;
+      box-shadow: 
+        0 15px 40px rgba(0,0,0,0.4),
+        inset 0 0 50px rgba(180, 145, 90, 0.25);
+      border: 1px solid #DFCEAA;
+    }
+    .book-spine-crease {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      background: linear-gradient(to right, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.22) 50%, rgba(0,0,0,0.08) 100%);
+      pointer-events: none;
+      z-index: 20;
+    }
   </style>
 </head>
 <body class="text-scrap-ink font-sans selection:bg-scrap-gold selection:text-white min-h-screen flex flex-col">
@@ -190,7 +238,7 @@
       <nav class="hidden md:flex items-center gap-2 bg-scrap-kraft/60 p-1.5 rounded-xl border border-scrap-kraft shadow-inner">
         <button onclick="showPage('home')" id="tab-home" class="nav-tab px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition bg-scrap-charcoal text-white shadow">Home & Council</button>
         <button onclick="showPage('scuba')" id="tab-scuba" class="nav-tab px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition text-scrap-charcoal hover:bg-scrap-kraft">Charna Scuba '26</button>
-        <button onclick="showPage('gallery')" id="tab-gallery" class="nav-tab px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition text-scrap-charcoal hover:bg-scrap-kraft">Field Journal</button>
+        <button onclick="showPage('gallery')" id="tab-gallery" class="nav-tab px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition text-scrap-charcoal hover:bg-scrap-kraft">Field Journals</button>
       </nav>
 
       <button onclick="showPage('scuba')" class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-scrap-teal hover:opacity-90 text-white font-display font-bold text-xs uppercase tracking-wider shadow-md transition">
@@ -202,7 +250,7 @@
     <div class="flex md:hidden border-t border-scrap-kraft bg-[#FAF6EE] px-3 py-2 justify-around">
       <button onclick="showPage('home')" id="tab-home-m" class="nav-tab-m text-xs font-bold text-scrap-charcoal px-3 py-1">Home</button>
       <button onclick="showPage('scuba')" id="tab-scuba-m" class="nav-tab-m text-xs font-bold text-scrap-ink/70 px-3 py-1">Scuba '26</button>
-      <button onclick="showPage('gallery')" id="tab-gallery-m" class="nav-tab-m text-xs font-bold text-scrap-ink/70 px-3 py-1">Journal</button>
+      <button onclick="showPage('gallery')" id="tab-gallery-m" class="nav-tab-m text-xs font-bold text-scrap-ink/70 px-3 py-1">Journals</button>
     </div>
   </header>
 
@@ -275,7 +323,7 @@
       </div>
     </section>
 
-    <!-- COUNCIL & HIERARCHICAL STRUCTURE SECTION (Seamless Topographic Board Background) -->
+    <!-- COUNCIL & HIERARCHICAL STRUCTURE SECTION (Seamless Topographic Background) -->
     <section id="council-section" class="px-4 sm:px-6 pt-16 pb-20 border-t-2 border-[#E0D2B8] relative">
       <div class="max-w-6xl mx-auto">
         
@@ -323,7 +371,7 @@
               </div>
             </div>
 
-            <!-- COO: Yusra (Organic Crumpled Paper Card with Complete Vector Paperclip) -->
+            <!-- COO: Yusra (Organic Crumpled Paper Card with Vector Paperclip) -->
             <div class="crumpled-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
               <!-- Full Uncut Vector Metal Paperclip -->
               <svg class="absolute -top-4 left-6 w-7 h-14 pointer-events-none drop-shadow-md z-30" viewBox="0 0 28 56" fill="none">
@@ -383,7 +431,6 @@
                 </div>
 
                 <div class="space-y-3.5">
-                  <!-- Muntazir -->
                   <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
                     <img src="muntazir.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>MH</div>'" alt="Muntazir" onclick="openLightbox(this.src, 'Muntazir Hassan — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
@@ -393,7 +440,6 @@
                     </div>
                   </div>
 
-                  <!-- Rayyan -->
                   <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
                     <img src="rayyan.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>RR</div>'" alt="Rayyan" onclick="openLightbox(this.src, 'Rayyan Rafique — Director Media & Design')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
@@ -403,12 +449,11 @@
                     </div>
                   </div>
 
-                  <!-- Meerub -->
                   <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
                     <img src="meerub.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>MH</div>'" alt="Meerub" onclick="openLightbox(this.src, 'Meerub Haider — Director Content Planning')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Meerub Haider</h4>
-                      <span class="text-xs font-semibold text-scrap-teal/80 uppercase tracking-wider block">Director Content Planning</span>
+                      <span class="text-xs font-semibold text-scrap-teal/70 uppercase tracking-wider block">Director Content Planning</span>
                       <a href="mailto:m.haider.33279@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.haider.33279@khi.iba.edu.pk</a>
                     </div>
                   </div>
@@ -424,7 +469,6 @@
                 </div>
 
                 <div class="space-y-3.5">
-                  <!-- Abdullah -->
                   <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
                     <img src="abdullah.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>AG</div>'" alt="Abdullah" onclick="openLightbox(this.src, 'Abdullah Asif Gul — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
@@ -434,12 +478,11 @@
                     </div>
                   </div>
 
-                  <!-- Osama -->
                   <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
                     <img src="osama.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>OS</div>'" alt="Osama" onclick="openLightbox(this.src, 'Osama — Director Corporate & Communications')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Osama</h4>
-                      <span class="text-xs font-semibold text-scrap-rust/80 uppercase tracking-wider block">Director Corporate & Comms</span>
+                      <span class="text-xs font-semibold text-scrap-rust/70 uppercase tracking-wider block">Director Corporate & Comms</span>
                       <span class="text-xs text-scrap-ink/70 block mt-0.5">Executive Director</span>
                     </div>
                   </div>
@@ -455,17 +498,15 @@
                 </div>
 
                 <div class="space-y-3.5">
-                  <!-- Neetu -->
                   <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.6deg]">
                     <img src="neetu.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
-                      <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
+                      <span class="text-xs font-bold text-[#7ba632] uppercase tracking-wider block">Executive Council</span>
                       <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-[#7ba632] truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
                     </div>
                   </div>
 
-                  <!-- Alina -->
                   <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.4deg]">
                     <img src="alina.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>AK</div>'" alt="Alina" onclick="openLightbox(this.src, 'Alina Kashif — Director Safety')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
@@ -486,7 +527,6 @@
                 </div>
 
                 <div class="space-y-3.5">
-                  <!-- Kashaf -->
                   <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
                     <img src="kashaf.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>KS</div>'" alt="Kashaf" onclick="openLightbox(this.src, 'Kashaf — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
@@ -496,7 +536,6 @@
                     </div>
                   </div>
 
-                  <!-- Najiba -->
                   <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
                     <img src="najiba.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>NZ</div>'" alt="Najiba" onclick="openLightbox(this.src, 'Najiba Zia — Director Ops & Logistics')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
@@ -517,7 +556,6 @@
                 </div>
 
                 <div class="space-y-3.5">
-                  <!-- Divyansh -->
                   <div class="sticky-note-item bg-[#FFF8E2] border-[#EDA531]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
                     <img src="divyansh.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>DK</div>'" alt="Divyansh" onclick="openLightbox(this.src, 'Divyansh — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
@@ -538,7 +576,6 @@
                 </div>
 
                 <div class="space-y-3.5">
-                  <!-- Omar -->
                   <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
                     <img src="omar.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>OA</div>'" alt="Omar" onclick="openLightbox(this.src, 'Muhammad Omar Afridi — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
@@ -548,12 +585,11 @@
                     </div>
                   </div>
 
-                  <!-- Hasan -->
                   <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
                     <img src="hasan.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>HK</div>'" alt="Hasan" onclick="openLightbox(this.src, 'Muhammad Hasan Khan — Director General Affairs')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Hasan Khan</h4>
-                      <span class="text-xs font-semibold text-scrap-teal/80 uppercase tracking-wider block">Director General Affairs</span>
+                      <span class="text-xs font-semibold text-scrap-teal/70 uppercase tracking-wider block">Director General Affairs</span>
                       <a href="mailto:m.khan.30910@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.khan.30910@khi.iba.edu.pk</a>
                     </div>
                   </div>
@@ -630,25 +666,25 @@
         </div>
 
         <!-- HIERARCHY LEVEL 3: MANAGEMENT TEAM (Tightly Grouped, No Colliding Lower Line) -->
-        <div class="w-full max-w-5xl mx-auto mt-8 flex flex-col items-center">
+        <div class="w-full max-w-5xl mx-auto mt-6 flex flex-col items-center">
           
           <!-- Hierarchical Line Leading Cleanly to Title Pill -->
           <div class="flex justify-center">
-            <svg class="w-8 h-12" viewBox="0 0 32 48" fill="none">
-              <path d="M 16 0 L 16 44" stroke="#A44200" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round" />
-              <circle cx="16" cy="44" r="4.5" fill="#A44200" />
+            <svg class="w-8 h-14" viewBox="0 0 32 56" fill="none">
+              <path d="M 16 0 L 16 52" stroke="#A44200" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round" />
+              <circle cx="16" cy="52" r="4.5" fill="#A44200" />
             </svg>
           </div>
 
           <!-- Title Pill: Positioned Cleanly Outside -->
-          <div class="text-center mt-2 mb-2 z-10">
+          <div class="text-center mt-1 mb-2 z-10">
             <span class="inline-block px-9 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider shadow">
               MANAGEMENT TEAM 2026–2027
             </span>
           </div>
 
           <!-- Burlap Fabric Textured Card: Brought Closer with Zero Intersecting Lower Line -->
-          <div class="burlap-fabric-card rounded-2xl p-7 pt-9 text-center relative w-full shadow-md mt-4">
+          <div class="burlap-fabric-card rounded-2xl p-7 pt-9 text-center relative w-full shadow-md mt-2">
             <div class="washi-tape"></div>
             <h4 class="font-display font-bold text-2xl text-scrap-charcoal mt-1">Annual General Management Body</h4>
             <p class="text-sm text-scrap-ink/85 max-w-2xl mx-auto mt-2 leading-relaxed font-medium">
@@ -689,7 +725,7 @@
           <p class="text-xs text-scrap-ink/75 mt-2 leading-relaxed">Crystal clear surface visibility with parrotfish, angelfish, sea anemones, and guided buoyancy testing.</p>
         </div>
 
-        <div class="bg-[#FAF4E6] p-6 rounded-xl border-2 border-scrap-teal shadow-md relative">
+        <div class="bg-[#FAF4E6] p-6 rounded-xl border border-scrap-teal shadow-md relative">
           <div class="absolute -top-3 right-3 bg-scrap-teal text-white text-[10px] font-bold px-2.5 py-0.5 rounded uppercase">Full Tank Dive</div>
           <span class="font-mono text-xs font-bold text-scrap-teal block mb-1">DEPTH: 10M - 12M</span>
           <h4 class="font-display font-bold text-lg text-scrap-charcoal">The Deep Reef Trench</h4>
@@ -831,83 +867,128 @@
     </div>
   </main>
 
-  <!-- PAGE 3: MEDIA GALLERY / FIELD JOURNAL -->
-  <main id="page-gallery" class="page-view hidden flex-grow px-6 py-12 max-w-6xl mx-auto w-full">
-    <div class="text-center max-w-xl mx-auto mb-10">
-      <span class="font-hand text-2xl text-scrap-rust font-bold block mb-1">Adventure looks good on you ♡</span>
-      <h1 class="text-3xl sm:text-5xl font-display font-bold text-scrap-charcoal">Field Archive & Polaroids</h1>
-      <p class="text-xs sm:text-sm text-scrap-ink/70 mt-2">Candid stills and unscripted memories logged across peaks, deserts, and reefs.</p>
+  <!-- PAGE 3: STUDENT FIELD JOURNALS (SHELF & FLIP-BOOK ENGINE) -->
+  <main id="page-gallery" class="page-view hidden flex-grow px-4 sm:px-6 py-12 max-w-6xl mx-auto w-full">
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="font-hand text-3xl text-scrap-rust font-bold block mb-1">Adventure looks good on you ♡</span>
+      <h1 class="text-3xl sm:text-5xl font-display font-bold text-scrap-charcoal">Student Field Journals</h1>
+      <p class="text-sm text-scrap-ink/75 mt-2">
+        Every explorer gets their own expedition notebook. Click open any student's journal to flip through their candid trip photos and field notes.
+      </p>
+
+      <!-- Submit Snaps & Field Notes via Google Form -->
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+        <button onclick="openFormSubmissionModal()" class="px-6 py-3 bg-scrap-rust hover:bg-scrap-rust/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition transform hover:-translate-y-0.5 inline-flex items-center gap-2">
+          <span>📥 Submit Your Trip Snaps (Add to Your Journal)</span>
+        </button>
+      </div>
     </div>
 
-    <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
-      <button onclick="filterGallery('all', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-scrap-charcoal text-white shadow-sm">All</button>
-      <button onclick="filterGallery('scuba', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-[#FAF3E3] text-scrap-charcoal border border-[#DECFA9] hover:bg-[#F2E8D2]">Scuba & Marine</button>
-      <button onclick="filterGallery('north', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-[#FAF3E3] text-scrap-charcoal border border-[#DECFA9] hover:bg-[#F2E8D2]">Northern Treks</button>
-      <button onclick="filterGallery('desert', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-[#FAF3E3] text-scrap-charcoal border border-[#DECFA9] hover:bg-[#F2E8D2]">Desert & Camp</button>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="galleryGrid">
-      <div class="gallery-item polaroid cursor-pointer" data-category="scuba" onclick="openLightbox('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80', 'Churna Deep Reef Dive')">
-        <div class="aspect-video w-full overflow-hidden rounded bg-scrap-kraft">
-          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Scuba Dive" class="w-full h-full object-cover">
-        </div>
-        <div class="mt-3 text-center">
-          <p class="font-hand text-lg text-scrap-charcoal font-bold">Churna Deep Reef '25</p>
-          <span class="text-[10px] uppercase font-bold text-scrap-teal">Marine Recon</span>
-        </div>
-      </div>
-
-      <div class="gallery-item polaroid cursor-pointer" data-category="north" onclick="openLightbox('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', 'Passu Cones Basecamp')">
-        <div class="aspect-video w-full overflow-hidden rounded bg-scrap-kraft">
-          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Passu Cones" class="w-full h-full object-cover">
-        </div>
-        <div class="mt-3 text-center">
-          <p class="font-hand text-lg text-scrap-charcoal font-bold">Passu Cones Crossing</p>
-          <span class="text-[10px] uppercase font-bold text-scrap-moss">Northern Expedition</span>
-        </div>
-      </div>
-
-      <div class="gallery-item polaroid cursor-pointer" data-category="desert" onclick="openLightbox('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80', 'Gorakh Hill Station Night Sky')">
-        <div class="aspect-video w-full overflow-hidden rounded bg-scrap-kraft">
-          <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" alt="Gorakh Hill" class="w-full h-full object-cover">
-        </div>
-        <div class="mt-3 text-center">
-          <p class="font-hand text-lg text-scrap-charcoal font-bold">Gorakh Hills Star Watch</p>
-          <span class="text-[10px] uppercase font-bold text-scrap-gold">Sindh Altitude Camp</span>
-        </div>
-      </div>
-
-      <div class="gallery-item polaroid cursor-pointer" data-category="scuba" onclick="openLightbox('https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=1200&q=80', 'Cliff Jump Mubarak Village')">
-        <div class="aspect-video w-full overflow-hidden rounded bg-scrap-kraft">
-          <img src="https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=600&q=80" alt="Cliff Jump" class="w-full h-full object-cover">
-        </div>
-        <div class="mt-3 text-center">
-          <p class="font-hand text-lg text-scrap-charcoal font-bold">Mubarak Cliff Jump</p>
-          <span class="text-[10px] uppercase font-bold text-scrap-teal">Coastal Tide</span>
-        </div>
-      </div>
-
-      <div class="gallery-item polaroid cursor-pointer" data-category="north" onclick="openLightbox('https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', 'Fairy Meadows Alpine Trek')">
-        <div class="aspect-video w-full overflow-hidden rounded bg-scrap-kraft">
-          <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=600&q=80" alt="Fairy Meadows" class="w-full h-full object-cover">
-        </div>
-        <div class="mt-3 text-center">
-          <p class="font-hand text-lg text-scrap-charcoal font-bold">Fairy Meadows Glacier Camp</p>
-          <span class="text-[10px] uppercase font-bold text-scrap-rust">Alpine Trail</span>
-        </div>
-      </div>
-
-      <div class="gallery-item polaroid cursor-pointer" data-category="desert" onclick="openLightbox('https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?auto=format&fit=crop&w=1200&q=80', 'Hingol Princess of Hope Canyons')">
-        <div class="aspect-video w-full overflow-hidden rounded bg-scrap-kraft">
-          <img src="https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?auto=format&fit=crop&w=600&q=80" alt="Hingol" class="w-full h-full object-cover">
-        </div>
-        <div class="mt-3 text-center">
-          <p class="font-hand text-lg text-scrap-charcoal font-bold">Hingol Mud Volcanoes</p>
-          <span class="text-[10px] uppercase font-bold text-scrap-gold">Balochistan Trek</span>
-        </div>
-      </div>
+    <!-- The Scrapbook Shelf Grid (Grouped by Student ERP) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-4 pb-12" id="journalShelfGrid">
+      <!-- Generated dynamically by renderStudentJournals() based on student ERP IDs -->
     </div>
   </main>
+
+  <!-- MODAL: GOOGLE FORM SUBMISSION PORTAL -->
+  <div id="formModal" class="fixed inset-0 z-50 bg-scrap-charcoal/90 backdrop-blur-md hidden flex-col items-center justify-center p-4">
+    <div class="w-full max-w-xl crumpled-paper-card p-7 sm:p-8 rounded-2xl relative text-center">
+      <div class="washi-tape washi-tape-rust"></div>
+      
+      <button onclick="closeFormSubmissionModal()" class="absolute top-4 right-5 text-scrap-charcoal hover:text-scrap-rust text-xl font-bold">✕</button>
+
+      <span class="text-2xl block mb-2">📸</span>
+      <h3 class="font-display font-bold text-2xl text-scrap-charcoal">Submit to Your Field Journal</h3>
+      <p class="text-xs text-scrap-ink/75 mt-1 max-w-md mx-auto leading-relaxed">
+        Upload your candid polaroids and trip notes through our official portal. All your submissions are automatically bound together inside your personal notebook.
+      </p>
+
+      <div class="my-6 p-4 rounded-xl bg-[#FAF5EC] border-2 border-dashed border-[#DECFA9] text-left text-xs space-y-2">
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-scrap-rust">1.</span>
+          <span>Enter your <strong>IBA ERP ID</strong> so new pages are routed to your notebook.</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-scrap-rust">2.</span>
+          <span>Drop your unedited photos & raw captions.</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-scrap-rust">3.</span>
+          <span>Our media desk verifies and publishes your new pages directly to your shelf book.</span>
+        </div>
+      </div>
+
+      <!-- Replace the href below with your exact Google Form link -->
+      <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 bg-scrap-teal hover:opacity-90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md inline-block transition">
+        Open Official Google Form Upload Portal ↗
+      </a>
+      
+      <span class="font-hand text-xs text-scrap-ink/60 block mt-3">Free • Unlimited student submissions ♡</span>
+    </div>
+  </div>
+
+  <!-- FULLSCREEN 2-PAGE SCRAPBOOK VIEWER MODAL -->
+  <div id="bookViewerModal" class="fixed inset-0 z-50 bg-scrap-charcoal/90 backdrop-blur-md hidden flex-col items-center justify-center p-3 sm:p-6">
+    <div class="w-full max-w-5xl flex justify-between items-center text-white mb-3 px-2">
+      <div>
+        <h3 id="bookModalTitle" class="font-display font-bold text-lg sm:text-xl"></h3>
+        <span id="bookModalAuthor" class="font-hand text-base text-scrap-gold"></span>
+      </div>
+      <button onclick="closeBookViewer()" class="px-4 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-xs font-bold uppercase tracking-wider transition">
+        ✕ Close Journal
+      </button>
+    </div>
+
+    <!-- The 2-Page Open Spread Container -->
+    <div class="w-full max-w-5xl bg-[#FAF4E5] rounded-2xl open-book-spread relative overflow-hidden flex flex-col md:flex-row min-h-[500px] md:min-h-[550px] border-4 border-[#DFCEAA] shadow-2xl">
+      <div class="book-spine-crease hidden md:block"></div>
+
+      <!-- LEFT PAGE -->
+      <div class="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#DFCFAA] relative">
+        <div class="washi-tape washi-tape-teal"></div>
+        <div class="mt-2">
+          <div class="aspect-video w-full rounded-xl overflow-hidden border-2 border-white shadow-md bg-scrap-kraft relative">
+            <img id="pageLeftImg" src="" alt="Left Page Snap" class="w-full h-full object-cover">
+          </div>
+          <p id="pageLeftDate" class="font-mono text-[10px] text-scrap-rust font-bold mt-3 uppercase tracking-widest"></p>
+          <h4 id="pageLeftHeading" class="font-display font-bold text-xl text-scrap-charcoal mt-1"></h4>
+        </div>
+        <div class="mt-4 pt-3 border-t border-[#DFCFAA]">
+          <p id="pageLeftText" class="font-hand text-lg text-scrap-ink/90 leading-snug"></p>
+          <span id="pageLeftNum" class="block font-mono text-[10px] text-scrap-ink/50 text-left mt-2"></span>
+        </div>
+      </div>
+
+      <!-- RIGHT PAGE -->
+      <div class="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-between relative bg-[#F7EED9]/60">
+        <div class="washi-tape washi-tape-rust"></div>
+        <div class="mt-2">
+          <div class="aspect-video w-full rounded-xl overflow-hidden border-2 border-white shadow-md bg-scrap-kraft relative">
+            <img id="pageRightImg" src="" alt="Right Page Snap" class="w-full h-full object-cover">
+          </div>
+          <p id="pageRightDate" class="font-mono text-[10px] text-scrap-teal font-bold mt-3 uppercase tracking-widest"></p>
+          <h4 id="pageRightHeading" class="font-display font-bold text-xl text-scrap-charcoal mt-1"></h4>
+        </div>
+        <div class="mt-4 pt-3 border-t border-[#DFCFAA]">
+          <p id="pageRightText" class="font-hand text-lg text-scrap-ink/90 leading-snug"></p>
+          <span id="pageRightNum" class="block font-mono text-[10px] text-scrap-ink/50 text-right mt-2"></span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Flipping Navigation Controls -->
+    <div class="flex items-center gap-4 mt-4 text-white">
+      <button onclick="prevBookSpread()" id="btnPrevSpread" class="px-5 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-xs font-bold uppercase tracking-wider disabled:opacity-30">
+        ← Previous Pages
+      </button>
+      <span id="spreadIndicator" class="font-mono text-xs text-scrap-gold"></span>
+      <button onclick="nextBookSpread()" id="btnNextSpread" class="px-5 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-xs font-bold uppercase tracking-wider disabled:opacity-30">
+        Next Pages →
+      </button>
+    </div>
+  </div>
 
   <!-- LIGHTBOX MODAL -->
   <div id="lightbox" class="fixed inset-0 z-50 bg-scrap-charcoal/95 hidden flex-col items-center justify-center p-4">
@@ -952,6 +1033,246 @@
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ==========================================================================
+       SUBMISSION DATA STREAM: Grouped by unique IBA ERP ID
+       Your media team simply adds rows here (or loads from Google Sheet)
+       ========================================================================== */
+    const rawStudentSubmissions = [
+      // Submissions from Omar Afridi (ERP 26220) - Automatically routed to his book
+      {
+        erpId: "26220",
+        studentName: "Muhammad Omar Afridi",
+        bookCoverColor: "#2E5E65",
+        volumeTag: "Vol. 01 • Marine & Reef",
+        img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80",
+        date: "OCTOBER 2025 • CHARNA REEF",
+        heading: "Descending into 12-Meter Silence",
+        caption: "First breath underwater feels unnatural until the coral shelf opens up. Schools of yellowtail snappers circled our descent line. Zero phone signal, just pure blue. ♡"
+      },
+      {
+        erpId: "26220",
+        studentName: "Muhammad Omar Afridi",
+        bookCoverColor: "#2E5E65",
+        volumeTag: "Vol. 01 • Marine & Reef",
+        img: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=900&q=80",
+        date: "OCTOBER 2025 • MUBARAK CLIFFS",
+        heading: "The 20ft Leap off the Harbor Ridge",
+        caption: "No hesitation allowed. Count to three and leap into the swell. The whole batch was cheering from the wooden boat deck."
+      },
+      {
+        erpId: "26220",
+        studentName: "Muhammad Omar Afridi",
+        bookCoverColor: "#2E5E65",
+        volumeTag: "Vol. 01 • Marine & Reef",
+        img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+        date: "OCTOBER 2025 • MUBARAK VILLAGE",
+        heading: "Post-Dive Biryani & Sea Breeze",
+        caption: "Nothing tastes better than hot biryani on a rocking wooden boat after two hours in the Arabian Sea tides."
+      },
+      {
+        erpId: "26220",
+        studentName: "Muhammad Omar Afridi",
+        bookCoverColor: "#2E5E65",
+        volumeTag: "Vol. 01 • Marine & Reef",
+        img: "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?auto=format&fit=crop&w=900&q=80",
+        date: "OCTOBER 2025 • RETURN RECON",
+        heading: "Sunset Over Hub Coastal Highway",
+        caption: "Exhausted coaster ride back to Karachi. Sun burned cheeks, salty hair, and already counting down to the 2026 expedition."
+      },
+
+      // Submissions from Rayyan Rafique (ERP 30530) - Automatically routed to his book
+      {
+        erpId: "30530",
+        studentName: "Rayyan Rafique",
+        bookCoverColor: "#5A3825",
+        volumeTag: "Vol. 02 • Northern Trails",
+        img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80",
+        date: "JULY 2025 • PASSU CONES",
+        heading: "Sharp Pinnacles of the Karakoram",
+        caption: "The granite cathedral peaks look unreal in the early morning sun. Cold glacial air hits your lungs the moment you step off the coaster."
+      },
+      {
+        erpId: "30530",
+        studentName: "Rayyan Rafique",
+        bookCoverColor: "#5A3825",
+        volumeTag: "Vol. 02 • Northern Trails",
+        img: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=900&q=80",
+        date: "JULY 2025 • BORIT LAKE",
+        heading: "Borit Lake Suspension Bridge Crossing",
+        caption: "Planks separated by feet of empty air over glacial rapids. Pure adrenaline testing campus courage."
+      },
+
+      // Submissions from Hamna (ERP 28100) - Automatically routed to her book
+      {
+        erpId: "28100",
+        studentName: "Hamna (CEO)",
+        bookCoverColor: "#383A31",
+        volumeTag: "Vol. 03 • Altitude Camp",
+        img: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=900&q=80",
+        date: "DECEMBER 2025 • GORAKH HILLS",
+        heading: "Sindh's Highest Ridge at 2:00 AM",
+        caption: "Freezing temperatures at 5,688 feet. The Milky Way was crystal clear directly above our camp tents."
+      },
+      {
+        erpId: "28100",
+        studentName: "Hamna (CEO)",
+        bookCoverColor: "#383A31",
+        volumeTag: "Vol. 03 • Altitude Camp",
+        img: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=900&q=80",
+        date: "DECEMBER 2025 • BASECAMP BONFIRE",
+        heading: "Doodh Patti & Acoustic Strings",
+        caption: "Woodsmoke in your jacket, shared shawls, and 30 voices singing along until the sun broke over the Kirthar range."
+      }
+    ];
+
+    // AUTOMATIC GROUPING ENGINE: Takes raw submissions and creates 1 Book per ERP ID
+    let compiledStudentJournals = [];
+
+    function buildStudentJournals() {
+      const grouped = {};
+      rawStudentSubmissions.forEach(sub => {
+        if (!grouped[sub.erpId]) {
+          grouped[sub.erpId] = {
+            erpId: sub.erpId,
+            studentName: sub.studentName,
+            color: sub.bookCoverColor || "#2E5E65",
+            volumeTag: sub.volumeTag || "Vol. Student Log",
+            pages: []
+          };
+        }
+        grouped[sub.erpId].pages.push({
+          img: sub.img,
+          date: sub.date,
+          heading: sub.heading,
+          text: sub.caption
+        });
+      });
+
+      compiledStudentJournals = Object.values(grouped);
+      renderShelfUI();
+    }
+
+    function renderShelfUI() {
+      const shelf = document.getElementById('journalShelfGrid');
+      shelf.innerHTML = '';
+
+      compiledStudentJournals.forEach((journal, idx) => {
+        const pageCount = journal.pages.length;
+        const card = document.createElement('div');
+        card.className = "notebook-cover p-6 text-white min-h-[300px] flex flex-col justify-between";
+        card.style.backgroundColor = journal.color;
+        card.onclick = function() { openBookViewer(idx); };
+
+        card.innerHTML = `
+          <div class="notebook-spine"></div>
+          <div class="pl-5">
+            <div class="flex justify-between items-start">
+              <span class="px-2.5 py-0.5 rounded bg-white/20 text-[10px] font-mono uppercase tracking-wider font-bold">${journal.volumeTag}</span>
+              <span class="text-xl">📖</span>
+            </div>
+            <h3 class="font-display font-bold text-2xl mt-4 leading-tight">${journal.studentName}'s Field Log</h3>
+            <p class="font-hand text-lg text-white/90 mt-1">ERP #${journal.erpId} • IBA Karachi</p>
+          </div>
+          <div class="pl-5 pt-6 border-t border-white/20 flex justify-between items-center text-xs">
+            <span class="font-mono text-white/70">${pageCount} Pages Logged</span>
+            <span class="font-bold underline underline-offset-4 font-display text-[11px] uppercase tracking-wider">Open Journal →</span>
+          </div>
+        `;
+        shelf.appendChild(card);
+      });
+    }
+
+    /* Flip-Book Viewer Modal Logic */
+    let currentBookIndex = 0;
+    let currentSpread = 0;
+
+    function openBookViewer(bookIdx) {
+      currentBookIndex = bookIdx;
+      currentSpread = 0;
+      const book = compiledStudentJournals[bookIdx];
+
+      document.getElementById('bookModalTitle').innerText = `${book.studentName}'s Field Journal`;
+      document.getElementById('bookModalAuthor').innerText = `IBA ERP ID: ${book.erpId}`;
+      renderBookSpread();
+
+      const modal = document.getElementById('bookViewerModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeBookViewer() {
+      const modal = document.getElementById('bookViewerModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function renderBookSpread() {
+      const book = compiledStudentJournals[currentBookIndex];
+      const leftIdx = currentSpread * 2;
+      const rightIdx = leftIdx + 1;
+
+      // Left page
+      if (book.pages[leftIdx]) {
+        document.getElementById('pageLeftImg').src = book.pages[leftIdx].img;
+        document.getElementById('pageLeftDate').innerText = book.pages[leftIdx].date;
+        document.getElementById('pageLeftHeading').innerText = book.pages[leftIdx].heading;
+        document.getElementById('pageLeftText').innerText = book.pages[leftIdx].text;
+        document.getElementById('pageLeftNum').innerText = 'Page ' + (leftIdx + 1);
+      } else {
+        document.getElementById('pageLeftImg').src = '';
+        document.getElementById('pageLeftHeading').innerText = 'Blank Page';
+        document.getElementById('pageLeftText').innerText = 'No entry recorded yet.';
+        document.getElementById('pageLeftNum').innerText = '';
+      }
+
+      // Right page
+      if (book.pages[rightIdx]) {
+        document.getElementById('pageRightImg').src = book.pages[rightIdx].img;
+        document.getElementById('pageRightDate').innerText = book.pages[rightIdx].date;
+        document.getElementById('pageRightHeading').innerText = book.pages[rightIdx].heading;
+        document.getElementById('pageRightText').innerText = book.pages[rightIdx].text;
+        document.getElementById('pageRightNum').innerText = 'Page ' + (rightIdx + 1);
+      } else {
+        document.getElementById('pageRightImg').src = 'https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?auto=format&fit=crop&w=900&q=80';
+        document.getElementById('pageRightDate').innerText = 'EXPEDITION LOG';
+        document.getElementById('pageRightHeading').innerText = 'End of Current Notes ♡';
+        document.getElementById('pageRightText').innerText = 'Submit more snaps through the Google Form portal to automatically add pages to this journal.';
+        document.getElementById('pageRightNum').innerText = '';
+      }
+
+      const totalSpreads = Math.ceil(book.pages.length / 2) || 1;
+      document.getElementById('spreadIndicator').innerText = `Spread ${currentSpread + 1} of ${totalSpreads}`;
+      document.getElementById('btnPrevSpread').disabled = (currentSpread === 0);
+      document.getElementById('btnNextSpread').disabled = (currentSpread >= totalSpreads - 1);
+    }
+
+    function prevBookSpread() {
+      if (currentSpread > 0) {
+        currentSpread--;
+        renderBookSpread();
+      }
+    }
+
+    function nextBookSpread() {
+      const book = compiledStudentJournals[currentBookIndex];
+      const totalSpreads = Math.ceil(book.pages.length / 2);
+      if (currentSpread < totalSpreads - 1) {
+        currentSpread++;
+        renderBookSpread();
+      }
+    }
+
+    /* Google Form Modal */
+    function openFormSubmissionModal() {
+      document.getElementById('formModal').classList.remove('hidden');
+      document.getElementById('formModal').classList.add('flex');
+    }
+
+    function closeFormSubmissionModal() {
+      document.getElementById('formModal').classList.add('hidden');
+      document.getElementById('formModal').classList.remove('flex');
     }
 
     function updateChecklist() {
@@ -1008,11 +1329,20 @@
     }
 
     document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') closeLightbox();
+      if (event.key === 'Escape') {
+        closeLightbox();
+        closeBookViewer();
+        closeFormSubmissionModal();
+      }
     });
 
     document.getElementById('lightbox').addEventListener('click', function(event) {
       if (event.target === this) closeLightbox();
+    });
+
+    // Initialize journals on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      buildStudentJournals();
     });
   </script>
 </body>
