@@ -173,14 +173,14 @@
           </div>
         </div>
 
-        <!-- Right: Clean Hero Polaroid Frame (Background shape removed) -->
+        <!-- Right: Clean Hero Polaroid Frame -->
         <div class="lg:col-span-5 relative flex justify-center">
           <div class="relative w-72 sm:w-80">
             <!-- Polaroid Main Frame -->
             <div class="polaroid transform -rotate-2">
               <div class="washi-tape washi-tape-teal"></div>
               
-              <!-- Image element wired to hasan_scuba.jpeg with fallback -->
+              <!-- Hero Photo: hasan_scuba.jpeg -->
               <div class="aspect-[4/3] w-full overflow-hidden rounded bg-scrap-kraft relative">
                 <img id="heroPolaroidImg" 
                      src="hasan_scuba.jpeg" 
@@ -192,12 +192,6 @@
               <div class="mt-3 text-center">
                 <p class="font-hand text-xl text-scrap-charcoal font-bold">Charna Island Scuba '26 ♡</p>
                 <p class="text-[10px] uppercase font-bold text-scrap-teal tracking-widest">Slots Now Open</p>
-                
-                <!-- Quick local upload picker to preview your photo right now -->
-                <label class="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-scrap-kraft/60 hover:bg-scrap-kraft text-[10px] font-bold text-scrap-charcoal cursor-pointer border border-scrap-kraft transition">
-                  <span>📷 Swap Photo</span>
-                  <input type="file" accept="image/*" class="hidden" onchange="previewHeroImage(event)">
-                </label>
               </div>
             </div>
 
@@ -414,7 +408,7 @@
                     <span class="absolute -bottom-1 -right-1 bg-scrap-charcoal text-white font-hand text-xs px-2 py-0.2 rounded-full shadow border border-white">Rayyan ♡</span>
                   </div>
                   <div class="flex-grow min-w-0">
-                    <div class="flex flex-wrap items-baseline justify-between gap-1">
+                    <div class="flex flex-wrap items-line justify-between gap-1">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal">Rayyan Rafique</h4>
                       <span class="text-[10px] font-semibold text-scrap-ink/70 uppercase tracking-wider bg-scrap-kraft/60 px-2 py-0.5 rounded border border-scrap-kraft">Director Media & Design</span>
                     </div>
@@ -981,18 +975,6 @@
     function scrollToQuiz() {
       const el = document.getElementById('quiz-section');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    /* Live Local Photo Preview Handler */
-    function previewHeroImage(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          document.getElementById('heroPolaroidImg').src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
     }
 
     /* Trail Matcher Quiz Logic */
