@@ -46,40 +46,24 @@
       background-size: 24px 24px, 260px 260px;
     }
 
-    /* 2. Microscopic Paper Fiber & Noise Texture Layer */
-    .paper-fiber {
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.055'/%3E%3C/svg%3E");
-    }
-
-    /* 3. Authentic Torn / Deckle Paper Card (Aged Parchment with Creased Grain) */
-    .torn-paper-card {
-      background-color: #FAF3E3;
+    /* 2. Authentic Crumpled & Flattened Paper Card Texture */
+    .crumpled-paper-card {
+      background-color: #FAF4E5;
       background-image: 
-        radial-gradient(circle at 10% 20%, rgba(222, 196, 150, 0.3) 0%, transparent 45%),
-        radial-gradient(circle at 90% 80%, rgba(204, 173, 128, 0.35) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 80%),
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
+        /* Flattened diagonal crease highlights & soft fold shadows */
+        linear-gradient(135deg, rgba(255,255,255,0.45) 0%, rgba(220,195,150,0.18) 35%, rgba(255,255,255,0.3) 50%, rgba(200,175,130,0.22) 75%, rgba(255,255,255,0.4) 100%),
+        linear-gradient(25deg, rgba(255,255,255,0.3) 0%, rgba(185,155,110,0.14) 40%, rgba(255,255,255,0.25) 70%, rgba(210,185,140,0.18) 100%),
+        /* Procedural paper fiber and tactile micro-creases */
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperCrease'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='5' result='noise'/%3E%3CfeDiffuseLighting in='noise' lighting-color='%23FFF8E7' surfaceScale='2.2' result='light'%3E%3CfeDistantLight azimuth='65' elevation='55'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperCrease)' opacity='0.32'/%3E%3C/svg%3E");
       border: 1px solid #DFCEAA;
       box-shadow: 
-        0 1px 2px rgba(53, 54, 48, 0.08),
-        0 6px 18px rgba(53, 54, 48, 0.1),
-        inset 0 0 35px rgba(214, 184, 137, 0.22);
+        0 1px 3px rgba(53, 54, 48, 0.08),
+        0 8px 22px rgba(53, 54, 48, 0.12),
+        inset 0 0 40px rgba(205, 175, 125, 0.25);
       position: relative;
     }
 
-    /* Rough fibrous torn top edge */
-    .torn-top-edge {
-      position: absolute;
-      top: -3px;
-      left: 0;
-      right: 0;
-      height: 6px;
-      background-image: url("data:image/svg+xml,%3Csvg width='40' height='6' viewBox='0 0 40 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6 L3 1 L7 4 L12 0 L18 5 L23 1 L28 4 L33 0 L37 5 L40 2 L40 6 Z' fill='%23FAF3E3' stroke='%23DFCEAA' stroke-width='0.5'/%3E%3C/svg%3E");
-      background-repeat: repeat-x;
-      z-index: 10;
-    }
-
-    /* 4. Coarse Burlap / Woven Fabric Canvas Texture */
+    /* 3. Coarse Burlap / Woven Fabric Canvas Texture */
     .burlap-fabric-card {
       background-color: #EFE3C8;
       background-image: 
@@ -94,7 +78,7 @@
       position: relative;
     }
 
-    /* 5. Real Washi Tape with Fibrous Edges */
+    /* 4. Real Washi Tape with Fibrous Edges */
     .washi-tape {
       position: absolute;
       top: -16px;
@@ -122,33 +106,7 @@
       transform: translateX(-50%) rotate(1.8deg);
     }
 
-    /* 6. Paperclip Graphic */
-    .paperclip-clip {
-      position: absolute;
-      top: -12px;
-      left: 24px;
-      width: 16px;
-      height: 42px;
-      border: 2.5px solid #8E8D88;
-      border-bottom: none;
-      border-radius: 12px 12px 0 0;
-      box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
-      z-index: 25;
-      pointer-events: none;
-    }
-    .paperclip-clip::after {
-      content: '';
-      position: absolute;
-      top: 8px;
-      left: 2px;
-      width: 7px;
-      height: 30px;
-      border: 2px solid #8E8D88;
-      border-top: none;
-      border-radius: 0 0 8px 8px;
-    }
-
-    /* 7. Realistic Pushpin */
+    /* 5. Realistic Pushpin */
     .pushpin {
       position: absolute;
       top: -14px;
@@ -305,7 +263,7 @@
       </div>
     </section>
 
-    <!-- COUNCIL & HIERARCHICAL STRUCTURE SECTION (Textured Coffee / Torn Paper Theme) -->
+    <!-- COUNCIL & HIERARCHICAL STRUCTURE SECTION (Authentic Crumpled Paper Aesthetic) -->
     <section id="council-section" class="px-4 sm:px-6 pt-16 pb-20 bg-[#F4ECDB]/60 border-t-2 border-[#E0D2B8] relative">
       <div class="max-w-6xl mx-auto">
         
@@ -327,9 +285,8 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 items-stretch">
             
-            <!-- CFO: Munira (Torn Paper Textured Card) -->
-            <div class="torn-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
-              <div class="torn-top-edge"></div>
+            <!-- CFO: Munira (Crumpled Flattened Paper Card) -->
+            <div class="crumpled-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
               <div class="washi-tape"></div>
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-4">
@@ -341,9 +298,8 @@
               </div>
             </div>
 
-            <!-- CEO: Hamna (Torn Paper Card with Rust Accent) -->
-            <div class="torn-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between border-2 border-scrap-rust shadow-xl sm:-translate-y-2">
-              <div class="torn-top-edge"></div>
+            <!-- CEO: Hamna (Crumpled Paper Card with Rust Border) -->
+            <div class="crumpled-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between border-2 border-scrap-rust shadow-xl sm:-translate-y-2">
               <div class="washi-tape washi-tape-rust"></div>
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-4">
@@ -355,10 +311,16 @@
               </div>
             </div>
 
-            <!-- COO: Yusra (Torn Paper Card with Paperclip Accent) -->
-            <div class="torn-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
-              <div class="torn-top-edge"></div>
-              <div class="paperclip-clip"></div>
+            <!-- COO: Yusra (Crumpled Paper Card with Realistic Paperclip) -->
+            <div class="crumpled-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
+              <!-- Full Vector Metal Paperclip (Not Cut Off) -->
+              <svg class="absolute -top-3 left-6 w-5 h-11 pointer-events-none drop-shadow-md z-30" viewBox="0 0 20 44" fill="none">
+                <path d="M6 36 V10 C6 5.6 9.6 2 14 2 C18.4 2 22 5.6 22 10 V34 C22 39.5 17.5 44 12 44 C6.5 44 2 39.5 2 34 V12" 
+                      stroke="#8E8D88" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M6 36 V10 C6 5.6 9.6 2 14 2 C18.4 2 22 5.6 22 10 V34 C22 39.5 17.5 44 12 44 C6.5 44 2 39.5 2 34 V12" 
+                      stroke="#D8D7D3" stroke-width="1" stroke-linecap="round" />
+              </svg>
+
               <div class="washi-tape washi-tape-teal"></div>
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-4">
@@ -397,12 +359,11 @@
               </span>
             </div>
 
-            <!-- Departments Grid (Coffee-Stained Parchment Cards with Internal Fabric Rows) -->
+            <!-- Departments Grid (Crumpled Flattened Paper Cards) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
               <!-- 1. Marketing & Creatives (Teal Theme) -->
-              <div class="torn-paper-card rounded-2xl p-6 relative">
-                <div class="torn-top-edge"></div>
+              <div class="crumpled-paper-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-teal"></div>
                 <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Marketing & Creatives</h3>
@@ -443,8 +404,7 @@
               </div>
 
               <!-- 2. Corporate & Communications (Rust Theme) -->
-              <div class="torn-paper-card rounded-2xl p-6 relative">
-                <div class="torn-top-edge"></div>
+              <div class="crumpled-paper-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-rust"></div>
                 <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Corporate & Comms</h3>
@@ -475,8 +435,7 @@
               </div>
 
               <!-- 3. Safety & Inclusivity (Moss Theme) -->
-              <div class="torn-paper-card rounded-2xl p-6 relative">
-                <div class="torn-top-edge"></div>
+              <div class="crumpled-paper-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-moss"></div>
                 <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Safety & Inclusivity</h3>
@@ -507,8 +466,7 @@
               </div>
 
               <!-- 4. Operations & Logistics (Rust Theme) -->
-              <div class="torn-paper-card rounded-2xl p-6 relative">
-                <div class="torn-top-edge"></div>
+              <div class="crumpled-paper-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-rust"></div>
                 <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Operations & Logistics</h3>
@@ -539,8 +497,7 @@
               </div>
 
               <!-- 5. Recruitment & Registrations (Gold Theme) -->
-              <div class="torn-paper-card rounded-2xl p-6 relative">
-                <div class="torn-top-edge"></div>
+              <div class="crumpled-paper-card rounded-2xl p-6 relative">
                 <div class="washi-tape"></div>
                 <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Recruitment</h3>
@@ -561,8 +518,7 @@
               </div>
 
               <!-- 6. General Affairs (Teal Theme) -->
-              <div class="torn-paper-card rounded-2xl p-6 relative">
-                <div class="torn-top-edge"></div>
+              <div class="crumpled-paper-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-teal"></div>
                 <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">General Affairs</h3>
@@ -605,9 +561,8 @@
               </span>
             </div>
 
-            <!-- Advisor Card (Torn Parchment Paper Texture) -->
-            <div class="torn-paper-card rounded-2xl p-7 relative">
-              <div class="torn-top-edge"></div>
+            <!-- Advisor Card (Crumpled Paper Texture) -->
+            <div class="crumpled-paper-card rounded-2xl p-7 relative">
               <div class="washi-tape washi-tape-rust"></div>
               
               <div class="text-center flex flex-col items-center">
@@ -701,7 +656,7 @@
     </div>
 
     <!-- Depth Meter Breakdown -->
-    <div class="mb-12 torn-paper-card p-6 sm:p-8 rounded-2xl relative">
+    <div class="mb-12 crumpled-paper-card p-6 sm:p-8 rounded-2xl relative">
       <div class="washi-tape washi-tape-teal"></div>
       <h3 class="font-display font-bold text-xl text-scrap-charcoal mb-6 text-center">Interactive Depth Meter: What Awaits You</h3>
 
@@ -732,7 +687,7 @@
       
       <!-- Logistics & Checklist -->
       <div class="lg:col-span-5 space-y-6">
-        <div class="torn-paper-card p-7 rounded-2xl relative">
+        <div class="crumpled-paper-card p-7 rounded-2xl relative">
           <div class="washi-tape"></div>
           <h3 class="font-display font-bold text-xl text-scrap-charcoal border-b border-[#DFCFAA] pb-3">Field Notes & Inclusions</h3>
           <ul class="space-y-4 text-xs mt-5">
@@ -797,7 +752,7 @@
       </div>
 
       <!-- Registration Form -->
-      <div class="lg:col-span-7 torn-paper-card p-7 sm:p-8 rounded-2xl relative">
+      <div class="lg:col-span-7 crumpled-paper-card p-7 sm:p-8 rounded-2xl relative">
         <div class="washi-tape washi-tape-rust"></div>
         <h3 class="font-display font-bold text-2xl text-scrap-charcoal mb-1">Diver Manifest Form</h3>
         <p class="text-xs text-scrap-ink/70 mb-6">Enter your student credentials to claim your dive slot. Confirmation will be dispatched to your WhatsApp.</p>
