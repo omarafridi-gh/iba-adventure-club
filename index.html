@@ -88,7 +88,6 @@
       background: #FDF9F2;
     }
 
-    /* 3D Realistic Pushpins */
     .thumbpin {
       position: absolute;
       top: -10px;
@@ -156,7 +155,7 @@
     <!-- Compact Hero Section with Pinned Side Polaroids -->
     <section class="relative px-4 sm:px-6 pt-6 pb-8 max-w-6xl mx-auto text-center overflow-hidden lg:overflow-visible">
       
-      <!-- LEFT PINNED POLAROID (Desktop Bulletin Accent) -->
+      <!-- LEFT PINNED POLAROID -->
       <div class="hidden xl:block absolute left-0 top-10 transform -rotate-6 transition hover:rotate-0 hover:scale-105 duration-200 z-10 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', 'First light on the ridge')">
         <div class="relative bg-white p-2.5 pb-5 shadow-xl border border-scrap-kraft/80 w-44 rounded-sm">
           <div class="thumbpin thumbpin-red"></div>
@@ -165,7 +164,7 @@
         </div>
       </div>
 
-      <!-- RIGHT PINNED POLAROID (Desktop Bulletin Accent) -->
+      <!-- RIGHT PINNED POLAROID -->
       <div class="hidden xl:block absolute right-0 top-8 transform rotate-6 transition hover:rotate-0 hover:scale-105 duration-200 z-10 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80', 'Campfire under the stars')">
         <div class="relative bg-white p-2.5 pb-5 shadow-xl border border-scrap-kraft/80 w-44 rounded-sm">
           <div class="thumbpin"></div>
@@ -176,24 +175,20 @@
 
       <!-- Center Hero Content -->
       <div class="max-w-3xl mx-auto relative z-10">
-        <!-- Dialogue Tag -->
         <div class="inline-block relative mb-3">
           <div class="font-hand text-lg sm:text-xl text-scrap-rust font-bold transform -rotate-1 bg-scrap-kraft/50 px-4 py-1 rounded-md border border-scrap-kraft shadow-sm">
             "Different batch, bolder stories, same campfire. ♡"
           </div>
         </div>
 
-        <!-- Main Title -->
         <h1 class="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-scrap-charcoal leading-tight">
           Beyond Campus Gates, Into The Untamed.
         </h1>
 
-        <!-- Subtitle -->
         <p class="mt-3 text-sm sm:text-base text-scrap-ink/80 max-w-xl mx-auto font-normal leading-relaxed">
           The official expedition and exploration society of IBA Karachi. Documenting trails, coastal reefs, mountain crossings, and student camaraderie.
         </p>
 
-        <!-- CTA Buttons -->
         <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
           <button onclick="showPage('scuba')" class="px-7 py-2.5 bg-scrap-moss hover:opacity-90 text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md border-2 border-scrap-charcoal transition transform hover:-translate-y-0.5">
             Join Scuba Trip '26
@@ -203,7 +198,6 @@
           </button>
         </div>
 
-        <!-- Category Chips -->
         <div class="flex flex-wrap items-center justify-center gap-2 mt-5">
           <span class="px-3 py-1 rounded-full bg-scrap-teal text-white font-display text-[11px] font-bold tracking-wider shadow-sm transform -rotate-2">Hikes</span>
           <span class="px-3 py-1 rounded-full bg-scrap-moss text-scrap-charcoal font-display text-[11px] font-bold tracking-wider shadow-sm transform rotate-1">Trips</span>
@@ -211,7 +205,6 @@
           <span class="px-3 py-1 rounded-full bg-scrap-rust text-white font-display text-[11px] font-bold tracking-wider shadow-sm transform rotate-2">Exploration</span>
         </div>
 
-        <!-- Subtle Peek Scroll Link -->
         <a href="#council-section" class="inline-flex items-center gap-1 font-hand text-xs text-scrap-rust/80 hover:text-scrap-rust font-bold mt-4 animate-bounce transition">
           <span>↓ Scroll to Meet the Council</span>
         </a>
@@ -221,7 +214,6 @@
     <!-- Council & Panel Section -->
     <section id="council-section" class="px-6 pt-10 pb-16 bg-scrap-kraft/40 border-t-2 border-scrap-kraft">
       <div class="max-w-6xl mx-auto">
-        <!-- Single-Line Header with Cleaned Spacing -->
         <div class="text-center max-w-4xl mx-auto mb-8">
           <span class="font-hand text-2xl sm:text-3xl text-scrap-rust font-bold block mb-1">Not just adventures, but a community ♡</span>
           <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight text-scrap-charcoal whitespace-nowrap">
@@ -230,7 +222,7 @@
           <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-scrap-ink/60 mt-1">Team Structure 2026–2027</p>
         </div>
 
-<!-- TIER 1: OFFICE BEARERS (Compact, No Redundant Full Forms) -->
+        <!-- TIER 1: OFFICE BEARERS -->
         <div class="max-w-5xl mx-auto mb-10 text-center">
           <div class="inline-block relative mb-6">
             <span class="px-8 py-2 rounded-xl bg-scrap-rust text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow-md">
@@ -244,18 +236,14 @@
             <div class="field-card rounded-2xl p-5 sm:p-6 flex flex-col items-center text-center relative justify-between">
               <div class="washi-tape"></div>
               <div class="flex flex-col items-center w-full">
-                <!-- Avatar with floating cursive name tag -->
                 <div class="relative mb-2">
                   <img src="cfo.png" onerror="this.outerHTML='<div class=\'w-24 h-24 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>CFO</div>'" alt="Munira - CFO" onclick="openLightbox(this.src, 'Munira — CFO')" class="w-24 h-24 mx-auto rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block" title="Click to view full photo">
                   <span class="absolute -bottom-1.5 -right-1.5 bg-scrap-charcoal text-white font-hand text-base px-2.5 py-0.5 rounded-full shadow -rotate-6 border border-white">Munira ♡</span>
                 </div>
-
-                <!-- Pure Role -->
                 <span class="font-display font-black text-2xl text-scrap-gold tracking-wider mt-1">CFO</span>
                 <p class="text-xs text-scrap-ink/70 mt-1 font-normal leading-relaxed">Directs allocations, trip budgeting & transparent subsidies.</p>
               </div>
 
-              <!-- Personality Sticker Pills -->
               <div class="flex flex-wrap items-center justify-center gap-1.5 mt-3 pt-3 border-t border-scrap-kraft/80 w-full">
                 <span class="text-[10px] font-mono px-2 py-0.5 bg-scrap-kraft/60 text-scrap-charcoal rounded border border-scrap-kraft">[fun loving]</span>
                 <span class="text-[10px] font-mono px-2 py-0.5 bg-scrap-kraft/60 text-scrap-charcoal rounded border border-scrap-kraft">[Problem Solver]</span>
@@ -267,18 +255,14 @@
             <div class="field-card rounded-2xl p-5 sm:p-6 flex flex-col items-center text-center relative justify-between border-2 border-scrap-rust shadow-xl">
               <div class="washi-tape washi-tape-rust"></div>
               <div class="flex flex-col items-center w-full">
-                <!-- Avatar with floating cursive name tag -->
                 <div class="relative mb-2">
                   <img src="ceo.png" onerror="this.outerHTML='<div class=\'w-28 h-28 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-rust flex items-center justify-center font-display font-black text-3xl text-scrap-charcoal shadow-inner\'>CEO</div>'" alt="Hamna - CEO" onclick="openLightbox(this.src, 'Hamna — CEO')" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-scrap-rust hover:scale-105 transition cursor-pointer shadow-lg block" title="Click to view full photo">
                   <span class="absolute -bottom-1.5 -right-1.5 bg-scrap-rust text-white font-hand text-lg px-2.5 py-0.5 rounded-full shadow -rotate-6 border border-white">Hamna ♡</span>
                 </div>
-
-                <!-- Pure Role -->
                 <span class="font-display font-black text-3xl text-scrap-rust tracking-wider mt-1">CEO</span>
                 <p class="text-xs text-scrap-ink/70 mt-1 font-normal leading-relaxed">Spearheads club vision, culture, campus ties & expeditions.</p>
               </div>
 
-              <!-- Personality Sticker Pills -->
               <div class="flex flex-wrap items-center justify-center gap-1.5 mt-3 pt-3 border-t border-scrap-kraft/80 w-full">
                 <span class="text-[10px] font-mono px-2 py-0.5 bg-scrap-rust/10 text-scrap-rust rounded border border-scrap-rust/30">[multi tasker]</span>
                 <span class="text-[10px] font-mono px-2 py-0.5 bg-scrap-rust/10 text-scrap-rust rounded border border-scrap-rust/30">[cat-mom]</span>
@@ -290,18 +274,14 @@
             <div class="field-card rounded-2xl p-5 sm:p-6 flex flex-col items-center text-center relative justify-between">
               <div class="washi-tape washi-tape-teal"></div>
               <div class="flex flex-col items-center w-full">
-                <!-- Avatar with floating cursive name tag -->
                 <div class="relative mb-2">
                   <img src="coo.png" onerror="this.outerHTML='<div class=\'w-24 h-24 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>COO</div>'" alt="Yusra - COO" onclick="openLightbox(this.src, 'Yusra — COO')" class="w-24 h-24 mx-auto rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block" title="Click to view full photo">
                   <span class="absolute -bottom-1.5 -right-1.5 bg-scrap-teal text-white font-hand text-base px-2.5 py-0.5 rounded-full shadow -rotate-6 border border-white">Yusra ♡</span>
                 </div>
-
-                <!-- Pure Role -->
                 <span class="font-display font-black text-2xl text-scrap-teal tracking-wider mt-1">COO</span>
                 <p class="text-xs text-scrap-ink/70 mt-1 font-normal leading-relaxed">Directs on-ground transit logistics, base camps & safety.</p>
               </div>
 
-              <!-- Personality Sticker Pills -->
               <div class="flex flex-wrap items-center justify-center gap-1.5 mt-3 pt-3 border-t border-scrap-kraft/80 w-full">
                 <span class="text-[10px] font-mono px-2 py-0.5 bg-scrap-kraft/60 text-scrap-charcoal rounded border border-scrap-kraft">[super organised]</span>
                 <span class="text-[10px] font-mono px-2 py-0.5 bg-scrap-kraft/60 text-scrap-charcoal rounded border border-scrap-kraft">[chef since 9]</span>
@@ -312,13 +292,12 @@
           </div>
         </div>
 
-        <!-- TIER 2: ADVISOR TO THE PANEL (Mustafa's Poster Style & Compact Card) -->
+        <!-- TIER 2: ADVISOR TO THE PANEL -->
         <div class="max-w-xl mx-auto mb-10 text-center">
           <div class="field-card rounded-2xl p-5 sm:p-6 relative">
             <div class="washi-tape washi-tape-rust"></div>
             
             <div class="flex items-start gap-5 text-left bg-scrap-kraft/20 p-3.5 rounded-xl border border-scrap-kraft/60">
-              <!-- Avatar with Mustafa sticker -->
               <div class="relative shrink-0">
                 <img src="advisor.png" onerror="this.outerHTML='<div class=\'w-20 h-20 shrink-0 rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-bold text-lg text-scrap-charcoal shadow\'>MU</div>'" alt="Mustafa" onclick="openLightbox(this.src, 'Mustafa — Advisor to the Panel')" class="w-20 h-20 rounded-full object-cover border-2 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block" title="Click to view full photo">
                 <span class="absolute -bottom-1 -right-1 bg-scrap-charcoal text-white font-hand text-xs px-2 py-0.5 rounded-full shadow border border-white">Mustafa ♡</span>
@@ -330,12 +309,9 @@
                   <span class="text-[10px] font-bold text-scrap-rust uppercase tracking-wider bg-scrap-rust/10 px-2 py-0.5 rounded border border-scrap-rust/20">Advisor to the Panel</span>
                 </div>
                 
-                <!-- Quote from his poster -->
                 <p class="font-hand text-base text-scrap-rust font-bold mt-1 leading-snug">"Will definitely make you laugh ♡"</p>
-                
                 <p class="text-xs text-scrap-ink/70 mt-1">Senior counsel, strategic oversight & institutional governance.</p>
 
-                <!-- Personality Badges -->
                 <div class="flex flex-wrap gap-1.5 mt-2.5">
                   <span class="text-[10px] font-mono px-1.5 py-0.5 bg-white text-scrap-charcoal rounded border border-scrap-kraft">[senior counsel]</span>
                   <span class="text-[10px] font-mono px-1.5 py-0.5 bg-white text-scrap-charcoal rounded border border-scrap-kraft">[humor anchor]</span>
@@ -346,7 +322,7 @@
           </div>
         </div>
 
-<!-- TIER 3: EXECUTIVE COUNCIL (Office Bearers Scrapbook Style - Compact & Consistent) -->
+        <!-- TIER 3: EXECUTIVE COUNCIL -->
         <div class="border-t-2 border-dashed border-scrap-kraft pt-6">
           <div class="text-center mb-8">
             <span class="inline-block px-7 py-2 rounded-xl bg-scrap-charcoal text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow">
@@ -652,7 +628,10 @@
 
           </div>
         </div>
-  
+      </div>
+    </section>
+  </main>
+
   <!-- PAGE 2: SCUBA REGISTRATION -->
   <main id="page-scuba" class="page-view hidden flex-grow px-6 py-12 max-w-5xl mx-auto w-full">
     <div class="text-center max-w-2xl mx-auto mb-10">
@@ -664,7 +643,6 @@
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      <!-- Expedition Specs -->
       <div class="lg:col-span-5 field-card p-6 sm:p-8 rounded-2xl relative">
         <div class="washi-tape washi-tape-teal"></div>
         <h3 class="font-display font-bold text-lg text-scrap-charcoal border-b border-scrap-kraft pb-3">Field Notes & Inclusions</h3>
@@ -704,7 +682,6 @@
         </div>
       </div>
 
-      <!-- Registration Form -->
       <div class="lg:col-span-7 field-card p-6 sm:p-8 rounded-2xl relative">
         <div class="washi-tape"></div>
         <h3 class="font-display font-bold text-2xl text-scrap-charcoal mb-1">Diver Manifest Form</h3>
@@ -775,7 +752,6 @@
       <p class="text-xs sm:text-sm text-scrap-ink/70 mt-2">Candid stills and unscripted memories logged from across Pakistan.</p>
     </div>
 
-    <!-- Filter Buttons -->
     <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
       <button onclick="filterGallery('all', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-scrap-charcoal text-white shadow-sm">All</button>
       <button onclick="filterGallery('scuba', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-white text-scrap-charcoal border border-scrap-kraft hover:bg-scrap-kraft/40">Scuba & Marine</button>
@@ -783,7 +759,6 @@
       <button onclick="filterGallery('desert', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-white text-scrap-charcoal border border-scrap-kraft hover:bg-scrap-kraft/40">Desert & Camp</button>
     </div>
 
-    <!-- Polaroid Photo Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="galleryGrid">
       <div class="gallery-item polaroid cursor-pointer" data-category="scuba" onclick="openLightbox('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80', 'Churna Deep Reef Dive')">
         <div class="aspect-video w-full overflow-hidden rounded bg-scrap-kraft">
@@ -860,14 +835,16 @@
     <p class="font-hand text-xl text-scrap-rust mt-1 font-bold">Different batch, bolder stories, same campfire. ♡</p>
   </footer>
 
-  <!-- ROUTING & LIGHTBOX SCRIPT -->
+  <!-- SCRIPT FOR ROUTING & INTERACTIONS -->
   <script>
     function showPage(pageId) {
-      document.querySelectorAll('.page-view').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.page-view').forEach(function(el) {
+        el.classList.add('hidden');
+      });
       const active = document.getElementById('page-' + pageId);
       if (active) active.classList.remove('hidden');
 
-      document.querySelectorAll('.nav-tab').forEach(btn => {
+      document.querySelectorAll('.nav-tab').forEach(function(btn) {
         btn.classList.remove('bg-scrap-charcoal', 'text-white', 'shadow');
         btn.classList.add('text-scrap-charcoal');
       });
@@ -877,7 +854,7 @@
         activeTab.classList.remove('text-scrap-charcoal');
       }
 
-      document.querySelectorAll('.nav-tab-m').forEach(btn => {
+      document.querySelectorAll('.nav-tab-m').forEach(function(btn) {
         btn.classList.remove('text-scrap-charcoal');
         btn.classList.add('text-scrap-ink/70');
       });
@@ -899,7 +876,7 @@
     }
 
     function filterGallery(category, evt) {
-      document.querySelectorAll('.gallery-filter').forEach(btn => {
+      document.querySelectorAll('.gallery-filter').forEach(function(btn) {
         btn.classList.remove('bg-scrap-charcoal', 'text-white');
         btn.classList.add('bg-white', 'text-scrap-charcoal');
       });
@@ -909,7 +886,7 @@
       }
 
       const items = document.querySelectorAll('.gallery-item');
-      items.forEach(item => {
+      items.forEach(function(item) {
         if (category === 'all' || item.getAttribute('data-category') === category) {
           item.classList.remove('hidden');
         } else {
