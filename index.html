@@ -46,20 +46,22 @@
       background-size: 24px 24px, 260px 260px;
     }
 
-    /* 2. Tangible Crumpled & Unfolded Kraft Paper Texture */
+    /* 2. Authentic Imperfect Crumpled Paper (Zero geometric bands) */
     .crumpled-paper-card {
-      background-color: #F8F1DC;
+      background-color: #F8F2E2;
       background-image: 
-        /* High-contrast crinkle facet highlights and hard angular fold lines */
-        linear-gradient(118deg, rgba(255,255,255,0.7) 0%, rgba(215,185,135,0.3) 18%, rgba(255,255,255,0.6) 24%, rgba(185,150,95,0.4) 42%, rgba(255,255,255,0.75) 45%, rgba(215,185,135,0.2) 62%, rgba(180,145,95,0.45) 78%, rgba(255,255,255,0.8) 82%, rgba(200,165,115,0.35) 100%),
-        linear-gradient(28deg, rgba(255,255,255,0.5) 0%, rgba(190,155,100,0.35) 32%, rgba(255,255,255,0.7) 35%, rgba(180,140,85,0.4) 65%, rgba(255,255,255,0.65) 68%, rgba(210,175,120,0.3) 100%),
-        /* Organic crumpled lighting heightmap */
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='crumple'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.045' numOctaves='6' result='noise'/%3E%3CfeDiffuseLighting in='noise' lighting-color='%23FFF8E7' surfaceScale='3.8' result='light'%3E%3CfeDistantLight azimuth='50' elevation='40'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23crumple)' opacity='0.48'/%3E%3C/svg%3E");
-      border: 1.5px solid #D5C095;
+        /* Natural organic tea/paper stains with irregular soft depth */
+        radial-gradient(circle at 18% 28%, rgba(225, 195, 140, 0.28) 0%, transparent 45%),
+        radial-gradient(circle at 78% 72%, rgba(210, 180, 125, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 45% 85%, rgba(220, 190, 135, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 82% 20%, rgba(255, 255, 255, 0.35) 0%, transparent 35%),
+        /* High-density organic fractal crinkles & micro-creases */
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 350 350' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='organicWrinkle'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.038' numOctaves='6' result='noise'/%3E%3CfeDiffuseLighting in='noise' lighting-color='%23FFFDF7' surfaceScale='2.4' result='light'%3E%3CfeDistantLight azimuth='75' elevation='52'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23organicWrinkle)' opacity='0.42'/%3E%3C/svg%3E");
+      border: 1px solid #DFCEAA;
       box-shadow: 
-        0 2px 5px rgba(53, 54, 48, 0.08),
-        0 10px 26px rgba(53, 54, 48, 0.14),
-        inset 0 0 45px rgba(180, 145, 90, 0.3);
+        0 2px 4px rgba(53, 54, 48, 0.06),
+        0 8px 24px rgba(53, 54, 48, 0.11),
+        inset 0 0 35px rgba(200, 168, 120, 0.22);
       position: relative;
     }
 
@@ -263,7 +265,7 @@
       </div>
     </section>
 
-    <!-- COUNCIL & HIERARCHICAL STRUCTURE SECTION (Authentic Crumpled Paper Aesthetic) -->
+    <!-- COUNCIL & HIERARCHICAL STRUCTURE SECTION -->
     <section id="council-section" class="px-4 sm:px-6 pt-16 pb-20 bg-[#F4ECDB]/60 border-t-2 border-[#E0D2B8] relative">
       <div class="max-w-6xl mx-auto">
         
@@ -285,7 +287,7 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 items-stretch">
             
-            <!-- CFO: Munira (Crumpled Flattened Paper Card) -->
+            <!-- CFO: Munira (Organic Crumpled Paper Card) -->
             <div class="crumpled-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
               <div class="washi-tape"></div>
               <div class="flex flex-col items-center w-full">
@@ -298,8 +300,8 @@
               </div>
             </div>
 
-            <!-- CEO: Hamna (Crumpled Paper Card with Rust Border) -->
-            <div class="crumpled-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between border-2 border-scrap-rust shadow-xl sm:-translate-y-2">
+            <!-- CEO: Hamna (Organic Crumpled Paper Card - Consistent Harmonized Border) -->
+            <div class="crumpled-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between sm:-translate-y-2">
               <div class="washi-tape washi-tape-rust"></div>
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-4">
@@ -311,9 +313,9 @@
               </div>
             </div>
 
-            <!-- COO: Yusra (Crumpled Paper Card with Unclipped, Realistic Paperclip) -->
+            <!-- COO: Yusra (Organic Crumpled Paper Card with Complete Vector Paperclip) -->
             <div class="crumpled-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
-              <!-- Full Uncut Vector Metal Paperclip with Roomy Bounds -->
+              <!-- Full Uncut Vector Metal Paperclip -->
               <svg class="absolute -top-4 left-6 w-7 h-14 pointer-events-none drop-shadow-md z-30" viewBox="0 0 28 56" fill="none">
                 <path d="M8 44 V12 C8 6.5 12 3 16.5 3 C21 3 25 6.5 25 12 V42 C25 48.5 19.5 53 13.5 53 C7.5 53 3 48.5 3 42 V14" 
                       stroke="#7D7C76" stroke-width="2.6" stroke-linecap="round" />
@@ -359,7 +361,7 @@
               </span>
             </div>
 
-            <!-- Departments Grid (Crumpled Flattened Paper Cards) -->
+            <!-- Departments Grid (Organic Crumpled Paper Cards) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
               <!-- 1. Marketing & Creatives (Teal Theme) -->
@@ -617,18 +619,18 @@
 
         </div>
 
-        <!-- HIERARCHY LEVEL 3: MANAGEMENT TEAM (Clear Connector Spacing, Zero Washi Collision) -->
+        <!-- HIERARCHY LEVEL 3: MANAGEMENT TEAM (Ample Clearance, Zero Line-Tape Collision) -->
         <div class="w-full max-w-5xl mx-auto mt-6">
-          <!-- Connector stopping cleanly with ample margin above the card & washi tape -->
-          <div class="w-full flex justify-center mb-4">
-            <svg class="w-8 h-10" viewBox="0 0 32 40" fill="none">
-              <path d="M 16 0 L 16 26" stroke="#A44200" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round" />
-              <circle cx="16" cy="26" r="4.5" fill="#A44200" />
+          <!-- Connector stopping with 20px clearance ABOVE the washi tape -->
+          <div class="w-full flex justify-center mb-0">
+            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none">
+              <path d="M 16 0 L 16 20" stroke="#A44200" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round" />
+              <circle cx="16" cy="20" r="4.5" fill="#A44200" />
             </svg>
           </div>
 
-          <!-- Burlap Fabric Textured Card with Safe Top Clearance -->
-          <div class="burlap-fabric-card rounded-2xl p-8 pt-10 text-center relative mt-4">
+          <!-- Burlap Fabric Textured Card with Safe Clearance -->
+          <div class="burlap-fabric-card rounded-2xl p-8 pt-10 text-center relative mt-6">
             <div class="washi-tape"></div>
             <div class="mt-2 mb-3">
               <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider shadow">
