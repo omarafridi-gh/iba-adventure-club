@@ -21,9 +21,9 @@
               rust: '#A44200',
               paper: '#FAF6EE',
               kraft: '#EDE2CC',
-              card: '#FBF8F0',
-              parchment: '#F6EED8',
-              coffee: '#F3E8CE',
+              card: '#F6EEDB',
+              parchment: '#EFE2C5',
+              coffee: '#E6D3B1',
               ink: '#2B2C27'
             }
           },
@@ -37,15 +37,64 @@
     }
   </script>
   <style>
+    /* 1. Global Page Background with Topographic Map Contours */
     body {
-      background-color: #FAF6EE;
+      background-color: #FAF5EB;
       background-image: 
-        radial-gradient(#D8CEB7 0.8px, transparent 0.8px),
-        linear-gradient(to right, rgba(216, 206, 183, 0.25) 1px, transparent 1px);
-      background-size: 24px 24px;
+        radial-gradient(#D6C6A5 0.9px, transparent 0.9px),
+        url("data:image/svg+xml,%3Csvg width='260' height='260' viewBox='0 0 260 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 80 Q60 40 120 70 T240 60 M20 130 Q70 100 140 120 T250 110 M0 190 Q80 160 150 180 T260 160 M30 240 Q100 210 180 230 T260 220' stroke='%23C7B594' stroke-width='0.75' stroke-dasharray='3 5' fill='none' opacity='0.35'/%3E%3C/svg%3E");
+      background-size: 24px 24px, 260px 260px;
     }
 
-    /* Washi Tape styling */
+    /* 2. Microscopic Paper Fiber & Noise Texture Layer */
+    .paper-fiber {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.055'/%3E%3C/svg%3E");
+    }
+
+    /* 3. Authentic Torn / Deckle Paper Card (Aged Parchment with Creased Grain) */
+    .torn-paper-card {
+      background-color: #FAF3E3;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(222, 196, 150, 0.3) 0%, transparent 45%),
+        radial-gradient(circle at 90% 80%, rgba(204, 173, 128, 0.35) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 80%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
+      border: 1px solid #DFCEAA;
+      box-shadow: 
+        0 1px 2px rgba(53, 54, 48, 0.08),
+        0 6px 18px rgba(53, 54, 48, 0.1),
+        inset 0 0 35px rgba(214, 184, 137, 0.22);
+      position: relative;
+    }
+
+    /* Rough fibrous torn top edge */
+    .torn-top-edge {
+      position: absolute;
+      top: -3px;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='6' viewBox='0 0 40 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6 L3 1 L7 4 L12 0 L18 5 L23 1 L28 4 L33 0 L37 5 L40 2 L40 6 Z' fill='%23FAF3E3' stroke='%23DFCEAA' stroke-width='0.5'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      z-index: 10;
+    }
+
+    /* 4. Coarse Burlap / Woven Fabric Canvas Texture */
+    .burlap-fabric-card {
+      background-color: #EFE3C8;
+      background-image: 
+        repeating-linear-gradient(0deg, rgba(164, 66, 0, 0.06) 0px, rgba(164, 66, 0, 0.06) 1px, transparent 1px, transparent 4px),
+        repeating-linear-gradient(90deg, rgba(53, 54, 48, 0.07) 0px, rgba(53, 54, 48, 0.07) 1px, transparent 1px, transparent 4px),
+        radial-gradient(ellipse at center, rgba(255,255,255,0.3) 0%, rgba(164, 66, 0, 0.12) 100%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+      border: 2px dashed #CBB387;
+      box-shadow: 
+        0 4px 14px rgba(53, 54, 48, 0.12),
+        inset 0 0 25px rgba(164, 66, 0, 0.1);
+      position: relative;
+    }
+
+    /* 5. Real Washi Tape with Fibrous Edges */
     .washi-tape {
       position: absolute;
       top: -16px;
@@ -53,74 +102,53 @@
       transform: translateX(-50%) rotate(-2deg);
       width: 120px;
       height: 30px;
-      background: rgba(237, 165, 49, 0.5);
+      background: rgba(237, 165, 49, 0.52);
       backdrop-filter: blur(2px);
-      border-left: 2px dashed rgba(53, 54, 48, 0.3);
-      border-right: 2px dashed rgba(53, 54, 48, 0.3);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      border-left: 2px dashed rgba(53, 54, 48, 0.35);
+      border-right: 2px dashed rgba(53, 54, 48, 0.35);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
       z-index: 20;
     }
     .washi-tape-teal {
-      background: rgba(25, 143, 159, 0.45);
+      background: rgba(25, 143, 159, 0.48);
       transform: translateX(-50%) rotate(2.5deg);
     }
     .washi-tape-rust {
-      background: rgba(164, 66, 0, 0.4);
+      background: rgba(164, 66, 0, 0.42);
       transform: translateX(-50%) rotate(-1.5deg);
     }
     .washi-tape-moss {
-      background: rgba(153, 195, 77, 0.5);
+      background: rgba(153, 195, 77, 0.55);
       transform: translateX(-50%) rotate(1.8deg);
     }
 
-    /* Tactile Torn Paper Card Texture (Coffee / Parchment grain) */
-    .field-card {
-      background-color: #FAF5E8;
-      background-image: 
-        radial-gradient(ellipse at 20% 15%, rgba(243, 232, 206, 0.65) 0%, transparent 60%),
-        radial-gradient(ellipse at 85% 80%, rgba(229, 214, 182, 0.5) 0%, transparent 70%),
-        repeating-linear-gradient(45deg, rgba(216, 206, 183, 0.08) 0px, rgba(216, 206, 183, 0.08) 2px, transparent 2px, transparent 6px);
-      box-shadow: 2px 8px 24px rgba(53, 54, 48, 0.1), 0 2px 4px rgba(0,0,0,0.04);
-      border: 1.5px solid #E2D4B7;
-      position: relative;
+    /* 6. Paperclip Graphic */
+    .paperclip-clip {
+      position: absolute;
+      top: -12px;
+      left: 24px;
+      width: 16px;
+      height: 42px;
+      border: 2.5px solid #8E8D88;
+      border-bottom: none;
+      border-radius: 12px 12px 0 0;
+      box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+      z-index: 25;
+      pointer-events: none;
+    }
+    .paperclip-clip::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 2px;
+      width: 7px;
+      height: 30px;
+      border: 2px solid #8E8D88;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
     }
 
-    /* Torn Ragged Top & Bottom Deckle Paper Effect */
-    .torn-card {
-      background-color: #F8F1DE;
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(220, 203, 170, 0.4) 0%, transparent 70%),
-        linear-gradient(to bottom, #FAF5E8 0%, #F5ECDB 100%);
-      box-shadow: 3px 9px 24px rgba(53, 54, 48, 0.12);
-      border: 1.5px solid #E5D7BD;
-      position: relative;
-    }
-
-    /* Fabric / Burlap Canvas Weave Texture */
-    .fabric-card {
-      background-color: #F5EEDB;
-      background-image: 
-        linear-gradient(90deg, rgba(164, 66, 0, 0.04) 1px, transparent 1px),
-        linear-gradient(rgba(164, 66, 0, 0.04) 1px, transparent 1px),
-        linear-gradient(45deg, rgba(53, 54, 48, 0.03) 25%, transparent 25%, transparent 75%, rgba(53, 54, 48, 0.03) 75%),
-        linear-gradient(-45deg, rgba(53, 54, 48, 0.03) 25%, transparent 25%, transparent 75%, rgba(53, 54, 48, 0.03) 75%);
-      background-size: 8px 8px, 8px 8px, 16px 16px, 16px 16px;
-      border: 1.5px solid #DECFA9;
-    }
-
-    .polaroid {
-      background-color: #FBF8F1;
-      background-image: linear-gradient(to bottom, #FFFFFF 0%, #F7EFE1 100%);
-      padding: 14px 14px 30px 14px;
-      box-shadow: 2px 8px 20px rgba(53, 54, 48, 0.12);
-      border: 1.5px solid #E5DCCE;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .polaroid:hover {
-      transform: translateY(-5px) rotate(1deg);
-      box-shadow: 4px 14px 26px rgba(53, 54, 48, 0.18);
-    }
-
+    /* 7. Realistic Pushpin */
     .pushpin {
       position: absolute;
       top: -14px;
@@ -144,6 +172,21 @@
       border-radius: 50%;
     }
 
+    .polaroid {
+      background-color: #FAF4E6;
+      background-image: 
+        linear-gradient(to bottom, #FFFFFF 0%, #F5ECDB 100%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+      padding: 14px 14px 30px 14px;
+      box-shadow: 3px 10px 24px rgba(53, 54, 48, 0.14);
+      border: 1.5px solid #E2D5BA;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .polaroid:hover {
+      transform: translateY(-5px) rotate(1deg);
+      box-shadow: 5px 16px 28px rgba(53, 54, 48, 0.2);
+    }
+
     .rubber-stamp {
       border: 2.5px dashed #A44200;
       color: #A44200;
@@ -162,7 +205,7 @@
 <body class="text-scrap-ink font-sans selection:bg-scrap-gold selection:text-white min-h-screen flex flex-col">
 
   <!-- TOP HEADER / NAV -->
-  <header class="sticky top-0 z-40 bg-[#FAF6EE]/90 backdrop-blur-md border-b-2 border-scrap-kraft shadow-sm">
+  <header class="sticky top-0 z-40 bg-[#FAF6EE]/92 backdrop-blur-md border-b-2 border-scrap-kraft shadow-sm">
     <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
       <div class="flex items-center gap-3.5 cursor-pointer group" onclick="showPage('home')">
         <img src="IAC%20Logo.PNG" onerror="this.outerHTML='<div class=\'w-12 h-12 rounded-full bg-scrap-charcoal flex items-center justify-center font-display font-black text-white text-base shadow\'>IAC</div>'" alt="IAC Logo" class="w-12 h-12 rounded-full object-cover border-2 border-scrap-charcoal shadow-sm group-hover:rotate-6 transition">
@@ -202,7 +245,7 @@
         <!-- Left: Copy & Taglines -->
         <div class="lg:col-span-7 text-center lg:text-left">
           <div class="inline-block relative mb-4">
-            <span class="font-hand text-xl sm:text-2xl text-scrap-rust font-bold bg-scrap-kraft/60 px-5 py-1.5 rounded-md border border-scrap-kraft shadow-sm inline-block transform -rotate-1">
+            <span class="font-hand text-xl sm:text-2xl text-scrap-rust font-bold bg-[#F4EBD7] px-5 py-1.5 rounded-md border border-[#DFCFAA] shadow-sm inline-block transform -rotate-1">
               "New faces. Uncharted trails. Same wild spirit. ♡"
             </span>
           </div>
@@ -220,7 +263,7 @@
             <button onclick="showPage('scuba')" class="px-8 py-3.5 bg-scrap-teal hover:bg-scrap-teal/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition transform hover:-translate-y-0.5">
               Explore Charna Scuba '26 →
             </button>
-            <a href="#council-section" class="px-8 py-3.5 bg-white hover:bg-scrap-kraft/40 text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition transform hover:-translate-y-0.5 inline-block">
+            <a href="#council-section" class="px-8 py-3.5 bg-[#FAF3E3] hover:bg-[#F3E6C9] text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition transform hover:-translate-y-0.5 inline-block">
               Meet The Council ↓
             </a>
           </div>
@@ -253,7 +296,7 @@
               </div>
             </div>
 
-            <div class="absolute -bottom-4 -left-4 rubber-stamp px-3.5 py-1 text-xs bg-white/90 shadow">
+            <div class="absolute -bottom-4 -left-4 rubber-stamp px-3.5 py-1 text-xs bg-[#FAF5EC] shadow">
               OFFICIAL IBA EXPEDITION
             </div>
           </div>
@@ -262,8 +305,8 @@
       </div>
     </section>
 
-    <!-- COUNCIL & HIERARCHICAL STRUCTURE SECTION -->
-    <section id="council-section" class="px-4 sm:px-6 pt-16 pb-20 bg-scrap-kraft/35 border-t-2 border-scrap-kraft">
+    <!-- COUNCIL & HIERARCHICAL STRUCTURE SECTION (Textured Coffee / Torn Paper Theme) -->
+    <section id="council-section" class="px-4 sm:px-6 pt-16 pb-20 bg-[#F4ECDB]/60 border-t-2 border-[#E0D2B8] relative">
       <div class="max-w-6xl mx-auto">
         
         <div class="text-center max-w-4xl mx-auto mb-14">
@@ -284,8 +327,9 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 items-stretch">
             
-            <!-- CFO: Munira (Torn Parchment Card) -->
-            <div class="torn-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
+            <!-- CFO: Munira (Torn Paper Textured Card) -->
+            <div class="torn-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
+              <div class="torn-top-edge"></div>
               <div class="washi-tape"></div>
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-4">
@@ -297,8 +341,9 @@
               </div>
             </div>
 
-            <!-- CEO: Hamna (Torn Parchment Card with Rust Border) -->
-            <div class="torn-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between border-2 border-scrap-rust shadow-xl sm:-translate-y-2">
+            <!-- CEO: Hamna (Torn Paper Card with Rust Accent) -->
+            <div class="torn-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between border-2 border-scrap-rust shadow-xl sm:-translate-y-2">
+              <div class="torn-top-edge"></div>
               <div class="washi-tape washi-tape-rust"></div>
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-4">
@@ -310,8 +355,10 @@
               </div>
             </div>
 
-            <!-- COO: Yusra (Torn Parchment Card) -->
-            <div class="torn-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
+            <!-- COO: Yusra (Torn Paper Card with Paperclip Accent) -->
+            <div class="torn-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
+              <div class="torn-top-edge"></div>
+              <div class="paperclip-clip"></div>
               <div class="washi-tape washi-tape-teal"></div>
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-4">
@@ -350,20 +397,21 @@
               </span>
             </div>
 
-            <!-- Departments Grid (Textured Coffee/Parchment Cards) -->
+            <!-- Departments Grid (Coffee-Stained Parchment Cards with Internal Fabric Rows) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
               <!-- 1. Marketing & Creatives (Teal Theme) -->
-              <div class="field-card rounded-2xl p-6 relative">
+              <div class="torn-paper-card rounded-2xl p-6 relative">
+                <div class="torn-top-edge"></div>
                 <div class="washi-tape washi-tape-teal"></div>
-                <div class="flex items-center justify-between border-b border-[#E2D4B7] pb-3 mb-5">
+                <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Marketing & Creatives</h3>
                   <span class="font-hand text-scrap-teal text-lg font-bold">3 Explorers ♡</span>
                 </div>
 
                 <div class="space-y-4">
                   <!-- Muntazir -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
+                  <div class="flex items-center gap-4 bg-[#F2E8D2] p-3.5 rounded-xl border border-[#D8C7A0] shadow-inner">
                     <img src="muntazir.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>MH</div>'" alt="Muntazir" onclick="openLightbox(this.src, 'Muntazir Hassan — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muntazir Hassan</h4>
@@ -373,7 +421,7 @@
                   </div>
 
                   <!-- Rayyan -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
+                  <div class="flex items-center gap-4 bg-[#F2E8D2] p-3.5 rounded-xl border border-[#D8C7A0] shadow-inner">
                     <img src="rayyan.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>RR</div>'" alt="Rayyan" onclick="openLightbox(this.src, 'Rayyan Rafique — Director Media & Design')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Rayyan Rafique</h4>
@@ -383,7 +431,7 @@
                   </div>
 
                   <!-- Meerub -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
+                  <div class="flex items-center gap-4 bg-[#F2E8D2] p-3.5 rounded-xl border border-[#D8C7A0] shadow-inner">
                     <img src="meerub.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>MH</div>'" alt="Meerub" onclick="openLightbox(this.src, 'Meerub Haider — Director Content Planning')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Meerub Haider</h4>
@@ -395,16 +443,17 @@
               </div>
 
               <!-- 2. Corporate & Communications (Rust Theme) -->
-              <div class="field-card rounded-2xl p-6 relative">
+              <div class="torn-paper-card rounded-2xl p-6 relative">
+                <div class="torn-top-edge"></div>
                 <div class="washi-tape washi-tape-rust"></div>
-                <div class="flex items-center justify-between border-b border-[#E2D4B7] pb-3 mb-5">
+                <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Corporate & Comms</h3>
                   <span class="font-hand text-scrap-rust text-lg font-bold">2 Explorers ♡</span>
                 </div>
 
                 <div class="space-y-4">
                   <!-- Abdullah -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
+                  <div class="flex items-center gap-4 bg-[#F2E8D2] p-3.5 rounded-xl border border-[#D8C7A0] shadow-inner">
                     <img src="abdullah.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>AG</div>'" alt="Abdullah" onclick="openLightbox(this.src, 'Abdullah Asif Gul — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Abdullah Asif Gul</h4>
@@ -414,7 +463,7 @@
                   </div>
 
                   <!-- Osama -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
+                  <div class="flex items-center gap-4 bg-[#F2E8D2] p-3.5 rounded-xl border border-[#D8C7A0] shadow-inner">
                     <img src="osama.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>OS</div>'" alt="Osama" onclick="openLightbox(this.src, 'Osama — Director Corporate & Communications')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Osama</h4>
@@ -426,16 +475,17 @@
               </div>
 
               <!-- 3. Safety & Inclusivity (Moss Theme) -->
-              <div class="field-card rounded-2xl p-6 relative">
+              <div class="torn-paper-card rounded-2xl p-6 relative">
+                <div class="torn-top-edge"></div>
                 <div class="washi-tape washi-tape-moss"></div>
-                <div class="flex items-center justify-between border-b border-[#E2D4B7] pb-3 mb-5">
+                <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Safety & Inclusivity</h3>
                   <span class="font-hand text-[#7ba632] text-lg font-bold">2 Explorers ♡</span>
                 </div>
 
                 <div class="space-y-4">
                   <!-- Neetu -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
+                  <div class="flex items-center gap-4 bg-[#F2E8D2] p-3.5 rounded-xl border border-[#D8C7A0] shadow-inner">
                     <img src="neetu.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
@@ -445,7 +495,7 @@
                   </div>
 
                   <!-- Alina -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
+                  <div class="flex items-center gap-4 bg-[#F2E8D2] p-3.5 rounded-xl border border-[#D8C7A0] shadow-inner">
                     <img src="alina.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>AK</div>'" alt="Alina" onclick="openLightbox(this.src, 'Alina Kashif — Director Safety')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Alina Kashif</h4>
@@ -457,16 +507,17 @@
               </div>
 
               <!-- 4. Operations & Logistics (Rust Theme) -->
-              <div class="field-card rounded-2xl p-6 relative">
+              <div class="torn-paper-card rounded-2xl p-6 relative">
+                <div class="torn-top-edge"></div>
                 <div class="washi-tape washi-tape-rust"></div>
-                <div class="flex items-center justify-between border-b border-[#E2D4B7] pb-3 mb-5">
+                <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Operations & Logistics</h3>
                   <span class="font-hand text-scrap-rust text-lg font-bold">2 Explorers ♡</span>
                 </div>
 
                 <div class="space-y-4">
                   <!-- Kashaf -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
+                  <div class="flex items-center gap-4 bg-[#F2E8D2] p-3.5 rounded-xl border border-[#D8C7A0] shadow-inner">
                     <img src="kashaf.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>KS</div>'" alt="Kashaf" onclick="openLightbox(this.src, 'Kashaf — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Kashaf</h4>
@@ -476,7 +527,7 @@
                   </div>
 
                   <!-- Najiba -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
+                  <div class="flex items-center gap-4 bg-[#F2E8D2] p-3.5 rounded-xl border border-[#D8C7A0] shadow-inner">
                     <img src="najiba.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>NZ</div>'" alt="Najiba" onclick="openLightbox(this.src, 'Najiba Zia — Director Ops & Logistics')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Najiba Zia</h4>
@@ -488,16 +539,17 @@
               </div>
 
               <!-- 5. Recruitment & Registrations (Gold Theme) -->
-              <div class="field-card rounded-2xl p-6 relative">
+              <div class="torn-paper-card rounded-2xl p-6 relative">
+                <div class="torn-top-edge"></div>
                 <div class="washi-tape"></div>
-                <div class="flex items-center justify-between border-b border-[#E2D4B7] pb-3 mb-5">
+                <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Recruitment</h3>
                   <span class="font-hand text-scrap-gold text-lg font-bold">1 Explorer ♡</span>
                 </div>
 
                 <div class="space-y-4">
                   <!-- Divyansh -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
+                  <div class="flex items-center gap-4 bg-[#F2E8D2] p-3.5 rounded-xl border border-[#D8C7A0] shadow-inner">
                     <img src="divyansh.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>DK</div>'" alt="Divyansh" onclick="openLightbox(this.src, 'Divyansh — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Divyansh</h4>
@@ -509,16 +561,17 @@
               </div>
 
               <!-- 6. General Affairs (Teal Theme) -->
-              <div class="field-card rounded-2xl p-6 relative">
+              <div class="torn-paper-card rounded-2xl p-6 relative">
+                <div class="torn-top-edge"></div>
                 <div class="washi-tape washi-tape-teal"></div>
-                <div class="flex items-center justify-between border-b border-[#E2D4B7] pb-3 mb-5">
+                <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">General Affairs</h3>
                   <span class="font-hand text-scrap-teal text-lg font-bold">2 Explorers ♡</span>
                 </div>
 
                 <div class="space-y-4">
                   <!-- Omar -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
+                  <div class="flex items-center gap-4 bg-[#F2E8D2] p-3.5 rounded-xl border border-[#D8C7A0] shadow-inner">
                     <img src="omar.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>OA</div>'" alt="Omar" onclick="openLightbox(this.src, 'Muhammad Omar Afridi — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Omar Afridi</h4>
@@ -528,7 +581,7 @@
                   </div>
 
                   <!-- Hasan -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
+                  <div class="flex items-center gap-4 bg-[#F2E8D2] p-3.5 rounded-xl border border-[#D8C7A0] shadow-inner">
                     <img src="hasan.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>HK</div>'" alt="Hasan" onclick="openLightbox(this.src, 'Muhammad Hasan Khan — Director General Affairs')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Hasan Khan</h4>
@@ -552,8 +605,9 @@
               </span>
             </div>
 
-            <!-- Advisor Card (Torn Parchment Card) -->
-            <div class="torn-card rounded-2xl p-7 relative">
+            <!-- Advisor Card (Torn Parchment Paper Texture) -->
+            <div class="torn-paper-card rounded-2xl p-7 relative">
+              <div class="torn-top-edge"></div>
               <div class="washi-tape washi-tape-rust"></div>
               
               <div class="text-center flex flex-col items-center">
@@ -608,7 +662,7 @@
 
         </div>
 
-        <!-- HIERARCHY LEVEL 3: MANAGEMENT TEAM (Fabric / Canvas Weave Textured Card) -->
+        <!-- HIERARCHY LEVEL 3: MANAGEMENT TEAM (Burlap / Coarse Woven Fabric Canvas) -->
         <div class="w-full max-w-5xl mx-auto mt-6">
           <div class="w-full flex justify-center mb-0">
             <svg class="w-8 h-10" viewBox="0 0 32 40" fill="none">
@@ -617,8 +671,8 @@
             </svg>
           </div>
 
-          <!-- Fabric Textured Management Board Card -->
-          <div class="fabric-card rounded-2xl p-8 pt-9 text-center relative shadow-lg mt-2">
+          <!-- Burlap Fabric Textured Card -->
+          <div class="burlap-fabric-card rounded-2xl p-8 pt-9 text-center relative mt-2">
             <div class="washi-tape"></div>
             <div class="mt-2 mb-3">
               <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider shadow">
@@ -626,7 +680,7 @@
               </span>
             </div>
             <h4 class="font-display font-bold text-2xl text-scrap-charcoal mt-2">Annual General Management Body</h4>
-            <p class="text-sm text-scrap-ink/80 max-w-2xl mx-auto mt-2.5 leading-relaxed">
+            <p class="text-sm text-scrap-ink/85 max-w-2xl mx-auto mt-2.5 leading-relaxed font-medium">
               Operating directly under the Executive Council and Directors. Inducted annually for the tenure to drive on-ground execution across expeditions, basecamps, and campus drives.
             </p>
           </div>
@@ -647,24 +701,24 @@
     </div>
 
     <!-- Depth Meter Breakdown -->
-    <div class="mb-12 field-card p-6 sm:p-8 rounded-2xl relative bg-gradient-to-b from-[#FAF6EE] to-cyan-50/50 border border-scrap-kraft">
+    <div class="mb-12 torn-paper-card p-6 sm:p-8 rounded-2xl relative">
       <div class="washi-tape washi-tape-teal"></div>
       <h3 class="font-display font-bold text-xl text-scrap-charcoal mb-6 text-center">Interactive Depth Meter: What Awaits You</h3>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="bg-white p-6 rounded-xl border border-scrap-kraft/80 shadow-sm relative">
+        <div class="bg-[#FAF4E6] p-6 rounded-xl border border-[#DFCFAA] shadow-sm relative">
           <span class="font-mono text-xs font-bold text-scrap-teal block mb-1">DEPTH: 0.0M (SURFACE)</span>
           <h4 class="font-display font-bold text-lg text-scrap-charcoal">Coastline & Cliff Jump</h4>
           <p class="text-xs text-scrap-ink/75 mt-2 leading-relaxed">Mubarak Village harbor departure, lifejacket safety drills, and optional 20ft adrenaline cliff jumps.</p>
         </div>
 
-        <div class="bg-white p-6 rounded-xl border border-scrap-teal/40 shadow-sm relative">
+        <div class="bg-[#FAF4E6] p-6 rounded-xl border border-scrap-teal/40 shadow-sm relative">
           <span class="font-mono text-xs font-bold text-scrap-teal block mb-1">DEPTH: 4.5M (REEF SHELF)</span>
           <h4 class="font-display font-bold text-lg text-scrap-charcoal">Snorkel & Coral Forest</h4>
           <p class="text-xs text-scrap-ink/75 mt-2 leading-relaxed">Crystal clear surface visibility with parrotfish, angelfish, sea anemones, and guided buoyancy testing.</p>
         </div>
 
-        <div class="bg-white p-6 rounded-xl border-2 border-scrap-teal shadow-md relative">
+        <div class="bg-[#FAF4E6] p-6 rounded-xl border-2 border-scrap-teal shadow-md relative">
           <div class="absolute -top-3 right-3 bg-scrap-teal text-white text-[10px] font-bold px-2.5 py-0.5 rounded uppercase">Full Tank Dive</div>
           <span class="font-mono text-xs font-bold text-scrap-teal block mb-1">DEPTH: 10M - 12M</span>
           <h4 class="font-display font-bold text-lg text-scrap-charcoal">The Deep Reef Trench</h4>
@@ -678,33 +732,33 @@
       
       <!-- Logistics & Checklist -->
       <div class="lg:col-span-5 space-y-6">
-        <div class="field-card p-7 rounded-2xl relative">
+        <div class="torn-paper-card p-7 rounded-2xl relative">
           <div class="washi-tape"></div>
-          <h3 class="font-display font-bold text-xl text-scrap-charcoal border-b border-scrap-kraft pb-3">Field Notes & Inclusions</h3>
+          <h3 class="font-display font-bold text-xl text-scrap-charcoal border-b border-[#DFCFAA] pb-3">Field Notes & Inclusions</h3>
           <ul class="space-y-4 text-xs mt-5">
-            <li class="flex justify-between py-1 border-b border-scrap-kraft/60">
+            <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
               <span class="text-scrap-ink/60 font-semibold">Date:</span>
               <span class="font-bold text-scrap-charcoal">Sunday, 25 October 2026</span>
             </li>
-            <li class="flex justify-between py-1 border-b border-scrap-kraft/60">
+            <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
               <span class="text-scrap-ink/60 font-semibold">Reporting:</span>
               <span class="font-bold text-scrap-charcoal">5:30 AM (Aman CED Gate)</span>
             </li>
-            <li class="flex justify-between py-1 border-b border-scrap-kraft/60">
+            <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
               <span class="text-scrap-ink/60 font-semibold">Location:</span>
               <span class="font-bold text-scrap-charcoal">Charna Island & Mubarak Village</span>
             </li>
-            <li class="flex justify-between py-1 border-b border-scrap-kraft/60">
+            <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
               <span class="text-scrap-ink/60 font-semibold">Subsidized Fee:</span>
               <span class="font-bold text-scrap-rust bg-scrap-rust/10 px-2 py-0.5 rounded text-xs border border-scrap-rust/20">PKR 8,500 (All Incl.)</span>
             </li>
-            <li class="flex justify-between py-1 border-b border-scrap-kraft/60">
+            <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
               <span class="text-scrap-ink/60 font-semibold">Slots Remaining:</span>
               <span class="font-bold text-scrap-teal">14 of 40 Slots</span>
             </li>
           </ul>
 
-          <div class="mt-6 pt-4 border-t border-scrap-kraft">
+          <div class="mt-6 pt-4 border-t border-[#DFCFAA]">
             <div class="flex items-center justify-between mb-3">
               <h4 class="text-xs font-bold uppercase tracking-wider text-scrap-charcoal">Pack Your Dry Bag:</h4>
               <span class="text-xs font-mono text-scrap-rust font-bold" id="packProgress">0/5 Ready</span>
@@ -743,7 +797,7 @@
       </div>
 
       <!-- Registration Form -->
-      <div class="lg:col-span-7 field-card p-7 sm:p-8 rounded-2xl relative">
+      <div class="lg:col-span-7 torn-paper-card p-7 sm:p-8 rounded-2xl relative">
         <div class="washi-tape washi-tape-rust"></div>
         <h3 class="font-display font-bold text-2xl text-scrap-charcoal mb-1">Diver Manifest Form</h3>
         <p class="text-xs text-scrap-ink/70 mb-6">Enter your student credentials to claim your dive slot. Confirmation will be dispatched to your WhatsApp.</p>
@@ -751,24 +805,24 @@
         <form id="scubaForm" onsubmit="handleRegistration(event)" class="space-y-4 text-xs">
           <div>
             <label class="block font-bold text-scrap-charcoal mb-1">Full Name</label>
-            <input type="text" required placeholder="e.g. Omar Afridi" class="w-full bg-[#FAF6EE] border-2 border-scrap-kraft rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
+            <input type="text" required placeholder="e.g. Omar Afridi" class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block font-bold text-scrap-charcoal mb-1">IBA ERP ID</label>
-              <input type="text" required pattern="[0-9]{5}" placeholder="e.g. 26220" class="w-full bg-[#FAF6EE] border-2 border-scrap-kraft rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
+              <input type="text" required pattern="[0-9]{5}" placeholder="e.g. 26220" class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
             </div>
             <div>
               <label class="block font-bold text-scrap-charcoal mb-1">WhatsApp Number</label>
-              <input type="tel" required placeholder="03XXXXXXXXX" class="w-full bg-[#FAF6EE] border-2 border-scrap-kraft rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
+              <input type="tel" required placeholder="03XXXXXXXXX" class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block font-bold text-scrap-charcoal mb-1">Swimming Proficiency</label>
-              <select class="w-full bg-[#FAF6EE] border-2 border-scrap-kraft rounded-xl px-3 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
+              <select class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-3 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
                 <option>Non-Swimmer (Standard Lifejacket + 1-on-1 Dive Guide)</option>
                 <option>Basic / Recreational Swimmer</option>
                 <option>Advanced Swimmer</option>
@@ -776,7 +830,7 @@
             </div>
             <div>
               <label class="block font-bold text-scrap-charcoal mb-1">Dietary Preference</label>
-              <select class="w-full bg-[#FAF6EE] border-2 border-scrap-kraft rounded-xl px-3 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
+              <select class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-3 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
                 <option>Standard (Chicken Biryani / BBQ)</option>
                 <option>Vegetarian</option>
               </select>
@@ -785,7 +839,7 @@
 
           <div>
             <label class="block font-bold text-scrap-charcoal mb-1">Emergency Contact & Relation</label>
-            <input type="text" required placeholder="Parent/Guardian Name & Number" class="w-full bg-[#FAF6EE] border-2 border-scrap-kraft rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
+            <input type="text" required placeholder="Parent/Guardian Name & Number" class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
           </div>
 
           <div class="pt-2">
@@ -795,7 +849,7 @@
           </div>
         </form>
 
-        <div id="formSuccess" class="hidden mt-6 p-5 rounded-xl border-2 border-dashed border-scrap-teal bg-[#FAF6EE] text-center">
+        <div id="formSuccess" class="hidden mt-6 p-5 rounded-xl border-2 border-dashed border-scrap-teal bg-[#FAF5EC] text-center">
           <div class="w-8 h-8 rounded-full bg-scrap-teal text-white font-bold flex items-center justify-center mx-auto mb-2 shadow">✓</div>
           <h4 class="font-display font-bold text-sm text-scrap-charcoal">Registration Pre-Approved!</h4>
           <p class="text-xs text-scrap-ink/70 mt-1">Manifest Pass: <span class="font-mono text-scrap-rust font-bold" id="bookingCode">#IAC-SCUBA-882</span></p>
@@ -816,9 +870,9 @@
 
     <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
       <button onclick="filterGallery('all', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-scrap-charcoal text-white shadow-sm">All</button>
-      <button onclick="filterGallery('scuba', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-white text-scrap-charcoal border border-scrap-kraft hover:bg-scrap-kraft/40">Scuba & Marine</button>
-      <button onclick="filterGallery('north', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-white text-scrap-charcoal border border-scrap-kraft hover:bg-scrap-kraft/40">Northern Treks</button>
-      <button onclick="filterGallery('desert', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-white text-scrap-charcoal border border-scrap-kraft hover:bg-scrap-kraft/40">Desert & Camp</button>
+      <button onclick="filterGallery('scuba', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-[#FAF3E3] text-scrap-charcoal border border-[#DECFA9] hover:bg-[#F2E8D2]">Scuba & Marine</button>
+      <button onclick="filterGallery('north', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-[#FAF3E3] text-scrap-charcoal border border-[#DECFA9] hover:bg-[#F2E8D2]">Northern Treks</button>
+      <button onclick="filterGallery('desert', event)" class="gallery-filter px-5 py-1.5 rounded-full text-xs font-bold bg-[#FAF3E3] text-scrap-charcoal border border-[#DECFA9] hover:bg-[#F2E8D2]">Desert & Camp</button>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="galleryGrid">
