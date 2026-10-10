@@ -170,8 +170,8 @@
           <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-scrap-ink/60 mt-2">Team Structure 2026–2027</p>
         </div>
 
-        <!-- TIER 1: OFFICE BEARERS (Centered CEO, Tightened Top & Bottom Gaps) -->
-        <div class="max-w-5xl mx-auto mb-14 text-center">
+<!-- TIER 1: OFFICE BEARERS (Scrapbook Feature Cards) -->
+        <div class="max-w-5xl mx-auto mb-16 text-center">
           <div class="inline-block relative mb-8">
             <span class="px-8 py-2 rounded-xl bg-scrap-rust text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow-md">
               OFFICE BEARERS
@@ -179,32 +179,79 @@
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 items-stretch">
-            <!-- CFO (Left) -->
-            <div class="field-card rounded-2xl p-8 sm:p-10 flex flex-col items-center justify-center text-center relative">
+            
+            <!-- CFO: Munira (Left) -->
+            <div class="field-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
               <div class="washi-tape"></div>
-              <img src="cfo.png" onerror="this.outerHTML='<div class=\'w-28 h-28 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>CFO</div>'" alt="Chief Financial Officer" onclick="openLightbox(this.src, 'Chief Financial Officer')" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block" title="Click to view full photo">
-              <h4 class="font-display font-bold text-xl sm:text-2xl text-scrap-charcoal mt-6 leading-snug">
-                Chief Financial Officer
-              </h4>
+              <div class="flex flex-col items-center w-full">
+                <!-- Avatar with floating cursive name tag -->
+                <div class="relative mb-3">
+                  <img src="cfo.png" onerror="this.outerHTML='<div class=\'w-28 h-28 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>CFO</div>'" alt="Munira - CFO" onclick="openLightbox(this.src, 'Munira — Chief Financial Officer')" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block" title="Click to view full photo">
+                  <span class="absolute -bottom-2 -right-2 bg-scrap-charcoal text-white font-hand text-lg px-2.5 py-0.5 rounded-full shadow -rotate-6 border border-white">Munira ♡</span>
+                </div>
+
+                <!-- Title & Role -->
+                <span class="font-display font-black text-2xl text-scrap-gold tracking-wider mt-2">CFO</span>
+                <h4 class="font-display font-bold text-base text-scrap-charcoal leading-snug">Chief Financial Officer</h4>
+                <p class="text-xs text-scrap-ink/70 mt-2 font-normal leading-relaxed">Directs club allocations, trip budgets, and transparent student subsidies.</p>
+              </div>
+
+              <!-- Personality Sticker Pills from poster -->
+              <div class="flex flex-wrap items-center justify-center gap-1.5 mt-5 pt-4 border-t border-scrap-kraft/80 w-full">
+                <span class="text-[11px] font-mono px-2 py-0.5 bg-scrap-kraft/60 text-scrap-charcoal rounded border border-scrap-kraft">[fun loving]</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 bg-scrap-kraft/60 text-scrap-charcoal rounded border border-scrap-kraft">[Problem Solver]</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 bg-scrap-kraft/60 text-scrap-charcoal rounded border border-scrap-kraft">[Sporty Spirit]</span>
+              </div>
             </div>
 
-            <!-- CEO (Center) -->
-            <div class="field-card rounded-2xl p-8 sm:p-10 flex flex-col items-center justify-center text-center relative border-2 border-scrap-rust shadow-xl">
+            <!-- CEO: Hamna (Center, Highlighted) -->
+            <div class="field-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between border-2 border-scrap-rust shadow-xl">
               <div class="washi-tape washi-tape-rust"></div>
-              <img src="ceo.png" onerror="this.outerHTML='<div class=\'w-28 h-28 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-rust flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>CEO</div>'" alt="Chief Executive Officer" onclick="openLightbox(this.src, 'Chief Executive Officer')" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-scrap-rust hover:scale-105 transition cursor-pointer shadow-lg block" title="Click to view full photo">
-              <h4 class="font-display font-bold text-xl sm:text-2xl text-scrap-charcoal mt-6 leading-snug">
-                Chief Executive Officer
-              </h4>
+              <div class="flex flex-col items-center w-full">
+                <!-- Avatar with floating cursive name tag -->
+                <div class="relative mb-3">
+                  <img src="ceo.png" onerror="this.outerHTML='<div class=\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-rust flex items-center justify-center font-display font-black text-3xl text-scrap-charcoal shadow-inner\'>CEO</div>'" alt="Hamna - CEO" onclick="openLightbox(this.src, 'Hamna — Chief Executive Officer')" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-scrap-rust hover:scale-105 transition cursor-pointer shadow-lg block" title="Click to view full photo">
+                  <span class="absolute -bottom-2 -right-2 bg-scrap-rust text-white font-hand text-xl px-3 py-0.5 rounded-full shadow -rotate-6 border border-white">Hamna ♡</span>
+                </div>
+
+                <!-- Title & Role -->
+                <span class="font-display font-black text-3xl text-scrap-rust tracking-wider mt-2">CEO</span>
+                <h4 class="font-display font-bold text-lg text-scrap-charcoal leading-snug">Chief Executive Officer</h4>
+                <p class="text-xs text-scrap-ink/70 mt-2 font-normal leading-relaxed">Spearheads society vision, leadership culture, institutional ties, and expeditions.</p>
+              </div>
+
+              <!-- Personality Sticker Pills from poster -->
+              <div class="flex flex-wrap items-center justify-center gap-1.5 mt-5 pt-4 border-t border-scrap-kraft/80 w-full">
+                <span class="text-[11px] font-mono px-2 py-0.5 bg-scrap-rust/10 text-scrap-rust rounded border border-scrap-rust/30">[multi tasker]</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 bg-scrap-rust/10 text-scrap-rust rounded border border-scrap-rust/30">[cat-mom]</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 bg-scrap-rust/10 text-scrap-rust rounded border border-scrap-rust/30">[loves photography]</span>
+              </div>
             </div>
 
-            <!-- COO (Right) -->
-            <div class="field-card rounded-2xl p-8 sm:p-10 flex flex-col items-center justify-center text-center relative">
+            <!-- COO: Yusra (Right) -->
+            <div class="field-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
               <div class="washi-tape washi-tape-teal"></div>
-              <img src="coo.png" onerror="this.outerHTML='<div class=\'w-28 h-28 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>COO</div>'" alt="Chief Operating Officer" onclick="openLightbox(this.src, 'Chief Operating Officer')" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block" title="Click to view full photo">
-              <h4 class="font-display font-bold text-xl sm:text-2xl text-scrap-charcoal mt-6 leading-snug">
-                Chief Operating Officer
-              </h4>
+              <div class="flex flex-col items-center w-full">
+                <!-- Avatar with floating cursive name tag -->
+                <div class="relative mb-3">
+                  <img src="coo.png" onerror="this.outerHTML='<div class=\'w-28 h-28 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>COO</div>'" alt="Yusra - COO" onclick="openLightbox(this.src, 'Yusra — Chief Operating Officer')" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block" title="Click to view full photo">
+                  <span class="absolute -bottom-2 -right-2 bg-scrap-teal text-white font-hand text-lg px-2.5 py-0.5 rounded-full shadow -rotate-6 border border-white">Yusra ♡</span>
+                </div>
+
+                <!-- Title & Role -->
+                <span class="font-display font-black text-2xl text-scrap-teal tracking-wider mt-2">COO</span>
+                <h4 class="font-display font-bold text-base text-scrap-charcoal leading-snug">Chief Operating Officer</h4>
+                <p class="text-xs text-scrap-ink/70 mt-2 font-normal leading-relaxed">Directs expedition logistics, route clearances, vendor transit, and camp safety.</p>
+              </div>
+
+              <!-- Personality Sticker Pills from poster -->
+              <div class="flex flex-wrap items-center justify-center gap-1.5 mt-5 pt-4 border-t border-scrap-kraft/80 w-full">
+                <span class="text-[11px] font-mono px-2 py-0.5 bg-scrap-kraft/60 text-scrap-charcoal rounded border border-scrap-kraft">[super organised]</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 bg-scrap-kraft/60 text-scrap-charcoal rounded border border-scrap-kraft">[chef since 9]</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 bg-scrap-kraft/60 text-scrap-charcoal rounded border border-scrap-kraft">[art in 5 mediums]</span>
+              </div>
             </div>
+
           </div>
         </div>
 
