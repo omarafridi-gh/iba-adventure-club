@@ -21,7 +21,9 @@
               rust: '#A44200',
               paper: '#FAF6EE',
               kraft: '#EDE2CC',
-              card: '#FFFFFF',
+              card: '#FBF8F0',
+              parchment: '#F6EED8',
+              coffee: '#F3E8CE',
               ink: '#2B2C27'
             }
           },
@@ -43,6 +45,7 @@
       background-size: 24px 24px;
     }
 
+    /* Washi Tape styling */
     .washi-tape {
       position: absolute;
       top: -16px;
@@ -50,36 +53,67 @@
       transform: translateX(-50%) rotate(-2deg);
       width: 120px;
       height: 30px;
-      background: rgba(237, 165, 49, 0.45);
+      background: rgba(237, 165, 49, 0.5);
       backdrop-filter: blur(2px);
-      border-left: 2px dashed rgba(53, 54, 48, 0.25);
-      border-right: 2px dashed rgba(53, 54, 48, 0.25);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      border-left: 2px dashed rgba(53, 54, 48, 0.3);
+      border-right: 2px dashed rgba(53, 54, 48, 0.3);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
       z-index: 20;
     }
     .washi-tape-teal {
-      background: rgba(25, 143, 159, 0.4);
+      background: rgba(25, 143, 159, 0.45);
       transform: translateX(-50%) rotate(2.5deg);
     }
     .washi-tape-rust {
-      background: rgba(164, 66, 0, 0.35);
+      background: rgba(164, 66, 0, 0.4);
       transform: translateX(-50%) rotate(-1.5deg);
     }
     .washi-tape-moss {
-      background: rgba(153, 195, 77, 0.45);
+      background: rgba(153, 195, 77, 0.5);
       transform: translateX(-50%) rotate(1.8deg);
     }
 
+    /* Tactile Torn Paper Card Texture (Coffee / Parchment grain) */
     .field-card {
-      background: #FFFFFF;
-      box-shadow: 0 4px 20px rgba(53, 54, 48, 0.08), 0 2px 6px rgba(0,0,0,0.04);
-      border: 1.5px solid rgba(216, 206, 183, 0.9);
+      background-color: #FAF5E8;
+      background-image: 
+        radial-gradient(ellipse at 20% 15%, rgba(243, 232, 206, 0.65) 0%, transparent 60%),
+        radial-gradient(ellipse at 85% 80%, rgba(229, 214, 182, 0.5) 0%, transparent 70%),
+        repeating-linear-gradient(45deg, rgba(216, 206, 183, 0.08) 0px, rgba(216, 206, 183, 0.08) 2px, transparent 2px, transparent 6px);
+      box-shadow: 2px 8px 24px rgba(53, 54, 48, 0.1), 0 2px 4px rgba(0,0,0,0.04);
+      border: 1.5px solid #E2D4B7;
+      position: relative;
     }
+
+    /* Torn Ragged Top & Bottom Deckle Paper Effect */
+    .torn-card {
+      background-color: #F8F1DE;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(220, 203, 170, 0.4) 0%, transparent 70%),
+        linear-gradient(to bottom, #FAF5E8 0%, #F5ECDB 100%);
+      box-shadow: 3px 9px 24px rgba(53, 54, 48, 0.12);
+      border: 1.5px solid #E5D7BD;
+      position: relative;
+    }
+
+    /* Fabric / Burlap Canvas Weave Texture */
+    .fabric-card {
+      background-color: #F5EEDB;
+      background-image: 
+        linear-gradient(90deg, rgba(164, 66, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(rgba(164, 66, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(45deg, rgba(53, 54, 48, 0.03) 25%, transparent 25%, transparent 75%, rgba(53, 54, 48, 0.03) 75%),
+        linear-gradient(-45deg, rgba(53, 54, 48, 0.03) 25%, transparent 25%, transparent 75%, rgba(53, 54, 48, 0.03) 75%);
+      background-size: 8px 8px, 8px 8px, 16px 16px, 16px 16px;
+      border: 1.5px solid #DECFA9;
+    }
+
     .polaroid {
-      background: #FFFFFF;
+      background-color: #FBF8F1;
+      background-image: linear-gradient(to bottom, #FFFFFF 0%, #F7EFE1 100%);
       padding: 14px 14px 30px 14px;
       box-shadow: 2px 8px 20px rgba(53, 54, 48, 0.12);
-      border: 1px solid #E5DCCE;
+      border: 1.5px solid #E5DCCE;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
     .polaroid:hover {
@@ -250,8 +284,8 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 items-stretch">
             
-            <!-- CFO: Munira -->
-            <div class="field-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
+            <!-- CFO: Munira (Torn Parchment Card) -->
+            <div class="torn-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
               <div class="washi-tape"></div>
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-4">
@@ -263,8 +297,8 @@
               </div>
             </div>
 
-            <!-- CEO: Hamna -->
-            <div class="field-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between border-2 border-scrap-rust shadow-xl sm:-translate-y-2">
+            <!-- CEO: Hamna (Torn Parchment Card with Rust Border) -->
+            <div class="torn-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between border-2 border-scrap-rust shadow-xl sm:-translate-y-2">
               <div class="washi-tape washi-tape-rust"></div>
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-4">
@@ -276,8 +310,8 @@
               </div>
             </div>
 
-            <!-- COO: Yusra -->
-            <div class="field-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
+            <!-- COO: Yusra (Torn Parchment Card) -->
+            <div class="torn-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
               <div class="washi-tape washi-tape-teal"></div>
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-4">
@@ -316,20 +350,20 @@
               </span>
             </div>
 
-            <!-- Departments Grid -->
+            <!-- Departments Grid (Textured Coffee/Parchment Cards) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
               <!-- 1. Marketing & Creatives (Teal Theme) -->
               <div class="field-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-teal"></div>
-                <div class="flex items-center justify-between border-b border-scrap-kraft pb-3 mb-5">
+                <div class="flex items-center justify-between border-b border-[#E2D4B7] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Marketing & Creatives</h3>
                   <span class="font-hand text-scrap-teal text-lg font-bold">3 Explorers ♡</span>
                 </div>
 
                 <div class="space-y-4">
                   <!-- Muntazir -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/20 p-3.5 rounded-xl border border-scrap-kraft/70">
+                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
                     <img src="muntazir.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>MH</div>'" alt="Muntazir" onclick="openLightbox(this.src, 'Muntazir Hassan — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muntazir Hassan</h4>
@@ -339,7 +373,7 @@
                   </div>
 
                   <!-- Rayyan -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/20 p-3.5 rounded-xl border border-scrap-kraft/70">
+                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
                     <img src="rayyan.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>RR</div>'" alt="Rayyan" onclick="openLightbox(this.src, 'Rayyan Rafique — Director Media & Design')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Rayyan Rafique</h4>
@@ -349,7 +383,7 @@
                   </div>
 
                   <!-- Meerub -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/20 p-3.5 rounded-xl border border-scrap-kraft/70">
+                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
                     <img src="meerub.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>MH</div>'" alt="Meerub" onclick="openLightbox(this.src, 'Meerub Haider — Director Content Planning')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Meerub Haider</h4>
@@ -363,14 +397,14 @@
               <!-- 2. Corporate & Communications (Rust Theme) -->
               <div class="field-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-rust"></div>
-                <div class="flex items-center justify-between border-b border-scrap-kraft pb-3 mb-5">
+                <div class="flex items-center justify-between border-b border-[#E2D4B7] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Corporate & Comms</h3>
                   <span class="font-hand text-scrap-rust text-lg font-bold">2 Explorers ♡</span>
                 </div>
 
                 <div class="space-y-4">
                   <!-- Abdullah -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/20 p-3.5 rounded-xl border border-scrap-kraft/70">
+                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
                     <img src="abdullah.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>AG</div>'" alt="Abdullah" onclick="openLightbox(this.src, 'Abdullah Asif Gul — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Abdullah Asif Gul</h4>
@@ -380,7 +414,7 @@
                   </div>
 
                   <!-- Osama -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/20 p-3.5 rounded-xl border border-scrap-kraft/70">
+                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
                     <img src="osama.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>OS</div>'" alt="Osama" onclick="openLightbox(this.src, 'Osama — Director Corporate & Communications')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Osama</h4>
@@ -394,14 +428,14 @@
               <!-- 3. Safety & Inclusivity (Moss Theme) -->
               <div class="field-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-moss"></div>
-                <div class="flex items-center justify-between border-b border-scrap-kraft pb-3 mb-5">
+                <div class="flex items-center justify-between border-b border-[#E2D4B7] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Safety & Inclusivity</h3>
                   <span class="font-hand text-[#7ba632] text-lg font-bold">2 Explorers ♡</span>
                 </div>
 
                 <div class="space-y-4">
                   <!-- Neetu -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/20 p-3.5 rounded-xl border border-scrap-kraft/70">
+                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
                     <img src="neetu.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
@@ -411,7 +445,7 @@
                   </div>
 
                   <!-- Alina -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/20 p-3.5 rounded-xl border border-scrap-kraft/70">
+                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
                     <img src="alina.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>AK</div>'" alt="Alina" onclick="openLightbox(this.src, 'Alina Kashif — Director Safety')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Alina Kashif</h4>
@@ -425,14 +459,14 @@
               <!-- 4. Operations & Logistics (Rust Theme) -->
               <div class="field-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-rust"></div>
-                <div class="flex items-center justify-between border-b border-scrap-kraft pb-3 mb-5">
+                <div class="flex items-center justify-between border-b border-[#E2D4B7] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Operations & Logistics</h3>
                   <span class="font-hand text-scrap-rust text-lg font-bold">2 Explorers ♡</span>
                 </div>
 
                 <div class="space-y-4">
                   <!-- Kashaf -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/20 p-3.5 rounded-xl border border-scrap-kraft/70">
+                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
                     <img src="kashaf.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>KS</div>'" alt="Kashaf" onclick="openLightbox(this.src, 'Kashaf — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Kashaf</h4>
@@ -442,7 +476,7 @@
                   </div>
 
                   <!-- Najiba -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/20 p-3.5 rounded-xl border border-scrap-kraft/70">
+                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
                     <img src="najiba.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>NZ</div>'" alt="Najiba" onclick="openLightbox(this.src, 'Najiba Zia — Director Ops & Logistics')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Najiba Zia</h4>
@@ -456,14 +490,14 @@
               <!-- 5. Recruitment & Registrations (Gold Theme) -->
               <div class="field-card rounded-2xl p-6 relative">
                 <div class="washi-tape"></div>
-                <div class="flex items-center justify-between border-b border-scrap-kraft pb-3 mb-5">
+                <div class="flex items-center justify-between border-b border-[#E2D4B7] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">Recruitment</h3>
                   <span class="font-hand text-scrap-gold text-lg font-bold">1 Explorer ♡</span>
                 </div>
 
                 <div class="space-y-4">
                   <!-- Divyansh -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/20 p-3.5 rounded-xl border border-scrap-kraft/70">
+                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
                     <img src="divyansh.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>DK</div>'" alt="Divyansh" onclick="openLightbox(this.src, 'Divyansh — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Divyansh</h4>
@@ -477,14 +511,14 @@
               <!-- 6. General Affairs (Teal Theme) -->
               <div class="field-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-teal"></div>
-                <div class="flex items-center justify-between border-b border-scrap-kraft pb-3 mb-5">
+                <div class="flex items-center justify-between border-b border-[#E2D4B7] pb-3 mb-5">
                   <h3 class="font-display font-bold text-xl text-scrap-charcoal">General Affairs</h3>
                   <span class="font-hand text-scrap-teal text-lg font-bold">2 Explorers ♡</span>
                 </div>
 
                 <div class="space-y-4">
                   <!-- Omar -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/20 p-3.5 rounded-xl border border-scrap-kraft/70">
+                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
                     <img src="omar.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>OA</div>'" alt="Omar" onclick="openLightbox(this.src, 'Muhammad Omar Afridi — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Omar Afridi</h4>
@@ -494,7 +528,7 @@
                   </div>
 
                   <!-- Hasan -->
-                  <div class="flex items-center gap-4 bg-scrap-kraft/20 p-3.5 rounded-xl border border-scrap-kraft/70">
+                  <div class="flex items-center gap-4 bg-scrap-kraft/35 p-3.5 rounded-xl border border-[#DECFA9] shadow-inner">
                     <img src="hasan.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>HK</div>'" alt="Hasan" onclick="openLightbox(this.src, 'Muhammad Hasan Khan — Director General Affairs')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Hasan Khan</h4>
@@ -518,13 +552,13 @@
               </span>
             </div>
 
-            <!-- Advisor Card -->
-            <div class="field-card rounded-2xl p-7 relative">
+            <!-- Advisor Card (Torn Parchment Card) -->
+            <div class="torn-card rounded-2xl p-7 relative">
               <div class="washi-tape washi-tape-rust"></div>
               
               <div class="text-center flex flex-col items-center">
                 <div class="relative mb-4">
-                  <img src="advisor.png" onerror="this.outerHTML='<div class=\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-bold text-2xl text-scrap-charcoal shadow\'>MU</div>'" alt="Mustafa" onclick="openLightbox(this.src, 'Mustafa — Advisor to the Panel')" class="w-32 h-32 rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
+                  <img src="advisor.png" onerror="this.outerHTML='<div class=\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow\'>MU</div>'" alt="Mustafa" onclick="openLightbox(this.src, 'Mustafa — Advisor to the Panel')" class="w-32 h-32 rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
                 </div>
 
                 <h4 class="font-display font-bold text-2xl text-scrap-charcoal">Mustafa</h4>
@@ -574,19 +608,17 @@
 
         </div>
 
-        <!-- HIERARCHY LEVEL 3: MANAGEMENT TEAM (Fixed Connector Distance, No Tape Collision) -->
+        <!-- HIERARCHY LEVEL 3: MANAGEMENT TEAM (Fabric / Canvas Weave Textured Card) -->
         <div class="w-full max-w-5xl mx-auto mt-6">
-          <!-- BOLD MATCHING SVG CONNECTOR TERMINATING ABOVE WASHI TAPE -->
           <div class="w-full flex justify-center mb-0">
             <svg class="w-8 h-10" viewBox="0 0 32 40" fill="none">
-              <!-- Line stops cleanly at y=32 so waypoint circle hovers right above the tape -->
               <path d="M 16 0 L 16 32" stroke="#A44200" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round" />
               <circle cx="16" cy="32" r="4.5" fill="#A44200" />
             </svg>
           </div>
 
-          <!-- Card given generous top padding & margin so tape has its own space -->
-          <div class="field-card rounded-2xl p-8 pt-9 text-center relative border-2 border-dashed border-scrap-kraft bg-[#FAF6EE]/90 mt-2">
+          <!-- Fabric Textured Management Board Card -->
+          <div class="fabric-card rounded-2xl p-8 pt-9 text-center relative shadow-lg mt-2">
             <div class="washi-tape"></div>
             <div class="mt-2 mb-3">
               <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider shadow">
