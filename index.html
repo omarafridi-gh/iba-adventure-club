@@ -87,6 +87,34 @@
       border: 2px dashed #A44200;
       background: #FDF9F2;
     }
+
+    /* 3D Realistic Pushpins */
+    .thumbpin {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 14px;
+      background: radial-gradient(circle at 35% 35%, #EDA531, #A44200);
+      border-radius: 50%;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.35), inset 0 1px 2px rgba(255,255,255,0.6);
+      z-index: 30;
+    }
+    .thumbpin-red {
+      background: radial-gradient(circle at 35% 35%, #e74c3c, #962d22);
+    }
+    .thumbpin::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 3px;
+      width: 8px;
+      height: 4px;
+      background: rgba(0,0,0,0.25);
+      border-radius: 50%;
+      filter: blur(1px);
+    }
   </style>
 </head>
 <body class="text-scrap-ink font-sans selection:bg-scrap-gold selection:text-white min-h-screen flex flex-col">
@@ -115,7 +143,7 @@
       </button>
     </div>
 
-    <!-- Mobile Nav Bar -->
+    <!-- Mobile Navigation Bar -->
     <div class="flex md:hidden border-t border-scrap-kraft bg-[#FAF6EE] px-3 py-2 justify-around">
       <button onclick="showPage('home')" id="tab-home-m" class="nav-tab-m text-xs font-bold text-scrap-charcoal px-3 py-1">Home</button>
       <button onclick="showPage('scuba')" id="tab-scuba-m" class="nav-tab-m text-xs font-bold text-scrap-ink/70 px-3 py-1">Scuba '26</button>
@@ -125,53 +153,85 @@
 
   <!-- PAGE 1: HOME & COUNCIL -->
   <main id="page-home" class="page-view flex-grow">
-    <!-- Hero Banner -->
-    <section class="relative px-6 pt-16 pb-20 max-w-5xl mx-auto text-center">
-      <div class="inline-block relative mb-6">
-        <div class="font-hand text-xl sm:text-2xl text-scrap-rust font-bold transform -rotate-2 bg-scrap-kraft/50 px-5 py-1.5 rounded-md border border-scrap-kraft shadow-sm">
-          "Different batch, bolder stories, same campfire. ♡"
+    <!-- Compact Hero Section with Pinned Side Polaroids -->
+    <section class="relative px-4 sm:px-6 pt-6 pb-8 max-w-6xl mx-auto text-center overflow-hidden lg:overflow-visible">
+      
+      <!-- LEFT PINNED POLAROID (Desktop Bulletin Accent) -->
+      <div class="hidden xl:block absolute left-0 top-10 transform -rotate-6 transition hover:rotate-0 hover:scale-105 duration-200 z-10 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', 'First light on the ridge')">
+        <div class="relative bg-white p-2.5 pb-5 shadow-xl border border-scrap-kraft/80 w-44 rounded-sm">
+          <div class="thumbpin thumbpin-red"></div>
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&q=80" alt="Mountain Ridge" class="w-full h-32 object-cover rounded-sm">
+          <p class="font-hand text-base text-scrap-charcoal font-bold mt-2 text-center leading-none">First light ⛰️</p>
         </div>
       </div>
 
-      <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-scrap-charcoal leading-tight max-w-4xl mx-auto">
-        Beyond Campus Gates, Into The Untamed.
-      </h1>
-
-      <p class="mt-6 text-base sm:text-lg text-scrap-ink/80 max-w-2xl mx-auto font-normal leading-relaxed">
-        The official expedition and exploration society of IBA Karachi. Documenting trails, coastal reefs, mountain crossings, and student camaraderie.
-      </p>
-
-      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-        <button onclick="showPage('scuba')" class="px-8 py-3.5 bg-scrap-moss hover:opacity-90 text-scrap-charcoal font-display font-bold text-sm tracking-wider uppercase rounded-xl shadow-md border-2 border-scrap-charcoal transition transform hover:-translate-y-0.5">
-          Join Scuba Trip '26
-        </button>
-        <button onclick="showPage('gallery')" class="px-8 py-3.5 bg-white hover:bg-scrap-kraft/40 text-scrap-charcoal font-display font-bold text-sm tracking-wider uppercase rounded-xl border-2 border-scrap-charcoal shadow-sm transition transform hover:-translate-y-0.5">
-          Field Archives
-        </button>
+      <!-- RIGHT PINNED POLAROID (Desktop Bulletin Accent) -->
+      <div class="hidden xl:block absolute right-0 top-8 transform rotate-6 transition hover:rotate-0 hover:scale-105 duration-200 z-10 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80', 'Campfire under the stars')">
+        <div class="relative bg-white p-2.5 pb-5 shadow-xl border border-scrap-kraft/80 w-44 rounded-sm">
+          <div class="thumbpin"></div>
+          <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=400&q=80" alt="Campfire Night" class="w-full h-32 object-cover rounded-sm">
+          <p class="font-hand text-base text-scrap-charcoal font-bold mt-2 text-center leading-none">Under the stars ✨</p>
+        </div>
       </div>
 
-      <div class="flex flex-wrap items-center justify-center gap-3 mt-12">
-        <span class="px-4 py-1.5 rounded-full bg-scrap-teal text-white font-display text-xs font-bold tracking-wider shadow-sm transform -rotate-2">Hikes</span>
-        <span class="px-4 py-1.5 rounded-full bg-scrap-moss text-scrap-charcoal font-display text-xs font-bold tracking-wider shadow-sm transform rotate-1">Trips</span>
-        <span class="px-4 py-1.5 rounded-full bg-scrap-gold text-scrap-charcoal font-display text-xs font-bold tracking-wider shadow-sm transform -rotate-1">Camping</span>
-        <span class="px-4 py-1.5 rounded-full bg-scrap-rust text-white font-display text-xs font-bold tracking-wider shadow-sm transform rotate-2">Exploration</span>
+      <!-- Center Hero Content -->
+      <div class="max-w-3xl mx-auto relative z-10">
+        <!-- Dialogue Tag -->
+        <div class="inline-block relative mb-3">
+          <div class="font-hand text-lg sm:text-xl text-scrap-rust font-bold transform -rotate-1 bg-scrap-kraft/50 px-4 py-1 rounded-md border border-scrap-kraft shadow-sm">
+            "Different batch, bolder stories, same campfire. ♡"
+          </div>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-scrap-charcoal leading-tight">
+          Beyond Campus Gates, Into The Untamed.
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="mt-3 text-sm sm:text-base text-scrap-ink/80 max-w-xl mx-auto font-normal leading-relaxed">
+          The official expedition and exploration society of IBA Karachi. Documenting trails, coastal reefs, mountain crossings, and student camaraderie.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <button onclick="showPage('scuba')" class="px-7 py-2.5 bg-scrap-moss hover:opacity-90 text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md border-2 border-scrap-charcoal transition transform hover:-translate-y-0.5">
+            Join Scuba Trip '26
+          </button>
+          <button onclick="showPage('gallery')" class="px-7 py-2.5 bg-white hover:bg-scrap-kraft/40 text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition transform hover:-translate-y-0.5">
+            Field Archives
+          </button>
+        </div>
+
+        <!-- Category Chips -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mt-5">
+          <span class="px-3 py-1 rounded-full bg-scrap-teal text-white font-display text-[11px] font-bold tracking-wider shadow-sm transform -rotate-2">Hikes</span>
+          <span class="px-3 py-1 rounded-full bg-scrap-moss text-scrap-charcoal font-display text-[11px] font-bold tracking-wider shadow-sm transform rotate-1">Trips</span>
+          <span class="px-3 py-1 rounded-full bg-scrap-gold text-scrap-charcoal font-display text-[11px] font-bold tracking-wider shadow-sm transform -rotate-1">Camping</span>
+          <span class="px-3 py-1 rounded-full bg-scrap-rust text-white font-display text-[11px] font-bold tracking-wider shadow-sm transform rotate-2">Exploration</span>
+        </div>
+
+        <!-- Subtle Peek Scroll Link -->
+        <a href="#council-section" class="inline-flex items-center gap-1 font-hand text-xs text-scrap-rust/80 hover:text-scrap-rust font-bold mt-4 animate-bounce transition">
+          <span>↓ Scroll to Meet the Council</span>
+        </a>
       </div>
     </section>
 
     <!-- Council & Panel Section -->
-    <section class="px-6 pt-16 pb-20 bg-scrap-kraft/40 border-t-2 border-scrap-kraft">
+    <section id="council-section" class="px-6 pt-10 pb-16 bg-scrap-kraft/40 border-t-2 border-scrap-kraft">
       <div class="max-w-6xl mx-auto">
-        <!-- Styled Single-Line Heading with Reduced Gap Below -->
-        <div class="text-center max-w-4xl mx-auto mb-10">
+        <!-- Single-Line Header with Cleaned Spacing -->
+        <div class="text-center max-w-4xl mx-auto mb-8">
           <span class="font-hand text-2xl sm:text-3xl text-scrap-rust font-bold block mb-1">Not just adventures, but a community ♡</span>
           <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight text-scrap-charcoal whitespace-nowrap">
             <span>Panel</span> <span class="text-scrap-gold">&</span> <span class="text-scrap-rust">Executive Council</span>
           </h2>
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-scrap-ink/60 mt-2">Team Structure 2026–2027</p>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-scrap-ink/60 mt-1">Team Structure 2026–2027</p>
         </div>
 
-<!-- TIER 1: OFFICE BEARERS (Scrapbook Feature Cards) -->
-        <div class="max-w-5xl mx-auto mb-16 text-center">
+        <!-- TIER 1: OFFICE BEARERS (Centered CEO, Poster Details & Personality Badges) -->
+        <div class="max-w-5xl mx-auto mb-14 text-center">
           <div class="inline-block relative mb-8">
             <span class="px-8 py-2 rounded-xl bg-scrap-rust text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow-md">
               OFFICE BEARERS
@@ -256,8 +316,8 @@
         </div>
 
         <!-- TIER 2: ADVISOR TO THE PANEL (Reduced Bottom Gap) -->
-        <div class="max-w-xl mx-auto mb-14 text-center">
-          <div class="field-card rounded-2xl p-8 flex items-center gap-6 text-left relative">
+        <div class="max-w-xl mx-auto mb-12 text-center">
+          <div class="field-card rounded-2xl p-7 flex items-center gap-6 text-left relative">
             <div class="washi-tape washi-tape-rust"></div>
             <img src="advisor.png" onerror="this.outerHTML='<div class=\'w-24 h-24 shrink-0 rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-bold text-xl text-scrap-charcoal\'>ADV</div>'" alt="Advisor to the Panel" onclick="openLightbox(this.src, 'Advisor to the Panel')" class="w-24 h-24 shrink-0 rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow" title="Click to view full photo">
             <div>
@@ -270,7 +330,7 @@
         </div>
 
         <!-- TIER 3: EXECUTIVE COUNCIL (Reduced Top Padding) -->
-        <div class="border-t-2 border-dashed border-scrap-kraft pt-10">
+        <div class="border-t-2 border-dashed border-scrap-kraft pt-8">
           <div class="text-center mb-10">
             <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-base sm:text-lg font-bold uppercase tracking-wider shadow">
               EXECUTIVE COUNCIL
