@@ -63,10 +63,12 @@
       position: relative;
     }
 
-    /* 3. Sticky Note Individual Profiles */
+    /* 3. Sticky Note Individual Profiles with Dotted Outline */
     .sticky-note-item {
       box-shadow: 1px 3px 6px rgba(53, 54, 48, 0.07), 0 1px 2px rgba(0,0,0,0.03);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-style: dotted;
+      border-width: 1.5px;
     }
     .sticky-note-item:hover {
       transform: translateY(-2px) scale(1.01);
@@ -369,10 +371,10 @@
               </span>
             </div>
 
-            <!-- Departments Grid (Organic Crumpled Paper Cards + Individual Sticky Notes) -->
+            <!-- Departments Grid (Crumpled Paper Cards + Dotted-Border Sticky Notes) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
-              <!-- 1. Marketing & Creatives (Teal Sticky Notes) -->
+              <!-- 1. Marketing & Creatives (Teal Sticky Notes with Dotted Border) -->
               <div class="crumpled-paper-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-teal"></div>
                 <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
@@ -382,7 +384,7 @@
 
                 <div class="space-y-3.5">
                   <!-- Muntazir -->
-                  <div class="sticky-note-item bg-[#E3F4F6] border border-[#BCE4EA] p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
+                  <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
                     <img src="muntazir.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>MH</div>'" alt="Muntazir" onclick="openLightbox(this.src, 'Muntazir Hassan — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muntazir Hassan</h4>
@@ -392,28 +394,28 @@
                   </div>
 
                   <!-- Rayyan -->
-                  <div class="sticky-note-item bg-[#E3F4F6] border border-[#BCE4EA] p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
+                  <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
                     <img src="rayyan.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>RR</div>'" alt="Rayyan" onclick="openLightbox(this.src, 'Rayyan Rafique — Director Media & Design')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Rayyan Rafique</h4>
-                      <span class="text-xs font-semibold text-scrap-teal/70 uppercase tracking-wider block">Director Media & Design</span>
+                      <span class="text-xs font-semibold text-scrap-teal/80 uppercase tracking-wider block">Director Media & Design</span>
                       <a href="mailto:r.rafique.30530@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">r.rafique.30530@khi.iba.edu.pk</a>
                     </div>
                   </div>
 
                   <!-- Meerub -->
-                  <div class="sticky-note-item bg-[#E3F4F6] border border-[#BCE4EA] p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
+                  <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
                     <img src="meerub.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>MH</div>'" alt="Meerub" onclick="openLightbox(this.src, 'Meerub Haider — Director Content Planning')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Meerub Haider</h4>
-                      <span class="text-xs font-semibold text-scrap-teal/70 uppercase tracking-wider block">Director Content Planning</span>
+                      <span class="text-xs font-semibold text-scrap-teal/80 uppercase tracking-wider block">Director Content Planning</span>
                       <a href="mailto:m.haider.33279@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.haider.33279@khi.iba.edu.pk</a>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- 2. Corporate & Communications (Warm Peach-Rust Sticky Notes) -->
+              <!-- 2. Corporate & Communications (Warm Peach-Rust Sticky Notes with Dotted Border) -->
               <div class="crumpled-paper-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-rust"></div>
                 <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
@@ -423,7 +425,7 @@
 
                 <div class="space-y-3.5">
                   <!-- Abdullah -->
-                  <div class="sticky-note-item bg-[#FCEFE6] border border-[#F5D6C2] p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
+                  <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
                     <img src="abdullah.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>AG</div>'" alt="Abdullah" onclick="openLightbox(this.src, 'Abdullah Asif Gul — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Abdullah Asif Gul</h4>
@@ -433,18 +435,18 @@
                   </div>
 
                   <!-- Osama -->
-                  <div class="sticky-note-item bg-[#FCEFE6] border border-[#F5D6C2] p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
+                  <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
                     <img src="osama.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>OS</div>'" alt="Osama" onclick="openLightbox(this.src, 'Osama — Director Corporate & Communications')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Osama</h4>
-                      <span class="text-xs font-semibold text-scrap-rust/70 uppercase tracking-wider block">Director Corporate & Comms</span>
+                      <span class="text-xs font-semibold text-scrap-rust/80 uppercase tracking-wider block">Director Corporate & Comms</span>
                       <span class="text-xs text-scrap-ink/70 block mt-0.5">Executive Director</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- 3. Safety & Inclusivity (Fresh Pastel Moss Sticky Notes) -->
+              <!-- 3. Safety & Inclusivity (Fresh Pastel Moss Sticky Notes with Dotted Border) -->
               <div class="crumpled-paper-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-moss"></div>
                 <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
@@ -454,7 +456,7 @@
 
                 <div class="space-y-3.5">
                   <!-- Neetu -->
-                  <div class="sticky-note-item bg-[#EEF7DE] border border-[#D8EDB7] p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.6deg]">
+                  <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.6deg]">
                     <img src="neetu.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
@@ -464,7 +466,7 @@
                   </div>
 
                   <!-- Alina -->
-                  <div class="sticky-note-item bg-[#EEF7DE] border border-[#D8EDB7] p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.4deg]">
+                  <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.4deg]">
                     <img src="alina.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>AK</div>'" alt="Alina" onclick="openLightbox(this.src, 'Alina Kashif — Director Safety')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Alina Kashif</h4>
@@ -475,7 +477,7 @@
                 </div>
               </div>
 
-              <!-- 4. Operations & Logistics (Warm Peach-Rust Sticky Notes) -->
+              <!-- 4. Operations & Logistics (Warm Peach-Rust Sticky Notes with Dotted Border) -->
               <div class="crumpled-paper-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-rust"></div>
                 <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
@@ -485,7 +487,7 @@
 
                 <div class="space-y-3.5">
                   <!-- Kashaf -->
-                  <div class="sticky-note-item bg-[#FCEFE6] border border-[#F5D6C2] p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
+                  <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
                     <img src="kashaf.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>KS</div>'" alt="Kashaf" onclick="openLightbox(this.src, 'Kashaf — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Kashaf</h4>
@@ -495,18 +497,18 @@
                   </div>
 
                   <!-- Najiba -->
-                  <div class="sticky-note-item bg-[#FCEFE6] border border-[#F5D6C2] p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
+                  <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
                     <img src="najiba.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>NZ</div>'" alt="Najiba" onclick="openLightbox(this.src, 'Najiba Zia — Director Ops & Logistics')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Najiba Zia</h4>
-                      <span class="text-xs font-semibold text-scrap-rust/70 uppercase tracking-wider block">Director Ops & Logistics</span>
+                      <span class="text-xs font-semibold text-scrap-rust/80 uppercase tracking-wider block">Director Ops & Logistics</span>
                       <a href="mailto:n.zia.33420@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-rust truncate block mt-0.5">n.zia.33420@khi.iba.edu.pk</a>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- 5. Recruitment & Registrations (Sunlight Gold Sticky Notes) -->
+              <!-- 5. Recruitment & Registrations (Sunlight Gold Sticky Notes with Dotted Border) -->
               <div class="crumpled-paper-card rounded-2xl p-6 relative">
                 <div class="washi-tape"></div>
                 <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
@@ -516,7 +518,7 @@
 
                 <div class="space-y-3.5">
                   <!-- Divyansh -->
-                  <div class="sticky-note-item bg-[#FFF8E2] border border-[#FDEABB] p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
+                  <div class="sticky-note-item bg-[#FFF8E2] border-[#EDA531]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
                     <img src="divyansh.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>DK</div>'" alt="Divyansh" onclick="openLightbox(this.src, 'Divyansh — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Divyansh</h4>
@@ -527,7 +529,7 @@
                 </div>
               </div>
 
-              <!-- 6. General Affairs (Teal Sticky Notes) -->
+              <!-- 6. General Affairs (Teal Sticky Notes with Dotted Border) -->
               <div class="crumpled-paper-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-teal"></div>
                 <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
@@ -537,7 +539,7 @@
 
                 <div class="space-y-3.5">
                   <!-- Omar -->
-                  <div class="sticky-note-item bg-[#E3F4F6] border border-[#BCE4EA] p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
+                  <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
                     <img src="omar.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>OA</div>'" alt="Omar" onclick="openLightbox(this.src, 'Muhammad Omar Afridi — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Omar Afridi</h4>
@@ -547,11 +549,11 @@
                   </div>
 
                   <!-- Hasan -->
-                  <div class="sticky-note-item bg-[#E3F4F6] border border-[#BCE4EA] p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
+                  <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
                     <img src="hasan.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>HK</div>'" alt="Hasan" onclick="openLightbox(this.src, 'Muhammad Hasan Khan — Director General Affairs')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Hasan Khan</h4>
-                      <span class="text-xs font-semibold text-scrap-teal/70 uppercase tracking-wider block">Director General Affairs</span>
+                      <span class="text-xs font-semibold text-scrap-teal/80 uppercase tracking-wider block">Director General Affairs</span>
                       <a href="mailto:m.khan.30910@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.khan.30910@khi.iba.edu.pk</a>
                     </div>
                   </div>
@@ -627,26 +629,37 @@
 
         </div>
 
-        <!-- HIERARCHY LEVEL 3: MANAGEMENT TEAM (Ample Clearance, Zero Line-Tape Collision) -->
-        <div class="w-full max-w-5xl mx-auto mt-6">
-          <!-- Connector stopping with clear margin ABOVE the washi tape -->
-          <div class="w-full flex justify-center mb-0">
-            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none">
-              <path d="M 16 0 L 16 20" stroke="#A44200" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round" />
-              <circle cx="16" cy="20" r="4.5" fill="#A44200" />
+        <!-- HIERARCHY LEVEL 3: MANAGEMENT TEAM (Title OUTSIDE Card + Longer Clear Connector) -->
+        <div class="w-full max-w-5xl mx-auto mt-10">
+          
+          <!-- Extended Hierarchical Line from EC Down to Title Pill -->
+          <div class="w-full flex justify-center">
+            <svg class="w-8 h-14" viewBox="0 0 32 56" fill="none">
+              <path d="M 16 0 L 16 52" stroke="#A44200" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round" />
+              <circle cx="16" cy="52" r="4.5" fill="#A44200" />
             </svg>
           </div>
 
-          <!-- Burlap Fabric Textured Card with Safe Clearance -->
-          <div class="burlap-fabric-card rounded-2xl p-8 pt-10 text-center relative mt-6">
+          <!-- Title Pill: Now OUTSIDE the Card in the hierarchy flow -->
+          <div class="text-center my-3">
+            <span class="inline-block px-9 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider shadow">
+              MANAGEMENT TEAM 2026–2027
+            </span>
+          </div>
+
+          <!-- Short Connector from Title Pill to Burlap Card Edge -->
+          <div class="w-full flex justify-center mb-1">
+            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none">
+              <path d="M 16 0 L 16 22" stroke="#A44200" stroke-width="3.5" stroke-dasharray="5 5" stroke-linecap="round" />
+              <circle cx="16" cy="22" r="4.5" fill="#A44200" />
+            </svg>
+          </div>
+
+          <!-- Burlap Fabric Textured Card -->
+          <div class="burlap-fabric-card rounded-2xl p-8 pt-9 text-center relative mt-3 shadow-md">
             <div class="washi-tape"></div>
-            <div class="mt-2 mb-3">
-              <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider shadow">
-                MANAGEMENT TEAM 2026–2027
-              </span>
-            </div>
-            <h4 class="font-display font-bold text-2xl text-scrap-charcoal mt-2">Annual General Management Body</h4>
-            <p class="text-sm text-scrap-ink/85 max-w-2xl mx-auto mt-2.5 leading-relaxed font-medium">
+            <h4 class="font-display font-bold text-2xl text-scrap-charcoal mt-1">Annual General Management Body</h4>
+            <p class="text-sm text-scrap-ink/85 max-w-2xl mx-auto mt-2 leading-relaxed font-medium">
               Operating directly under the Executive Council and Directors. Inducted annually for the tenure to drive on-ground execution across expeditions, basecamps, and campus drives.
             </p>
           </div>
