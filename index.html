@@ -152,19 +152,19 @@
           </h1>
 
           <p class="mt-4 text-sm sm:text-base text-scrap-ink/80 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
-            The faces rotate, the routes evolve, but the deep dive never stops. From the alpine ridgelines of the Karakoram to the coral beds of Charna Island, we bring IBA students beyond campus gates into the untamed.
+            The faces rotate, the routes evolve, but the deep dive never stops. From the turquoise depths of Charna Island to the upcoming summer alpine crossing in the high North, we take IBA students beyond campus walls.
           </p>
 
           <div class="mt-7 flex flex-wrap items-center justify-center lg:justify-start gap-3">
             <button onclick="showPage('scuba')" class="px-7 py-3 bg-scrap-teal hover:bg-scrap-teal/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition transform hover:-translate-y-0.5">
               Explore Charna Scuba '26 →
             </button>
-            <button onclick="scrollToQuiz()" class="px-7 py-3 bg-white hover:bg-scrap-kraft/40 text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition transform hover:-translate-y-0.5">
-              Find Your Trail Quiz
-            </button>
+            <a href="#expeditions-section" class="px-7 py-3 bg-white hover:bg-scrap-kraft/40 text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition transform hover:-translate-y-0.5 inline-block">
+              View 2026–27 Calendar ↓
+            </a>
           </div>
 
-          <!-- Mood Board Washi Badges -->
+          <!-- Mood Board Badges -->
           <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 mt-6">
             <span class="px-3.5 py-1 rounded-full bg-scrap-teal text-white font-display text-[11px] font-bold tracking-wider shadow-sm transform -rotate-2">Hikes</span>
             <span class="px-3.5 py-1 rounded-full bg-scrap-moss text-scrap-charcoal font-display text-[11px] font-bold tracking-wider shadow-sm transform rotate-1">Trips</span>
@@ -173,14 +173,12 @@
           </div>
         </div>
 
-        <!-- Right: Clean Hero Polaroid Frame -->
+        <!-- Right: Clean Hero Polaroid Frame with hasan_scuba.jpeg -->
         <div class="lg:col-span-5 relative flex justify-center">
           <div class="relative w-72 sm:w-80">
-            <!-- Polaroid Main Frame -->
             <div class="polaroid transform -rotate-2">
               <div class="washi-tape washi-tape-teal"></div>
               
-              <!-- Hero Photo: hasan_scuba.jpeg -->
               <div class="aspect-[4/3] w-full overflow-hidden rounded bg-scrap-kraft relative">
                 <img id="heroPolaroidImg" 
                      src="hasan_scuba.jpeg" 
@@ -205,49 +203,141 @@
       </div>
     </section>
 
-    <!-- INTERACTIVE FEATURE: Trail Matcher Mini-Quiz -->
-    <section id="quiz-section" class="px-6 py-12 bg-white border-y-2 border-scrap-kraft relative">
-      <div class="max-w-3xl mx-auto text-center">
-        <span class="font-hand text-2xl text-scrap-rust font-bold">Can't decide your next journey? ♡</span>
-        <h2 class="text-2xl sm:text-3xl font-display font-bold text-scrap-charcoal mt-1">Interactive Trail Matcher</h2>
-        <p class="text-xs text-scrap-ink/70 mt-1 mb-8">Tell us your current semester vibe, and we'll point your compass to the right expedition.</p>
+    <!-- ELABORATED SECTION 1: THE TWO OFFICIAL EXPEDITIONS (Scuba vs Summer North) -->
+    <section id="expeditions-section" class="px-6 py-14 bg-white border-y-2 border-scrap-kraft relative">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="font-hand text-2xl text-scrap-rust font-bold">Two journeys. One unforgettable year. ♡</span>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-scrap-charcoal mt-1">The 2026–2027 Expeditions</h2>
+          <p class="text-xs sm:text-sm text-scrap-ink/70 mt-2">
+            We don't do dozen watered-down trips. The IBA Adventure Club concentrates on two premier, signature adventures for our student community.
+          </p>
+        </div>
 
-        <div id="quizContainer" class="field-card p-6 sm:p-8 rounded-2xl relative text-left bg-[#FAF6EE]/50">
-          <div class="washi-tape"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          
+          <!-- TRIP 1: CHARNA SCUBA (CONFIRMED & ACTIVE) -->
+          <div class="field-card rounded-2xl p-7 relative flex flex-col justify-between border-2 border-scrap-teal">
+            <div class="washi-tape washi-tape-teal"></div>
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 bg-scrap-teal/15 text-scrap-teal border border-scrap-teal/30 rounded-full font-mono text-[10px] font-bold uppercase tracking-wider">
+                  ● EXPEDITION 01 • ACTIVE NOW
+                </span>
+                <span class="font-hand text-lg text-scrap-teal font-bold">October 25, 2026</span>
+              </div>
 
-          <!-- Step 1 -->
-          <div id="quizStep1">
-            <h4 class="font-display font-bold text-sm sm:text-base text-scrap-charcoal mb-4">1. What does your weekend desperately need?</h4>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <button onclick="pickQuiz(1, 'sea')" class="p-4 rounded-xl border-2 border-scrap-kraft hover:border-scrap-teal bg-white text-left transition group">
-                <span class="text-2xl block mb-2">🌊</span>
-                <span class="font-display font-bold text-xs text-scrap-charcoal block group-hover:text-scrap-teal">Deep Blue Silence</span>
-                <span class="text-[11px] text-scrap-ink/60 mt-1 block">Zero cell reception, open tides & coral reefs.</span>
+              <h3 class="font-display font-bold text-2xl text-scrap-charcoal">Charna Island Deep Reef Scuba</h3>
+              <p class="text-xs text-scrap-ink/75 mt-2 leading-relaxed">
+                The flagship coastal experience. Full certified scuba gear, PADI dive masters, 20ft cliff jumps off Mubarak Village, and deep-sea boat recon. Non-swimmers welcome!
+              </p>
+
+              <div class="grid grid-cols-2 gap-2 mt-5 p-3.5 bg-scrap-kraft/20 rounded-xl border border-scrap-kraft/60 text-[11px]">
+                <div><span class="text-scrap-ink/60">Location:</span> <strong class="block text-scrap-charcoal">Mubarak & Charna</strong></div>
+                <div><span class="text-scrap-ink/60">Subsidized Fee:</span> <strong class="block text-scrap-rust font-mono">PKR 8,500</strong></div>
+                <div><span class="text-scrap-ink/60">Status:</span> <strong class="block text-scrap-teal">14 Slots Left</strong></div>
+                <div><span class="text-scrap-ink/60">Transit:</span> <strong class="block text-scrap-charcoal">AC Coaster Direct</strong></div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-scrap-kraft flex items-center justify-between">
+              <button onclick="showPage('scuba')" class="px-6 py-2.5 bg-scrap-teal hover:bg-scrap-teal/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow transition">
+                Book Scuba Slot →
               </button>
-              <button onclick="pickQuiz(1, 'mountain')" class="p-4 rounded-xl border-2 border-scrap-kraft hover:border-scrap-moss bg-white text-left transition group">
-                <span class="text-2xl block mb-2">🏔️</span>
-                <span class="font-display font-bold text-xs text-scrap-charcoal block group-hover:text-scrap-moss">High Summits</span>
-                <span class="text-[11px] text-scrap-ink/60 mt-1 block">Cold mountain air, rocky ascents & steep views.</span>
-              </button>
-              <button onclick="pickQuiz(1, 'camp')" class="p-4 rounded-xl border-2 border-scrap-kraft hover:border-scrap-gold bg-white text-left transition group">
-                <span class="text-2xl block mb-2">🔥</span>
-                <span class="font-display font-bold text-xs text-scrap-charcoal block group-hover:text-scrap-gold">Bonfire & Starlight</span>
-                <span class="text-[11px] text-scrap-ink/60 mt-1 block">Doodh patti tea, stargazing & guitar acoustics.</span>
+              <span class="font-hand text-xs text-scrap-rust font-bold">Only 40 Total Spots ♡</span>
+            </div>
+          </div>
+
+          <!-- TRIP 2: SUMMER NORTHERN EXPEDITION (UNDER RECON + POLL) -->
+          <div class="field-card rounded-2xl p-7 relative flex flex-col justify-between border-2 border-scrap-rust">
+            <div class="washi-tape washi-tape-rust"></div>
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 bg-scrap-rust/15 text-scrap-rust border border-scrap-rust/30 rounded-full font-mono text-[10px] font-bold uppercase tracking-wider">
+                  ▲ EXPEDITION 02 • SUMMER '27
+                </span>
+                <span class="font-hand text-lg text-scrap-rust font-bold">Route Recon in Progress</span>
+              </div>
+
+              <h3 class="font-display font-bold text-2xl text-scrap-charcoal">The Grand Northern Summer Crossing</h3>
+              <p class="text-xs text-scrap-ink/75 mt-2 leading-relaxed">
+                Our massive multi-day summer voyage into Gilgit-Baltistan. Whether we traverse the pine ridges of Fairy Meadows or set basecamp across Skardu & Deosai, this is the ultimate university rite of passage.
+              </p>
+
+              <!-- Interactive Route Voting Poll -->
+              <div class="mt-5 p-4 bg-[#FAF6EE] rounded-xl border border-scrap-kraft text-xs">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-display font-bold text-scrap-charcoal">Student Route Poll: Where to?</span>
+                  <span class="text-[10px] font-mono text-scrap-rust font-bold" id="pollVoteCount">184 Votes</span>
+                </div>
+                
+                <div class="space-y-2 mt-3" id="pollOptions">
+                  <button onclick="castVote('skardu')" class="w-full text-left p-2.5 rounded-lg border border-scrap-kraft hover:border-scrap-charcoal bg-white flex items-center justify-between transition group">
+                    <span class="font-medium text-scrap-charcoal group-hover:text-scrap-rust">🏔️ Skardu, Shangrila & Deosai Plains</span>
+                    <span class="font-mono text-[11px] text-scrap-ink/60 font-bold" id="skarduPct">48%</span>
+                  </button>
+                  <button onclick="castVote('fairymeadows')" class="w-full text-left p-2.5 rounded-lg border border-scrap-kraft hover:border-scrap-charcoal bg-white flex items-center justify-between transition group">
+                    <span class="font-medium text-scrap-charcoal group-hover:text-scrap-rust">🌲 Fairy Meadows & Nanga Parbat Base</span>
+                    <span class="font-mono text-[11px] text-scrap-ink/60 font-bold" id="fmPct">36%</span>
+                  </button>
+                  <button onclick="castVote('hunza')" class="w-full text-left p-2.5 rounded-lg border border-scrap-kraft hover:border-scrap-charcoal bg-white flex items-center justify-between transition group">
+                    <span class="font-medium text-scrap-charcoal group-hover:text-scrap-rust">⛰️ Hunza Valley & Passu Cones Ridge</span>
+                    <span class="font-mono text-[11px] text-scrap-ink/60 font-bold" id="hunzaPct">16%</span>
+                  </button>
+                </div>
+                <div id="voteDoneMsg" class="hidden text-center text-scrap-rust font-hand text-base font-bold mt-2">
+                  Vote recorded! The Executive Council is factoring this in ♡
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-scrap-kraft flex items-center justify-between">
+              <span class="text-[11px] text-scrap-ink/60 font-mono">Itinerary Drop: Spring Semester '27</span>
+              <button onclick="showPage('gallery')" class="text-xs font-bold font-display uppercase tracking-wider text-scrap-rust hover:underline">
+                View Past Treks →
               </button>
             </div>
           </div>
 
-          <!-- Result View -->
-          <div id="quizResult" class="hidden text-center py-4">
-            <span class="font-mono text-xs uppercase tracking-widest text-scrap-rust font-bold">Your Official Club Route</span>
-            <h3 id="resultTitle" class="font-display font-bold text-2xl sm:text-3xl text-scrap-charcoal mt-1 mb-2"></h3>
-            <p id="resultDesc" class="text-xs sm:text-sm text-scrap-ink/75 max-w-lg mx-auto leading-relaxed mb-6"></p>
-            <div class="flex justify-center gap-3">
-              <button id="resultCTA" onclick="showPage('scuba')" class="px-6 py-2.5 bg-scrap-teal text-white rounded-xl font-display font-bold text-xs uppercase tracking-wider shadow">View Trip Details</button>
-              <button onclick="resetQuiz()" class="px-5 py-2.5 bg-white border border-scrap-kraft rounded-xl font-display font-bold text-xs uppercase tracking-wider text-scrap-charcoal">Try Again</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ELABORATED SECTION 2: SCRAPBOOK FIELD SOUNDS & AMBIENCE -->
+    <section class="px-6 py-10 bg-scrap-kraft/30 border-b-2 border-scrap-kraft">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="font-hand text-xl text-scrap-rust font-bold">Sensory Field Logs ♡</span>
+        <h3 class="font-display font-bold text-xl sm:text-2xl text-scrap-charcoal mt-0.5 mb-2">Tune Into The Expeditions</h3>
+        <p class="text-xs text-scrap-ink/70 max-w-lg mx-auto mb-6">Hit play on the ambient soundtracks recorded directly on location during our club scouting expeditions.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Audio Card 1: Marine -->
+          <div class="field-card p-4 rounded-xl flex items-center justify-between border border-scrap-kraft bg-white">
+            <div class="text-left flex items-center gap-3">
+              <span class="w-10 h-10 rounded-full bg-scrap-teal/15 text-scrap-teal flex items-center justify-center text-xl shrink-0">🌊</span>
+              <div>
+                <strong class="font-display text-xs text-scrap-charcoal block">Mubarak Bay Ocean Swell</strong>
+                <span class="text-[10px] text-scrap-ink/60 font-mono">Ambient Waves & Boat Idle</span>
+              </div>
             </div>
+            <button onclick="toggleAudioPreview(this, 'ocean')" class="px-3.5 py-1.5 rounded-lg bg-scrap-teal text-white font-mono text-[11px] font-bold shadow-sm">
+              ▶ Play
+            </button>
           </div>
 
+          <!-- Audio Card 2: Mountain Campfire -->
+          <div class="field-card p-4 rounded-xl flex items-center justify-between border border-scrap-kraft bg-white">
+            <div class="text-left flex items-center gap-3">
+              <span class="w-10 h-10 rounded-full bg-scrap-rust/15 text-scrap-rust flex items-center justify-center text-xl shrink-0">🔥</span>
+              <div>
+                <strong class="font-display text-xs text-scrap-charcoal block">Alpine Pine Campfire</strong>
+                <span class="text-[10px] text-scrap-ink/60 font-mono">Crackling Wood & Mountain Wind</span>
+              </div>
+            </div>
+            <button onclick="toggleAudioPreview(this, 'fire')" class="px-3.5 py-1.5 rounded-lg bg-scrap-rust text-white font-mono text-[11px] font-bold shadow-sm">
+              ▶ Play
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -297,7 +387,7 @@
               <div class="washi-tape washi-tape-rust"></div>
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-3">
-                  <img src="ceo.png" onerror="this.outerHTML='<div class=\'w-28 h-28 mx-auto rounded-full bg-scrap-rust border-2 border-scrap-rust flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>CEO</div>'" alt="Hamna - CEO" onclick="openLightbox(this.src, 'Hamna — CEO')" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-scrap-rust hover:scale-105 transition cursor-pointer shadow-lg block" title="Click to view full photo">
+                  <img src="ceo.png" onerror="this.outerHTML='<div class=\'w-28 h-28 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-rust flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>CEO</div>'" alt="Hamna - CEO" onclick="openLightbox(this.src, 'Hamna — CEO')" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-scrap-rust hover:scale-105 transition cursor-pointer shadow-lg block" title="Click to view full photo">
                   <span class="absolute -bottom-1 -right-1 bg-scrap-rust text-white font-hand text-base px-2.5 py-0.5 rounded-full shadow -rotate-6 border border-white">Hamna ♡</span>
                 </div>
                 <span class="font-display font-black text-2xl text-scrap-rust tracking-wider mt-1">CEO</span>
@@ -408,7 +498,7 @@
                     <span class="absolute -bottom-1 -right-1 bg-scrap-charcoal text-white font-hand text-xs px-2 py-0.2 rounded-full shadow border border-white">Rayyan ♡</span>
                   </div>
                   <div class="flex-grow min-w-0">
-                    <div class="flex flex-wrap items-line justify-between gap-1">
+                    <div class="flex flex-wrap items-baseline justify-between gap-1">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal">Rayyan Rafique</h4>
                       <span class="text-[10px] font-semibold text-scrap-ink/70 uppercase tracking-wider bg-scrap-kraft/60 px-2 py-0.5 rounded border border-scrap-kraft">Director Media & Design</span>
                     </div>
@@ -675,7 +765,6 @@
 
   <!-- PAGE 2: CHARNA SCUBA SPOTLIGHT & REGISTRATION -->
   <main id="page-scuba" class="page-view hidden flex-grow px-4 sm:px-6 py-12 max-w-6xl mx-auto w-full">
-    <!-- Header Spotlight -->
     <div class="text-center max-w-3xl mx-auto mb-12">
       <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-scrap-teal/15 text-scrap-teal border border-scrap-teal/30 font-display text-xs font-bold uppercase tracking-wider mb-3">
         <span>🌊 Annual Flagship Expedition</span>
@@ -684,27 +773,24 @@
       <p class="mt-3 text-sm sm:text-base text-scrap-ink/70 font-medium">The faces rotate, the routes evolve, but the deep dive never stops. Come find your depth off the coast of Mubarak Village.</p>
     </div>
 
-    <!-- Interactive Depth Meter Breakdown -->
+    <!-- Depth Meter Breakdown -->
     <div class="mb-12 field-card p-6 sm:p-8 rounded-2xl relative bg-gradient-to-b from-[#FAF6EE] to-cyan-50/50 border border-scrap-kraft">
       <div class="washi-tape washi-tape-teal"></div>
       <h3 class="font-display font-bold text-lg text-scrap-charcoal mb-6 text-center">Interactive Depth Meter: What Awaits You</h3>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- 0m -->
         <div class="bg-white p-5 rounded-xl border border-scrap-kraft/80 shadow-sm relative">
           <span class="font-mono text-xs font-bold text-scrap-teal block mb-1">DEPTH: 0.0M (SURFACE)</span>
           <h4 class="font-display font-bold text-base text-scrap-charcoal">Coastline & Cliff Jump</h4>
           <p class="text-xs text-scrap-ink/70 mt-1.5">Mubarak Village harbor departure, lifejacket safety drills, and optional 20ft adrenaline cliff jumps.</p>
         </div>
 
-        <!-- 5m -->
         <div class="bg-white p-5 rounded-xl border border-scrap-teal/40 shadow-sm relative">
           <span class="font-mono text-xs font-bold text-scrap-teal block mb-1">DEPTH: 4.5M (REEF SHELF)</span>
           <h4 class="font-display font-bold text-base text-scrap-charcoal">Snorkel & Coral Forest</h4>
           <p class="text-xs text-scrap-ink/70 mt-1.5">Crystal clear surface visibility with parrotfish, angelfish, sea anemones, and guided buoyancy testing.</p>
         </div>
 
-        <!-- 10-12m -->
         <div class="bg-white p-5 rounded-xl border-2 border-scrap-teal shadow-md relative">
           <div class="absolute -top-2.5 right-3 bg-scrap-teal text-white text-[9px] font-bold px-2 py-0.5 rounded uppercase">Full Tank Dive</div>
           <span class="font-mono text-xs font-bold text-scrap-teal block mb-1">DEPTH: 10M - 12M</span>
@@ -717,7 +803,7 @@
     <!-- Booking & Checklist Columns -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
-      <!-- Logistics & Interactive Checklist -->
+      <!-- Logistics & Checklist -->
       <div class="lg:col-span-5 space-y-6">
         <div class="field-card p-6 sm:p-7 rounded-2xl relative">
           <div class="washi-tape"></div>
@@ -745,7 +831,7 @@
             </li>
           </ul>
 
-          <!-- Interactive Gear Checklist -->
+          <!-- Gear Checklist -->
           <div class="mt-6 pt-4 border-t border-scrap-kraft">
             <div class="flex items-center justify-between mb-3">
               <h4 class="text-xs font-bold uppercase tracking-wider text-scrap-charcoal">Pack Your Dry Bag:</h4>
@@ -776,16 +862,15 @@
           </div>
         </div>
 
-        <!-- Sticky Note FAQ -->
         <div class="p-5 rounded-2xl bg-[#FFF9E6] border border-[#E8DCB8] shadow-sm relative transform -rotate-1">
-          <span class="font-hand text-lg text-scrap-rust font-bold block mb-1">Got cold feet? Note from Alina (Director Safety):</span>
+          <span class="font-hand text-lg text-scrap-rust font-bold block mb-1">Note from Alina (Director Safety):</span>
           <p class="text-xs text-scrap-ink/80 leading-relaxed font-normal">
             "You don't need to know how to swim to scuba! Every non-swimmer is geared in certified buoyancy jackets and escorted one-on-one by our licensed dive masters into the reef."
           </p>
         </div>
       </div>
 
-      <!-- Registration Manifest Form -->
+      <!-- Registration Form -->
       <div class="lg:col-span-7 field-card p-6 sm:p-8 rounded-2xl relative">
         <div class="washi-tape washi-tape-rust"></div>
         <h3 class="font-display font-bold text-2xl text-scrap-charcoal mb-1">Diver Manifest Form</h3>
@@ -972,43 +1057,73 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function scrollToQuiz() {
-      const el = document.getElementById('quiz-section');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    /* Trail Matcher Quiz Logic */
-    function pickQuiz(step, choice) {
-      const step1 = document.getElementById('quizStep1');
-      const result = document.getElementById('quizResult');
-      const title = document.getElementById('resultTitle');
-      const desc = document.getElementById('resultDesc');
-      const cta = document.getElementById('resultCTA');
-
-      step1.classList.add('hidden');
-      result.classList.remove('hidden');
-
-      if (choice === 'sea') {
-        title.innerText = "The Marine Diver (Charna Island)";
-        desc.innerText = "You belong under the waves. Escape the campus noise with deep scuba diving, crystal reefs, and boat jumps off Mubarak Village.";
-        cta.innerText = "Book Charna Scuba '26 →";
-        cta.onclick = function() { showPage('scuba'); };
-      } else if (choice === 'mountain') {
-        title.innerText = "The High Altitude Trekker (Passu & Hunza)";
-        desc.innerText = "You thrive on crisp morning air and rocky inclines. Your spirit belongs on Northern basecamp crossings with the crew.";
-        cta.innerText = "Browse Northern Gallery →";
-        cta.onclick = function() { showPage('gallery'); };
+    /* Summer Northern Route Polling */
+    let votes = 184;
+    function castVote(route) {
+      votes++;
+      document.getElementById('pollVoteCount').innerText = votes + ' Votes';
+      document.getElementById('voteDoneMsg').classList.remove('hidden');
+      if (route === 'skardu') {
+        document.getElementById('skarduPct').innerText = '50%';
+      } else if (route === 'fairymeadows') {
+        document.getElementById('fmPct').innerText = '38%';
       } else {
-        title.innerText = "The Starlight Nomad (Gorakh Hill Camp)";
-        desc.innerText = "You need campfires, acoustic jam sessions, and milky way skies atop Sindh's highest ridge.";
-        cta.innerText = "Explore Desert & Camp Logs →";
-        cta.onclick = function() { showPage('gallery'); };
+        document.getElementById('hunzaPct').innerText = '18%';
       }
     }
 
-    function resetQuiz() {
-      document.getElementById('quizResult').classList.add('hidden');
-      document.getElementById('quizStep1').classList.remove('hidden');
+    /* Ambient Web Audio Synthesizer (Zero external file dependencies) */
+    let currentAudioContext = null;
+    function toggleAudioPreview(btn, type) {
+      if (btn.innerText.includes('■ Stop')) {
+        if (currentAudioContext) {
+          currentAudioContext.close();
+          currentAudioContext = null;
+        }
+        btn.innerText = '▶ Play';
+        btn.classList.remove('opacity-75');
+        return;
+      }
+
+      document.querySelectorAll('button').forEach(b => {
+        if (b.innerText.includes('■ Stop')) b.innerText = '▶ Play';
+      });
+
+      if (currentAudioContext) currentAudioContext.close();
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      currentAudioContext = new AudioContext();
+
+      const bufferSize = currentAudioContext.sampleRate * 2;
+      const buffer = currentAudioContext.createBuffer(1, bufferSize, currentAudioContext.sampleRate);
+      const output = buffer.getChannelData(0);
+
+      for (let i = 0; i < bufferSize; i++) {
+        output[i] = Math.random() * 2 - 1;
+      }
+
+      const whiteNoise = currentAudioContext.createBufferSource();
+      whiteNoise.buffer = buffer;
+      whiteNoise.loop = true;
+
+      const filter = currentAudioContext.createBiquadFilter();
+      if (type === 'ocean') {
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(320, currentAudioContext.currentTime);
+      } else {
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(600, currentAudioContext.currentTime);
+      }
+
+      const gain = currentAudioContext.createGain();
+      gain.gain.setValueAtTime(0.08, currentAudioContext.currentTime);
+
+      whiteNoise.connect(filter);
+      filter.connect(gain);
+      gain.connect(currentAudioContext.destination);
+
+      whiteNoise.start();
+      btn.innerText = '■ Stop';
+      btn.classList.add('opacity-75');
     }
 
     /* Packing Checklist Tracker */
