@@ -87,6 +87,29 @@
       box-shadow: 4px 14px 26px rgba(53, 54, 48, 0.18);
     }
 
+    .pushpin {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 24px;
+      height: 24px;
+      background: radial-gradient(circle at 35% 35%, #FF5252, #B71C1C);
+      border-radius: 50%;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3), inset 0 -2px 4px rgba(0,0,0,0.4);
+      z-index: 30;
+    }
+    .pushpin::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 7px;
+      width: 6px;
+      height: 4px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 50%;
+    }
+
     .rubber-stamp {
       border: 2.5px dashed #A44200;
       color: #A44200;
@@ -176,7 +199,7 @@
           </div>
         </div>
 
-        <!-- Right: Clean Hero Polaroid Frame with hasan_scuba.jpeg -->
+        <!-- Right: Hero Polaroid Frame with hasan_scuba.jpeg -->
         <div class="lg:col-span-5 relative flex justify-center">
           <div class="relative w-80 sm:w-96">
             <div class="polaroid transform -rotate-2">
@@ -259,7 +282,7 @@
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-4">
                   <img src="coo.png" onerror="this.outerHTML='<div class=\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>COO</div>'" alt="Yusra - COO" onclick="openLightbox(this.src, 'Yusra — COO')" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
-                  <span class="absolute -bottom-1 -right-1 bg-scrap-teal text-white font-hand text-lg px-3 py-0.5 rounded-full shadow -rotate-6 border border-white font-bold">Yusra ♡</span>
+                  <span class="absolute -bottom-1 -right-1 bg-scrap-teal text-white font-hand text-lg px-3 py-0.5 rounded-full shadow border border-white font-bold">Yusra ♡</span>
                 </div>
                 <span class="font-display font-black text-3xl text-scrap-teal tracking-wider mt-1">COO</span>
                 <p class="text-sm text-scrap-ink/80 mt-2.5 font-normal leading-relaxed">Directs operations, ground logistics, fleet movements and basecamps.</p>
@@ -269,32 +292,30 @@
           </div>
         </div>
 
-        <!-- HIERARCHICAL TREE CONNECTOR (Aligned Over Columns) -->
-        <div class="hidden lg:block w-full max-w-6xl mx-auto mt-4 mb-2">
-          <!-- Trunk dropping down from CEO center -->
-          <div class="w-full flex justify-center">
-            <div class="w-0.5 h-8 border-l-2 border-dashed border-scrap-rust"></div>
-          </div>
-
-          <!-- Horizontal Bar linking Center of Left 8-col Branch to Center of Right 4-col Branch -->
-          <div class="grid grid-cols-12 gap-8 items-start">
-            <div class="col-span-8 flex justify-end">
-              <div class="w-1/2 h-0.5 border-t-2 border-dashed border-scrap-rust"></div>
-            </div>
-            <div class="col-span-4 flex justify-start">
-              <div class="w-1/2 h-0.5 border-t-2 border-dashed border-scrap-rust"></div>
-            </div>
-          </div>
+        <!-- BOLD & ACCURATE SVG HIERARCHICAL CONNECTOR -->
+        <div class="hidden lg:block w-full max-w-6xl mx-auto my-3">
+          <svg class="w-full h-16" viewBox="0 0 1152 64" fill="none" preserveAspectRatio="none">
+            <!-- Downward center trunk from CEO -->
+            <path d="M 576 0 L 576 34" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
+            <!-- Horizontal branch connecting col 8 center (384) to col 4 center (960) -->
+            <path d="M 384 34 L 960 34" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
+            <!-- Vertical Drop to EC & Directors Title -->
+            <path d="M 384 34 L 384 64" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
+            <!-- Vertical Drop to Advisor to the Panel Title -->
+            <path d="M 960 34 L 960 64" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
+            <!-- Solid Waypoint Markers -->
+            <circle cx="576" cy="34" r="5" fill="#A44200" />
+            <circle cx="384" cy="34" r="4.5" fill="#A44200" />
+            <circle cx="960" cy="34" r="4.5" fill="#A44200" />
+          </svg>
         </div>
 
-        <!-- HIERARCHY LEVEL 2: EXECUTIVE COUNCIL & ADVISOR -->
+        <!-- HIERARCHY LEVEL 2: EXECUTIVE COUNCIL & ADVISOR WITH REEL PIN -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
           
           <!-- LEFT BRANCH: EXECUTIVE COUNCIL & DIRECTORS -->
           <div class="lg:col-span-8 space-y-6">
-            <!-- Header with Vertical Line centered over Title -->
             <div class="flex flex-col items-center mb-6">
-              <div class="hidden lg:block w-0.5 h-6 border-l-2 border-dashed border-scrap-rust mb-1"></div>
               <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow">
                 EXECUTIVE COUNCIL & DIRECTORS
               </span>
@@ -303,7 +324,7 @@
             <!-- Departments Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
-              <!-- 1. Marketing & Creatives (Teal Washi -> Teal EC / Lighter Teal Director) -->
+              <!-- 1. Marketing & Creatives (Teal Theme) -->
               <div class="field-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-teal"></div>
                 <div class="flex items-center justify-between border-b border-scrap-kraft pb-3 mb-5">
@@ -344,7 +365,7 @@
                 </div>
               </div>
 
-              <!-- 2. Corporate & Communications (Rust Washi -> Rust EC / Lighter Rust Director) -->
+              <!-- 2. Corporate & Communications (Rust Theme) -->
               <div class="field-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-rust"></div>
                 <div class="flex items-center justify-between border-b border-scrap-kraft pb-3 mb-5">
@@ -375,7 +396,7 @@
                 </div>
               </div>
 
-              <!-- 3. Safety & Inclusivity (Moss Washi -> Moss EC / Lighter Moss Director) -->
+              <!-- 3. Safety & Inclusivity (Moss Theme) -->
               <div class="field-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-moss"></div>
                 <div class="flex items-center justify-between border-b border-scrap-kraft pb-3 mb-5">
@@ -406,7 +427,7 @@
                 </div>
               </div>
 
-              <!-- 4. Operations & Logistics (Rust Washi -> Rust EC / Lighter Rust Director) -->
+              <!-- 4. Operations & Logistics (Rust Theme) -->
               <div class="field-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-rust"></div>
                 <div class="flex items-center justify-between border-b border-scrap-kraft pb-3 mb-5">
@@ -437,7 +458,7 @@
                 </div>
               </div>
 
-              <!-- 5. Recruitment & Registrations (Gold Washi -> Gold EC) -->
+              <!-- 5. Recruitment & Registrations (Gold Theme) -->
               <div class="field-card rounded-2xl p-6 relative">
                 <div class="washi-tape"></div>
                 <div class="flex items-center justify-between border-b border-scrap-kraft pb-3 mb-5">
@@ -458,7 +479,7 @@
                 </div>
               </div>
 
-              <!-- 6. General Affairs (Teal Washi -> Teal EC / Lighter Teal Director) -->
+              <!-- 6. General Affairs (Teal Theme) -->
               <div class="field-card rounded-2xl p-6 relative">
                 <div class="washi-tape washi-tape-teal"></div>
                 <div class="flex items-center justify-between border-b border-scrap-kraft pb-3 mb-5">
@@ -492,37 +513,68 @@
             </div>
           </div>
 
-          <!-- RIGHT BRANCH: ADVISOR TO THE PANEL (Dedicated Advisory Card) -->
+          <!-- RIGHT BRANCH: ADVISOR & INSTAGRAM REEL -->
           <div class="lg:col-span-4 space-y-6">
-            <!-- Header with Vertical Line centered over Title -->
+            
+            <!-- Advisor Header -->
             <div class="flex flex-col items-center mb-6">
-              <div class="hidden lg:block w-0.5 h-6 border-l-2 border-dashed border-scrap-rust mb-1"></div>
               <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-rust text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow">
                 ADVISOR TO THE PANEL
               </span>
             </div>
 
-            <div class="field-card rounded-2xl p-8 relative">
+            <!-- Advisor Card -->
+            <div class="field-card rounded-2xl p-7 relative">
               <div class="washi-tape washi-tape-rust"></div>
               
               <div class="text-center flex flex-col items-center">
-                <!-- Clean Circular Avatar with no overlay tag -->
-                <div class="relative mb-5">
+                <div class="relative mb-4">
                   <img src="advisor.png" onerror="this.outerHTML='<div class=\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-bold text-2xl text-scrap-charcoal shadow\'>MU</div>'" alt="Mustafa" onclick="openLightbox(this.src, 'Mustafa — Advisor to the Panel')" class="w-32 h-32 rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
                 </div>
 
                 <h4 class="font-display font-bold text-2xl text-scrap-charcoal">Mustafa</h4>
                 <span class="text-xs font-bold text-scrap-rust uppercase tracking-wider mt-1 px-3 py-1 bg-scrap-rust/10 rounded-full border border-scrap-rust/20">Advisor to the Panel</span>
-                <p class="text-sm text-scrap-ink/80 mt-3.5 leading-relaxed">Senior counsel, strategic oversight & institutional advisory to the society leadership.</p>
+                <p class="text-sm text-scrap-ink/80 mt-3 leading-relaxed">Senior counsel, strategic oversight & institutional advisory to the society leadership.</p>
               </div>
             </div>
+
+            <!-- PINNED INSTAGRAM REEL EMBED -->
+            <div class="field-card rounded-2xl p-5 relative mt-6 transform rotate-1 border-2 border-scrap-kraft hover:rotate-0 transition">
+              <!-- Pushpin Element -->
+              <div class="pushpin"></div>
+
+              <div class="flex items-center justify-between border-b border-scrap-kraft pb-2.5 mb-3">
+                <div class="flex items-center gap-2">
+                  <span class="text-lg">📍</span>
+                  <span class="font-hand text-lg text-scrap-rust font-bold">Field Dispatch Reel ♡</span>
+                </div>
+                <a href="https://www.instagram.com/reel/DdS0RWKJkXT/" target="_blank" rel="noopener noreferrer" class="font-mono text-[10px] text-scrap-teal hover:underline font-bold">Open Post ↗</a>
+              </div>
+
+              <!-- Official Instagram Player Container -->
+              <div class="w-full rounded-xl overflow-hidden border border-scrap-kraft/80 shadow-inner bg-[#FAF6EE]">
+                <iframe 
+                  src="https://www.instagram.com/reel/DdS0RWKJkXT/embed/" 
+                  class="w-full border-0 rounded-xl" 
+                  height="460"
+                  scrolling="no" 
+                  allowtransparency="true" 
+                  allow="encrypted-media"
+                  title="IBA Adventure Club Instagram Reel">
+                </iframe>
+              </div>
+
+              <p class="text-[11px] text-scrap-ink/65 text-center mt-2.5 font-hand font-bold text-base">
+                Click play above to watch the dispatch ♡
+              </p>
+            </div>
+
           </div>
 
         </div>
 
-        <!-- HIERARCHY LEVEL 3: MANAGEMENT TEAM (Full Width Flow Beneath Departments) -->
-        <div class="w-full max-w-5xl mx-auto mt-4">
-          <!-- Vertical Trail Connector down from EC/Directors -->
+        <!-- HIERARCHY LEVEL 3: MANAGEMENT TEAM (Full Width Beneath Departments) -->
+        <div class="w-full max-w-5xl mx-auto mt-6">
           <div class="flex justify-center mb-4">
             <div class="w-0.5 h-10 border-l-2 border-dashed border-scrap-rust"></div>
           </div>
