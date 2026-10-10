@@ -96,12 +96,6 @@
       transform: rotate(-4deg);
       user-select: none;
     }
-
-    .postage-stamp {
-      border: 1px dashed rgba(53, 54, 48, 0.3);
-      outline: 4px solid #FAF6EE;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-    }
   </style>
 </head>
 <body class="text-scrap-ink font-sans selection:bg-scrap-gold selection:text-white min-h-screen flex flex-col">
@@ -179,23 +173,31 @@
           </div>
         </div>
 
-        <!-- Right: Scrapbook Visual Stamp Collage -->
+        <!-- Right: Clean Hero Polaroid Frame (Background shape removed) -->
         <div class="lg:col-span-5 relative flex justify-center">
           <div class="relative w-72 sm:w-80">
-            <!-- Background Stamp/Card -->
-            <div class="absolute -top-4 -right-4 w-32 p-3 bg-scrap-kraft/70 rounded-xl border border-scrap-kraft rotate-6 hidden sm:block">
-              <span class="font-mono text-[9px] uppercase tracking-wider text-scrap-charcoal block font-bold">Coords:</span>
-              <span class="font-mono text-[10px] text-scrap-rust font-semibold">24°53'N 66°42'E</span>
-              <span class="font-hand text-xs text-scrap-charcoal block mt-1">Charna Basecamp</span>
-            </div>
-
             <!-- Polaroid Main Frame -->
             <div class="polaroid transform -rotate-2">
               <div class="washi-tape washi-tape-teal"></div>
-              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Scuba Preview" class="w-full h-64 object-cover rounded">
+              
+              <!-- Image element wired to hasan_scuba.jpeg with fallback -->
+              <div class="aspect-[4/3] w-full overflow-hidden rounded bg-scrap-kraft relative">
+                <img id="heroPolaroidImg" 
+                     src="hasan_scuba.jpeg" 
+                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80';" 
+                     alt="Charna Scuba" 
+                     class="w-full h-full object-cover">
+              </div>
+
               <div class="mt-3 text-center">
                 <p class="font-hand text-xl text-scrap-charcoal font-bold">Charna Island Scuba '26 ♡</p>
                 <p class="text-[10px] uppercase font-bold text-scrap-teal tracking-widest">Slots Now Open</p>
+                
+                <!-- Quick local upload picker to preview your photo right now -->
+                <label class="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-scrap-kraft/60 hover:bg-scrap-kraft text-[10px] font-bold text-scrap-charcoal cursor-pointer border border-scrap-kraft transition">
+                  <span>📷 Swap Photo</span>
+                  <input type="file" accept="image/*" class="hidden" onchange="previewHeroImage(event)">
+                </label>
               </div>
             </div>
 
@@ -301,7 +303,7 @@
               <div class="washi-tape washi-tape-rust"></div>
               <div class="flex flex-col items-center w-full">
                 <div class="relative mb-3">
-                  <img src="ceo.png" onerror="this.outerHTML='<div class=\'w-28 h-28 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-rust flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>CEO</div>'" alt="Hamna - CEO" onclick="openLightbox(this.src, 'Hamna — CEO')" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-scrap-rust hover:scale-105 transition cursor-pointer shadow-lg block" title="Click to view full photo">
+                  <img src="ceo.png" onerror="this.outerHTML='<div class=\'w-28 h-28 mx-auto rounded-full bg-scrap-rust border-2 border-scrap-rust flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>CEO</div>'" alt="Hamna - CEO" onclick="openLightbox(this.src, 'Hamna — CEO')" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-scrap-rust hover:scale-105 transition cursor-pointer shadow-lg block" title="Click to view full photo">
                   <span class="absolute -bottom-1 -right-1 bg-scrap-rust text-white font-hand text-base px-2.5 py-0.5 rounded-full shadow -rotate-6 border border-white">Hamna ♡</span>
                 </div>
                 <span class="font-display font-black text-2xl text-scrap-rust tracking-wider mt-1">CEO</span>
@@ -944,7 +946,7 @@
     <p class="font-hand text-xl text-scrap-rust mt-1 font-bold">New faces. Uncharted trails. Same wild spirit. ♡</p>
   </footer>
 
-  <!-- ROUTING & INTERACTIVE LOGIC -->
+  <!-- SCRIPT LOGIC -->
   <script>
     function showPage(pageId) {
       document.querySelectorAll('.page-view').forEach(function(el) {
@@ -979,6 +981,18 @@
     function scrollToQuiz() {
       const el = document.getElementById('quiz-section');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* Live Local Photo Preview Handler */
+    function previewHeroImage(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('heroPolaroidImg').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
     }
 
     /* Trail Matcher Quiz Logic */
