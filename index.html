@@ -171,28 +171,39 @@
       user-select: none;
     }
 
-    /* 7. Beautiful Proportional Leather Journal Cover */
+    /* 7. Enhanced Vintage Leather Journal Cover */
     .master-journal-preview {
-      background: #4A2E1B;
+      background: #462A17;
       background-image: 
-        radial-gradient(circle at 50% 45%, rgba(255,255,255,0.09) 0%, transparent 75%),
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='leatherNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23leatherNoise)' opacity='0.16'/%3E%3C/svg%3E");
+        radial-gradient(circle at 50% 45%, rgba(255,255,255,0.1) 0%, transparent 75%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='leatherNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23leatherNoise)' opacity='0.18'/%3E%3C/svg%3E");
       box-shadow: 
-        0 18px 40px rgba(0,0,0,0.4),
-        0 30px 65px rgba(53,54,48,0.25);
-      border: 3px solid #362113;
+        0 18px 42px rgba(0,0,0,0.42),
+        0 32px 70px rgba(53,54,48,0.28);
+      border: 3.5px solid #2F1A0D;
       transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
     }
     .master-journal-preview:hover {
       transform: translateY(-7px) scale(1.012);
       box-shadow: 
-        0 24px 50px rgba(0,0,0,0.45),
-        0 35px 75px rgba(53,54,48,0.3);
+        0 24px 50px rgba(0,0,0,0.48),
+        0 38px 80px rgba(53,54,48,0.32);
     }
 
-    /* 8. True 3D Book Environment & Physical Flipping Engine */
+    /* Brass corner bracket accents */
+    .brass-corner {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border: 2.5px solid rgba(237, 165, 49, 0.55);
+      pointer-events: none;
+    }
+    .brass-corner-tr { top: 10px; right: 10px; border-left: none; border-bottom: none; border-radius: 0 10px 0 0; }
+    .brass-corner-br { bottom: 10px; right: 10px; border-left: none; border-top: none; border-radius: 0 0 10px 0; }
+
+    /* 8. 3D Cinematic Tabletop Opening & Camera Move */
     .book-3d-stage {
-      perspective: 2600px;
+      perspective: 2800px;
       perspective-origin: 50% 50%;
       transform-style: preserve-3d;
       position: relative;
@@ -201,7 +212,7 @@
     .open-book-spread {
       background-color: #FAF4E5;
       box-shadow: 
-        0 30px 80px rgba(0,0,0,0.8),
+        0 35px 85px rgba(0,0,0,0.85),
         inset 0 0 70px rgba(180, 145, 90, 0.25);
       border: 2px solid #DFCEAA;
       transform-style: preserve-3d;
@@ -220,16 +231,40 @@
       z-index: 30;
     }
 
-    /* 3D Moving Leather Cover that lifts off slowly */
+    /* Cinematic 4-Stage Opening Sequence (Slide right -> Zoom out -> Flip open on table -> Zoom into dark room) */
+    .anim-tabletop-cinematic {
+      animation: tabletopOpening 1.35s cubic-bezier(0.2, 0.85, 0.25, 1) forwards;
+      transform-origin: center center;
+    }
+    @keyframes tabletopOpening {
+      0% {
+        opacity: 0.6;
+        transform: translateX(-40px) scale(0.92) rotateX(16deg);
+      }
+      28% {
+        opacity: 0.95;
+        transform: translateX(25px) scale(0.90) rotateX(10deg);
+      }
+      65% {
+        opacity: 1;
+        transform: translateX(0px) scale(0.95) rotateX(4deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0px) scale(1) rotateX(0deg);
+      }
+    }
+
+    /* 3D Moving Leather Cover that lifts & flips open */
     #coverHingeLeaf {
       position: absolute;
       top: 0;
       bottom: 0;
       right: 0;
       width: 50%;
-      background: #4A2E1B;
+      background: #462A17;
       background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 80%);
-      border: 3px solid #362113;
+      border: 3px solid #2F1A0D;
       border-radius: 0 16px 16px 0;
       box-shadow: 0 20px 50px rgba(0,0,0,0.5);
       transform-origin: left center;
@@ -240,15 +275,17 @@
     }
     .anim-cover-opening {
       display: block !important;
-      animation: coverHingeSwing 1.05s cubic-bezier(0.25, 0.9, 0.3, 1) forwards;
+      animation: coverPhysicalFlip 1.25s cubic-bezier(0.22, 0.85, 0.3, 1) forwards;
     }
-    @keyframes coverHingeSwing {
+    @keyframes coverPhysicalFlip {
       0% {
         transform: rotateY(0deg);
-        box-shadow: -8px 0 30px rgba(0,0,0,0.6);
+        box-shadow: -10px 0 35px rgba(0,0,0,0.65);
       }
       45% {
-        box-shadow: -35px 15px 50px rgba(0,0,0,0.4);
+        transform: rotateY(-85deg);
+        box-shadow: -45px 20px 60px rgba(0,0,0,0.45);
+        background: #3B2212;
       }
       100% {
         transform: rotateY(-180deg);
@@ -257,7 +294,7 @@
       }
     }
 
-    /* 3D Page Leaf that reveals the underlying page slowly */
+    /* 3D Page Turn Leaf Layer */
     #turningPageLeaf {
       position: absolute;
       top: 0;
@@ -790,7 +827,7 @@
     </section>
   </main>
 
-  <!-- PAGE 2: CHARNA SCUBA SPOTLIGHT & REGISTRATION (Depth Meter Removed) -->
+  <!-- PAGE 2: CHARNA SCUBA SPOTLIGHT & REGISTRATION -->
   <main id="page-scuba" class="page-view hidden flex-grow px-4 sm:px-6 py-12 max-w-6xl mx-auto w-full">
     <div class="text-center max-w-3xl mx-auto mb-12">
       <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-scrap-teal/15 text-scrap-teal border border-scrap-teal/30 font-display text-xs font-bold uppercase tracking-wider mb-3">
@@ -933,7 +970,7 @@
     </div>
   </main>
 
-  <!-- PAGE 3: FIELD JOURNAL (CLEAN, BEAUTIFUL CENTERED MEMORIES NOTEBOOK) -->
+  <!-- PAGE 3: FIELD JOURNAL (ELEGANT VINTAGE LEATHER NOTEBOOK) -->
   <main id="page-journal" class="page-view hidden flex-grow px-4 sm:px-6 py-12 max-w-6xl mx-auto w-full">
     <!-- Header -->
     <div class="text-center max-w-2xl mx-auto mb-10">
@@ -944,40 +981,70 @@
       </p>
     </div>
 
-    <!-- The Centered Tabletop Showcase (Cleaned Cover, No Clutter, Elegant Centerpiece) -->
+    <!-- The Centered Tabletop Showcase -->
     <div class="max-w-4xl mx-auto relative flex flex-col items-center">
       
-      <!-- Proportional Album Preview (16:10 Aspect Ratio, Centered Title & Minimal Button) -->
+      <!-- Proportional Album Preview (16:10 Aspect Ratio, Brass Compass, Filigree Accents) -->
       <div id="closedBookCover" class="master-journal-preview w-full aspect-[16/10] max-w-4xl rounded-2xl p-8 sm:p-14 text-white relative cursor-pointer flex flex-col justify-center items-center text-center select-none" onclick="openMasterBookModal()">
         
-        <!-- Binding Spine & Realistic Brass Rivets -->
-        <div class="absolute left-0 top-0 bottom-0 w-8 sm:w-12 bg-black/40 border-r-2 border-dashed border-white/20 rounded-l-2xl flex flex-col justify-around items-center py-4">
-          <span class="w-2.5 h-2.5 rounded-full bg-scrap-gold/60 border border-black/40 shadow-sm"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-scrap-gold/60 border border-black/40 shadow-sm"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-scrap-gold/60 border border-black/40 shadow-sm"></span>
+        <!-- Binding Spine & Realistic Brass Rivets on Left -->
+        <div class="absolute left-0 top-0 bottom-0 w-8 sm:w-12 bg-black/45 border-r-2 border-dashed border-white/20 rounded-l-2xl flex flex-col justify-around items-center py-5 shadow-inner">
+          <span class="w-3 h-3 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/50 shadow-sm"></span>
+          <span class="w-3 h-3 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/50 shadow-sm"></span>
+          <span class="w-3 h-3 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/50 shadow-sm"></span>
         </div>
         
-        <!-- Elastic Ribbon Bookmark on Right -->
-        <div class="absolute right-10 top-0 bottom-0 w-3 bg-[#24130A] shadow-md border-x border-black/50 hidden sm:block"></div>
+        <!-- Brass Filigree Corner Brackets on Right -->
+        <div class="brass-corner brass-corner-tr"></div>
+        <div class="brass-corner brass-corner-br"></div>
 
-        <!-- Elegant Center Layout -->
+        <!-- Elastic Ribbon Bookmark on Right -->
+        <div class="absolute right-10 top-0 bottom-0 w-3 bg-[#24130A] shadow-lg border-x border-black/60 hidden sm:block"></div>
+
+        <!-- Elegant Centerpiece -->
         <div class="pl-4 sm:pl-8 flex flex-col items-center my-auto">
-          <!-- Brass Compass Medallion -->
-          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-dashed border-scrap-gold/80 flex items-center justify-center mb-4 text-3xl shadow-inner bg-black/30">
-            🧭
+          
+          <!-- Detailed Brass Compass Rose Seal Stamp -->
+          <div class="relative mb-3 flex items-center justify-center">
+            <!-- Outer Dashed Navigation Ring -->
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-dashed border-scrap-gold/80 flex items-center justify-center p-1 bg-black/35 shadow-inner">
+              <!-- Inner Brass Compass Medallion -->
+              <svg class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-md" viewBox="0 0 100 100" fill="none">
+                <!-- Compass dial ring -->
+                <circle cx="50" cy="50" r="46" stroke="#EDA531" stroke-width="1.8" stroke-dasharray="2 3"/>
+                <circle cx="50" cy="50" r="38" stroke="#EDA531" stroke-width="1" opacity="0.6"/>
+                <!-- Cardinal degree indicators -->
+                <line x1="50" y1="6" x2="50" y2="12" stroke="#EDA531" stroke-width="2"/>
+                <line x1="50" y1="88" x2="50" y2="94" stroke="#EDA531" stroke-width="2"/>
+                <line x1="6" y1="50" x2="12" y2="50" stroke="#EDA531" stroke-width="2"/>
+                <line x1="88" y1="50" x2="94" y2="50" stroke="#EDA531" stroke-width="2"/>
+                <!-- North / South Star Needle -->
+                <polygon points="50,16 56,47 50,50 44,47" fill="#A44200"/>
+                <polygon points="50,84 56,53 50,50 44,53" fill="#EDA531"/>
+                <polygon points="16,50 47,44 50,50 47,56" fill="#D39226"/>
+                <polygon points="84,50 53,44 50,50 53,56" fill="#D39226"/>
+                <!-- Central brass rivet -->
+                <circle cx="50" cy="50" r="3.5" fill="#FFF3D4" stroke="#8C4E0E" stroke-width="1.5"/>
+              </svg>
+            </div>
           </div>
 
+          <!-- Volume Tag: VOL. 2026-2027 -->
+          <span class="inline-block px-4 py-1 rounded-full bg-black/40 border border-scrap-gold/50 text-[11px] sm:text-xs font-mono uppercase tracking-[0.25em] text-scrap-gold font-bold mb-3 shadow-sm">
+            ✦ VOL. 2026–2027 ✦
+          </span>
+
           <!-- Embossed Foil Society Title -->
-          <h2 class="font-display font-bold text-3xl sm:text-5xl md:text-6xl tracking-tight text-white leading-tight drop-shadow-md">
+          <h2 class="font-display font-bold text-3xl sm:text-5xl md:text-6xl tracking-tight text-white leading-tight drop-shadow-lg">
             IBA ADVENTURE CLUB
           </h2>
-          <p class="font-hand text-2xl sm:text-4xl text-scrap-gold mt-1.5 font-bold drop-shadow">
+          <p class="font-hand text-2xl sm:text-4xl text-scrap-gold mt-1 font-bold drop-shadow">
             Expedition Memories & Field Notes ♡
           </p>
 
           <!-- Cute Minimal Wax-Seal Centered Prompt Button -->
-          <div class="mt-8">
-            <span class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-scrap-gold/90 hover:bg-scrap-gold text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider shadow-lg transition transform hover:scale-105">
+          <div class="mt-7">
+            <span class="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-scrap-gold hover:bg-scrap-gold/90 text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider shadow-lg transition transform hover:scale-105 border border-amber-300">
               <span>Tap to open journal</span>
               <span class="text-sm">📖</span>
             </span>
@@ -989,8 +1056,8 @@
     </div>
   </main>
 
-  <!-- FULL-SCREEN 2-PAGE SCRAPBOOK VIEWER (Deep Dark Black/95 Backdrop + 3D Realistic Hand Flip) -->
-  <div id="journalModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex-col items-center justify-center p-3 sm:p-6 overflow-y-auto" onclick="handleBackdropClick(event)">
+  <!-- FULL-SCREEN 2-PAGE SCRAPBOOK VIEWER (Deep Dark Black/96 Backdrop + Cinematic 3D Opening) -->
+  <div id="journalModal" class="fixed inset-0 z-50 bg-black/96 backdrop-blur-md hidden flex-col items-center justify-center p-3 sm:p-6 overflow-y-auto" onclick="handleBackdropClick(event)">
     
     <!-- Modal Header Controls -->
     <div class="w-full max-w-5xl flex justify-between items-center text-white mb-2 sm:mb-3 px-2">
@@ -1007,7 +1074,7 @@
     <!-- 3D Book Stage with Hinging Leaves -->
     <div class="w-full max-w-5xl book-3d-stage">
       
-      <!-- Hinging Leather Front Cover (Flips open to reveal page 1 & 2) -->
+      <!-- Hinging Leather Front Cover (Flips open in 3D perspective to reveal page 1 & 2) -->
       <div id="coverHingeLeaf"></div>
 
       <!-- 3D Turning Inner Page Leaf (Reveals page behind as it turns) -->
@@ -1062,7 +1129,7 @@
       </div>
     </div>
 
-    <!-- Bottom Flipping Controls & Progress Indicator (Legible High Contrast on Black) -->
+    <!-- Bottom Flipping Controls & Progress Indicator (Crystal-Clear Contrast on Black) -->
     <div class="flex items-center gap-3 sm:gap-6 mt-4 text-white text-xs">
       <button onclick="prevSpread()" id="btnPrevModal" class="px-5 sm:px-6 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-bold uppercase tracking-wider transition disabled:opacity-20 shadow">
         ← Previous Page
@@ -1075,7 +1142,7 @@
       </button>
     </div>
 
-    <!-- Distinct, High-Visibility Interaction Tip -->
+    <!-- Clear Interaction Guidance -->
     <p class="text-xs sm:text-sm font-hand text-white/90 mt-2.5 text-center drop-shadow">
       Click either page to turn • Swipe left or right on touchscreens • Use keyboard arrows ← → ♡
     </p>
@@ -1203,9 +1270,10 @@
     let currentSpreadIdx = 0;
     let isFlipping = false;
 
-    /* Modal open logic with realistic 3D front cover swing */
+    /* Cinematic 4-Stage Opening Sequence */
     function openMasterBookModal() {
       const modal = document.getElementById('journalModal');
+      const spreadArea = document.getElementById('bookSpreadTouchArea');
       const coverLeaf = document.getElementById('coverHingeLeaf');
       
       modal.classList.remove('hidden');
@@ -1215,11 +1283,16 @@
       currentSpreadIdx = 0;
       renderCurrentSpread();
 
-      // Trigger slow, realistic cover opening swing
+      // Trigger tabletop slide-right and zoom orchestration
+      spreadArea.classList.remove('anim-tabletop-cinematic');
+      void spreadArea.offsetWidth; // force reflow
+      spreadArea.classList.add('anim-tabletop-cinematic');
+
+      // Trigger 3D front cover swing
       coverLeaf.className = 'anim-cover-opening';
       setTimeout(() => {
         coverLeaf.className = '';
-      }, 1100);
+      }, 1250);
     }
 
     function closeMasterBookModal() {
@@ -1268,13 +1341,13 @@
       const leaf = document.getElementById('turningPageLeaf');
       leaf.className = 'turn-page-slow-forward';
 
-      // Halfway through the 3D rotation, switch the underlying page so it is revealed naturally
+      // Halfway through rotation (420ms), flip underlying content so it is revealed as leaf crosses
       setTimeout(() => {
         currentSpreadIdx++;
         renderCurrentSpread();
       }, 420);
 
-      // Complete full turn
+      // Finish full turn animation
       setTimeout(() => {
         leaf.className = '';
         isFlipping = false;
@@ -1288,7 +1361,7 @@
       const leaf = document.getElementById('turningPageLeaf');
       leaf.className = 'turn-page-slow-backward';
 
-      // Halfway through the turn, reveal previous page
+      // Halfway through rotation (420ms), reveal previous page
       setTimeout(() => {
         currentSpreadIdx--;
         renderCurrentSpread();
