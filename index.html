@@ -190,7 +190,6 @@
         0 38px 80px rgba(53,54,48,0.32);
     }
 
-    /* Brass corner bracket accents */
     .brass-corner {
       position: absolute;
       width: 32px;
@@ -201,9 +200,9 @@
     .brass-corner-tr { top: 10px; right: 10px; border-left: none; border-bottom: none; border-radius: 0 10px 0 0; }
     .brass-corner-br { bottom: 10px; right: 10px; border-left: none; border-top: none; border-radius: 0 0 10px 0; }
 
-    /* 8. 3D Cinematic Tabletop Opening & Camera Move */
+    /* 8. 3D Cinematic Opening & Page Turning Engine */
     .book-3d-stage {
-      perspective: 2800px;
+      perspective: 3000px;
       perspective-origin: 50% 50%;
       transform-style: preserve-3d;
       position: relative;
@@ -212,7 +211,7 @@
     .open-book-spread {
       background-color: #FAF4E5;
       box-shadow: 
-        0 35px 85px rgba(0,0,0,0.85),
+        0 35px 95px rgba(0,0,0,0.85),
         inset 0 0 70px rgba(180, 145, 90, 0.25);
       border: 2px solid #DFCEAA;
       transform-style: preserve-3d;
@@ -231,31 +230,29 @@
       z-index: 30;
     }
 
-    /* Cinematic 4-Stage Opening Sequence (Slide right -> Zoom out -> Flip open on table -> Zoom into dark room) */
+    /* Cinematic Opening Orchestration: Starts on table, slides right, zoom-out, flips open, zooms in as room dims */
     .anim-tabletop-cinematic {
-      animation: tabletopOpening 1.35s cubic-bezier(0.2, 0.85, 0.25, 1) forwards;
+      animation: tabletopFlow 1.45s cubic-bezier(0.2, 0.85, 0.25, 1) forwards;
       transform-origin: center center;
     }
-    @keyframes tabletopOpening {
+    @keyframes tabletopFlow {
       0% {
-        opacity: 0.6;
-        transform: translateX(-40px) scale(0.92) rotateX(16deg);
+        opacity: 0.7;
+        transform: translateX(-50px) scale(0.90) rotateX(16deg);
       }
-      28% {
-        opacity: 0.95;
-        transform: translateX(25px) scale(0.90) rotateX(10deg);
+      30% {
+        opacity: 1;
+        transform: translateX(30px) scale(0.88) rotateX(10deg);
       }
       65% {
-        opacity: 1;
-        transform: translateX(0px) scale(0.95) rotateX(4deg);
+        transform: translateX(0px) scale(0.96) rotateX(4deg);
       }
       100% {
-        opacity: 1;
-        transform: translateX(0px) scale(1) rotateX(0deg);
+        transform: translateX(0px) scale(1.02) rotateX(0deg);
       }
     }
 
-    /* 3D Moving Leather Cover that lifts & flips open */
+    /* 3D Physical Leather Cover Flip */
     #coverHingeLeaf {
       position: absolute;
       top: 0;
@@ -275,7 +272,7 @@
     }
     .anim-cover-opening {
       display: block !important;
-      animation: coverPhysicalFlip 1.25s cubic-bezier(0.22, 0.85, 0.3, 1) forwards;
+      animation: coverPhysicalFlip 1.35s cubic-bezier(0.22, 0.85, 0.3, 1) forwards;
     }
     @keyframes coverPhysicalFlip {
       0% {
@@ -283,7 +280,7 @@
         box-shadow: -10px 0 35px rgba(0,0,0,0.65);
       }
       45% {
-        transform: rotateY(-85deg);
+        transform: rotateY(-90deg);
         box-shadow: -45px 20px 60px rgba(0,0,0,0.45);
         background: #3B2212;
       }
@@ -294,7 +291,7 @@
       }
     }
 
-    /* 3D Page Turn Leaf Layer */
+    /* 3D Page Turn Leaf Layer (Slow 0.9s with background reveal) */
     #turningPageLeaf {
       position: absolute;
       top: 0;
@@ -310,12 +307,11 @@
       overflow: hidden;
     }
 
-    /* Slow & smooth forward turn (Right to Left) */
     .turn-page-slow-forward {
       display: block !important;
       right: 0;
       transform-origin: left center;
-      animation: turnForward3D 0.85s cubic-bezier(0.22, 0.85, 0.3, 1) forwards;
+      animation: turnForward3D 0.9s cubic-bezier(0.22, 0.85, 0.3, 1) forwards;
     }
     @keyframes turnForward3D {
       0% {
@@ -334,12 +330,11 @@
       }
     }
 
-    /* Slow & smooth backward turn (Left to Right) */
     .turn-page-slow-backward {
       display: block !important;
       left: 0;
       transform-origin: right center;
-      animation: turnBackward3D 0.85s cubic-bezier(0.22, 0.85, 0.3, 1) forwards;
+      animation: turnBackward3D 0.9s cubic-bezier(0.22, 0.85, 0.3, 1) forwards;
     }
     @keyframes turnBackward3D {
       0% {
@@ -639,7 +634,7 @@
                     <div class="min-w-0">
                       <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
                       <span class="text-xs font-bold text-[#7ba632] uppercase tracking-wider block">Executive Council</span>
-                      <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-[#7ba632] truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
+                      <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
                     </div>
                   </div>
 
@@ -859,7 +854,6 @@
               <span class="font-bold text-scrap-charcoal">Charna Island & Mubarak Village</span>
             </li>
             <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
-              <span class="text-scrap-ink/60 font-semibold">Subsidized Fee:</span>
               <span class="font-bold text-scrap-rust bg-scrap-rust/10 px-2 py-0.5 rounded text-xs border border-scrap-rust/20">PKR 8,500 (All Incl.)</span>
             </li>
             <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
@@ -1006,24 +1000,18 @@
           
           <!-- Detailed Brass Compass Rose Seal Stamp -->
           <div class="relative mb-3 flex items-center justify-center">
-            <!-- Outer Dashed Navigation Ring -->
             <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-dashed border-scrap-gold/80 flex items-center justify-center p-1 bg-black/35 shadow-inner">
-              <!-- Inner Brass Compass Medallion -->
               <svg class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-md" viewBox="0 0 100 100" fill="none">
-                <!-- Compass dial ring -->
                 <circle cx="50" cy="50" r="46" stroke="#EDA531" stroke-width="1.8" stroke-dasharray="2 3"/>
                 <circle cx="50" cy="50" r="38" stroke="#EDA531" stroke-width="1" opacity="0.6"/>
-                <!-- Cardinal degree indicators -->
                 <line x1="50" y1="6" x2="50" y2="12" stroke="#EDA531" stroke-width="2"/>
                 <line x1="50" y1="88" x2="50" y2="94" stroke="#EDA531" stroke-width="2"/>
                 <line x1="6" y1="50" x2="12" y2="50" stroke="#EDA531" stroke-width="2"/>
                 <line x1="88" y1="50" x2="94" y2="50" stroke="#EDA531" stroke-width="2"/>
-                <!-- North / South Star Needle -->
                 <polygon points="50,16 56,47 50,50 44,47" fill="#A44200"/>
                 <polygon points="50,84 56,53 50,50 44,53" fill="#EDA531"/>
                 <polygon points="16,50 47,44 50,50 47,56" fill="#D39226"/>
                 <polygon points="84,50 53,44 50,50 53,56" fill="#D39226"/>
-                <!-- Central brass rivet -->
                 <circle cx="50" cy="50" r="3.5" fill="#FFF3D4" stroke="#8C4E0E" stroke-width="1.5"/>
               </svg>
             </div>
@@ -1270,7 +1258,7 @@
     let currentSpreadIdx = 0;
     let isFlipping = false;
 
-    /* Cinematic 4-Stage Opening Sequence */
+    /* Cinematic Opening Sequence */
     function openMasterBookModal() {
       const modal = document.getElementById('journalModal');
       const spreadArea = document.getElementById('bookSpreadTouchArea');
@@ -1283,7 +1271,7 @@
       currentSpreadIdx = 0;
       renderCurrentSpread();
 
-      // Trigger tabletop slide-right and zoom orchestration
+      // Trigger tabletop slide & zoom orchestration
       spreadArea.classList.remove('anim-tabletop-cinematic');
       void spreadArea.offsetWidth; // force reflow
       spreadArea.classList.add('anim-tabletop-cinematic');
@@ -1292,7 +1280,7 @@
       coverLeaf.className = 'anim-cover-opening';
       setTimeout(() => {
         coverLeaf.className = '';
-      }, 1250);
+      }, 1350);
     }
 
     function closeMasterBookModal() {
@@ -1341,17 +1329,17 @@
       const leaf = document.getElementById('turningPageLeaf');
       leaf.className = 'turn-page-slow-forward';
 
-      // Halfway through rotation (420ms), flip underlying content so it is revealed as leaf crosses
+      // Halfway through rotation (450ms), flip underlying content so it is revealed as leaf crosses
       setTimeout(() => {
         currentSpreadIdx++;
         renderCurrentSpread();
-      }, 420);
+      }, 450);
 
       // Finish full turn animation
       setTimeout(() => {
         leaf.className = '';
         isFlipping = false;
-      }, 860);
+      }, 900);
     }
 
     function prevSpread() {
@@ -1361,16 +1349,16 @@
       const leaf = document.getElementById('turningPageLeaf');
       leaf.className = 'turn-page-slow-backward';
 
-      // Halfway through rotation (420ms), reveal previous page
+      // Halfway through rotation (450ms), reveal previous page
       setTimeout(() => {
         currentSpreadIdx--;
         renderCurrentSpread();
-      }, 420);
+      }, 450);
 
       setTimeout(() => {
         leaf.className = '';
         isFlipping = false;
-      }, 860);
+      }, 900);
     }
 
     /* Touchscreen Sideways Swipe */
@@ -1445,6 +1433,10 @@
       lb.classList.remove('flex');
       document.getElementById('lightboxImg').src = '';
     }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') closeLightbox();
+    });
 
     document.getElementById('lightbox').addEventListener('click', function(event) {
       if (event.target === this) closeLightbox();
