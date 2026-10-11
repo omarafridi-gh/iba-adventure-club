@@ -171,38 +171,41 @@
       user-select: none;
     }
 
-    /* 7. Proportional Unopened Album Preview */
+    /* 7. Beautiful Proportional Leather Journal Cover */
     .master-journal-preview {
       background: #4A2E1B;
       background-image: 
-        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 80%),
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='leatherNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23leatherNoise)' opacity='0.15'/%3E%3C/svg%3E");
+        radial-gradient(circle at 50% 45%, rgba(255,255,255,0.09) 0%, transparent 75%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='leatherNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23leatherNoise)' opacity='0.16'/%3E%3C/svg%3E");
       box-shadow: 
-        0 15px 35px rgba(0,0,0,0.35),
-        0 25px 50px rgba(53,54,48,0.22);
+        0 18px 40px rgba(0,0,0,0.4),
+        0 30px 65px rgba(53,54,48,0.25);
       border: 3px solid #362113;
-      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
     }
     .master-journal-preview:hover {
-      transform: translateY(-6px) scale(1.01);
+      transform: translateY(-7px) scale(1.012);
       box-shadow: 
-        0 20px 45px rgba(0,0,0,0.4),
-        0 30px 60px rgba(53,54,48,0.28);
+        0 24px 50px rgba(0,0,0,0.45),
+        0 35px 75px rgba(53,54,48,0.3);
     }
 
-    /* 8. 3D Book Environment & Flip Animations */
-    .book-3d-scene {
-      perspective: 2400px;
+    /* 8. True 3D Book Environment & Physical Flipping Engine */
+    .book-3d-stage {
+      perspective: 2600px;
+      perspective-origin: 50% 50%;
       transform-style: preserve-3d;
+      position: relative;
     }
 
     .open-book-spread {
       background-color: #FAF4E5;
       box-shadow: 
-        0 30px 70px rgba(0,0,0,0.7),
-        inset 0 0 60px rgba(180, 145, 90, 0.25);
+        0 30px 80px rgba(0,0,0,0.8),
+        inset 0 0 70px rgba(180, 145, 90, 0.25);
       border: 2px solid #DFCEAA;
       transform-style: preserve-3d;
+      position: relative;
     }
 
     .book-spine-crease {
@@ -212,81 +215,109 @@
       left: 50%;
       transform: translateX(-50%);
       width: 44px;
-      background: linear-gradient(to right, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.24) 50%, rgba(0,0,0,0.05) 100%);
+      background: linear-gradient(to right, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.28) 50%, rgba(0,0,0,0.06) 100%);
       pointer-events: none;
-      z-index: 25;
+      z-index: 30;
     }
 
-    /* Dynamic 3D Page Flip Leaf Layer */
-    #flippingLeaf {
+    /* 3D Moving Leather Cover that lifts off slowly */
+    #coverHingeLeaf {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      background: #4A2E1B;
+      background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 80%);
+      border: 3px solid #362113;
+      border-radius: 0 16px 16px 0;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      transform-origin: left center;
+      transform-style: preserve-3d;
+      z-index: 50;
+      display: none;
+      pointer-events: none;
+    }
+    .anim-cover-opening {
+      display: block !important;
+      animation: coverHingeSwing 1.05s cubic-bezier(0.25, 0.9, 0.3, 1) forwards;
+    }
+    @keyframes coverHingeSwing {
+      0% {
+        transform: rotateY(0deg);
+        box-shadow: -8px 0 30px rgba(0,0,0,0.6);
+      }
+      45% {
+        box-shadow: -35px 15px 50px rgba(0,0,0,0.4);
+      }
+      100% {
+        transform: rotateY(-180deg);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+        opacity: 0;
+      }
+    }
+
+    /* 3D Page Leaf that reveals the underlying page slowly */
+    #turningPageLeaf {
       position: absolute;
       top: 0;
       bottom: 0;
       width: 50%;
-      background: #F9F2E0;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      z-index: 40;
-      pointer-events: none;
+      background: #F8F1DD;
+      border: 1px solid #DFCEAA;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      z-index: 45;
       display: none;
-      backface-visibility: hidden;
+      pointer-events: none;
       transform-style: preserve-3d;
+      overflow: hidden;
     }
 
-    /* Initial Book Opening Animation */
-    .anim-book-open {
-      animation: bookHingeOpen 0.75s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
-      transform-origin: left center;
-    }
-    @keyframes bookHingeOpen {
-      0% {
-        opacity: 0;
-        transform: rotateY(-38deg) scale(0.92);
-      }
-      100% {
-        opacity: 1;
-        transform: rotateY(0deg) scale(1);
-      }
-    }
-
-    /* Right-to-Left Forward Page Turn */
-    .flip-forward {
+    /* Slow & smooth forward turn (Right to Left) */
+    .turn-page-slow-forward {
       display: block !important;
       right: 0;
       transform-origin: left center;
-      animation: flipTurnForward 0.52s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+      animation: turnForward3D 0.85s cubic-bezier(0.22, 0.85, 0.3, 1) forwards;
     }
-    @keyframes flipTurnForward {
+    @keyframes turnForward3D {
       0% {
         transform: rotateY(0deg);
-        box-shadow: -5px 0 25px rgba(0,0,0,0.3);
+        box-shadow: -8px 0 28px rgba(0,0,0,0.35);
+        filter: brightness(1);
       }
-      50% {
-        background: #ECE1C7;
+      48% {
+        filter: brightness(0.9);
+        box-shadow: -30px 10px 45px rgba(0,0,0,0.25);
       }
       100% {
         transform: rotateY(-180deg);
-        box-shadow: 15px 0 35px rgba(0,0,0,0.0);
+        box-shadow: 10px 0 25px rgba(0,0,0,0.1);
+        filter: brightness(1);
       }
     }
 
-    /* Left-to-Right Backward Page Turn */
-    .flip-backward {
+    /* Slow & smooth backward turn (Left to Right) */
+    .turn-page-slow-backward {
       display: block !important;
       left: 0;
       transform-origin: right center;
-      animation: flipTurnBackward 0.52s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+      animation: turnBackward3D 0.85s cubic-bezier(0.22, 0.85, 0.3, 1) forwards;
     }
-    @keyframes flipTurnBackward {
+    @keyframes turnBackward3D {
       0% {
         transform: rotateY(0deg);
-        box-shadow: 5px 0 25px rgba(0,0,0,0.3);
+        box-shadow: 8px 0 28px rgba(0,0,0,0.35);
+        filter: brightness(1);
       }
-      50% {
-        background: #ECE1C7;
+      48% {
+        filter: brightness(0.9);
+        box-shadow: 30px 10px 45px rgba(0,0,0,0.25);
       }
       100% {
         transform: rotateY(180deg);
-        box-shadow: -15px 0 35px rgba(0,0,0,0.0);
+        box-shadow: -10px 0 25px rgba(0,0,0,0.1);
+        filter: brightness(1);
       }
     }
   </style>
@@ -478,10 +509,9 @@
           </svg>
         </div>
 
-        <!-- HIERARCHY LEVEL 2: EXECUTIVE COUNCIL & ADVISOR WITH REEL PIN -->
+        <!-- HIERARCHY LEVEL 2: EXECUTIVE COUNCIL & DIRECTORS -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
           
-          <!-- LEFT BRANCH: EXECUTIVE COUNCIL & DIRECTORS -->
           <div class="lg:col-span-8 space-y-6">
             <div class="flex flex-col items-center mb-6">
               <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow">
@@ -770,7 +800,7 @@
       <p class="mt-3 text-base text-scrap-ink/75 font-medium">The faces rotate, the routes evolve, but the deep dive never stops. Come find your depth off the coast of Mubarak Village.</p>
     </div>
 
-    <!-- Booking & Checklist Columns Directly Following Header -->
+    <!-- Booking & Checklist Columns -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
       <!-- Logistics & Checklist -->
@@ -903,7 +933,7 @@
     </div>
   </main>
 
-  <!-- PAGE 3: FIELD JOURNAL (MEMORIES SCRAPBOOK) -->
+  <!-- PAGE 3: FIELD JOURNAL (CLEAN, BEAUTIFUL CENTERED MEMORIES NOTEBOOK) -->
   <main id="page-journal" class="page-view hidden flex-grow px-4 sm:px-6 py-12 max-w-6xl mx-auto w-full">
     <!-- Header -->
     <div class="text-center max-w-2xl mx-auto mb-10">
@@ -914,46 +944,52 @@
       </p>
     </div>
 
-    <!-- The Scrapbook Table Top Showcase (Proportional 16:10 Preview) -->
+    <!-- The Centered Tabletop Showcase (Cleaned Cover, No Clutter, Elegant Centerpiece) -->
     <div class="max-w-4xl mx-auto relative flex flex-col items-center">
       
-      <!-- Proportional Album Preview (16:10 Aspect Ratio, Verified Expeditions badge removed) -->
-      <div id="closedBookCover" class="master-journal-preview w-full aspect-[16/10] max-w-4xl rounded-2xl p-6 sm:p-12 text-white relative cursor-pointer flex flex-col justify-between" onclick="openMasterBookModal()">
+      <!-- Proportional Album Preview (16:10 Aspect Ratio, Centered Title & Minimal Button) -->
+      <div id="closedBookCover" class="master-journal-preview w-full aspect-[16/10] max-w-4xl rounded-2xl p-8 sm:p-14 text-white relative cursor-pointer flex flex-col justify-center items-center text-center select-none" onclick="openMasterBookModal()">
         
-        <!-- Binding Spine & Stitching -->
-        <div class="absolute left-0 top-0 bottom-0 w-8 sm:w-12 bg-black/35 border-r-2 border-dashed border-white/20 rounded-l-2xl"></div>
-        <div class="absolute right-8 top-0 bottom-0 w-3 bg-[#2A180E] shadow-md border-x border-black/40 hidden sm:block"></div>
-
-        <div class="pl-6 sm:pl-12 flex justify-between items-start">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20">
-            <span class="text-xs">📖</span>
-            <span class="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-scrap-gold font-bold">Official Society Chronicles • Vol. 2025–2027</span>
-          </div>
-          <span class="font-mono text-xs text-white/60 hidden sm:inline">IBA Karachi</span>
+        <!-- Binding Spine & Realistic Brass Rivets -->
+        <div class="absolute left-0 top-0 bottom-0 w-8 sm:w-12 bg-black/40 border-r-2 border-dashed border-white/20 rounded-l-2xl flex flex-col justify-around items-center py-4">
+          <span class="w-2.5 h-2.5 rounded-full bg-scrap-gold/60 border border-black/40 shadow-sm"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-scrap-gold/60 border border-black/40 shadow-sm"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-scrap-gold/60 border border-black/40 shadow-sm"></span>
         </div>
+        
+        <!-- Elastic Ribbon Bookmark on Right -->
+        <div class="absolute right-10 top-0 bottom-0 w-3 bg-[#24130A] shadow-md border-x border-black/50 hidden sm:block"></div>
 
-        <div class="pl-6 sm:pl-12 text-center my-auto">
-          <div class="w-16 h-16 rounded-full border-2 border-dashed border-scrap-gold flex items-center justify-center mx-auto mb-3 text-2xl shadow-inner bg-black/20">
+        <!-- Elegant Center Layout -->
+        <div class="pl-4 sm:pl-8 flex flex-col items-center my-auto">
+          <!-- Brass Compass Medallion -->
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-dashed border-scrap-gold/80 flex items-center justify-center mb-4 text-3xl shadow-inner bg-black/30">
             🧭
           </div>
-          <h2 class="font-display font-bold text-2xl sm:text-4xl md:text-5xl tracking-tight text-white leading-tight">
+
+          <!-- Embossed Foil Society Title -->
+          <h2 class="font-display font-bold text-3xl sm:text-5xl md:text-6xl tracking-tight text-white leading-tight drop-shadow-md">
             IBA ADVENTURE CLUB
           </h2>
-          <p class="font-hand text-xl sm:text-3xl text-scrap-gold mt-1 font-bold">Expedition Memories & Field Notes ♡</p>
+          <p class="font-hand text-2xl sm:text-4xl text-scrap-gold mt-1.5 font-bold drop-shadow">
+            Expedition Memories & Field Notes ♡
+          </p>
+
+          <!-- Cute Minimal Wax-Seal Centered Prompt Button -->
+          <div class="mt-8">
+            <span class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-scrap-gold/90 hover:bg-scrap-gold text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider shadow-lg transition transform hover:scale-105">
+              <span>Tap to open journal</span>
+              <span class="text-sm">📖</span>
+            </span>
+          </div>
         </div>
 
-        <div class="pl-6 sm:pl-12 pt-4 border-t border-white/20 flex items-center justify-between text-xs text-white/80">
-          <span class="font-mono text-xs">Curated by the Council • Tap to Read</span>
-          <span class="px-5 py-2 rounded-xl bg-scrap-gold hover:bg-scrap-gold/90 text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider shadow">
-            Open Memories Journal ↗
-          </span>
-        </div>
       </div>
 
     </div>
   </main>
 
-  <!-- FULL-SCREEN 2-PAGE SCRAPBOOK VIEWER MODAL (Deep Dark Background + 3D Realistic Hand Flip) -->
+  <!-- FULL-SCREEN 2-PAGE SCRAPBOOK VIEWER (Deep Dark Black/95 Backdrop + 3D Realistic Hand Flip) -->
   <div id="journalModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex-col items-center justify-center p-3 sm:p-6 overflow-y-auto" onclick="handleBackdropClick(event)">
     
     <!-- Modal Header Controls -->
@@ -962,19 +998,30 @@
         <span class="font-mono text-[11px] font-bold text-scrap-gold uppercase tracking-widest" id="modalCategory">Expedition 01 • Marine Recon</span>
         <h3 class="font-display font-bold text-base sm:text-xl text-white leading-tight" id="modalTitle">Chasing Blue: Charna Island & Mubarak</h3>
       </div>
-      <button onclick="closeMasterBookModal()" class="px-4 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-xs font-bold uppercase tracking-wider text-white transition flex items-center gap-1.5 shadow">
+      <button onclick="closeMasterBookModal()" class="px-4 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-xs font-bold uppercase tracking-wider text-white transition flex items-center gap-1.5 shadow">
         <span>✕</span>
         <span>Close Journal</span>
       </button>
     </div>
 
-    <!-- 3D Book Environment -->
-    <div class="w-full max-w-5xl book-3d-scene">
-      <div id="bookSpreadTouchArea" class="w-full aspect-[16/10] min-h-[460px] sm:min-h-[520px] rounded-2xl open-book-spread relative overflow-hidden flex flex-col md:flex-row shadow-2xl select-none anim-book-open">
-        <div class="book-spine-crease hidden md:block"></div>
+    <!-- 3D Book Stage with Hinging Leaves -->
+    <div class="w-full max-w-5xl book-3d-stage">
+      
+      <!-- Hinging Leather Front Cover (Flips open to reveal page 1 & 2) -->
+      <div id="coverHingeLeaf"></div>
 
-        <!-- 3D Turning Leaf Layer -->
-        <div id="flippingLeaf"></div>
+      <!-- 3D Turning Inner Page Leaf (Reveals page behind as it turns) -->
+      <div id="turningPageLeaf">
+        <div class="w-full h-full p-6 flex flex-col justify-between opacity-80">
+          <div class="aspect-[4/3] w-full bg-[#E5D7B7] rounded-xl border border-[#DFCEAA]"></div>
+          <div class="h-4 bg-[#DFCEAA]/50 rounded w-3/4 mt-4"></div>
+          <div class="h-3 bg-[#DFCEAA]/40 rounded w-1/2 mt-2"></div>
+        </div>
+      </div>
+
+      <!-- Main Open 2-Page Spread Frame -->
+      <div id="bookSpreadTouchArea" class="w-full aspect-[16/10] min-h-[460px] sm:min-h-[520px] rounded-2xl open-book-spread relative overflow-hidden flex flex-col md:flex-row shadow-2xl select-none">
+        <div class="book-spine-crease hidden md:block"></div>
 
         <!-- LEFT PAGE (Click to Turn Left / Back) -->
         <div onclick="prevSpread()" class="w-full md:w-1/2 p-5 sm:p-8 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#DFCFAA] relative cursor-pointer hover:bg-black/[0.015] transition" title="Click left page or swipe right to turn back">
@@ -1015,21 +1062,22 @@
       </div>
     </div>
 
-    <!-- Bottom Flipping Controls & Progress Indicator (Crystal-Clear Contrast on Black) -->
+    <!-- Bottom Flipping Controls & Progress Indicator (Legible High Contrast on Black) -->
     <div class="flex items-center gap-3 sm:gap-6 mt-4 text-white text-xs">
-      <button onclick="prevSpread()" id="btnPrevModal" class="px-5 sm:px-6 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-bold uppercase tracking-wider transition disabled:opacity-25 shadow">
+      <button onclick="prevSpread()" id="btnPrevModal" class="px-5 sm:px-6 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-bold uppercase tracking-wider transition disabled:opacity-20 shadow">
         ← Previous Page
       </button>
       
       <span id="modalSpreadTracker" class="font-mono font-bold text-scrap-gold text-xs sm:text-sm">Spread 1 of 4</span>
 
-      <button onclick="nextSpread()" id="btnNextModal" class="px-5 sm:px-6 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-bold uppercase tracking-wider transition disabled:opacity-25 shadow">
+      <button onclick="nextSpread()" id="btnNextModal" class="px-5 sm:px-6 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-bold uppercase tracking-wider transition disabled:opacity-20 shadow">
         Next Page →
       </button>
     </div>
 
-    <p class="text-xs sm:text-sm font-hand text-white/80 mt-2 text-center drop-shadow">
-      Click either page to turn • Use keyboard arrows ← → • Swipe on touchscreens ♡
+    <!-- Distinct, High-Visibility Interaction Tip -->
+    <p class="text-xs sm:text-sm font-hand text-white/90 mt-2.5 text-center drop-shadow">
+      Click either page to turn • Swipe left or right on touchscreens • Use keyboard arrows ← → ♡
     </p>
   </div>
 
@@ -1079,7 +1127,7 @@
     }
 
     /* ==========================================================================
-       THE OFFICIAL FIELD SCRAPBOOK SPREADS (Easy for panel to update)
+       THE OFFICIAL FIELD SCRAPBOOK SPREADS
        ========================================================================== */
     const masterJournalSpreads = [
       // SPREAD 1: CHARNA SCUBA & REEF EXPEDITION
@@ -1155,21 +1203,23 @@
     let currentSpreadIdx = 0;
     let isFlipping = false;
 
-    /* Modal open/close logic with 3D Hand Lift Animation */
+    /* Modal open logic with realistic 3D front cover swing */
     function openMasterBookModal() {
       const modal = document.getElementById('journalModal');
-      const spreadArea = document.getElementById('bookSpreadTouchArea');
+      const coverLeaf = document.getElementById('coverHingeLeaf');
       
       modal.classList.remove('hidden');
       modal.classList.add('flex');
-      
-      spreadArea.classList.remove('anim-book-open');
-      void spreadArea.offsetWidth; // force reflow
-      spreadArea.classList.add('anim-book-open');
+      document.body.style.overflow = 'hidden';
 
       currentSpreadIdx = 0;
       renderCurrentSpread();
-      document.body.style.overflow = 'hidden';
+
+      // Trigger slow, realistic cover opening swing
+      coverLeaf.className = 'anim-cover-opening';
+      setTimeout(() => {
+        coverLeaf.className = '';
+      }, 1100);
     }
 
     function closeMasterBookModal() {
@@ -1185,7 +1235,7 @@
       }
     }
 
-    /* Render spread content */
+    /* Render current spread text and polaroids */
     function renderCurrentSpread() {
       const sp = masterJournalSpreads[currentSpreadIdx];
       document.getElementById('modalCategory').innerText = sp.category;
@@ -1210,44 +1260,47 @@
       document.getElementById('btnNextModal').disabled = (currentSpreadIdx >= masterJournalSpreads.length - 1);
     }
 
-    /* 3D Realistic Page Flip Transitions */
+    /* Slow, Realistic 3D Page Turn with Background Reveal */
     function nextSpread() {
       if (isFlipping || currentSpreadIdx >= masterJournalSpreads.length - 1) return;
       isFlipping = true;
 
-      const leaf = document.getElementById('flippingLeaf');
-      leaf.className = 'flip-forward';
+      const leaf = document.getElementById('turningPageLeaf');
+      leaf.className = 'turn-page-slow-forward';
 
+      // Halfway through the 3D rotation, switch the underlying page so it is revealed naturally
       setTimeout(() => {
         currentSpreadIdx++;
         renderCurrentSpread();
-      }, 260);
+      }, 420);
 
+      // Complete full turn
       setTimeout(() => {
         leaf.className = '';
         isFlipping = false;
-      }, 520);
+      }, 860);
     }
 
     function prevSpread() {
       if (isFlipping || currentSpreadIdx <= 0) return;
       isFlipping = true;
 
-      const leaf = document.getElementById('flippingLeaf');
-      leaf.className = 'flip-backward';
+      const leaf = document.getElementById('turningPageLeaf');
+      leaf.className = 'turn-page-slow-backward';
 
+      // Halfway through the turn, reveal previous page
       setTimeout(() => {
         currentSpreadIdx--;
         renderCurrentSpread();
-      }, 260);
+      }, 420);
 
       setTimeout(() => {
         leaf.className = '';
         isFlipping = false;
-      }, 520);
+      }, 860);
     }
 
-    /* Touch Swiping & Gesture Navigation */
+    /* Touchscreen Sideways Swipe */
     let touchStartX = 0;
     let touchEndX = 0;
     const touchArea = document.getElementById('bookSpreadTouchArea');
@@ -1262,12 +1315,10 @@
     }, { passive: true });
 
     function handleSwipe() {
-      const threshold = 40; // minimum swipe distance in px
+      const threshold = 45;
       if (touchEndX < touchStartX - threshold) {
-        // Swiped Left -> Flip Forward
         nextSpread();
       } else if (touchEndX > touchStartX + threshold) {
-        // Swiped Right -> Flip Backward
         prevSpread();
       }
     }
