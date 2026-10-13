@@ -23,7 +23,30 @@ window.JOURNAL_PAGE_TEMPLATE = `
     <div class="ambient-sunbeam absolute inset-0"></div>
   </div>
 
-  <!-- 2. HIGH-CONTRAST GLOWING TEXT INDICATOR & NATURAL CLICK HOTSPOT -->
+  <!-- 2. AMBIENT LO-FI AUDIO ELEMENT -->
+  <audio id="journalAudio" loop preload="auto">
+    <source src="lofi.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- 3. COZY LO-FI MUSIC TOGGLE (TOP-RIGHT ROOM CORNER) -->
+  <div class="absolute top-5 right-5 z-30">
+    <button 
+      onclick="toggleJournalMusic()" 
+      id="journalMusicBtn"
+      class="px-3.5 py-1.5 rounded-full bg-black/60 hover:bg-black/80 backdrop-blur-md border border-white/20 text-[#FAF6EE] shadow-lg flex items-center gap-2 transition transform hover:scale-105 active:scale-95"
+      title="Toggle Lo-fi Room Beats"
+    >
+      <span id="musicDiscIcon" class="text-sm">📻</span>
+      <span id="musicStatusText" class="font-hand font-bold text-sm tracking-wide text-scrap-gold">
+        Play Lo-fi Beats ♪
+      </span>
+      <span id="musicWaves" class="hidden font-mono text-xs text-white/70 animate-pulse">
+        ılıılı
+      </span>
+    </button>
+  </div>
+
+  <!-- 4. HIGH-CONTRAST GLOWING TEXT INDICATOR & NATURAL CLICK HOTSPOT -->
   <div 
     class="absolute bottom-[2%] sm:bottom-[3%] left-[48%] -translate-x-1/2 w-[34%] sm:w-[24%] max-w-[300px] z-20 flex flex-col items-center cursor-pointer group pointer-events-auto"
     onclick="openMasterBookModal()" 
