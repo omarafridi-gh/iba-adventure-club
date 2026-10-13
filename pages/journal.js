@@ -1,5 +1,6 @@
-<!-- PAGE 3: FIELD JOURNAL (SEAMLESS MP4 LOOP WITH VISIBLE GLOWING INDICATOR) -->
-<main id="page-journal" class="page-view w-full h-[calc(100vh-130px)] min-h-[500px] relative overflow-hidden flex flex-col justify-between select-none">
+// pages/journal.js
+window.JOURNAL_PAGE_TEMPLATE = `
+<main id="page-journal" class="page-view w-full h-[calc(100vh-130px)] min-h-[520px] relative overflow-hidden flex flex-col justify-between select-none">
   
   <!-- 1. FULL-BLEED SEAMLESS MP4 LOOP BACKGROUND -->
   <div class="absolute inset-0 z-0 bg-[#2B160B]">
@@ -13,25 +14,27 @@
       class="w-full h-full object-cover object-center pointer-events-none"
     >
       <source src="Journal_Page1.mp4" type="video/mp4">
+      <source src="Jounral_Page1.mp4" type="video/mp4">
+      <source src="Journal_Page.mp4" type="video/mp4">
+      <source src="packing_room.mp4" type="video/mp4">
     </video>
 
-    <!-- Soft Ambient Light Overlay -->
+    <!-- Ambient Sunbeam Light Overlay -->
     <div class="ambient-sunbeam absolute inset-0 pointer-events-none"></div>
   </div>
 
   <!-- 2. INVISIBLE HOVER HOTSPOT: CORK NOTICE BOARD (LEFT WALL) -->
   <div class="absolute top-[5%] left-[2%] w-[30%] h-[42%] z-10 cursor-default group pointer-events-auto" title="Journal Archive">
-    <!-- Subtle interactive shimmer on board hover -->
     <div class="w-full h-full rounded-2xl transition duration-300 group-hover:bg-amber-400/10 group-hover:ring-2 group-hover:ring-amber-300/40"></div>
   </div>
 
   <!-- 3. GLOWING CLICK INDICATOR & HOTSPOT: LEATHER JOURNAL (ON COFFEE TABLE) -->
   <div class="absolute bottom-[4%] left-1/2 -translate-x-1/2 w-[34%] sm:w-[22%] max-w-[260px] aspect-[16/10] z-20 flex flex-col items-center justify-center cursor-pointer group pointer-events-auto" onclick="openMasterBookModal()" title="Click to open Journal">
     
-    <!-- Gentle Glowing Pulse Outline Around The Book -->
+    <!-- Glowing Outline on Tabletop Journal -->
     <div class="w-full h-full rounded-2xl border-2 border-scrap-gold/90 bg-amber-400/10 shadow-[0_0_25px_rgba(237,165,49,0.55)] transition-all duration-300 group-hover:scale-105 group-hover:bg-amber-400/25 group-hover:shadow-[0_0_40px_rgba(237,165,49,0.85)] flex items-center justify-center relative">
       
-      <!-- Visible Pulsing Indicator Badge -->
+      <!-- Pulsing "Click Me" Badge -->
       <div class="absolute -top-3.5 sm:-top-4 px-3.5 py-1 rounded-full bg-scrap-gold text-scrap-charcoal font-display font-bold text-[10px] sm:text-xs uppercase tracking-wider shadow-lg border border-white flex items-center gap-1.5 animate-bounce">
         <span>📖 Click Me</span>
       </div>
@@ -40,3 +43,4 @@
   </div>
 
 </main>
+`;
