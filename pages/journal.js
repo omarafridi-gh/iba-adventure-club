@@ -2,7 +2,7 @@
 window.JOURNAL_PAGE_TEMPLATE = `
 <main id="page-journal" class="page-view w-full h-[calc(100vh-64px)] relative overflow-hidden select-none bg-[#2B160B]">
   
-  <!-- 1. VIDEO VIEWPORT (Tuned to conceal watermark while keeping 'VOL. 2026-2027' clear) -->
+  <!-- 1. VIDEO VIEWPORT (Shifted up to object-[center_24%] so 2027 is fully visible) -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
     <video 
       id="packingRoomVideo"
@@ -11,7 +11,7 @@ window.JOURNAL_PAGE_TEMPLATE = `
       muted 
       playsinline 
       preload="auto"
-      class="w-full h-[103.5%] object-cover object-[center_28%] origin-top scale-[1.015]"
+      class="w-full h-[104%] object-cover object-[center_24%] origin-top scale-[1.015]"
     >
       <source src="Journal_Page1.mp4" type="video/mp4">
       <source src="Jounral_Page1.mp4" type="video/mp4">
