@@ -1,0 +1,134 @@
+<!-- PAGE 2: CHARNA SCUBA SPOTLIGHT & REGISTRATION -->
+<main id="page-scuba" class="page-view flex-grow px-4 sm:px-6 py-12 max-w-6xl mx-auto w-full">
+  <div class="text-center max-w-3xl mx-auto mb-10">
+    <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-scrap-teal/15 text-scrap-teal border border-scrap-teal/30 font-display text-xs font-bold uppercase tracking-wider mb-3">
+      <span>🌊 Annual Flagship Expedition</span>
+    </div>
+    <h1 class="text-3xl sm:text-5xl font-display font-bold text-scrap-charcoal">Chasing Blue: Charna Scuba '26</h1>
+    <p class="mt-2 text-sm text-scrap-ink/75 font-medium">Find your depth off the coast of Mubarak Village with licensed PADI dive guides.</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <!-- Left Column: Field Notes & Interactive Checklist -->
+    <div class="lg:col-span-5 space-y-6">
+      <div class="crumpled-paper-card p-7 rounded-2xl relative">
+        <div class="washi-tape"></div>
+        <h3 class="font-display font-bold text-xl text-scrap-charcoal border-b border-[#DFCFAA] pb-3">Field Notes & Inclusions</h3>
+        <ul class="space-y-4 text-xs mt-5">
+          <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
+            <span class="text-scrap-ink/60 font-semibold">Date:</span>
+            <span class="font-bold text-scrap-charcoal">Sunday, 25 October 2026</span>
+          </li>
+          <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
+            <span class="text-scrap-ink/60 font-semibold">Reporting:</span>
+            <span class="font-bold text-scrap-charcoal">5:30 AM (Aman CED Gate)</span>
+          </li>
+          <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
+            <span class="text-scrap-ink/60 font-semibold">Location:</span>
+            <span class="font-bold text-scrap-charcoal">Charna Island & Mubarak Village</span>
+          </li>
+          <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
+            <span class="font-bold text-scrap-rust bg-scrap-rust/10 px-2 py-0.5 rounded text-xs border border-scrap-rust/20">PKR 8,500 (All Incl.)</span>
+          </li>
+          <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
+            <span class="text-scrap-ink/60 font-semibold">Slots Remaining:</span>
+            <span class="font-bold text-scrap-teal">14 of 40 Slots</span>
+          </li>
+        </ul>
+
+        <div class="mt-6 pt-4 border-t border-[#DFCFAA]">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-scrap-charcoal">Pack Your Dry Bag:</h4>
+            <span class="text-xs font-mono text-scrap-rust font-bold" id="packProgress">0/5 Ready</span>
+          </div>
+          <div class="space-y-2.5 text-xs text-scrap-ink/80">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="updateChecklist()" class="pack-item accent-scrap-teal rounded">
+              <span>Extra change of clothes & towel</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="updateChecklist()" class="pack-item accent-scrap-teal rounded">
+              <span>Original IBA Student ID Card</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="updateChecklist()" class="pack-item accent-scrap-teal rounded">
+              <span>Reef-safe sunscreen & waterproof bag</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="updateChecklist()" class="pack-item accent-scrap-teal rounded">
+              <span>Motion sickness pills (if prone to waves)</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="updateChecklist()" class="pack-item accent-scrap-teal rounded">
+              <span>Water bottle / electrolyte pouch</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[#FFF9E6] border border-[#E8DCB8] shadow-sm relative transform -rotate-1">
+        <span class="font-hand text-xl text-scrap-rust font-bold block mb-1">Note from Alina (Director Safety):</span>
+        <p class="text-xs text-scrap-ink/80 leading-relaxed font-normal">
+          "You don't need to know how to swim to scuba! Every non-swimmer is geared in certified buoyancy jackets and escorted one-on-one by our licensed dive masters into the reef."
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Column: Registration Form -->
+    <div class="lg:col-span-7 crumpled-paper-card p-7 sm:p-8 rounded-2xl relative">
+      <div class="washi-tape washi-tape-rust"></div>
+      <h3 class="font-display font-bold text-2xl text-scrap-charcoal mb-1">Diver Manifest Form</h3>
+      <p class="text-xs text-scrap-ink/70 mb-6">Enter your student credentials to claim your dive slot. Confirmation will be dispatched to your WhatsApp.</p>
+
+      <form id="scubaForm" onsubmit="handleRegistration(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold text-scrap-charcoal mb-1">Full Name</label>
+          <input type="text" required placeholder="e.g. Omar Afridi" class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-bold text-scrap-charcoal mb-1">IBA ERP ID</label>
+            <input type="text" required pattern="[0-9]{5}" placeholder="e.g. 26220" class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
+          </div>
+          <div>
+            <label class="block font-bold text-scrap-charcoal mb-1">WhatsApp Number</label>
+            <input type="tel" required placeholder="03XXXXXXXXX" class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-bold text-scrap-charcoal mb-1">Swimming Proficiency</label>
+            <select class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-3 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
+              <option>Non-Swimmer (Standard Lifejacket + 1-on-1 Dive Guide)</option>
+              <option>Basic / Recreational Swimmer</option>
+              <option>Advanced Swimmer</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-scrap-charcoal mb-1">Dietary Preference</label>
+            <select class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-3 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
+              <option>Standard (Chicken Biryani / BBQ)</option>
+              <option>Vegetarian</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block font-bold text-scrap-charcoal mb-1">Emergency Contact & Relation</label>
+          <input type="text" required placeholder="Parent/Guardian Name & Number" class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
+        </div>
+        <div class="pt-2">
+          <button type="submit" class="w-full py-4 bg-scrap-teal hover:opacity-90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md border-2 border-scrap-charcoal transition">
+            Confirm Expedition Booking →
+          </button>
+        </div>
+      </form>
+
+      <div id="formSuccess" class="hidden mt-6 p-5 rounded-xl border-2 border-dashed border-scrap-teal bg-[#FAF5EC] text-center">
+        <div class="w-8 h-8 rounded-full bg-scrap-teal text-white font-bold flex items-center justify-center mx-auto mb-2 shadow">✓</div>
+        <h4 class="font-display font-bold text-sm text-scrap-charcoal">Registration Pre-Approved!</h4>
+        <p class="text-xs text-scrap-ink/70 mt-1">Booking ID: <span class="font-mono text-scrap-rust font-bold" id="bookingCode">#IAC-SCUBA-882</span></p>
+        <p class="text-[11px] text-scrap-ink/60 mt-1">Munira's finance desk will verify your payment slip via WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</main>
