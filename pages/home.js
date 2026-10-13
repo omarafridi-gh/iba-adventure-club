@@ -1,4 +1,5 @@
-<!-- PAGE 1: HOME & COUNCIL -->
+// pages/home.js
+window.HOME_PAGE_TEMPLATE = `
 <main id="page-home" class="page-view flex-grow">
   <!-- Hero Section -->
   <section class="relative px-4 sm:px-6 pt-10 pb-14 max-w-6xl mx-auto">
@@ -37,9 +38,6 @@
               <p class="text-xs uppercase font-bold text-scrap-teal tracking-widest mt-0.5">Slots Now Open</p>
             </div>
           </div>
-          <div class="absolute -bottom-4 -left-4 rubber-stamp px-3.5 py-1 text-xs bg-[#FAF5EC] shadow">
-            OFFICIAL IBA EXPEDITION
-          </div>
         </div>
       </div>
     </div>
@@ -70,7 +68,7 @@
             <div class="washi-tape"></div>
             <div class="flex flex-col items-center w-full">
               <div class="relative mb-4">
-                <img src="cfo.png" onerror="this.outerHTML='<div class=\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>CFO</div>'" alt="Munira - CFO" onclick="openLightbox(this.src, 'Munira — CFO')" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
+                <img src="cfo.png" onerror="this.outerHTML='<div class=\\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\\'>CFO</div>'" alt="Munira - CFO" onclick="openLightbox(this.src, 'Munira — CFO')" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
                 <span class="absolute -bottom-1 -right-1 bg-scrap-charcoal text-white font-hand text-lg px-3 py-0.5 rounded-full shadow -rotate-6 border border-white font-bold">Munira ♡</span>
               </div>
               <span class="font-display font-black text-3xl text-scrap-gold tracking-wider mt-1">CFO</span>
@@ -83,7 +81,7 @@
             <div class="washi-tape washi-tape-rust"></div>
             <div class="flex flex-col items-center w-full">
               <div class="relative mb-4">
-                <img src="ceo.png" onerror="this.outerHTML='<div class=\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-rust flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>CEO</div>'" alt="Hamna - CEO" onclick="openLightbox(this.src, 'Hamna — CEO')" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-scrap-rust hover:scale-105 transition cursor-pointer shadow-lg block">
+                <img src="ceo.png" onerror="this.outerHTML='<div class=\\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-rust flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\\'>CEO</div>'" alt="Hamna - CEO" onclick="openLightbox(this.src, 'Hamna — CEO')" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-scrap-rust hover:scale-105 transition cursor-pointer shadow-lg block">
                 <span class="absolute -bottom-1 -right-1 bg-scrap-rust text-white font-hand text-lg px-3 py-0.5 rounded-full shadow -rotate-6 border border-white font-bold">Hamna ♡</span>
               </div>
               <span class="font-display font-black text-3xl text-scrap-rust tracking-wider mt-1">CEO</span>
@@ -93,14 +91,10 @@
 
           <!-- COO: Yusra -->
           <div class="crumpled-paper-card rounded-2xl p-7 flex flex-col items-center text-center relative justify-between">
-            <svg class="absolute -top-4 left-6 w-7 h-14 pointer-events-none drop-shadow-md z-30" viewBox="0 0 28 56" fill="none">
-              <path d="M8 44 V12 C8 6.5 12 3 16.5 3 C21 3 25 6.5 25 12 V42 C25 48.5 19.5 53 13.5 53 C7.5 53 3 48.5 3 42 V14" stroke="#7D7C76" stroke-width="2.6" stroke-linecap="round" />
-              <path d="M8 44 V12 C8 6.5 12 3 16.5 3 C21 3 25 6.5 25 12 V42 C25 48.5 19.5 53 13.5 53 C7.5 53 3 48.5 3 42 V14" stroke="#E5E4DE" stroke-width="1.1" stroke-linecap="round" />
-            </svg>
             <div class="washi-tape washi-tape-teal"></div>
             <div class="flex flex-col items-center w-full">
               <div class="relative mb-4">
-                <img src="coo.png" onerror="this.outerHTML='<div class=\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\'>COO</div>'" alt="Yusra - COO" onclick="openLightbox(this.src, 'Yusra — COO')" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
+                <img src="coo.png" onerror="this.outerHTML='<div class=\\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow-inner\\'>COO</div>'" alt="Yusra - COO" onclick="openLightbox(this.src, 'Yusra — COO')" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
                 <span class="absolute -bottom-1 -right-1 bg-scrap-teal text-white font-hand text-lg px-3 py-0.5 rounded-full shadow border border-white font-bold">Yusra ♡</span>
               </div>
               <span class="font-display font-black text-3xl text-scrap-teal tracking-wider mt-1">COO</span>
@@ -123,7 +117,7 @@
         </svg>
       </div>
 
-      <!-- Hierarchy Level 2: Executive Council, Directors & Advisor -->
+      <!-- Hierarchy Level 2: Executive Council & Advisor -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
         <div class="lg:col-span-8 space-y-6">
           <div class="flex flex-col items-center mb-6">
@@ -142,7 +136,7 @@
               </div>
               <div class="space-y-3.5">
                 <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
-                  <img src="muntazir.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>MH</div>'" alt="Muntazir" onclick="openLightbox(this.src, 'Muntazir Hassan — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                  <img src="muntazir.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>MH</div>'" alt="Muntazir" onclick="openLightbox(this.src, 'Muntazir Hassan — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muntazir Hassan</h4>
                     <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
@@ -150,7 +144,7 @@
                   </div>
                 </div>
                 <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
-                  <img src="rayyan.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>RR</div>'" alt="Rayyan" onclick="openLightbox(this.src, 'Rayyan Rafique — Director Media & Design')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                  <img src="rayyan.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>RR</div>'" alt="Rayyan" onclick="openLightbox(this.src, 'Rayyan Rafique — Director Media & Design')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Rayyan Rafique</h4>
                     <span class="text-xs font-semibold text-scrap-teal/80 uppercase tracking-wider block">Director Media & Design</span>
@@ -158,7 +152,7 @@
                   </div>
                 </div>
                 <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
-                  <img src="meerub.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>MH</div>'" alt="Meerub" onclick="openLightbox(this.src, 'Meerub Haider — Director Content Planning')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                  <img src="meerub.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>MH</div>'" alt="Meerub" onclick="openLightbox(this.src, 'Meerub Haider — Director Content Planning')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Meerub Haider</h4>
                     <span class="text-xs font-semibold text-scrap-teal/70 uppercase tracking-wider block">Director Content Planning</span>
@@ -177,7 +171,7 @@
               </div>
               <div class="space-y-3.5">
                 <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
-                  <img src="abdullah.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>AG</div>'" alt="Abdullah" onclick="openLightbox(this.src, 'Abdullah Asif Gul — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                  <img src="abdullah.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>AG</div>'" alt="Abdullah" onclick="openLightbox(this.src, 'Abdullah Asif Gul — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Abdullah Asif Gul</h4>
                     <span class="text-xs font-bold text-scrap-rust uppercase tracking-wider block">Executive Council</span>
@@ -185,7 +179,7 @@
                   </div>
                 </div>
                 <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
-                  <img src="osama.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>OS</div>'" alt="Osama" onclick="openLightbox(this.src, 'Osama — Director Corporate & Communications')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                  <img src="osama.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>OS</div>'" alt="Osama" onclick="openLightbox(this.src, 'Osama — Director Corporate & Communications')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Osama</h4>
                     <span class="text-xs font-semibold text-scrap-rust/70 uppercase tracking-wider block">Director Corporate & Comms</span>
@@ -204,7 +198,7 @@
               </div>
               <div class="space-y-3.5">
                 <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.6deg]">
-                  <img src="neetu.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                  <img src="neetu.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
                     <span class="text-xs font-bold text-[#7ba632] uppercase tracking-wider block">Executive Council</span>
@@ -212,7 +206,7 @@
                   </div>
                 </div>
                 <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.4deg]">
-                  <img src="alina.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>AK</div>'" alt="Alina" onclick="openLightbox(this.src, 'Alina Kashif — Director Safety')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                  <img src="alina.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>AK</div>'" alt="Alina" onclick="openLightbox(this.src, 'Alina Kashif — Director Safety')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Alina Kashif</h4>
                     <span class="text-xs font-semibold text-[#7ba632]/80 uppercase tracking-wider block">Director Safety</span>
@@ -231,7 +225,7 @@
               </div>
               <div class="space-y-3.5">
                 <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
-                  <img src="kashaf.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>KS</div>'" alt="Kashaf" onclick="openLightbox(this.src, 'Kashaf — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                  <img src="kashaf.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>KS</div>'" alt="Kashaf" onclick="openLightbox(this.src, 'Kashaf — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Kashaf</h4>
                     <span class="text-xs font-bold text-scrap-rust uppercase tracking-wider block">Executive Council</span>
@@ -239,7 +233,7 @@
                   </div>
                 </div>
                 <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
-                  <img src="najiba.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>NZ</div>'" alt="Najiba" onclick="openLightbox(this.src, 'Najiba Zia — Director Ops & Logistics')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                  <img src="najiba.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>NZ</div>'" alt="Najiba" onclick="openLightbox(this.src, 'Najiba Zia — Director Ops & Logistics')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Najiba Zia</h4>
                     <span class="text-xs font-semibold text-scrap-rust/70 uppercase tracking-wider block">Director Ops & Logistics</span>
@@ -258,7 +252,7 @@
               </div>
               <div class="space-y-3.5">
                 <div class="sticky-note-item bg-[#FFF8E2] border-[#EDA531]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
-                  <img src="divyansh.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>DK</div>'" alt="Divyansh" onclick="openLightbox(this.src, 'Divyansh — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                  <img src="divyansh.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>DK</div>'" alt="Divyansh" onclick="openLightbox(this.src, 'Divyansh — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Divyansh</h4>
                     <span class="text-xs font-bold text-scrap-gold uppercase tracking-wider block">Executive Council</span>
@@ -277,7 +271,7 @@
               </div>
               <div class="space-y-3.5">
                 <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
-                  <img src="omar.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-black text-sm text-scrap-charcoal\'>OA</div>'" alt="Omar" onclick="openLightbox(this.src, 'Muhammad Omar Afridi — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                  <img src="omar.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-black text-sm text-scrap-charcoal\\'>OA</div>'" alt="Omar" onclick="openLightbox(this.src, 'Muhammad Omar Afridi — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Omar Afridi</h4>
                     <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
@@ -285,7 +279,7 @@
                   </div>
                 </div>
                 <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
-                  <img src="hasan.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>HK</div>'" alt="Hasan" onclick="openLightbox(this.src, 'Muhammad Hasan Khan — Director General Affairs')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                  <img src="hasan.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>HK</div>'" alt="Hasan" onclick="openLightbox(this.src, 'Muhammad Hasan Khan — Director General Affairs')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Hasan Khan</h4>
                     <span class="text-xs font-semibold text-scrap-teal/80 uppercase tracking-wider block">Director General Affairs</span>
@@ -308,7 +302,7 @@
             <div class="washi-tape washi-tape-rust"></div>
             <div class="text-center flex flex-col items-center">
               <div class="relative mb-4">
-                <img src="advisor.png" onerror="this.outerHTML='<div class=\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow\'>MU</div>'" alt="Mustafa" onclick="openLightbox(this.src, 'Mustafa — Advisor to the Panel')" class="w-32 h-32 rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
+                <img src="advisor.png" onerror="this.outerHTML='<div class=\\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow\\'>MU</div>'" alt="Mustafa" onclick="openLightbox(this.src, 'Mustafa — Advisor to the Panel')" class="w-32 h-32 rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
               </div>
               <h4 class="font-display font-bold text-2xl text-scrap-charcoal">Mustafa</h4>
               <span class="text-xs font-bold text-scrap-rust uppercase tracking-wider mt-1 px-3 py-1 bg-scrap-rust/10 rounded-full border border-scrap-rust/20">Advisor to the Panel</span>
@@ -366,3 +360,4 @@
     </div>
   </section>
 </main>
+`;
