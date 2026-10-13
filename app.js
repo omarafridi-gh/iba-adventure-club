@@ -17,17 +17,19 @@ function showPage(pageId) {
   const active = document.getElementById('page-' + pageId);
   if (active) active.classList.remove('hidden');
 
-  // Prevent scrollbar and fractional page scrolling specifically on Journal
+  // Lock root HTML & Body overflow to completely eliminate scrollbars on Journal
   const footer = document.getElementById('globalFooter');
   if (pageId === 'journal') {
     if (footer) footer.classList.add('hidden');
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
   } else {
     if (footer) footer.classList.remove('hidden');
+    document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
   }
 
-  // Update Desktop Tabs
+  // Update Desktop Navigation Tabs
   document.querySelectorAll('.nav-tab').forEach(function(btn) {
     btn.classList.remove('bg-scrap-charcoal', 'text-white', 'shadow');
     btn.classList.add('text-scrap-charcoal');
@@ -38,7 +40,7 @@ function showPage(pageId) {
     activeTab.classList.remove('text-scrap-charcoal');
   }
 
-  // Update Mobile Tabs
+  // Update Mobile Navigation Tabs
   document.querySelectorAll('.nav-tab-m').forEach(function(btn) {
     btn.classList.remove('text-scrap-charcoal');
     btn.classList.add('text-scrap-ink/70');
@@ -51,7 +53,6 @@ function showPage(pageId) {
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
 // 3. 3D Journal Spreads Data & Preloader
 const masterJournalSpreads = [
   {
