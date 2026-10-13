@@ -62,48 +62,21 @@
       position: relative;
     }
 
-    .sticky-note-item {
-      box-shadow: 1px 3px 6px rgba(53, 54, 48, 0.07), 0 1px 2px rgba(0,0,0,0.03);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      border-style: dotted;
-      border-width: 1.5px;
-    }
-    .sticky-note-item:hover {
-      transform: translateY(-2px) scale(1.01);
-      box-shadow: 2px 6px 12px rgba(53, 54, 48, 0.12);
-    }
-
-    .burlap-fabric-card {
-      background-color: #EFE3C8;
-      background-image: 
-        repeating-linear-gradient(0deg, rgba(164, 66, 0, 0.06) 0px, rgba(164, 66, 0, 0.06) 1px, transparent 1px, transparent 4px),
-        repeating-linear-gradient(90deg, rgba(53, 54, 48, 0.07) 0px, rgba(53, 54, 48, 0.07) 1px, transparent 1px, transparent 4px),
-        radial-gradient(ellipse at center, rgba(255,255,255,0.3) 0%, rgba(164, 66, 0, 0.12) 100%),
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
-      border: 2px dashed #CBB387;
-      box-shadow: 
-        0 4px 14px rgba(53, 54, 48, 0.12),
-        inset 0 0 25px rgba(164, 66, 0, 0.1);
-      position: relative;
-    }
-
     .washi-tape {
       position: absolute;
-      top: -16px;
+      top: -14px;
       left: 50%;
       transform: translateX(-50%) rotate(-2deg);
-      width: 120px;
-      height: 30px;
-      background: rgba(237, 165, 49, 0.52);
+      width: 110px;
+      height: 24px;
+      background: rgba(237, 165, 49, 0.65);
       backdrop-filter: blur(2px);
       border-left: 2px dashed rgba(53, 54, 48, 0.35);
       border-right: 2px dashed rgba(53, 54, 48, 0.35);
       box-shadow: 0 1px 4px rgba(0,0,0,0.12);
       z-index: 20;
     }
-    .washi-tape-teal { background: rgba(25, 143, 159, 0.48); transform: translateX(-50%) rotate(2.5deg); }
-    .washi-tape-rust { background: rgba(164, 66, 0, 0.42); transform: translateX(-50%) rotate(-1.5deg); }
-    .washi-tape-moss { background: rgba(153, 195, 77, 0.55); transform: translateX(-50%) rotate(1.8deg); }
+    .washi-tape-teal { background: rgba(25, 143, 159, 0.6); transform: translateX(-50%) rotate(2deg); }
 
     .polaroid {
       background-color: #FAF4E6;
@@ -120,66 +93,31 @@
       box-shadow: 5px 16px 28px rgba(53, 54, 48, 0.2);
     }
 
-    .rubber-stamp {
-      border: 2.5px dashed #A44200;
-      color: #A44200;
-      text-transform: uppercase;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      border-radius: 9999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transform: rotate(-4deg);
-      user-select: none;
+    /* Ambient Sunbeam Dust Layer */
+    @keyframes sunbeamBreathe {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.45; }
+    }
+    .ambient-sunbeam {
+      background: radial-gradient(ellipse at 75% 25%, rgba(255, 235, 160, 0.4) 0%, rgba(255, 220, 130, 0.12) 45%, transparent 75%);
+      animation: sunbeamBreathe 5s ease-in-out infinite;
+      pointer-events: none;
     }
 
-    /* FULL-BLEED ROOM ENVIRONMENT */
-    .room-wall-bg {
-      background-color: #E6D7BC;
-      background-image: 
-        radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.4) 0%, transparent 70%),
-        url("data:image/svg+xml,%3Csvg width='260' height='260' viewBox='0 0 260 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 80 Q60 40 120 70 T240 60 M20 130 Q70 100 140 120 T250 110 M0 190 Q80 160 150 180 T260 160 M30 240 Q100 210 180 230 T260 220' stroke='%23C7B594' stroke-width='0.6' stroke-dasharray='3 5' fill='none' opacity='0.3'/%3E%3C/svg%3E");
-    }
-
-    .room-floor-wood {
-      background-color: #A67343;
-      background-image: 
-        repeating-linear-gradient(0deg, rgba(0,0,0,0.06) 0px, rgba(0,0,0,0.06) 2px, transparent 2px, transparent 40px),
-        linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 15%);
-    }
-
-    /* Window Outside Animation */
-    @keyframes swayTree { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(2.5deg); } }
-    .anim-tree { transform-origin: bottom center; animation: swayTree 5s ease-in-out infinite; }
-
-    @keyframes cloudDrift { 0% { transform: translateX(-15px); } 50% { transform: translateX(18px); } 100% { transform: translateX(-15px); } }
-    .anim-cloud { animation: cloudDrift 10s ease-in-out infinite; }
-
-    /* Cute subtle idle floating for characters */
-    @keyframes gentleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
-    .anim-chibi { animation: gentleFloat 3s ease-in-out infinite; }
-
-    /* Table & Stationary Notebook */
-    .tabletop-surface {
-      background: #633E1D;
-      background-image: linear-gradient(to bottom, #754B25 0%, #523114 100%);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 2px 4px rgba(255,255,255,0.15);
-    }
-
-    .master-journal-preview {
+    /* Tabletop Journal Appearance */
+    .master-journal-tabletop {
       background: #462A17;
       background-image: 
-        radial-gradient(circle at 50% 45%, rgba(255,255,255,0.1) 0%, transparent 75%),
+        radial-gradient(circle at 50% 45%, rgba(255,255,255,0.12) 0%, transparent 75%),
         url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='leatherNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23leatherNoise)' opacity='0.18'/%3E%3C/svg%3E");
-      border: 3.5px solid #2F1A0D;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      border: 3.5px solid #2B160B;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.65), 0 0 22px rgba(237, 165, 49, 0.45);
       cursor: pointer;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
-    .master-journal-preview:hover {
-      transform: scale(1.02);
-      box-shadow: 0 20px 45px rgba(0,0,0,0.6), 0 0 25px rgba(237, 165, 49, 0.4);
+    .master-journal-tabletop:hover {
+      transform: scale(1.03);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 35px rgba(237, 165, 49, 0.7);
     }
 
     /* 3D FULLSCREEN MODAL & FLIP VIEWER */
@@ -292,29 +230,29 @@
 
   <!-- TOP HEADER / NAV -->
   <header class="sticky top-0 z-40 bg-[#FAF6EE]/92 backdrop-blur-md border-b-2 border-scrap-kraft shadow-sm">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-3.5 cursor-pointer group" onclick="showPage('home')">
-        <img src="IAC%20Logo.PNG" onerror="this.outerHTML='<div class=\'w-12 h-12 rounded-full bg-scrap-charcoal flex items-center justify-center font-display font-black text-white text-base shadow\'>IAC</div>'" alt="IAC Logo" class="w-12 h-12 rounded-full object-cover border-2 border-scrap-charcoal shadow-sm group-hover:rotate-6 transition">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
+        <img src="IAC%20Logo.PNG" onerror="this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-scrap-charcoal flex items-center justify-center font-display font-black text-white text-sm shadow\'>IAC</div>'" alt="IAC Logo" class="w-10 h-10 rounded-full object-cover border-2 border-scrap-charcoal shadow-sm">
         <div>
-          <span class="font-display font-bold text-lg sm:text-xl tracking-tight text-scrap-charcoal block leading-none">
+          <span class="font-display font-bold text-base sm:text-lg tracking-tight text-scrap-charcoal block leading-none">
             IBA ADVENTURE CLUB
           </span>
-          <span class="font-hand text-base text-scrap-rust font-bold">Explore / Connect / Belong</span>
+          <span class="font-hand text-sm text-scrap-rust font-bold">Explore / Connect / Belong</span>
         </div>
       </div>
 
-      <nav class="hidden md:flex items-center gap-2 bg-scrap-kraft/60 p-1.5 rounded-xl border border-scrap-kraft shadow-inner">
-        <button onclick="showPage('home')" id="tab-home" class="nav-tab px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition bg-scrap-charcoal text-white shadow">Home & Council</button>
-        <button onclick="showPage('scuba')" id="tab-scuba" class="nav-tab px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition text-scrap-charcoal hover:bg-scrap-kraft">Charna Scuba '26</button>
-        <button onclick="showPage('journal')" id="tab-journal" class="nav-tab px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition text-scrap-charcoal hover:bg-scrap-kraft">Field Journal</button>
+      <nav class="hidden md:flex items-center gap-2 bg-scrap-kraft/60 p-1 rounded-xl border border-scrap-kraft shadow-inner">
+        <button onclick="showPage('home')" id="tab-home" class="nav-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition bg-scrap-charcoal text-white shadow">Home & Council</button>
+        <button onclick="showPage('scuba')" id="tab-scuba" class="nav-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition text-scrap-charcoal hover:bg-scrap-kraft">Charna Scuba '26</button>
+        <button onclick="showPage('journal')" id="tab-journal" class="nav-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition text-scrap-charcoal hover:bg-scrap-kraft">Field Journal</button>
       </nav>
 
-      <button onclick="showPage('scuba')" class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-scrap-teal hover:opacity-90 text-white font-display font-bold text-xs uppercase tracking-wider shadow-md transition">
+      <button onclick="showPage('scuba')" class="hidden sm:inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-scrap-teal hover:opacity-90 text-white font-display font-bold text-xs uppercase tracking-wider shadow-md transition">
         Claim Dive Slot →
       </button>
     </div>
 
-    <div class="flex md:hidden border-t border-scrap-kraft bg-[#FAF6EE] px-3 py-2 justify-around">
+    <div class="flex md:hidden border-t border-scrap-kraft bg-[#FAF6EE] px-3 py-1.5 justify-around">
       <button onclick="showPage('home')" id="tab-home-m" class="nav-tab-m text-xs font-bold text-scrap-charcoal px-3 py-1">Home</button>
       <button onclick="showPage('scuba')" id="tab-scuba-m" class="nav-tab-m text-xs font-bold text-scrap-ink/70 px-3 py-1">Scuba '26</button>
       <button onclick="showPage('journal')" id="tab-journal-m" class="nav-tab-m text-xs font-bold text-scrap-ink/70 px-3 py-1">Journal</button>
@@ -323,7 +261,7 @@
 
   <!-- PAGE 1: HOME & COUNCIL -->
   <main id="page-home" class="page-view flex-grow">
-    <section class="relative px-4 sm:px-6 pt-12 pb-16 max-w-6xl mx-auto">
+    <section class="relative px-4 sm:px-6 pt-10 pb-14 max-w-6xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div class="lg:col-span-7 text-center lg:text-left">
           <div class="inline-block relative mb-4">
@@ -336,27 +274,20 @@
             <span class="text-scrap-rust">For A Compass.</span>
           </h1>
           <p class="mt-4 text-base sm:text-lg text-scrap-ink/85 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
-            The faces rotate, the routes evolve, but the deep dive never stops. From the turquoise depths of Charna Island to high alpine mountain crossings, we take IBA students beyond campus gates into the untamed.
+            From the turquoise depths of Charna Island to high alpine mountain crossings, we take IBA students beyond campus gates into the untamed.
           </p>
           <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
-            <button onclick="showPage('scuba')" class="px-8 py-3.5 bg-scrap-teal hover:bg-scrap-teal/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition transform hover:-translate-y-0.5">
+            <button onclick="showPage('scuba')" class="px-8 py-3.5 bg-scrap-teal hover:bg-scrap-teal/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition">
               Explore Charna Scuba '26 →
             </button>
-            <a href="#council-section" class="px-8 py-3.5 bg-[#FAF3E3] hover:bg-[#F3E6C9] text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition transform hover:-translate-y-0.5 inline-block">
-              Meet The Council ↓
-            </a>
-          </div>
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 mt-7">
-            <span class="px-4 py-1.5 rounded-full bg-scrap-teal text-white font-display text-xs font-bold tracking-wider shadow-sm transform -rotate-2">Hikes</span>
-            <span class="px-4 py-1.5 rounded-full bg-scrap-moss text-scrap-charcoal font-display text-xs font-bold tracking-wider shadow-sm transform rotate-1">Trips</span>
-            <span class="px-4 py-1.5 rounded-full bg-scrap-gold text-scrap-charcoal font-display text-xs font-bold tracking-wider shadow-sm transform -rotate-1">Camping</span>
-            <span class="px-4 py-1.5 rounded-full bg-scrap-rust text-white font-display text-xs font-bold tracking-wider shadow-sm transform rotate-2">Exploration</span>
+            <button onclick="showPage('journal')" class="px-8 py-3.5 bg-[#FAF3E3] hover:bg-[#F3E6C9] text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition">
+              Open Field Journal 📖
+            </button>
           </div>
         </div>
         <div class="lg:col-span-5 relative flex justify-center">
           <div class="relative w-80 sm:w-96">
             <div class="polaroid transform -rotate-2">
-              <div class="washi-tape washi-tape-teal"></div>
               <div class="aspect-[4/3] w-full overflow-hidden rounded bg-scrap-kraft relative">
                 <img id="heroPolaroidImg" src="hasan_scuba.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80';" alt="Charna Scuba" class="w-full h-full object-cover">
               </div>
@@ -365,16 +296,13 @@
                 <p class="text-xs uppercase font-bold text-scrap-teal tracking-widest mt-0.5">Slots Now Open</p>
               </div>
             </div>
-            <div class="absolute -bottom-4 -left-4 rubber-stamp px-3.5 py-1 text-xs bg-[#FAF5EC] shadow">
-              OFFICIAL IBA EXPEDITION
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- COUNCIL & HIERARCHICAL STRUCTURE SECTION -->
-    <section id="council-section" class="px-4 sm:px-6 pt-16 pb-20 border-t-2 border-[#E0D2B8] relative">
+    <!-- COUNCIL & HIERARCHY SECTION -->
+    <section class="px-4 sm:px-6 pt-16 pb-20 border-t-2 border-[#E0D2B8] relative">
       <div class="max-w-6xl mx-auto">
         <div class="text-center max-w-4xl mx-auto mb-14">
           <span class="font-hand text-3xl sm:text-4xl text-scrap-rust font-bold block mb-1">Not just adventures, but a community ♡</span>
@@ -434,608 +362,102 @@
             </div>
           </div>
         </div>
-
-        <!-- HIERARCHICAL CONNECTOR -->
-        <div class="hidden lg:block w-full max-w-6xl mx-auto my-3">
-          <svg class="w-full h-16" viewBox="0 0 1152 64" fill="none" preserveAspectRatio="none">
-            <path d="M 576 0 L 576 34" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
-            <path d="M 384 34 L 960 34" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
-            <path d="M 384 34 L 384 64" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
-            <path d="M 960 34 L 960 64" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
-            <circle cx="576" cy="34" r="5" fill="#A44200" />
-            <circle cx="384" cy="34" r="4.5" fill="#A44200" />
-            <circle cx="960" cy="34" r="4.5" fill="#A44200" />
-          </svg>
-        </div>
-
-        <!-- HIERARCHY LEVEL 2: EXECUTIVE COUNCIL & ADVISOR -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
-          <div class="lg:col-span-8 space-y-6">
-            <div class="flex flex-col items-center mb-6">
-              <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow">
-                EXECUTIVE COUNCIL & DIRECTORS
-              </span>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <!-- Marketing & Creatives -->
-              <div class="crumpled-paper-card rounded-2xl p-6 relative">
-                <div class="washi-tape washi-tape-teal"></div>
-                <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
-                  <h3 class="font-display font-bold text-xl text-scrap-charcoal">Marketing & Creatives</h3>
-                  <span class="font-hand text-scrap-teal text-lg font-bold">3 Explorers ♡</span>
-                </div>
-                <div class="space-y-3.5">
-                  <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
-                    <img src="muntazir.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>MH</div>'" alt="Muntazir" onclick="openLightbox(this.src, 'Muntazir Hassan — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                    <div class="min-w-0">
-                      <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muntazir Hassan</h4>
-                      <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
-                      <a href="mailto:m.hassan.30002@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.hassan.30002@khi.iba.edu.pk</a>
-                    </div>
-                  </div>
-                  <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
-                    <img src="rayyan.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>RR</div>'" alt="Rayyan" onclick="openLightbox(this.src, 'Rayyan Rafique — Director Media & Design')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                    <div class="min-w-0">
-                      <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Rayyan Rafique</h4>
-                      <span class="text-xs font-semibold text-scrap-teal/80 uppercase tracking-wider block">Director Media & Design</span>
-                      <a href="mailto:r.rafique.30530@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">r.rafique.30530@khi.iba.edu.pk</a>
-                    </div>
-                  </div>
-                  <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
-                    <img src="meerub.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>MH</div>'" alt="Meerub" onclick="openLightbox(this.src, 'Meerub Haider — Director Content Planning')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                    <div class="min-w-0">
-                      <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Meerub Haider</h4>
-                      <span class="text-xs font-semibold text-scrap-teal/70 uppercase tracking-wider block">Director Content Planning</span>
-                      <a href="mailto:m.haider.33279@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.haider.33279@khi.iba.edu.pk</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Corporate & Comms -->
-              <div class="crumpled-paper-card rounded-2xl p-6 relative">
-                <div class="washi-tape washi-tape-rust"></div>
-                <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
-                  <h3 class="font-display font-bold text-xl text-scrap-charcoal">Corporate & Comms</h3>
-                  <span class="font-hand text-scrap-rust text-lg font-bold">2 Explorers ♡</span>
-                </div>
-                <div class="space-y-3.5">
-                  <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
-                    <img src="abdullah.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>AG</div>'" alt="Abdullah" onclick="openLightbox(this.src, 'Abdullah Asif Gul — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                    <div class="min-w-0">
-                      <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Abdullah Asif Gul</h4>
-                      <span class="text-xs font-bold text-scrap-rust uppercase tracking-wider block">Executive Council</span>
-                      <a href="mailto:a.asifgul.32679@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-rust truncate block mt-0.5">a.asifgul.32679@khi.iba.edu.pk</a>
-                    </div>
-                  </div>
-                  <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
-                    <img src="osama.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>OS</div>'" alt="Osama" onclick="openLightbox(this.src, 'Osama — Director Corporate & Communications')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                    <div class="min-w-0">
-                      <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Osama</h4>
-                      <span class="text-xs font-semibold text-scrap-rust/70 uppercase tracking-wider block">Director Corporate & Comms</span>
-                      <span class="text-xs text-scrap-ink/70 block mt-0.5">Executive Director</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Safety & Inclusivity -->
-              <div class="crumpled-paper-card rounded-2xl p-6 relative">
-                <div class="washi-tape washi-tape-moss"></div>
-                <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
-                  <h3 class="font-display font-bold text-xl text-scrap-charcoal">Safety & Inclusivity</h3>
-                  <span class="font-hand text-[#7ba632] text-lg font-bold">2 Explorers ♡</span>
-                </div>
-                <div class="space-y-3.5">
-                  <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.6deg]">
-                    <img src="neetu.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                    <div class="min-w-0">
-                      <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
-                      <span class="text-xs font-bold text-[#7ba632] uppercase tracking-wider block">Executive Council</span>
-                      <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-[#7ba632] truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
-                    </div>
-                  </div>
-                  <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.4deg]">
-                    <img src="alina.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>AK</div>'" alt="Alina" onclick="openLightbox(this.src, 'Alina Kashif — Director Safety')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                    <div class="min-w-0">
-                      <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Alina Kashif</h4>
-                      <span class="text-xs font-semibold text-[#7ba632]/80 uppercase tracking-wider block">Director Safety</span>
-                      <a href="mailto:alinakashif2007@gmail.com" class="text-xs text-scrap-ink/70 hover:text-[#7ba632] truncate block mt-0.5">alinakashif2007@gmail.com</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Operations & Logistics -->
-              <div class="crumpled-paper-card rounded-2xl p-6 relative">
-                <div class="washi-tape washi-tape-rust"></div>
-                <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
-                  <h3 class="font-display font-bold text-xl text-scrap-charcoal">Operations & Logistics</h3>
-                  <span class="font-hand text-scrap-rust text-lg font-bold">2 Explorers ♡</span>
-                </div>
-                <div class="space-y-3.5">
-                  <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
-                    <img src="kashaf.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>KS</div>'" alt="Kashaf" onclick="openLightbox(this.src, 'Kashaf — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                    <div class="min-w-0">
-                      <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Kashaf</h4>
-                      <span class="text-xs font-bold text-scrap-rust uppercase tracking-wider block">Executive Council</span>
-                      <a href="mailto:k.safdar.32149@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-rust truncate block mt-0.5">k.safdar.32149@khi.iba.edu.pk</a>
-                    </div>
-                  </div>
-                  <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
-                    <img src="najiba.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>NZ</div>'" alt="Najiba" onclick="openLightbox(this.src, 'Najiba Zia — Director Ops & Logistics')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                    <div class="min-w-0">
-                      <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Najiba Zia</h4>
-                      <span class="text-xs font-semibold text-scrap-rust/70 uppercase tracking-wider block">Director Ops & Logistics</span>
-                      <a href="mailto:n.zia.33420@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-rust truncate block mt-0.5">n.zia.33420@khi.iba.edu.pk</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Recruitment -->
-              <div class="crumpled-paper-card rounded-2xl p-6 relative">
-                <div class="washi-tape"></div>
-                <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
-                  <h3 class="font-display font-bold text-xl text-scrap-charcoal">Recruitment</h3>
-                  <span class="font-hand text-scrap-gold text-lg font-bold">1 Explorer ♡</span>
-                </div>
-                <div class="space-y-3.5">
-                  <div class="sticky-note-item bg-[#FFF8E2] border-[#EDA531]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
-                    <img src="divyansh.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>DK</div>'" alt="Divyansh" onclick="openLightbox(this.src, 'Divyansh — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                    <div class="min-w-0">
-                      <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Divyansh</h4>
-                      <span class="text-xs font-bold text-scrap-gold uppercase tracking-wider block">Executive Council</span>
-                      <a href="mailto:d.kumar.33177@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-gold truncate block mt-0.5">d.kumar.33177@khi.iba.edu.pk</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- General Affairs -->
-              <div class="crumpled-paper-card rounded-2xl p-6 relative">
-                <div class="washi-tape washi-tape-teal"></div>
-                <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
-                  <h3 class="font-display font-bold text-xl text-scrap-charcoal">General Affairs</h3>
-                  <span class="font-hand text-scrap-teal text-lg font-bold">2 Explorers ♡</span>
-                </div>
-                <div class="space-y-3.5">
-                  <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
-                    <img src="omar.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-black text-sm text-scrap-charcoal\'>OA</div>'" alt="Omar" onclick="openLightbox(this.src, 'Muhammad Omar Afridi — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                    <div class="min-w-0">
-                      <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Omar Afridi</h4>
-                      <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
-                      <a href="mailto:m.afridi.26220@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.afridi.26220@khi.iba.edu.pk</a>
-                    </div>
-                  </div>
-                  <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
-                    <img src="hasan.png" onerror="this.outerHTML='<div class=\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\'>HK</div>'" alt="Hasan" onclick="openLightbox(this.src, 'Muhammad Hasan Khan — Director General Affairs')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                    <div class="min-w-0">
-                      <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Hasan Khan</h4>
-                      <span class="text-xs font-semibold text-scrap-teal/80 uppercase tracking-wider block">Director General Affairs</span>
-                      <a href="mailto:m.khan.30910@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.khan.30910@khi.iba.edu.pk</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Advisor & Reel -->
-          <div class="lg:col-span-4 space-y-6">
-            <div class="flex flex-col items-center mb-6">
-              <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-rust text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow">
-                ADVISOR TO THE PANEL
-              </span>
-            </div>
-            <div class="crumpled-paper-card rounded-2xl p-7 relative">
-              <div class="washi-tape washi-tape-rust"></div>
-              <div class="text-center flex flex-col items-center">
-                <div class="relative mb-4">
-                  <img src="advisor.png" onerror="this.outerHTML='<div class=\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow\'>MU</div>'" alt="Mustafa" onclick="openLightbox(this.src, 'Mustafa — Advisor to the Panel')" class="w-32 h-32 rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
-                </div>
-                <h4 class="font-display font-bold text-2xl text-scrap-charcoal">Mustafa</h4>
-                <span class="text-xs font-bold text-scrap-rust uppercase tracking-wider mt-1 px-3 py-1 bg-scrap-rust/10 rounded-full border border-scrap-rust/20">Advisor to the Panel</span>
-                <p class="text-sm text-scrap-ink/80 mt-3 leading-relaxed">Senior counsel, strategic oversight & institutional advisory to the society leadership.</p>
-              </div>
-            </div>
-
-            <!-- Reel Edit -->
-            <div class="rounded-2xl p-5 relative mt-8 bg-scrap-charcoal text-white shadow-2xl border-2 border-[#55564E] transform rotate-1 hover:rotate-0 transition duration-300">
-              <div class="pushpin"></div>
-              <div class="flex items-center justify-between border-b border-white/20 pb-3 mb-3">
-                <div class="flex items-center gap-2">
-                  <span class="text-xs font-mono uppercase tracking-widest text-scrap-gold font-bold">IAC ARCHIVES</span>
-                </div>
-                <a href="https://www.instagram.com/reel/DdS0RWKJkXT/" target="_blank" rel="noopener noreferrer" class="px-2.5 py-0.5 rounded-full bg-white/10 hover:bg-scrap-rust text-white font-mono text-[10px] font-bold border border-white/20 transition">
-                  Instagram ↗
-                </a>
-              </div>
-              <div class="mb-2">
-                <h4 class="font-hand text-xl text-scrap-gold font-bold leading-tight">Panel & Expeditions Edit ♡</h4>
-                <p class="text-[11px] text-white/70 font-normal">A look back at the previous panel & expeditions across Pakistan.</p>
-              </div>
-              <div class="w-full rounded-xl overflow-hidden border border-white/20 shadow-inner bg-black">
-                <iframe src="https://www.instagram.com/reel/DdS0RWKJkXT/embed/" class="w-full border-0 rounded-xl" height="450" scrolling="no" allowtransparency="true" allow="encrypted-media" title="IAC Archives: Panel & Expeditions Edit"></iframe>
-              </div>
-              <div class="mt-3 pt-2.5 border-t border-white/15 flex items-center justify-between text-[11px] text-white/70">
-                <span class="font-mono text-scrap-gold">● REEL ARCHIVE</span>
-                <span class="font-hand text-white/90 text-sm">Click play to watch with audio ♡</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Management Team -->
-        <div class="w-full max-w-5xl mx-auto mt-6 flex flex-col items-center">
-          <div class="flex justify-center">
-            <svg class="w-8 h-14" viewBox="0 0 32 56" fill="none">
-              <path d="M 16 0 L 16 52" stroke="#A44200" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round" />
-              <circle cx="16" cy="52" r="4.5" fill="#A44200" />
-            </svg>
-          </div>
-          <div class="text-center mt-1 mb-2 z-10">
-            <span class="inline-block px-9 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider shadow">
-              MANAGEMENT TEAM 2026–2027
-            </span>
-          </div>
-          <div class="burlap-fabric-card rounded-2xl p-7 pt-9 text-center relative w-full shadow-md mt-2">
-            <div class="washi-tape"></div>
-            <h4 class="font-display font-bold text-2xl text-scrap-charcoal mt-1">Annual General Management Body</h4>
-            <p class="text-sm text-scrap-ink/85 max-w-2xl mx-auto mt-2 leading-relaxed font-medium">
-              Operating directly under the Executive Council and Directors. Inducted annually for the tenure to drive on-ground execution across expeditions, basecamps, and campus drives.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   </main>
 
-  <!-- PAGE 2: CHARNA SCUBA SPOTLIGHT & REGISTRATION -->
+  <!-- PAGE 2: CHARNA SCUBA SPOTLIGHT -->
   <main id="page-scuba" class="page-view hidden flex-grow px-4 sm:px-6 py-12 max-w-6xl mx-auto w-full">
-    <div class="text-center max-w-3xl mx-auto mb-12">
+    <div class="text-center max-w-3xl mx-auto mb-10">
       <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-scrap-teal/15 text-scrap-teal border border-scrap-teal/30 font-display text-xs font-bold uppercase tracking-wider mb-3">
         <span>🌊 Annual Flagship Expedition</span>
       </div>
       <h1 class="text-3xl sm:text-5xl font-display font-bold text-scrap-charcoal">Chasing Blue: Charna Scuba '26</h1>
-      <p class="mt-3 text-base text-scrap-ink/75 font-medium">The faces rotate, the routes evolve, but the deep dive never stops. Come find your depth off the coast of Mubarak Village.</p>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      <div class="lg:col-span-5 space-y-6">
-        <div class="crumpled-paper-card p-7 rounded-2xl relative">
-          <div class="washi-tape"></div>
-          <h3 class="font-display font-bold text-xl text-scrap-charcoal border-b border-[#DFCFAA] pb-3">Field Notes & Inclusions</h3>
-          <ul class="space-y-4 text-xs mt-5">
-            <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
-              <span class="text-scrap-ink/60 font-semibold">Date:</span>
-              <span class="font-bold text-scrap-charcoal">Sunday, 25 October 2026</span>
-            </li>
-            <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
-              <span class="text-scrap-ink/60 font-semibold">Reporting:</span>
-              <span class="font-bold text-scrap-charcoal">5:30 AM (Aman CED Gate)</span>
-            </li>
-            <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
-              <span class="text-scrap-ink/60 font-semibold">Location:</span>
-              <span class="font-bold text-scrap-charcoal">Charna Island & Mubarak Village</span>
-            </li>
-            <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
-              <span class="font-bold text-scrap-rust bg-scrap-rust/10 px-2 py-0.5 rounded text-xs border border-scrap-rust/20">PKR 8,500 (All Incl.)</span>
-            </li>
-            <li class="flex justify-between py-1 border-b border-[#DFCFAA]/70">
-              <span class="text-scrap-ink/60 font-semibold">Slots Remaining:</span>
-              <span class="font-bold text-scrap-teal">14 of 40 Slots</span>
-            </li>
-          </ul>
-
-          <div class="mt-6 pt-4 border-t border-[#DFCFAA]">
-            <div class="flex items-center justify-between mb-3">
-              <h4 class="text-xs font-bold uppercase tracking-wider text-scrap-charcoal">Pack Your Dry Bag:</h4>
-              <span class="text-xs font-mono text-scrap-rust font-bold" id="packProgress">0/5 Ready</span>
-            </div>
-            <div class="space-y-2.5 text-xs text-scrap-ink/80">
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" onchange="updateChecklist()" class="pack-item accent-scrap-teal rounded">
-                <span>Extra change of clothes & towel</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" onchange="updateChecklist()" class="pack-item accent-scrap-teal rounded">
-                <span>Original IBA Student ID Card</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" onchange="updateChecklist()" class="pack-item accent-scrap-teal rounded">
-                <span>Reef-safe sunscreen & waterproof bag</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" onchange="updateChecklist()" class="pack-item accent-scrap-teal rounded">
-                <span>Motion sickness pills (if prone to waves)</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" onchange="updateChecklist()" class="pack-item accent-scrap-teal rounded">
-                <span>Water bottle / electrolyte pouch</span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-[#FFF9E6] border border-[#E8DCB8] shadow-sm relative transform -rotate-1">
-          <span class="font-hand text-xl text-scrap-rust font-bold block mb-1">Note from Alina (Director Safety):</span>
-          <p class="text-xs text-scrap-ink/80 leading-relaxed font-normal">
-            "You don't need to know how to swim to scuba! Every non-swimmer is geared in certified buoyancy jackets and escorted one-on-one by our licensed dive masters into the reef."
-          </p>
-        </div>
-      </div>
-
-      <div class="lg:col-span-7 crumpled-paper-card p-7 sm:p-8 rounded-2xl relative">
-        <div class="washi-tape washi-tape-rust"></div>
-        <h3 class="font-display font-bold text-2xl text-scrap-charcoal mb-1">Diver Manifest Form</h3>
-        <p class="text-xs text-scrap-ink/70 mb-6">Enter your student credentials to claim your dive slot. Confirmation will be dispatched to your WhatsApp.</p>
-
-        <form id="scubaForm" onsubmit="handleRegistration(event)" class="space-y-4 text-xs">
-          <div>
-            <label class="block font-bold text-scrap-charcoal mb-1">Full Name</label>
-            <input type="text" required placeholder="e.g. Omar Afridi" class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block font-bold text-scrap-charcoal mb-1">IBA ERP ID</label>
-              <input type="text" required pattern="[0-9]{5}" placeholder="e.g. 26220" class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
-            </div>
-            <div>
-              <label class="block font-bold text-scrap-charcoal mb-1">WhatsApp Number</label>
-              <input type="tel" required placeholder="03XXXXXXXXX" class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
-            </div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block font-bold text-scrap-charcoal mb-1">Swimming Proficiency</label>
-              <select class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-3 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
-                <option>Non-Swimmer (Standard Lifejacket + 1-on-1 Dive Guide)</option>
-                <option>Basic / Recreational Swimmer</option>
-                <option>Advanced Swimmer</option>
-              </select>
-            </div>
-            <div>
-              <label class="block font-bold text-scrap-charcoal mb-1">Dietary Preference</label>
-              <select class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-3 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
-                <option>Standard (Chicken Biryani / BBQ)</option>
-                <option>Vegetarian</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label class="block font-bold text-scrap-charcoal mb-1">Emergency Contact & Relation</label>
-            <input type="text" required placeholder="Parent/Guardian Name & Number" class="w-full bg-[#FAF5EC] border-2 border-[#DECFA9] rounded-xl px-4 py-3 text-scrap-charcoal focus:border-scrap-charcoal focus:outline-none text-sm">
-          </div>
-          <div class="pt-2">
-            <button type="submit" class="w-full py-4 bg-scrap-teal hover:opacity-90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md border-2 border-scrap-charcoal transition">
-              Confirm Expedition Booking →
-            </button>
-          </div>
-        </form>
-
-        <div id="formSuccess" class="hidden mt-6 p-5 rounded-xl border-2 border-dashed border-scrap-teal bg-[#FAF5EC] text-center">
-          <div class="w-8 h-8 rounded-full bg-scrap-teal text-white font-bold flex items-center justify-center mx-auto mb-2 shadow">✓</div>
-          <h4 class="font-display font-bold text-sm text-scrap-charcoal">Registration Pre-Approved!</h4>
-          <p class="text-xs text-scrap-ink/70 mt-1">Manifest Pass: <span class="font-mono text-scrap-rust font-bold" id="bookingCode">#IAC-SCUBA-882</span></p>
-          <p class="text-[11px] text-scrap-ink/60 mt-1">Munira's finance desk will verify your subsidized payment slip via WhatsApp.</p>
-        </div>
-      </div>
+      <p class="mt-2 text-sm text-scrap-ink/75 font-medium">Find your depth off the coast of Mubarak Village with licensed PADI dive guides.</p>
     </div>
   </main>
 
-  <!-- PAGE 3: FIELD JOURNAL (FULL-BLEED SEAMLESS ROOM WITH GIF SLOTS & ON-WALL BOARD) -->
-  <main id="page-journal" class="page-view hidden flex-grow relative w-full overflow-hidden">
+  <!-- PAGE 3: FIELD JOURNAL (ONE 100VH NON-SCROLLING SCREEN WITH EXACT MATCH TO VIDEO_1.MP4) -->
+  <main id="page-journal" class="page-view hidden w-full h-[calc(100vh-64px)] relative overflow-hidden flex flex-col justify-between select-none">
     
-    <!-- FULL-BLEED ROOM WALL (Spans naturally, no box boundaries) -->
-    <div class="room-wall-bg w-full pt-10 pb-6 px-4 sm:px-8 border-b-8 border-[#754B25] relative">
-      
-      <!-- BUNTING FLAGS DRAPED ACROSS THE CEILING -->
-      <div class="max-w-6xl mx-auto relative mb-6">
-        <svg class="w-full h-14" viewBox="0 0 1000 60" fill="none">
-          <path d="M 0 15 Q 250 50 500 15 Q 750 50 1000 15" stroke="#754B25" stroke-width="2.5" fill="none"/>
-          <polygon points="120,32 144,35 132,58" fill="#EDA531"/>
-          <polygon points="220,40 244,41 232,65" fill="#198F9F"/>
-          <polygon points="340,38 364,36 352,62" fill="#A44200"/>
-          <polygon points="450,26 474,22 462,48" fill="#99C34D"/>
-          <polygon points="620,26 644,31 632,52" fill="#EDA531"/>
-          <polygon points="740,38 764,40 752,64" fill="#198F9F"/>
-          <polygon points="860,35 884,31 872,58" fill="#A44200"/>
-        </svg>
-      </div>
+    <!-- 1. FULL-BLEED SEAMLESS MP4 LOOP BACKGROUND -->
+    <div class="absolute inset-0 z-0">
+      <video autoplay loop muted playsinline class="w-full h-full object-cover object-center">
+        <source src="video_1.mp4" type="video/mp4">
+        <source src="packing_room.mp4" type="video/mp4">
+      </video>
 
-      <!-- MAIN WALL CONTENT: SCRAPBOOK NOTICE BOARD (LEFT) + REAL SUNLIT WINDOW (RIGHT) -->
-      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-8">
-        
-        <!-- ON-WALL TORN CORK & SCRAPBOOK NOTICE BOARD -->
-        <div class="md:col-span-7 relative">
-          <div class="crumpled-paper-card p-6 sm:p-8 rounded-2xl transform -rotate-1 relative shadow-lg">
-            <div class="washi-tape washi-tape-teal"></div>
-            
-            <div class="flex items-center justify-between border-b border-[#DFCFAA] pb-3 mb-4">
-              <div>
-                <span class="font-mono text-[10px] uppercase font-bold text-scrap-rust tracking-widest block">BASECAMP LOG • VOL. 2026–2027</span>
-                <h1 class="font-display font-bold text-2xl sm:text-4xl text-scrap-charcoal leading-tight mt-0.5">
-                  The Expedition Memories Journal
-                </h1>
-              </div>
-              <div class="w-12 h-12 rounded-full border-2 border-dashed border-scrap-rust flex items-center justify-center font-display font-bold text-scrap-rust text-xs shrink-0">
-                IAC
-              </div>
-            </div>
-
-            <p class="font-hand text-xl sm:text-2xl text-scrap-rust font-bold leading-snug">
-              "Same people. New places. Bigger stories. ♡"
-            </p>
-            <p class="text-xs sm:text-sm text-scrap-ink/80 mt-2 font-normal leading-relaxed">
-              Bags are being zipped, offline maps saved, and playlists ready for the coaster ride up North. Click the official travel journal resting on the wooden table below to flip through our candid memories!
-            </p>
-
-            <div class="mt-4 flex flex-wrap gap-2 text-xs">
-              <span class="px-3 py-1 bg-scrap-teal/15 text-scrap-teal font-bold rounded-full border border-scrap-teal/30">✓ Passu Cones</span>
-              <span class="px-3 py-1 bg-scrap-moss/20 text-[#557b1f] font-bold rounded-full border border-[#557b1f]/30">✓ Charna Reef</span>
-              <span class="px-3 py-1 bg-scrap-gold/20 text-scrap-rust font-bold rounded-full border border-scrap-gold/30">✓ Gorakh Altitude</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- SUNLIT WOODEN WINDOW TO THE NORTHERN MOUNTAINS -->
-        <div class="md:col-span-5 flex justify-center">
-          <div class="w-72 sm:w-80 rounded-2xl overflow-hidden border-[10px] border-[#633E1D] shadow-2xl relative bg-[#7EC6E8]">
-            <svg class="w-full h-56 select-none" viewBox="0 0 300 210" fill="none">
-              <!-- Outside Distant Peaks -->
-              <polygon points="10,210 100,105 190,210" fill="#9EC5B0"/>
-              <polygon points="110,210 200,85 290,210" fill="#88B8A0"/>
-              <polygon points="200,85 180,115 220,115" fill="#FFFFFF" opacity="0.9"/>
-              <!-- Swaying Pine Trees -->
-              <g class="anim-tree">
-                <polygon points="50,210 38,155 62,155" fill="#2E5A36"/>
-                <polygon points="50,165 30,115 70,115" fill="#3D7347"/>
-                <polygon points="50,125 40,85 60,85" fill="#4C8C59"/>
-              </g>
-              <g class="anim-tree" style="animation-delay: -2s;">
-                <polygon points="250,210 240,160 260,160" fill="#2E5A36"/>
-                <polygon points="250,170 232,125 268,125" fill="#3D7347"/>
-                <polygon points="250,135 242,95 258,95" fill="#4C8C59"/>
-              </g>
-              <!-- Drifting Clouds -->
-              <g class="anim-cloud" fill="#FFFFFF" opacity="0.85">
-                <ellipse cx="90" cy="55" rx="30" ry="12"/>
-                <ellipse cx="110" cy="50" rx="22" ry="14"/>
-              </g>
-              <!-- Window Wooden Mullions -->
-              <line x1="150" y1="0" x2="150" y2="210" stroke="#633E1D" stroke-width="8"/>
-              <line x1="0" y1="105" x2="300" y2="105" stroke="#633E1D" stroke-width="8"/>
-            </svg>
-            <div class="bg-[#4E2F13] py-1 text-center font-hand text-xs text-scrap-gold font-bold">
-              Karakoram Highway Ahead 🏔️
-            </div>
-          </div>
-        </div>
-
-      </div>
-
+      <!-- Soft Vintage Ambient Lighting & Contrast Vignette -->
+      <div class="ambient-sunbeam absolute inset-0 pointer-events-none"></div>
     </div>
 
-    <!-- FULL-BLEED WOODEN FLOOR WITH FRIENDS & BIG TABLE -->
-    <div class="room-floor-wood w-full py-12 px-4 sm:px-8 relative min-h-[560px] flex flex-col justify-between">
-      
-      <!-- CHARACTERS SLOTS ROW (Ready for cute transparent GIFs / stickers) -->
-      <div class="max-w-6xl mx-auto w-full grid grid-cols-2 sm:grid-cols-4 gap-4 items-end mb-8 relative z-10">
-        
-        <!-- Slot 1: Friend 1 (Laying on Floor / Scrolling) -->
-        <div class="flex flex-col items-center text-center anim-chibi">
-          <div class="w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center relative">
-            <!-- Replace src with your favorite transparent GIF anytime! -->
-            <img src="https://media.giphy.com/media/Jk4ZT6R0OEUoM/giphy.gif" alt="Relaxing Friend" class="max-w-full max-h-full object-contain drop-shadow-md rounded-2xl" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=300&q=80';">
-          </div>
-          <span class="font-hand text-sm sm:text-base text-white/90 font-bold bg-black/40 px-3 py-0.5 rounded-full mt-1">
-            "Saving the road trip playlist 🎵"
-          </span>
-        </div>
-
-        <!-- Slot 2: Friend 2 (Stressfully Packing Duffel) -->
-        <div class="flex flex-col items-center text-center anim-chibi" style="animation-delay: -1s;">
-          <div class="w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center relative">
-            <img src="https://media.giphy.com/media/l41lI4bYmcsPJX9Go/giphy.gif" alt="Packing Bag" class="max-w-full max-h-full object-contain drop-shadow-md rounded-2xl" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=300&q=80';">
-          </div>
-          <span class="font-hand text-sm sm:text-base text-white/90 font-bold bg-black/40 px-3 py-0.5 rounded-full mt-1">
-            "Did someone pack the jackets?!" 💦
-          </span>
-        </div>
-
-        <!-- Slot 3: Small Puppy Playing With Ball -->
-        <div class="flex flex-col items-center text-center anim-chibi" style="animation-delay: -1.8s;">
-          <div class="w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center relative">
-            <img src="https://media.giphy.com/media/mG04c6OVOXclq/giphy.gif" alt="Puppy Playing" class="max-w-full max-h-full object-contain drop-shadow-md rounded-2xl" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=300&q=80';">
-          </div>
-          <span class="font-hand text-sm sm:text-base text-white/90 font-bold bg-black/40 px-3 py-0.5 rounded-full mt-1">
-            Team Mascot 🐾 ♡
-          </span>
-        </div>
-
-        <!-- Slot 4: Friend 4 (On Phone Confirming Coaster) -->
-        <div class="flex flex-col items-center text-center anim-chibi" style="animation-delay: -2.3s;">
-          <div class="w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center relative">
-            <img src="https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif" alt="On Call" class="max-w-full max-h-full object-contain drop-shadow-md rounded-2xl" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516726817505-f5ed825624d8?auto=format&fit=crop&w=300&q=80';">
-          </div>
-          <span class="font-hand text-sm sm:text-base text-white/90 font-bold bg-black/40 px-3 py-0.5 rounded-full mt-1">
-            "Coaster driver arrives at 5 AM! 🚐"
-          </span>
-        </div>
-
+    <!-- 2. ON-WALL TORN NOTICE BOARD (MATCHES TOP-LEFT CORKBOARD POSITION IN VIDEO) -->
+    <div class="absolute top-[3%] left-[2%] sm:top-[5%] sm:left-[3%] w-[27%] sm:w-[24%] max-w-[280px] z-20 pointer-events-auto">
+      <div class="bg-[#FAF4E5]/95 p-3 sm:p-4 rounded-xl border border-[#DFCEAA] shadow-xl relative transform -rotate-1 backdrop-blur-xs">
+        <div class="washi-tape washi-tape-teal"></div>
+        <span class="font-mono text-[9px] font-bold text-scrap-rust uppercase tracking-wider block">EXPEDITION LOGBOOK</span>
+        <h2 class="font-display font-bold text-xs sm:text-base text-scrap-charcoal leading-tight mt-0.5">
+          Field Memories Journal
+        </h2>
+        <p class="font-hand text-sm sm:text-base text-scrap-rust font-bold mt-0.5 leading-tight">
+          "Adventure looks good on you ♡"
+        </p>
+        <span class="inline-block mt-1 font-mono text-[9px] text-[#198F9F] font-bold">
+          ✦ VOL. 2026–2027 ✦
+        </span>
       </div>
+    </div>
 
-      <!-- BIG EXPANDED RUSTIC COFFEE TABLE WITH CENTERED NOTEBOOK (STATIONARY & PROPORTIONAL) -->
-      <div class="max-w-4xl mx-auto w-full tabletop-surface rounded-3xl p-6 sm:p-10 relative z-20 border-4 border-[#3D230D]">
+    <!-- 3. RUSTIC WOODEN COFFEE TABLE & STATIONARY NOTEBOOK (FOREGROUND CENTER) -->
+    <div class="absolute bottom-[2%] sm:bottom-[3%] left-1/2 -translate-x-1/2 w-[85%] sm:w-[55%] max-w-xl z-20 flex flex-col items-center">
+      
+      <!-- Sturdy Rustic Wooden Coffee Table Slab -->
+      <div class="w-full bg-[#523218] rounded-3xl p-4 sm:p-6 shadow-2xl border-4 border-[#331C0B] relative flex flex-col items-center backdrop-blur-sm bg-opacity-95">
         
-        <!-- Coffee Table Accessories -->
-        <div class="flex justify-between items-center text-xs text-white/70 mb-4 px-2">
-          <div class="flex items-center gap-2">
-            <span class="text-xl">☕</span>
-            <span class="font-hand text-sm sm:text-base text-scrap-gold font-bold">Doodh Patti on brew</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="text-xl">🗺️</span>
-            <span class="font-mono text-[11px] text-white/80">Karakoram Trail Map Spread</span>
-          </div>
+        <!-- Tabletop Accessories -->
+        <div class="w-full flex justify-between items-center text-xs text-white/80 mb-2 px-3">
+          <span class="font-hand text-sm text-scrap-gold font-bold">☕ Doodh Patti in enamel mug</span>
+          <span class="font-mono text-[10px] text-white/85">Karakoram Trail Map 🗺️</span>
         </div>
 
-        <!-- THE NOTEBOOK (STATIONARY, BEAUTIFUL & CENTERED) -->
-        <div class="master-journal-preview w-full max-w-xl mx-auto aspect-[16/10] rounded-2xl p-6 sm:p-10 text-white relative flex flex-col justify-center items-center text-center select-none" onclick="openMasterBookModal()">
+        <!-- THE STATIONARY NOTEBOOK (RESTS PROPORTIONALLY IN THE CENTER OF TABLE) -->
+        <div class="master-journal-tabletop w-full max-w-sm aspect-[16/10] rounded-2xl p-4 sm:p-6 text-white relative flex flex-col justify-center items-center text-center select-none" onclick="openMasterBookModal()">
           
-          <!-- Binding Spine on Left with Brass Rivets -->
-          <div class="absolute left-0 top-0 bottom-0 w-8 sm:w-10 bg-black/45 border-r-2 border-dashed border-white/20 rounded-l-2xl flex flex-col justify-around items-center py-4">
-            <span class="w-2.5 h-2.5 rounded-full bg-scrap-gold/80"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-scrap-gold/80"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-scrap-gold/80"></span>
+          <!-- Brass Rivets Spine -->
+          <div class="absolute left-0 top-0 bottom-0 w-7 bg-black/45 border-r-2 border-dashed border-white/20 rounded-l-2xl flex flex-col justify-around items-center py-2">
+            <span class="w-2 h-2 rounded-full bg-scrap-gold"></span>
+            <span class="w-2 h-2 rounded-full bg-scrap-gold"></span>
+            <span class="w-2 h-2 rounded-full bg-scrap-gold"></span>
           </div>
 
-          <!-- Brass Filigree Corners on Right -->
-          <div class="brass-corner brass-corner-tr"></div>
-          <div class="brass-corner brass-corner-br"></div>
-
-          <!-- Elastic Ribbon Strap -->
-          <div class="absolute right-8 top-0 bottom-0 w-2.5 bg-[#24130A] shadow border-x border-black/60 hidden sm:block"></div>
-
-          <!-- Center Content: Embossed Logo, Stamp & Title -->
-          <div class="pl-4 sm:pl-6 flex flex-col items-center my-auto">
-            
-            <!-- Brass Compass Seal -->
-            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-dashed border-scrap-gold/80 flex items-center justify-center p-1 bg-black/35 shadow-inner mb-2">
-              <svg class="w-12 h-12 sm:w-14 sm:h-14" viewBox="0 0 100 100" fill="none">
-                <circle cx="50" cy="50" r="46" stroke="#EDA531" stroke-width="1.8" stroke-dasharray="2 3"/>
-                <circle cx="50" cy="50" r="38" stroke="#EDA531" stroke-width="1" opacity="0.6"/>
-                <polygon points="50,16 56,47 50,50 44,47" fill="#A44200"/>
-                <polygon points="50,84 56,53 50,50 44,53" fill="#EDA531"/>
-                <polygon points="16,50 47,44 50,50 47,56" fill="#D39226"/>
-                <polygon points="84,50 53,44 50,50 53,56" fill="#D39226"/>
-                <circle cx="50" cy="50" r="3.5" fill="#FFF3D4" stroke="#8C4E0E" stroke-width="1.5"/>
-              </svg>
-            </div>
-
-            <!-- Volume Ribbon -->
-            <span class="inline-block px-3.5 py-0.5 rounded-full bg-black/40 border border-scrap-gold/50 text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] text-scrap-gold font-bold mb-2">
-              ✦ VOL. 2026–2027 ✦
-            </span>
-
-            <!-- Embossed Title -->
-            <h2 class="font-display font-bold text-2xl sm:text-4xl tracking-tight text-white leading-tight drop-shadow-md">
-              IBA ADVENTURE CLUB
-            </h2>
-            <p class="font-hand text-xl sm:text-3xl text-scrap-gold mt-0.5 font-bold drop-shadow">
-              Expedition Memories & Field Notes ♡
-            </p>
-
-            <!-- Minimal Golden Open Prompt Button -->
-            <div class="mt-5">
-              <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-scrap-gold hover:bg-scrap-gold/90 text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider shadow-lg border border-amber-300">
-                <span>Click To Open Journal</span>
-                <span>📖</span>
-              </span>
-            </div>
+          <!-- Brass Compass Medallion -->
+          <div class="w-12 h-12 rounded-full border border-dashed border-scrap-gold flex items-center justify-center p-1 bg-black/35 mb-1.5 shadow-inner">
+            <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="50" r="46" stroke="#EDA531" stroke-width="2" stroke-dasharray="2 3"/>
+              <polygon points="50,16 56,47 50,50 44,47" fill="#A44200"/>
+              <polygon points="50,84 56,53 50,50 44,53" fill="#EDA531"/>
+              <circle cx="50" cy="50" r="4" fill="#FFF3D4"/>
+            </svg>
           </div>
+
+          <!-- Volume Ribbon -->
+          <span class="inline-block px-3 py-0.5 rounded-full bg-black/40 border border-scrap-gold/50 text-[9px] font-mono uppercase tracking-[0.2em] text-scrap-gold font-bold mb-1">
+            ✦ VOL. 2026–2027 ✦
+          </span>
+
+          <!-- Title -->
+          <h2 class="font-display font-bold text-lg sm:text-xl text-white tracking-tight leading-tight">
+            IBA ADVENTURE CLUB
+          </h2>
+          <p class="font-hand text-base text-scrap-gold font-bold">
+            Expedition Memories ♡
+          </p>
+
+          <!-- Subtle Centered Click Prompt -->
+          <span class="mt-2 inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-scrap-gold text-scrap-charcoal font-display font-bold text-[10px] uppercase tracking-wider shadow">
+            <span>Tap to open scrapbook</span>
+            <span>📖</span>
+          </span>
         </div>
 
       </div>
@@ -1044,7 +466,7 @@
 
   </main>
 
-  <!-- FULL-SCREEN DARK FOCUS THEATER (2-PAGE SPREAD VIEWER WITH SEAMLESS 3D FLIP) -->
+  <!-- FULL-SCREEN DARK FOCUS THEATER (2-PAGE FLIPPABLE SPREAD VIEWER) -->
   <div id="journalModal" class="fixed inset-0 z-50 bg-black/96 backdrop-blur-md hidden flex-col items-center justify-center p-3 sm:p-6 overflow-y-auto" onclick="handleBackdropClick(event)">
     
     <div class="w-full max-w-5xl flex justify-between items-center text-white mb-2 sm:mb-3 px-2">
@@ -1058,13 +480,9 @@
       </button>
     </div>
 
-    <!-- 3D Book Stage with Hinging Leaves -->
+    <!-- 3D Book Stage -->
     <div class="w-full max-w-5xl book-3d-stage">
-      
-      <!-- Hinging Leather Front Cover -->
       <div id="coverHingeLeaf"></div>
-
-      <!-- 3D Turning Inner Page Leaf -->
       <div id="turningPageLeaf">
         <div id="turningLeafContent" class="w-full h-full p-5 sm:p-8 flex flex-col justify-between"></div>
       </div>
@@ -1074,7 +492,7 @@
         <div class="book-spine-crease hidden md:block"></div>
 
         <!-- LEFT PAGE -->
-        <div onclick="prevSpread()" class="w-full md:w-1/2 p-5 sm:p-8 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#DFCFAA] relative cursor-pointer hover:bg-black/[0.015] transition" title="Click left page or swipe right to turn back">
+        <div onclick="prevSpread()" class="w-full md:w-1/2 p-5 sm:p-8 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#DFCFAA] relative cursor-pointer hover:bg-black/[0.015] transition" title="Click left page to turn back">
           <div class="washi-tape washi-tape-teal"></div>
           
           <div id="leftPageContent">
@@ -1092,7 +510,7 @@
         </div>
 
         <!-- RIGHT PAGE -->
-        <div onclick="nextSpread()" class="w-full md:w-1/2 p-5 sm:p-8 flex flex-col justify-between relative bg-[#F7EED9]/50 cursor-pointer hover:bg-black/[0.015] transition" title="Click right page or swipe left to turn forward">
+        <div onclick="nextSpread()" class="w-full md:w-1/2 p-5 sm:p-8 flex flex-col justify-between relative bg-[#F7EED9]/50 cursor-pointer hover:bg-black/[0.015] transition" title="Click right page to turn forward">
           <div class="washi-tape washi-tape-rust"></div>
           
           <div id="rightPageContent">
@@ -1112,7 +530,7 @@
       </div>
     </div>
 
-    <!-- Bottom Flipping Controls & Progress Indicator -->
+    <!-- Bottom Controls -->
     <div class="flex items-center gap-3 sm:gap-6 mt-4 text-white text-xs">
       <button onclick="prevSpread()" id="btnPrevModal" class="px-5 sm:px-6 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-bold uppercase tracking-wider transition disabled:opacity-20 shadow">
         ← Previous Page
@@ -1125,23 +543,17 @@
       </button>
     </div>
 
-    <p class="text-xs sm:text-sm font-hand text-white/90 mt-2.5 text-center drop-shadow">
-      Click either page to turn • Swipe left or right on touchscreens • Use keyboard arrows ← → ♡
+    <p class="text-xs sm:text-sm font-hand text-white/90 mt-2 text-center drop-shadow">
+      Click either page to turn • Swipe left or right on mobile • Use keyboard arrows ← → ♡
     </p>
   </div>
 
-  <!-- LIGHTBOX MODAL (FOR COUNCIL PHOTOS) -->
+  <!-- LIGHTBOX MODAL -->
   <div id="lightbox" class="fixed inset-0 z-50 bg-scrap-charcoal/95 hidden flex-col items-center justify-center p-4">
     <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-scrap-gold text-3xl font-bold p-2 transition">✕</button>
     <img id="lightboxImg" src="" class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg border-4 border-white shadow-2xl">
     <p id="lightboxCaption" class="mt-4 font-hand font-bold text-white tracking-wide text-center text-2xl"></p>
   </div>
-
-  <!-- FOOTER -->
-  <footer class="mt-auto border-t-2 border-scrap-kraft bg-[#FAF6EE] py-8 px-6 text-center text-xs text-scrap-ink/70">
-    <p class="font-display font-semibold">© 2026 IBA Adventure Club. Institute of Business Administration, Karachi.</p>
-    <p class="font-hand text-xl text-scrap-rust mt-1 font-bold">New faces. Uncharted trails. Same wild spirit. ♡</p>
-  </footer>
 
   <!-- SCRIPT LOGIC -->
   <script>
@@ -1388,23 +800,6 @@
       }
     });
 
-    function updateChecklist() {
-      const checkboxes = document.querySelectorAll('.pack-item');
-      let checked = 0;
-      checkboxes.forEach(function(cb) {
-        if (cb.checked) checked++;
-      });
-      document.getElementById('packProgress').innerText = checked + '/' + checkboxes.length + ' Ready';
-    }
-
-    function handleRegistration(e) {
-      e.preventDefault();
-      const code = '#IAC-SCUBA-' + Math.floor(100 + Math.random() * 900);
-      document.getElementById('bookingCode').innerText = code;
-      document.getElementById('formSuccess').classList.remove('hidden');
-      document.getElementById('scubaForm').reset();
-    }
-
     function openLightbox(url, title) {
       if (!url) return;
       document.getElementById('lightboxImg').src = url;
@@ -1420,14 +815,6 @@
       lb.classList.remove('flex');
       document.getElementById('lightboxImg').src = '';
     }
-
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') closeLightbox();
-    });
-
-    document.getElementById('lightbox').addEventListener('click', function(event) {
-      if (event.target === this) closeLightbox();
-    });
   </script>
 </body>
 </html>
