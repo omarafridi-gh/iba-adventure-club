@@ -188,4 +188,159 @@
       display: block !important;
       left: 0;
       transform-origin: right center;
-      animation: turnBackward3D 0.88s
+      animation: turnBackward3D 0.88s cubic-bezier(0.22, 0.85, 0.3, 1) forwards;
+    }
+    @keyframes turnBackward3D {
+      0% { transform: rotateY(0deg); box-shadow: 8px 0 28px rgba(0,0,0,0.35); filter: brightness(1); }
+      48% { filter: brightness(0.92); box-shadow: 30px 10px 45px rgba(0,0,0,0.25); }
+      100% { transform: rotateY(180deg); box-shadow: -10px 0 25px rgba(0,0,0,0.1); filter: brightness(1); }
+    }
+  </style>
+</head>
+<body class="text-scrap-ink font-sans selection:bg-scrap-gold selection:text-white min-h-screen flex flex-col">
+
+  <!-- TOP HEADER / NAV -->
+  <header class="sticky top-0 z-40 bg-[#FAF6EE]/92 backdrop-blur-md border-b-2 border-scrap-kraft shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3 cursor-pointer group" onclick="showPage('home')">
+        <img src="IAC%20Logo.PNG" onerror="this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-scrap-charcoal flex items-center justify-center font-display font-black text-white text-sm shadow\'>IAC</div>'" alt="IAC Logo" class="w-10 h-10 rounded-full object-cover border-2 border-scrap-charcoal shadow-sm group-hover:rotate-6 transition">
+        <div>
+          <span class="font-display font-bold text-base sm:text-lg tracking-tight text-scrap-charcoal block leading-none">
+            IBA ADVENTURE CLUB
+          </span>
+          <span class="font-hand text-sm text-scrap-rust font-bold">Explore / Connect / Belong</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-2 bg-scrap-kraft/60 p-1 rounded-xl border border-scrap-kraft shadow-inner">
+        <button onclick="showPage('home')" id="tab-home" class="nav-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition bg-scrap-charcoal text-white shadow">Home & Council</button>
+        <button onclick="showPage('scuba')" id="tab-scuba" class="nav-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition text-scrap-charcoal hover:bg-scrap-kraft">Charna Scuba '26</button>
+        <button onclick="showPage('journal')" id="tab-journal" class="nav-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition text-scrap-charcoal hover:bg-scrap-kraft">Field Journal</button>
+      </nav>
+
+      <button onclick="showPage('scuba')" class="hidden sm:inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-scrap-teal hover:opacity-90 text-white font-display font-bold text-xs uppercase tracking-wider shadow-md transition">
+        Claim Dive Slot →
+      </button>
+    </div>
+
+    <!-- Mobile Nav Bar -->
+    <div class="flex md:hidden border-t border-scrap-kraft bg-[#FAF6EE] px-3 py-1.5 justify-around">
+      <button onclick="showPage('home')" id="tab-home-m" class="nav-tab-m text-xs font-bold text-scrap-charcoal px-3 py-1">Home</button>
+      <button onclick="showPage('scuba')" id="tab-scuba-m" class="nav-tab-m text-xs font-bold text-scrap-ink/70 px-3 py-1">Scuba '26</button>
+      <button onclick="showPage('journal')" id="tab-journal-m" class="nav-tab-m text-xs font-bold text-scrap-ink/70 px-3 py-1">Journal</button>
+    </div>
+  </header>
+
+  <!-- MOUNT CONTAINER FOR MODULAR PAGES -->
+  <div id="pagesContainer" class="flex-grow flex flex-col">
+    <div id="page-home-root"></div>
+    <div id="page-scuba-root"></div>
+    <div id="page-journal-root"></div>
+  </div>
+
+  <!-- FULL-SCREEN DARK FOCUS THEATER (ZERO-SCROLL, CLEAN FLIP READER) -->
+  <div id="journalModal" class="fixed inset-0 z-50 bg-black/96 backdrop-blur-md hidden flex-col items-center justify-center p-3 sm:p-5 overflow-hidden select-none" onclick="handleBackdropClick(event)">
+    
+    <!-- Top Header Bar with Inline Tip -->
+    <div class="w-full max-w-5xl flex justify-between items-center text-white mb-2 sm:mb-3 px-2">
+      <div>
+        <span class="font-mono text-[10px] sm:text-[11px] font-bold text-scrap-gold uppercase tracking-widest" id="modalCategory">Expedition 01 • Marine Recon</span>
+        <h3 class="font-display font-bold text-sm sm:text-lg text-white leading-tight" id="modalTitle">Chasing Blue: Charna Island & Mubarak</h3>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <!-- Compact Inline Tip -->
+        <span class="hidden md:inline font-hand text-sm text-white/80">Click pages or use arrows ← → ♡</span>
+        <span id="modalSpreadTracker" class="font-mono font-bold text-scrap-gold text-xs">Spread 1 of 4</span>
+
+        <button onclick="closeMasterBookModal()" class="px-3.5 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-xs font-bold uppercase tracking-wider text-white transition flex items-center gap-1.5 shadow">
+          <span>✕</span>
+          <span>Close</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 3D Book Stage (With Floating Side Paddles) -->
+    <div class="w-full max-w-5xl book-3d-stage relative flex items-center justify-center">
+      
+      <!-- Floating Left Navigation Paddle -->
+      <button onclick="prevSpread()" id="btnPrevModal" class="absolute -left-3 sm:-left-6 z-40 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-black/90 text-scrap-gold border border-white/20 flex items-center justify-center text-base sm:text-lg shadow-xl transition disabled:opacity-20 disabled:pointer-events-none" title="Previous Spread">
+        ←
+      </button>
+
+      <!-- Turning Page Leaf -->
+      <div id="turningPageLeaf">
+        <div id="turningLeafContent" class="w-full h-full p-5 sm:p-8 flex flex-col justify-between"></div>
+      </div>
+
+      <!-- Main Open 2-Page Spread Frame (Height constrained to 74vh so it never scrolls) -->
+      <div id="bookSpreadTouchArea" class="w-full aspect-[16/10] max-h-[74vh] min-h-[380px] rounded-2xl open-book-spread relative overflow-hidden flex flex-col md:flex-row shadow-2xl select-none">
+        <div class="book-spine-crease hidden md:block"></div>
+
+        <!-- LEFT PAGE -->
+        <div onclick="prevSpread()" class="w-full md:w-1/2 p-4 sm:p-7 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#DFCFAA] relative cursor-pointer hover:bg-black/[0.015] transition" title="Click left page to turn back">
+          <div class="washi-tape washi-tape-teal"></div>
+          
+          <div id="leftPageContent">
+            <div class="aspect-[16/10] w-full rounded-xl overflow-hidden border-2 border-white shadow-md bg-scrap-kraft relative">
+              <img id="modalLeftImg" src="" alt="Left Polaroid" class="w-full h-full object-cover">
+            </div>
+            <p id="modalLeftDate" class="font-mono text-[9px] sm:text-[10px] text-scrap-rust font-bold mt-2 uppercase tracking-widest"></p>
+            <h4 id="modalLeftHeading" class="font-display font-bold text-base sm:text-lg text-scrap-charcoal mt-0.5 leading-snug"></h4>
+          </div>
+
+          <div class="mt-2 pt-2 border-t border-[#DFCFAA] flex items-end justify-between">
+            <p id="modalLeftNote" class="font-hand text-base sm:text-lg text-scrap-ink/90 leading-snug"></p>
+            <span id="modalLeftPageNum" class="font-mono text-[9px] text-scrap-ink/50 ml-2 whitespace-nowrap">Page 1</span>
+          </div>
+        </div>
+
+        <!-- RIGHT PAGE -->
+        <div onclick="nextSpread()" class="w-full md:w-1/2 p-4 sm:p-7 flex flex-col justify-between relative bg-[#F7EED9]/50 cursor-pointer hover:bg-black/[0.015] transition" title="Click right page to turn forward">
+          <div class="washi-tape washi-tape-rust"></div>
+          
+          <div id="rightPageContent">
+            <div class="aspect-[16/10] w-full rounded-xl overflow-hidden border-2 border-white shadow-md bg-scrap-kraft relative">
+              <img id="modalRightImg" src="" alt="Right Polaroid" class="w-full h-full object-cover">
+            </div>
+            <p id="modalRightDate" class="font-mono text-[9px] sm:text-[10px] text-scrap-teal font-bold mt-2 uppercase tracking-widest"></p>
+            <h4 id="modalRightHeading" class="font-display font-bold text-base sm:text-lg text-scrap-charcoal mt-0.5 leading-snug"></h4>
+          </div>
+
+          <div class="mt-2 pt-2 border-t border-[#DFCFAA] flex items-end justify-between">
+            <p id="modalRightNote" class="font-hand text-base sm:text-lg text-scrap-ink/90 leading-snug"></p>
+            <span id="modalRightPageNum" class="font-mono text-[9px] text-scrap-ink/50 ml-2 whitespace-nowrap">Page 2</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Floating Right Navigation Paddle -->
+      <button onclick="nextSpread()" id="btnNextModal" class="absolute -right-3 sm:-right-6 z-40 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-black/90 text-scrap-gold border border-white/20 flex items-center justify-center text-base sm:text-lg shadow-xl transition disabled:opacity-20 disabled:pointer-events-none" title="Next Spread">
+        →
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="fixed inset-0 z-50 bg-scrap-charcoal/95 hidden flex-col items-center justify-center p-4">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-scrap-gold text-3xl font-bold p-2 transition">✕</button>
+    <img id="lightboxImg" src="" class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg border-4 border-white shadow-2xl">
+    <p id="lightboxCaption" class="mt-4 font-hand font-bold text-white tracking-wide text-center text-2xl"></p>
+  </div>
+
+  <!-- GLOBAL FOOTER (VISIBLE ON HOME & SCUBA) -->
+  <footer id="globalFooter" class="border-t-2 border-scrap-kraft bg-[#FAF6EE] py-8 px-6 text-center text-xs text-scrap-ink/70">
+    <p class="font-display font-semibold">© 2026 IBA Adventure Club. Institute of Business Administration, Karachi.</p>
+    <p class="font-hand text-xl text-scrap-rust mt-1 font-bold">New faces. Uncharted trails. Same wild spirit. ♡</p>
+  </footer>
+
+  <!-- LOAD MODULAR PAGE TEMPLATES & APP ENGINE -->
+  <script src="pages/home.js"></script>
+  <script src="pages/scuba.js"></script>
+  <script src="pages/journal.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
