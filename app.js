@@ -27,6 +27,18 @@ function showPage(pageId) {
     if (footer) footer.classList.remove('hidden');
     document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
+
+    // Gently pause journal lo-fi music if moving to another page
+    const audio = document.getElementById('journalAudio');
+    if (audio && !audio.paused) {
+      audio.pause();
+      const btnText = document.getElementById('musicStatusText');
+      const waves = document.getElementById('musicWaves');
+      const icon = document.getElementById('musicDiscIcon');
+      if (btnText) btnText.innerText = "Play Lo-fi Beats ♪";
+      if (waves) waves.classList.add('hidden');
+      if (icon) icon.classList.remove('animate-spin');
+    }
   }
 
   // Update Desktop Navigation Tabs
@@ -148,6 +160,12 @@ function openMasterBookModal() {
   spreadArea.classList.remove('anim-pov-zoom');
   void spreadArea.offsetWidth;
   spreadArea.classList.add('anim-pov-zoom');
+
+  // Automatically start ambient lo-fi music on open if not already playing
+  const audio = document.getElementById('journalAudio');
+  if (audio && audio.paused) {
+    toggleJournalMusic();
+  }
 }
 
 function closeMasterBookModal() {
@@ -238,6 +256,31 @@ function prevSpread() {
     leafContent.innerHTML = '';
     isFlipping = false;
   }, 880);
+}
+
+// 5. Lo-Fi Ambient Audio Controls
+function toggleJournalMusic() {
+  const audio = document.getElementById('journalAudio');
+  const btnText = document.getElementById('musicStatusText');
+  const waves = document.getElementById('musicWaves');
+  const icon = document.getElementById('musicDiscIcon');
+  if (!audio) return;
+
+  if (audio.paused) {
+    audio.volume = 0.45; // Comfortable lo-fi background volume
+    audio.play().then(() => {
+      if (btnText) btnText.innerText = "Playing Room Beats ♪";
+      if (waves) waves.classList.remove('hidden');
+      if (icon) icon.classList.add('animate-spin');
+    }).catch(err => {
+      console.log("Audio playback waiting for interaction:", err);
+    });
+  } else {
+    audio.pause();
+    if (btnText) btnText.innerText = "Play Lo-fi Beats ♪";
+    if (waves) waves.classList.add('hidden');
+    if (icon) icon.classList.remove('animate-spin');
+  }
 }
 
 // Touch swipe gestures
