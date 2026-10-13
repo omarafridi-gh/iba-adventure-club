@@ -94,20 +94,6 @@
       box-shadow: 5px 16px 28px rgba(53, 54, 48, 0.2);
     }
 
-    .rubber-stamp {
-      border: 2.5px dashed #A44200;
-      color: #A44200;
-      text-transform: uppercase;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      border-radius: 9999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transform: rotate(-4deg);
-      user-select: none;
-    }
-
     @keyframes sunbeamBreathe {
       0%, 100% { opacity: 0.25; }
       50% { opacity: 0.45; }
@@ -149,11 +135,11 @@
     }
 
     .anim-pov-zoom {
-      animation: povCameraPush 0.45s cubic-bezier(0.2, 0.85, 0.25, 1) forwards;
+      animation: povCameraPush 0.35s cubic-bezier(0.2, 0.85, 0.25, 1) forwards;
       transform-origin: center center;
     }
     @keyframes povCameraPush {
-      0% { opacity: 0.85; transform: scale(0.95); }
+      0% { opacity: 0.85; transform: scale(0.96); }
       100% { opacity: 1; transform: scale(1); }
     }
 
@@ -238,85 +224,84 @@
     <div id="page-journal-root"></div>
   </div>
 
-  <!-- FULL-SCREEN DARK FOCUS THEATER (ZERO-SCROLL, CLEAN FLIP READER) -->
-  <div id="journalModal" class="fixed inset-0 z-50 bg-black/96 backdrop-blur-md hidden flex-col items-center justify-center p-3 sm:p-5 overflow-hidden select-none" onclick="handleBackdropClick(event)">
+  <!-- FULL-SCREEN DARK FOCUS THEATER (ZERO-SCROLL, EXPANDED JOURNAL VIEW) -->
+  <div id="journalModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex-col items-center justify-center p-2 sm:p-4 overflow-hidden select-none" onclick="handleBackdropClick(event)">
     
-    <!-- Top Header Bar with Inline Tip -->
-    <div class="w-full max-w-5xl flex justify-between items-center text-white mb-2 sm:mb-3 px-2">
+    <!-- High-Contrast Top Control Bar -->
+    <div class="w-full max-w-6xl flex justify-between items-center mb-2 px-3 py-2 rounded-2xl bg-black/75 border border-white/20 backdrop-blur-md shadow-2xl">
       <div>
-        <span class="font-mono text-[10px] sm:text-[11px] font-bold text-scrap-gold uppercase tracking-widest" id="modalCategory">Expedition 01 • Marine Recon</span>
-        <h3 class="font-display font-bold text-sm sm:text-lg text-white leading-tight" id="modalTitle">Chasing Blue: Charna Island & Mubarak</h3>
+        <span class="font-mono text-xs sm:text-sm font-bold text-scrap-gold uppercase tracking-wider drop-shadow" id="modalCategory">EXPEDITION 01 • MARINE RECON</span>
+        <h3 class="font-display font-bold text-base sm:text-2xl text-white leading-tight drop-shadow-md" id="modalTitle">Chasing Blue: Charna Island & Mubarak</h3>
       </div>
 
-      <div class="flex items-center gap-4">
-        <!-- Compact Inline Tip -->
-        <span class="hidden md:inline font-hand text-sm text-white/80">Click pages or use arrows ← → ♡</span>
-        <span id="modalSpreadTracker" class="font-mono font-bold text-scrap-gold text-xs">Spread 1 of 4</span>
+      <div class="flex items-center gap-3 sm:gap-5">
+        <span class="hidden md:inline font-hand text-base sm:text-lg text-[#FFF3D6] drop-shadow">Click pages or use arrows ← → ♡</span>
+        <span id="modalSpreadTracker" class="font-mono font-bold text-scrap-gold text-xs sm:text-sm bg-white/10 px-2.5 py-1 rounded-lg border border-white/15">Spread 1 of 4</span>
 
-        <button onclick="closeMasterBookModal()" class="px-3.5 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-xs font-bold uppercase tracking-wider text-white transition flex items-center gap-1.5 shadow">
+        <button onclick="closeMasterBookModal()" class="px-4 py-1.5 rounded-xl bg-scrap-rust hover:bg-scrap-rust/90 text-xs sm:text-sm font-bold uppercase tracking-wider text-white transition flex items-center gap-1.5 shadow-lg border border-white/20">
           <span>✕</span>
           <span>Close</span>
         </button>
       </div>
     </div>
 
-    <!-- 3D Book Stage (With Floating Side Paddles) -->
-    <div class="w-full max-w-5xl book-3d-stage relative flex items-center justify-center">
+    <!-- 3D Book Stage (With Floating Side Paddles & Larger Dimensions) -->
+    <div class="w-full max-w-6xl book-3d-stage relative flex items-center justify-center">
       
       <!-- Floating Left Navigation Paddle -->
-      <button onclick="prevSpread()" id="btnPrevModal" class="absolute -left-3 sm:-left-6 z-40 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-black/90 text-scrap-gold border border-white/20 flex items-center justify-center text-base sm:text-lg shadow-xl transition disabled:opacity-20 disabled:pointer-events-none" title="Previous Spread">
+      <button onclick="prevSpread()" id="btnPrevModal" class="absolute -left-2 sm:-left-5 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/80 hover:bg-black text-scrap-gold border border-white/25 flex items-center justify-center text-lg sm:text-xl shadow-2xl transition disabled:opacity-20 disabled:pointer-events-none" title="Previous Spread">
         ←
       </button>
 
       <!-- Turning Page Leaf -->
       <div id="turningPageLeaf">
-        <div id="turningLeafContent" class="w-full h-full p-5 sm:p-8 flex flex-col justify-between"></div>
+        <div id="turningLeafContent" class="w-full h-full p-6 sm:p-9 flex flex-col justify-between"></div>
       </div>
 
-      <!-- Main Open 2-Page Spread Frame (Height constrained to 74vh so it never scrolls) -->
-      <div id="bookSpreadTouchArea" class="w-full aspect-[16/10] max-h-[74vh] min-h-[380px] rounded-2xl open-book-spread relative overflow-hidden flex flex-col md:flex-row shadow-2xl select-none">
+      <!-- Main Open 2-Page Spread Frame (Expanded to 82vh) -->
+      <div id="bookSpreadTouchArea" class="w-full aspect-[16/10] max-h-[82vh] min-h-[420px] rounded-2xl open-book-spread relative overflow-hidden flex flex-col md:flex-row shadow-[0_25px_60px_rgba(0,0,0,0.95)] select-none">
         <div class="book-spine-crease hidden md:block"></div>
 
         <!-- LEFT PAGE -->
-        <div onclick="prevSpread()" class="w-full md:w-1/2 p-4 sm:p-7 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#DFCFAA] relative cursor-pointer hover:bg-black/[0.015] transition" title="Click left page to turn back">
+        <div onclick="prevSpread()" class="w-full md:w-1/2 p-5 sm:p-8 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#DFCFAA] relative cursor-pointer hover:bg-black/[0.015] transition" title="Click left page to turn back">
           <div class="washi-tape washi-tape-teal"></div>
           
           <div id="leftPageContent">
             <div class="aspect-[16/10] w-full rounded-xl overflow-hidden border-2 border-white shadow-md bg-scrap-kraft relative">
               <img id="modalLeftImg" src="" alt="Left Polaroid" class="w-full h-full object-cover">
             </div>
-            <p id="modalLeftDate" class="font-mono text-[9px] sm:text-[10px] text-scrap-rust font-bold mt-2 uppercase tracking-widest"></p>
-            <h4 id="modalLeftHeading" class="font-display font-bold text-base sm:text-lg text-scrap-charcoal mt-0.5 leading-snug"></h4>
+            <p id="modalLeftDate" class="font-mono text-[10px] sm:text-xs text-scrap-rust font-bold mt-2.5 uppercase tracking-widest"></p>
+            <h4 id="modalLeftHeading" class="font-display font-bold text-lg sm:text-xl text-scrap-charcoal mt-0.5 leading-snug"></h4>
           </div>
 
           <div class="mt-2 pt-2 border-t border-[#DFCFAA] flex items-end justify-between">
-            <p id="modalLeftNote" class="font-hand text-base sm:text-lg text-scrap-ink/90 leading-snug"></p>
-            <span id="modalLeftPageNum" class="font-mono text-[9px] text-scrap-ink/50 ml-2 whitespace-nowrap">Page 1</span>
+            <p id="modalLeftNote" class="font-hand text-lg sm:text-xl text-scrap-ink/90 leading-snug"></p>
+            <span id="modalLeftPageNum" class="font-mono text-[10px] text-scrap-ink/50 ml-2 whitespace-nowrap">Page 1</span>
           </div>
         </div>
 
         <!-- RIGHT PAGE -->
-        <div onclick="nextSpread()" class="w-full md:w-1/2 p-4 sm:p-7 flex flex-col justify-between relative bg-[#F7EED9]/50 cursor-pointer hover:bg-black/[0.015] transition" title="Click right page to turn forward">
+        <div onclick="nextSpread()" class="w-full md:w-1/2 p-5 sm:p-8 flex flex-col justify-between relative bg-[#F7EED9]/50 cursor-pointer hover:bg-black/[0.015] transition" title="Click right page to turn forward">
           <div class="washi-tape washi-tape-rust"></div>
           
           <div id="rightPageContent">
             <div class="aspect-[16/10] w-full rounded-xl overflow-hidden border-2 border-white shadow-md bg-scrap-kraft relative">
               <img id="modalRightImg" src="" alt="Right Polaroid" class="w-full h-full object-cover">
             </div>
-            <p id="modalRightDate" class="font-mono text-[9px] sm:text-[10px] text-scrap-teal font-bold mt-2 uppercase tracking-widest"></p>
-            <h4 id="modalRightHeading" class="font-display font-bold text-base sm:text-lg text-scrap-charcoal mt-0.5 leading-snug"></h4>
+            <p id="modalRightDate" class="font-mono text-[10px] sm:text-xs text-scrap-teal font-bold mt-2.5 uppercase tracking-widest"></p>
+            <h4 id="modalRightHeading" class="font-display font-bold text-lg sm:text-xl text-scrap-charcoal mt-0.5 leading-snug"></h4>
           </div>
 
           <div class="mt-2 pt-2 border-t border-[#DFCFAA] flex items-end justify-between">
-            <p id="modalRightNote" class="font-hand text-base sm:text-lg text-scrap-ink/90 leading-snug"></p>
-            <span id="modalRightPageNum" class="font-mono text-[9px] text-scrap-ink/50 ml-2 whitespace-nowrap">Page 2</span>
+            <p id="modalRightNote" class="font-hand text-lg sm:text-xl text-scrap-ink/90 leading-snug"></p>
+            <span id="modalRightPageNum" class="font-mono text-[10px] text-scrap-ink/50 ml-2 whitespace-nowrap">Page 2</span>
           </div>
         </div>
 
       </div>
 
       <!-- Floating Right Navigation Paddle -->
-      <button onclick="nextSpread()" id="btnNextModal" class="absolute -right-3 sm:-right-6 z-40 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-black/90 text-scrap-gold border border-white/20 flex items-center justify-center text-base sm:text-lg shadow-xl transition disabled:opacity-20 disabled:pointer-events-none" title="Next Spread">
+      <button onclick="nextSpread()" id="btnNextModal" class="absolute -right-2 sm:-right-5 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/80 hover:bg-black text-scrap-gold border border-white/25 flex items-center justify-center text-lg sm:text-xl shadow-2xl transition disabled:opacity-20 disabled:pointer-events-none" title="Next Spread">
         →
       </button>
 
