@@ -1,49 +1,108 @@
 // pages/home.js
 window.HOME_PAGE_TEMPLATE = `
 <main id="page-home" class="page-view flex-grow">
-  <!-- Hero Section -->
-  <section class="relative px-4 sm:px-6 pt-10 pb-14 max-w-6xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+  
+  <!-- HERO SECTION: Warm, Textured & Scrapbook-Themed -->
+  <section class="relative px-4 sm:px-6 pt-10 pb-16 max-w-6xl mx-auto overflow-hidden">
+    
+    <!-- Decorative Ambient Glows -->
+    <div class="absolute -top-12 -left-12 w-72 h-72 rounded-full bg-scrap-gold/15 blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-12 w-80 h-80 rounded-full bg-scrap-teal/10 blur-3xl pointer-events-none"></div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+      
+      <!-- Left Column: Copy & CTAs -->
       <div class="lg:col-span-7 text-center lg:text-left">
-        <div class="inline-block relative mb-4">
-          <span class="font-hand text-xl sm:text-2xl text-scrap-rust font-bold bg-[#F4EBD7] px-5 py-1.5 rounded-md border border-[#DFCFAA] shadow-sm inline-block transform -rotate-1">
+        
+        <!-- Top Tape Scrap Badge -->
+        <div class="inline-flex items-center gap-2 relative mb-4">
+          <span class="font-hand text-xl sm:text-2xl text-scrap-rust font-bold bg-[#F4EBD7] px-5 py-1.5 rounded-md border border-[#DFCFAA] shadow-[0_2px_8px_rgba(53,54,48,0.08)] inline-block transform -rotate-1">
             "New faces. Uncharted trails. Same wild spirit. ♡"
           </span>
+          <!-- Mini Decorative Seal -->
+          <span class="hidden sm:inline-block px-2.5 py-0.5 rounded-full bg-scrap-teal/15 text-scrap-teal border border-scrap-teal/30 font-mono text-[11px] font-bold uppercase tracking-wider">
+            EST. 2026–27
+          </span>
         </div>
-        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-scrap-charcoal leading-[1.1]">
+
+        <!-- Punchy Display Heading with Color Accents -->
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-scrap-charcoal leading-[1.08]">
           Trade Your Laptop <br>
-          <span class="text-scrap-rust">For A Compass.</span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-scrap-rust via-scrap-gold to-scrap-rust">For A Compass.</span>
         </h1>
+
+        <!-- Subheading -->
         <p class="mt-4 text-base sm:text-lg text-scrap-ink/85 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
           The faces rotate, the routes evolve, but the deep dive never stops. From the turquoise depths of Charna Island to high alpine mountain crossings, we take IBA students beyond campus gates into the untamed.
         </p>
-        <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
-          <button onclick="showPage('scuba')" class="px-8 py-3.5 bg-scrap-teal hover:bg-scrap-teal/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition transform hover:-translate-y-0.5">
-            Explore Charna Scuba '26 →
+
+        <!-- CTAs & Mini Tags -->
+        <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+          <button onclick="showPage('scuba')" class="px-8 py-3.5 bg-scrap-teal hover:bg-scrap-teal/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md border-2 border-scrap-charcoal transition transform hover:-translate-y-0.5 flex items-center gap-2">
+            <span>Explore Charna Scuba '26</span>
+            <span>→</span>
           </button>
-          <a href="#council-section" class="px-8 py-3.5 bg-[#FAF3E3] hover:bg-[#F3E6C9] text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition inline-block">
+          
+          <a href="#council-section" class="px-7 py-3.5 bg-[#FAF3E3] hover:bg-[#F3E6C9] text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition inline-block">
             Meet The Council ↓
           </a>
-        </div>
-      </div>
-      <div class="lg:col-span-5 relative flex justify-center">
-        <div class="relative w-80 sm:w-96">
-          <div class="polaroid transform -rotate-2">
-            <div class="washi-tape washi-tape-teal"></div>
-            <div class="aspect-[4/3] w-full overflow-hidden rounded bg-scrap-kraft relative">
-              <img id="heroPolaroidImg" src="hasan_scuba.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80';" alt="Charna Scuba" class="w-full h-full object-cover">
-            </div>
-            <div class="mt-4 text-center">
-              <p class="font-hand text-2xl text-scrap-charcoal font-bold">Charna Island Scuba '26 ♡</p>
-              <p class="text-xs uppercase font-bold text-scrap-teal tracking-widest mt-0.5">Slots Now Open</p>
-            </div>
+
+          <!-- Hand-stamped Society Chip -->
+          <div class="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-dashed border-scrap-rust/40 bg-scrap-rust/5 text-scrap-rust font-hand font-bold text-sm">
+            <span>⛺ 400+ Campers Certified</span>
           </div>
         </div>
+
       </div>
+
+      <!-- Right Column: Interactive Clickable Polaroid -->
+      <div class="lg:col-span-5 relative flex justify-center">
+        
+        <!-- Washi Tape Accents -->
+        <div class="relative w-80 sm:w-96 cursor-pointer group" onclick="showPage('scuba')" title="Click to view Charna Scuba expedition and form">
+          
+          <!-- Polaroid Outer Container -->
+          <div class="polaroid transform -rotate-2 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300 shadow-xl group-hover:shadow-2xl">
+            
+            <!-- Teal Tape Holding The Polaroid -->
+            <div class="washi-tape washi-tape-teal"></div>
+            
+            <!-- Polaroid Image Area with Shimmer & Dive Badge -->
+            <div class="aspect-[4/3] w-full overflow-hidden rounded bg-scrap-kraft relative">
+              <img id="heroPolaroidImg" src="hasan_scuba.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80';" alt="Charna Scuba" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              
+              <!-- Floating 'Click to Book' Tag -->
+              <div class="absolute bottom-2.5 right-2.5 bg-black/75 backdrop-blur-sm text-white px-3 py-1 rounded-full text-[10px] font-bold font-mono tracking-wider border border-white/30 flex items-center gap-1 opacity-90 group-hover:opacity-100 group-hover:bg-scrap-teal transition">
+                <span>RESERVE DIVE</span>
+                <span>↗</span>
+              </div>
+            </div>
+
+            <!-- Polaroid Caption Note -->
+            <div class="mt-4 text-center">
+              <p class="font-hand text-2xl text-scrap-charcoal font-bold group-hover:text-scrap-rust transition">
+                Charna Island Scuba '26 ♡
+              </p>
+              <p class="text-xs uppercase font-bold text-scrap-teal tracking-widest mt-0.5 flex items-center justify-center gap-1">
+                <span>Slots Now Open • Tap to Join</span>
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Decorative Golden Compass Stamp on Side -->
+          <div class="absolute -bottom-4 -left-4 w-12 h-12 rounded-full border-2 border-dashed border-scrap-gold text-scrap-gold flex items-center justify-center font-bold text-lg bg-[#FAF4E5] shadow-md transform -rotate-12 pointer-events-none">
+            🧭
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   </section>
 
-  <!-- Council Hierarchy Section -->
+  <!-- COUNCIL HIERARCHY SECTION -->
   <section id="council-section" class="px-4 sm:px-6 pt-16 pb-20 border-t-2 border-[#E0D2B8] relative">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-4xl mx-auto mb-14">
@@ -336,7 +395,7 @@ window.HOME_PAGE_TEMPLATE = `
         </div>
       </div>
 
-      <!-- Management Team -->
+      <!-- RESTORED & TEXTURED: Management Team Section -->
       <div class="w-full max-w-5xl mx-auto mt-6 flex flex-col items-center">
         <div class="flex justify-center">
           <svg class="w-8 h-14" viewBox="0 0 32 56" fill="none">
@@ -344,20 +403,29 @@ window.HOME_PAGE_TEMPLATE = `
             <circle cx="16" cy="52" r="4.5" fill="#A44200" />
           </svg>
         </div>
+        
         <div class="text-center mt-1 mb-2 z-10">
-          <span class="inline-block px-9 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider shadow">
+          <span class="inline-block px-9 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider shadow-md">
             MANAGEMENT TEAM 2026–2027
           </span>
         </div>
-        <div class="burlap-fabric-card rounded-2xl p-7 pt-9 text-center relative w-full shadow-md mt-2">
-          <div class="washi-tape"></div>
-          <h4 class="font-display font-bold text-2xl text-scrap-charcoal mt-1">Annual General Management Body</h4>
+
+        <!-- Textured Parchment Burlap Card -->
+        <div class="crumpled-paper-card bg-[#FAF2DF] border-2 border-dashed border-[#DFCFAA] rounded-2xl p-8 pt-10 text-center relative w-full shadow-[0_8px_25px_rgba(53,54,48,0.1)] mt-2">
+          <!-- Real Scrapbook Washi Tape -->
+          <div class="washi-tape washi-tape-rust"></div>
+
+          <h4 class="font-display font-bold text-2xl text-scrap-charcoal mt-1 tracking-tight">
+            Annual General Management Body
+          </h4>
           <p class="text-sm text-scrap-ink/85 max-w-2xl mx-auto mt-2 leading-relaxed font-medium">
             Operating directly under the Executive Council and Directors. Inducted annually for the tenure to drive on-ground execution across expeditions, basecamps, and campus drives.
           </p>
         </div>
       </div>
+
     </div>
   </section>
+
 </main>
 `;
