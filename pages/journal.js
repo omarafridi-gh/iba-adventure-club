@@ -1,8 +1,8 @@
 // pages/journal.js
 window.JOURNAL_PAGE_TEMPLATE = `
-<main id="page-journal" class="page-view w-full h-[calc(100vh-64px)] relative overflow-hidden select-none bg-[#2B160B]">
+<main id="page-journal" class="page-view w-full h-[calc(100dvh-64px)] max-h-[calc(100dvh-64px)] relative overflow-hidden select-none bg-[#2B160B]">
   
-  <!-- 1. VIDEO VIEWPORT (Tuned to reveal the full 'VOL. 2026-2027' text while hiding watermark) -->
+  <!-- 1. VIDEO VIEWPORT (Locked to top, tuned to mask watermark while preserving cover art) -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
     <video 
       id="packingRoomVideo"
@@ -23,33 +23,28 @@ window.JOURNAL_PAGE_TEMPLATE = `
     <div class="ambient-sunbeam absolute inset-0"></div>
   </div>
 
-  <!-- 2. IN-THEME SCRAPBOOK BOOKMARK INDICATOR & CLICK HOTSPOT -->
+  <!-- 2. SUBTLE GLOWING TEXT INDICATOR & NATURAL CLICK HOTSPOT -->
   <div 
-    class="absolute bottom-[2%] sm:bottom-[3%] left-[48%] -translate-x-1/2 w-[34%] sm:w-[24%] max-w-[300px] z-20 flex flex-col items-center cursor-pointer group pointer-events-auto"
+    class="absolute bottom-[1%] sm:bottom-[2%] left-[48%] -translate-x-1/2 w-[36%] sm:w-[26%] max-w-[320px] z-20 flex flex-col items-center cursor-pointer group pointer-events-auto"
     onclick="openMasterBookModal()" 
     title="Click to open Field Journal"
   >
-    <!-- Organic Scrapbook Bookmark Floating Over the Journal -->
-    <div class="transition-all duration-300 transform group-hover:-translate-y-1.5 flex flex-col items-center">
+    <!-- Floating Glowing Prompt (No background box) -->
+    <div class="flex flex-col items-center pointer-events-none transition-transform duration-300 group-hover:-translate-y-1 mb-1">
       
-      <!-- Torn Parchment Tag with Washi Tape and Cursive Script -->
-      <div class="px-3.5 py-1 rounded bg-[#FAF4E5] border border-[#DFCFAA] shadow-[0_6px_16px_rgba(0,0,0,0.45)] relative flex items-center gap-2 transform -rotate-1">
-        <!-- Tiny Brass Pin -->
-        <span class="w-2 h-2 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/30 shadow-xs inline-block shrink-0"></span>
-        
-        <span class="font-hand font-bold text-sm sm:text-base text-scrap-rust leading-none tracking-wide">
-          Flip open our stories ♡
-        </span>
-        
-        <span class="text-xs text-scrap-gold font-bold">✦</span>
-      </div>
+      <!-- Cursive Glowing Title with Warm Amber Drop Glow -->
+      <span class="font-hand font-bold text-lg sm:text-2xl text-[#FFF3D6] tracking-wide leading-none drop-shadow-[0_2px_10px_rgba(237,165,49,0.9)] group-hover:text-scrap-gold transition-colors duration-300">
+        Flip open our stories ♡
+      </span>
 
-      <!-- Downward Pointing Parchment Tip -->
-      <div class="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-[#DFCFAA] drop-shadow-xs"></div>
+      <!-- Gentle Pulsing Compass Chevron Pointing to the Book -->
+      <svg class="w-5 h-5 text-scrap-gold drop-shadow-[0_2px_8px_rgba(237,165,49,0.85)] animate-bounce mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M7 9 L12 14 L17 9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
 
-    <!-- Transparent Click Area Directly Over the Embossed Tabletop Journal -->
-    <div class="w-full h-24 sm:h-28 rounded-2xl transition-all duration-300 group-hover:bg-amber-400/10 group-hover:ring-2 group-hover:ring-scrap-gold/60 mt-0.5"></div>
+    <!-- 100% Invisible Hit Area Over the Journal (No border, no highlight box) -->
+    <div class="w-full h-28 sm:h-36 rounded-2xl"></div>
 
   </div>
 
