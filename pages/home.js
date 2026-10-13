@@ -19,7 +19,6 @@ window.HOME_PAGE_TEMPLATE = `
           <span class="font-hand text-xl sm:text-2xl text-scrap-rust font-bold bg-[#F4EBD7] px-5 py-1.5 rounded-md border border-[#DFCFAA] shadow-[0_2px_8px_rgba(53,54,48,0.08)] inline-block transform -rotate-1">
             "New faces. Uncharted trails. Same wild spirit. ♡"
           </span>
-          <!-- Mini Decorative Seal -->
           <span class="hidden sm:inline-block px-2.5 py-0.5 rounded-full bg-scrap-teal/15 text-scrap-teal border border-scrap-teal/30 font-mono text-[11px] font-bold uppercase tracking-wider">
             EST. 2026–27
           </span>
@@ -36,7 +35,7 @@ window.HOME_PAGE_TEMPLATE = `
           The faces rotate, the routes evolve, but the deep dive never stops. From the turquoise depths of Charna Island to high alpine mountain crossings, we take IBA students beyond campus gates into the untamed.
         </p>
 
-        <!-- CTAs & Mini Tags -->
+        <!-- CTAs -->
         <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
           <button onclick="showPage('scuba')" class="px-8 py-3.5 bg-scrap-teal hover:bg-scrap-teal/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md border-2 border-scrap-charcoal transition transform hover:-translate-y-0.5 flex items-center gap-2">
             <span>Explore Charna Scuba '26</span>
@@ -46,11 +45,6 @@ window.HOME_PAGE_TEMPLATE = `
           <a href="#council-section" class="px-7 py-3.5 bg-[#FAF3E3] hover:bg-[#F3E6C9] text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition inline-block">
             Meet The Council ↓
           </a>
-
-          <!-- Hand-stamped Society Chip -->
-          <div class="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-dashed border-scrap-rust/40 bg-scrap-rust/5 text-scrap-rust font-hand font-bold text-sm">
-            <span>⛺ 400+ Campers Certified</span>
-          </div>
         </div>
 
       </div>
@@ -58,27 +52,21 @@ window.HOME_PAGE_TEMPLATE = `
       <!-- Right Column: Interactive Clickable Polaroid -->
       <div class="lg:col-span-5 relative flex justify-center">
         
-        <!-- Washi Tape Accents -->
         <div class="relative w-80 sm:w-96 cursor-pointer group" onclick="showPage('scuba')" title="Click to view Charna Scuba expedition and form">
           
-          <!-- Polaroid Outer Container -->
           <div class="polaroid transform -rotate-2 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300 shadow-xl group-hover:shadow-2xl">
             
-            <!-- Teal Tape Holding The Polaroid -->
             <div class="washi-tape washi-tape-teal"></div>
             
-            <!-- Polaroid Image Area with Shimmer & Dive Badge -->
             <div class="aspect-[4/3] w-full overflow-hidden rounded bg-scrap-kraft relative">
               <img id="heroPolaroidImg" src="hasan_scuba.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80';" alt="Charna Scuba" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
               
-              <!-- Floating 'Click to Book' Tag -->
               <div class="absolute bottom-2.5 right-2.5 bg-black/75 backdrop-blur-sm text-white px-3 py-1 rounded-full text-[10px] font-bold font-mono tracking-wider border border-white/30 flex items-center gap-1 opacity-90 group-hover:opacity-100 group-hover:bg-scrap-teal transition">
                 <span>RESERVE DIVE</span>
                 <span>↗</span>
               </div>
             </div>
 
-            <!-- Polaroid Caption Note -->
             <div class="mt-4 text-center">
               <p class="font-hand text-2xl text-scrap-charcoal font-bold group-hover:text-scrap-rust transition">
                 Charna Island Scuba '26 ♡
@@ -90,7 +78,6 @@ window.HOME_PAGE_TEMPLATE = `
 
           </div>
 
-          <!-- Decorative Golden Compass Stamp on Side -->
           <div class="absolute -bottom-4 -left-4 w-12 h-12 rounded-full border-2 border-dashed border-scrap-gold text-scrap-gold flex items-center justify-center font-bold text-lg bg-[#FAF4E5] shadow-md transform -rotate-12 pointer-events-none">
             🧭
           </div>
@@ -260,7 +247,7 @@ window.HOME_PAGE_TEMPLATE = `
                   <img src="neetu.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
-                    <span class="text-xs font-bold text-[#7ba632] uppercase tracking-wider block">Executive Council</span>
+                    <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
                     <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-[#7ba632] truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
                   </div>
                 </div>
@@ -350,7 +337,7 @@ window.HOME_PAGE_TEMPLATE = `
           </div>
         </div>
 
-        <!-- Advisor & Instagram Reel -->
+        <!-- Advisor & Native Archive Video (IAC Archives.mp4) -->
         <div class="lg:col-span-4 space-y-6">
           <div class="flex flex-col items-center mb-6">
             <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-rust text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow">
@@ -369,33 +356,45 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
           </div>
 
-          <!-- Reel Edit -->
+          <!-- Video Edit with Native Audio -->
           <div class="rounded-2xl p-5 relative mt-8 bg-scrap-charcoal text-white shadow-2xl border-2 border-[#55564E] transform rotate-1 hover:rotate-0 transition duration-300">
             <div class="pushpin"></div>
             <div class="flex items-center justify-between border-b border-white/20 pb-3 mb-3">
               <div class="flex items-center gap-2">
                 <span class="text-xs font-mono uppercase tracking-widest text-scrap-gold font-bold">IAC ARCHIVES</span>
               </div>
-              <a href="https://www.instagram.com/reel/DdS0RWKJkXT/" target="_blank" rel="noopener noreferrer" class="px-2.5 py-0.5 rounded-full bg-white/10 hover:bg-scrap-rust text-white font-mono text-[10px] font-bold border border-white/20 transition">
-                Instagram ↗
-              </a>
+              <span class="px-2.5 py-0.5 rounded-full bg-scrap-rust text-white font-mono text-[10px] font-bold border border-white/20">
+                Official Edit
+              </span>
             </div>
             <div class="mb-2">
               <h4 class="font-hand text-xl text-scrap-gold font-bold leading-tight">Panel & Expeditions Edit ♡</h4>
               <p class="text-[11px] text-white/70 font-normal">A look back at the previous panel & expeditions across Pakistan.</p>
             </div>
-            <div class="w-full rounded-xl overflow-hidden border border-white/20 shadow-inner bg-black">
-              <iframe src="https://www.instagram.com/reel/DdS0RWKJkXT/embed/" class="w-full border-0 rounded-xl" height="450" scrolling="no" allowtransparency="true" allow="encrypted-media" title="IAC Archives: Panel & Expeditions Edit"></iframe>
+            
+            <!-- Native HTML5 Video Player with Audio Controls -->
+            <div class="w-full rounded-xl overflow-hidden border border-white/20 shadow-inner bg-black aspect-[9/16] max-h-[460px] flex items-center justify-center">
+              <video 
+                controls 
+                playsinline 
+                preload="metadata"
+                class="w-full h-full object-cover rounded-xl"
+              >
+                <source src="IAC Archives.mp4" type="video/mp4">
+                <source src="IAC%20Archives.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
+
             <div class="mt-3 pt-2.5 border-t border-white/15 flex items-center justify-between text-[11px] text-white/70">
               <span class="font-mono text-scrap-gold">● REEL ARCHIVE</span>
-              <span class="font-hand text-white/90 text-sm">Click play to watch with audio ♡</span>
+              <span class="font-hand text-white/90 text-sm">Tap play to listen with sound ♡</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- RESTORED & TEXTURED: Management Team Section -->
+      <!-- Management Team Section -->
       <div class="w-full max-w-5xl mx-auto mt-6 flex flex-col items-center">
         <div class="flex justify-center">
           <svg class="w-8 h-14" viewBox="0 0 32 56" fill="none">
@@ -412,7 +411,6 @@ window.HOME_PAGE_TEMPLATE = `
 
         <!-- Textured Parchment Burlap Card -->
         <div class="crumpled-paper-card bg-[#FAF2DF] border-2 border-dashed border-[#DFCFAA] rounded-2xl p-8 pt-10 text-center relative w-full shadow-[0_8px_25px_rgba(53,54,48,0.1)] mt-2">
-          <!-- Real Scrapbook Washi Tape -->
           <div class="washi-tape washi-tape-rust"></div>
 
           <h4 class="font-display font-bold text-2xl text-scrap-charcoal mt-1 tracking-tight">
