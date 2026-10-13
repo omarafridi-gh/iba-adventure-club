@@ -1,5 +1,5 @@
-<!-- PAGE 3: FIELD JOURNAL (SEAMLESS MP4 LOOP WITH INVISIBLE HOTSPOTS) -->
-<main id="page-journal" class="page-view w-full h-[calc(100vh-64px)] relative overflow-hidden flex flex-col justify-between select-none">
+<!-- PAGE 3: FIELD JOURNAL (SEAMLESS MP4 LOOP WITH VISIBLE GLOWING INDICATOR) -->
+<main id="page-journal" class="page-view w-full h-[calc(100vh-130px)] min-h-[500px] relative overflow-hidden flex flex-col justify-between select-none">
   
   <!-- 1. FULL-BLEED SEAMLESS MP4 LOOP BACKGROUND -->
   <div class="absolute inset-0 z-0 bg-[#2B160B]">
@@ -12,7 +12,7 @@
       preload="auto"
       class="w-full h-full object-cover object-center pointer-events-none"
     >
-      <source src="packing_room.mp4" type="video/mp4">
+      <source src="Journal_Page1.mp4" type="video/mp4">
     </video>
 
     <!-- Soft Ambient Light Overlay -->
@@ -20,22 +20,20 @@
   </div>
 
   <!-- 2. INVISIBLE HOVER HOTSPOT: CORK NOTICE BOARD (LEFT WALL) -->
-  <div class="absolute top-[6%] left-[2%] w-[28%] h-[38%] z-10 cursor-default group pointer-events-auto" title="Field Journal Archive">
-    <!-- Subtle interactive shimmer when hovered -->
+  <div class="absolute top-[5%] left-[2%] w-[30%] h-[42%] z-10 cursor-default group pointer-events-auto" title="Journal Archive">
+    <!-- Subtle interactive shimmer on board hover -->
     <div class="w-full h-full rounded-2xl transition duration-300 group-hover:bg-amber-400/10 group-hover:ring-2 group-hover:ring-amber-300/40"></div>
   </div>
 
-  <!-- 3. INVISIBLE CLICK HOTSPOT: LEATHER JOURNAL (ON FLOOR / RUG) -->
-  <!-- Adjust bottom / left / width / height slightly if your video places the book in a different spot -->
-  <div class="absolute bottom-[6%] left-[36%] w-[26%] sm:w-[20%] h-[18%] sm:h-[16%] z-20 flex flex-col items-center justify-center cursor-pointer group" onclick="openMasterBookModal()" title="Click to open Field Journal">
+  <!-- 3. GLOWING CLICK INDICATOR & HOTSPOT: LEATHER JOURNAL (ON COFFEE TABLE) -->
+  <div class="absolute bottom-[4%] left-1/2 -translate-x-1/2 w-[34%] sm:w-[22%] max-w-[260px] aspect-[16/10] z-20 flex flex-col items-center justify-center cursor-pointer group pointer-events-auto" onclick="openMasterBookModal()" title="Click to open Journal">
     
-    <!-- Interactive Pulse Aura: Highlights the baked book on hover -->
-    <div class="w-full h-full rounded-2xl transition-all duration-300 group-hover:bg-amber-400/20 group-hover:shadow-[0_0_35px_rgba(237,165,49,0.7)] group-hover:ring-2 group-hover:ring-scrap-gold flex items-center justify-center">
+    <!-- Gentle Glowing Pulse Outline Around The Book -->
+    <div class="w-full h-full rounded-2xl border-2 border-scrap-gold/90 bg-amber-400/10 shadow-[0_0_25px_rgba(237,165,49,0.55)] transition-all duration-300 group-hover:scale-105 group-hover:bg-amber-400/25 group-hover:shadow-[0_0_40px_rgba(237,165,49,0.85)] flex items-center justify-center relative">
       
-      <!-- Floating "Tap to Read" badge that reveals smoothly on hover -->
-      <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 transform group-hover:-translate-y-1 px-4 py-1.5 rounded-full bg-scrap-gold text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider shadow-xl border border-white whitespace-nowrap flex items-center gap-1.5">
-        <span>Open Journal</span>
-        <span>📖</span>
+      <!-- Visible Pulsing Indicator Badge -->
+      <div class="absolute -top-3.5 sm:-top-4 px-3.5 py-1 rounded-full bg-scrap-gold text-scrap-charcoal font-display font-bold text-[10px] sm:text-xs uppercase tracking-wider shadow-lg border border-white flex items-center gap-1.5 animate-bounce">
+        <span>📖 Click Me</span>
       </div>
 
     </div>
