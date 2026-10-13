@@ -1,81 +1,41 @@
-<!-- PAGE 3: FIELD JOURNAL (ONE 100VH NON-SCROLLING SCREEN) -->
+<!-- PAGE 3: FIELD JOURNAL (SEAMLESS MP4 LOOP WITH INVISIBLE HOTSPOTS) -->
 <main id="page-journal" class="page-view w-full h-[calc(100vh-64px)] relative overflow-hidden flex flex-col justify-between select-none">
   
   <!-- 1. FULL-BLEED SEAMLESS MP4 LOOP BACKGROUND -->
-  <div class="absolute inset-0 z-0">
-    <video autoplay loop muted playsinline class="w-full h-full object-cover object-center">
-      <source src="video_1.mp4" type="video/mp4">
-      <source src="kling_20261013_VIDEO_Seamless_l_3817_0.mp4" type="video/mp4">
+  <div class="absolute inset-0 z-0 bg-[#2B160B]">
+    <video 
+      id="packingRoomVideo"
+      autoplay 
+      loop 
+      muted 
+      playsinline 
+      preload="auto"
+      class="w-full h-full object-cover object-center pointer-events-none"
+    >
       <source src="packing_room.mp4" type="video/mp4">
     </video>
 
-    <!-- Ambient Sunbeam Light Overlay -->
+    <!-- Soft Ambient Light Overlay -->
     <div class="ambient-sunbeam absolute inset-0 pointer-events-none"></div>
   </div>
 
-  <!-- 2. NATURAL SCRAPBOOK BULLETIN CARD (Pinned to the upper-left wall) -->
-  <div class="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 pointer-events-auto max-w-[280px] sm:max-w-xs">
-    <div class="scrapbook-pin-card p-4 sm:p-5 rounded-2xl relative text-left transform -rotate-1">
-      <div class="washi-tape washi-tape-teal"></div>
-
-      <div class="border-b border-[#DFCFAA] pb-2 mb-2">
-        <span class="font-mono text-[9px] font-bold text-scrap-rust uppercase tracking-wider block">✦ IBA ADVENTURE CLUB ✦</span>
-        <h2 class="font-display font-bold text-base sm:text-xl text-scrap-charcoal leading-tight mt-0.5">
-          Field Memories Journal
-        </h2>
-      </div>
-
-      <p class="font-hand text-lg sm:text-2xl text-scrap-rust font-bold leading-tight">
-        "Adventure looks good on you ♡"
-      </p>
-      
-      <p class="text-xs text-scrap-ink/80 font-normal mt-1 leading-snug">
-        Packed up & ready for the northern crossing. Official society logs, unscripted polaroids & expedition notes.
-      </p>
-
-      <div class="mt-3 pt-2 border-t border-[#DFCFAA] flex items-center justify-between text-[10px] font-mono font-bold text-scrap-teal">
-        <span>VOL. 2026–2027</span>
-        <span class="text-scrap-rust">TAP JOURNAL BELOW ↓</span>
-      </div>
-    </div>
+  <!-- 2. INVISIBLE HOVER HOTSPOT: CORK NOTICE BOARD (LEFT WALL) -->
+  <div class="absolute top-[6%] left-[2%] w-[28%] h-[38%] z-10 cursor-default group pointer-events-auto" title="Field Journal Archive">
+    <!-- Subtle interactive shimmer when hovered -->
+    <div class="w-full h-full rounded-2xl transition duration-300 group-hover:bg-amber-400/10 group-hover:ring-2 group-hover:ring-amber-300/40"></div>
   </div>
 
-  <!-- 3. TACTILE LEATHER JOURNAL ARTIFACT (Anchored in bottom floor area) -->
-  <div class="absolute bottom-6 right-6 sm:bottom-8 sm:right-12 z-20 pointer-events-auto">
-    <div class="floor-journal-card w-64 sm:w-72 aspect-[16/10] rounded-2xl p-4 sm:p-5 text-white flex flex-col justify-between items-center text-center select-none" onclick="openMasterBookModal()" title="Click to open Field Journal">
+  <!-- 3. INVISIBLE CLICK HOTSPOT: LEATHER JOURNAL (ON FLOOR / RUG) -->
+  <!-- Adjust bottom / left / width / height slightly if your video places the book in a different spot -->
+  <div class="absolute bottom-[6%] left-[36%] w-[26%] sm:w-[20%] h-[18%] sm:h-[16%] z-20 flex flex-col items-center justify-center cursor-pointer group" onclick="openMasterBookModal()" title="Click to open Field Journal">
+    
+    <!-- Interactive Pulse Aura: Highlights the baked book on hover -->
+    <div class="w-full h-full rounded-2xl transition-all duration-300 group-hover:bg-amber-400/20 group-hover:shadow-[0_0_35px_rgba(237,165,49,0.7)] group-hover:ring-2 group-hover:ring-scrap-gold flex items-center justify-center">
       
-      <!-- Spine on Left with Brass Rivets -->
-      <div class="absolute left-0 top-0 bottom-0 w-6 bg-black/45 border-r-2 border-dashed border-white/20 rounded-l-2xl flex flex-col justify-around items-center py-2">
-        <span class="w-2 h-2 rounded-full bg-scrap-gold"></span>
-        <span class="w-2 h-2 rounded-full bg-scrap-gold"></span>
-      </div>
-
-      <!-- Brass Compass Medallion -->
-      <div class="w-10 h-10 rounded-full border border-dashed border-scrap-gold flex items-center justify-center p-1 bg-black/35 shadow-inner mt-0.5">
-        <svg class="w-7 h-7" viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="46" stroke="#EDA531" stroke-width="2" stroke-dasharray="2 3"/>
-          <polygon points="50,16 56,47 50,50 44,47" fill="#A44200"/>
-          <polygon points="50,84 56,53 50,50 44,53" fill="#EDA531"/>
-          <circle cx="50" cy="50" r="4" fill="#FFF3D4"/>
-        </svg>
-      </div>
-
-      <!-- Volume Ribbon & Title -->
-      <div>
-        <span class="inline-block px-2.5 py-0.5 rounded-full bg-black/40 border border-scrap-gold/50 text-[9px] font-mono uppercase tracking-wider text-scrap-gold font-bold">
-          ✦ VOL. 2026–2027 ✦
-        </span>
-        <h3 class="font-display font-bold text-sm text-white tracking-tight leading-tight mt-1">
-          IBA ADVENTURE CLUB
-        </h3>
-        <p class="font-hand text-sm text-scrap-gold font-bold leading-none">
-          Expedition Memories ♡
-        </p>
-      </div>
-
-      <!-- Tap Prompt Tag -->
-      <div class="px-4 py-1 rounded-full bg-scrap-gold text-scrap-charcoal font-display font-bold text-[10px] uppercase tracking-wider shadow border border-white whitespace-nowrap">
-        <span>Tap to open</span> 📖
+      <!-- Floating "Tap to Read" badge that reveals smoothly on hover -->
+      <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 transform group-hover:-translate-y-1 px-4 py-1.5 rounded-full bg-scrap-gold text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider shadow-xl border border-white whitespace-nowrap flex items-center gap-1.5">
+        <span>Open Journal</span>
+        <span>📖</span>
       </div>
 
     </div>
