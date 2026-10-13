@@ -61,31 +61,6 @@
       position: relative;
     }
 
-    .sticky-note-item {
-      box-shadow: 1px 3px 6px rgba(53, 54, 48, 0.07), 0 1px 2px rgba(0,0,0,0.03);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      border-style: dotted;
-      border-width: 1.5px;
-    }
-    .sticky-note-item:hover {
-      transform: translateY(-2px) scale(1.01);
-      box-shadow: 2px 6px 12px rgba(53, 54, 48, 0.12);
-    }
-
-    .burlap-fabric-card {
-      background-color: #EFE3C8;
-      background-image: 
-        repeating-linear-gradient(0deg, rgba(164, 66, 0, 0.06) 0px, rgba(164, 66, 0, 0.06) 1px, transparent 1px, transparent 4px),
-        repeating-linear-gradient(90deg, rgba(53, 54, 48, 0.07) 0px, rgba(53, 54, 48, 0.07) 1px, transparent 1px, transparent 4px),
-        radial-gradient(ellipse at center, rgba(255,255,255,0.3) 0%, rgba(164, 66, 0, 0.12) 100%),
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
-      border: 2px dashed #CBB387;
-      box-shadow: 
-        0 4px 14px rgba(53, 54, 48, 0.12),
-        inset 0 0 25px rgba(164, 66, 0, 0.1);
-      position: relative;
-    }
-
     .washi-tape {
       position: absolute;
       top: -14px;
@@ -133,30 +108,6 @@
       user-select: none;
     }
 
-    .pushpin {
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 26px;
-      height: 26px;
-      background: radial-gradient(circle at 35% 35%, #FF3D3D, #990000);
-      border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4), inset 0 -2px 4px rgba(0,0,0,0.5);
-      z-index: 30;
-    }
-    .pushpin::after {
-      content: '';
-      position: absolute;
-      top: 5px;
-      left: 7px;
-      width: 6px;
-      height: 4px;
-      background: rgba(255,255,255,0.8);
-      border-radius: 50%;
-    }
-
-    /* Ambient Sunbeam Overlay */
     @keyframes sunbeamBreathe {
       0%, 100% { opacity: 0.25; }
       50% { opacity: 0.45; }
@@ -165,29 +116,6 @@
       background: radial-gradient(ellipse at 80% 20%, rgba(255, 235, 160, 0.4) 0%, rgba(255, 220, 130, 0.1) 50%, transparent 80%);
       animation: sunbeamBreathe 5s ease-in-out infinite;
       pointer-events: none;
-    }
-
-    /* Die-Cut Scrapbook Overlays */
-    .scrapbook-pin-card {
-      background: #FAF4E5;
-      background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.4) 0%, transparent 80%);
-      border: 2px solid #DFCEAA;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35), inset 0 0 15px rgba(164,66,0,0.06);
-    }
-
-    .floor-journal-card {
-      background: #462A17;
-      background-image: 
-        radial-gradient(circle at 50% 40%, rgba(255,255,255,0.15) 0%, transparent 75%),
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='leatherNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23leatherNoise)' opacity='0.22'/%3E%3C/svg%3E");
-      border: 3px solid #2B160B;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 25px rgba(237, 165, 49, 0.4);
-      cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .floor-journal-card:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.7), 0 0 35px rgba(237, 165, 49, 0.65);
     }
 
     /* 3D FULLSCREEN MODAL & FLIP VIEWER */
@@ -330,17 +258,14 @@
     </div>
   </header>
 
-  <!-- DYNAMIC PAGE CONTAINER (Pages injected cleanly or switched here) -->
+  <!-- MOUNT CONTAINER FOR MODULAR PAGES -->
   <div id="pagesContainer" class="flex-grow flex flex-col">
-    <!-- PAGE 1: HOME & COUNCIL -->
     <div id="page-home-root"></div>
-    <!-- PAGE 2: CHARNA SCUBA -->
     <div id="page-scuba-root"></div>
-    <!-- PAGE 3: FIELD JOURNAL ROOM -->
     <div id="page-journal-root"></div>
   </div>
 
-  <!-- FULL-SCREEN DARK FOCUS THEATER (Shared Modal Across the Application) -->
+  <!-- FULL-SCREEN DARK FOCUS THEATER -->
   <div id="journalModal" class="fixed inset-0 z-50 bg-black/96 backdrop-blur-md hidden flex-col items-center justify-center p-3 sm:p-6 overflow-y-auto" onclick="handleBackdropClick(event)">
     <div class="w-full max-w-5xl flex justify-between items-center text-white mb-2 sm:mb-3 px-2">
       <div>
@@ -421,20 +346,23 @@
     </p>
   </div>
 
-  <!-- LIGHTBOX MODAL (Shared Across Council Pictures) -->
+  <!-- LIGHTBOX MODAL -->
   <div id="lightbox" class="fixed inset-0 z-50 bg-scrap-charcoal/95 hidden flex-col items-center justify-center p-4">
     <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-scrap-gold text-3xl font-bold p-2 transition">✕</button>
     <img id="lightboxImg" src="" class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg border-4 border-white shadow-2xl">
     <p id="lightboxCaption" class="mt-4 font-hand font-bold text-white tracking-wide text-center text-2xl"></p>
   </div>
 
-  <!-- GLOBAL FOOTER -->
+  <!-- GLOBAL FOOTER (VISIBLE ON ALL PAGES) -->
   <footer id="globalFooter" class="border-t-2 border-scrap-kraft bg-[#FAF6EE] py-8 px-6 text-center text-xs text-scrap-ink/70">
     <p class="font-display font-semibold">© 2026 IBA Adventure Club. Institute of Business Administration, Karachi.</p>
     <p class="font-hand text-xl text-scrap-rust mt-1 font-bold">New faces. Uncharted trails. Same wild spirit. ♡</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- LOAD MODULAR PAGE TEMPLATES & APP ENGINE -->
+  <script src="pages/home.js"></script>
+  <script src="pages/scuba.js"></script>
+  <script src="pages/journal.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
