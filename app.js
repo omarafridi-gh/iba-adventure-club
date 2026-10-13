@@ -17,17 +17,17 @@ function showPage(pageId) {
   const active = document.getElementById('page-' + pageId);
   if (active) active.classList.remove('hidden');
 
-  // Hide the footer specifically on the journal tab for a clean full-screen room
+  // Prevent scrollbar and fractional page scrolling specifically on Journal
   const footer = document.getElementById('globalFooter');
-  if (footer) {
-    if (pageId === 'journal') {
-      footer.classList.add('hidden');
-    } else {
-      footer.classList.remove('hidden');
-    }
+  if (pageId === 'journal') {
+    if (footer) footer.classList.add('hidden');
+    document.body.style.overflow = 'hidden';
+  } else {
+    if (footer) footer.classList.remove('hidden');
+    document.body.style.overflow = '';
   }
 
-  // Update Desktop Navigation Tabs
+  // Update Desktop Tabs
   document.querySelectorAll('.nav-tab').forEach(function(btn) {
     btn.classList.remove('bg-scrap-charcoal', 'text-white', 'shadow');
     btn.classList.add('text-scrap-charcoal');
@@ -38,7 +38,7 @@ function showPage(pageId) {
     activeTab.classList.remove('text-scrap-charcoal');
   }
 
-  // Update Mobile Navigation Tabs
+  // Update Mobile Tabs
   document.querySelectorAll('.nav-tab-m').forEach(function(btn) {
     btn.classList.remove('text-scrap-charcoal');
     btn.classList.add('text-scrap-ink/70');
