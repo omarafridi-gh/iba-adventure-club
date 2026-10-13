@@ -1,4 +1,5 @@
-<!-- PAGE 2: CHARNA SCUBA SPOTLIGHT & REGISTRATION -->
+// pages/scuba.js
+window.SCUBA_PAGE_TEMPLATE = `
 <main id="page-scuba" class="page-view flex-grow px-4 sm:px-6 py-12 max-w-6xl mx-auto w-full">
   <div class="text-center max-w-3xl mx-auto mb-10">
     <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-scrap-teal/15 text-scrap-teal border border-scrap-teal/30 font-display text-xs font-bold uppercase tracking-wider mb-3">
@@ -9,7 +10,6 @@
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-    <!-- Left Column: Field Notes & Interactive Checklist -->
     <div class="lg:col-span-5 space-y-6">
       <div class="crumpled-paper-card p-7 rounded-2xl relative">
         <div class="washi-tape"></div>
@@ -74,7 +74,7 @@
       </div>
     </div>
 
-    <!-- Right Column: Registration Form -->
+    <!-- Registration Form -->
     <div class="lg:col-span-7 crumpled-paper-card p-7 sm:p-8 rounded-2xl relative">
       <div class="washi-tape washi-tape-rust"></div>
       <h3 class="font-display font-bold text-2xl text-scrap-charcoal mb-1">Diver Manifest Form</h3>
@@ -127,8 +127,8 @@
         <div class="w-8 h-8 rounded-full bg-scrap-teal text-white font-bold flex items-center justify-center mx-auto mb-2 shadow">✓</div>
         <h4 class="font-display font-bold text-sm text-scrap-charcoal">Registration Pre-Approved!</h4>
         <p class="text-xs text-scrap-ink/70 mt-1">Booking ID: <span class="font-mono text-scrap-rust font-bold" id="bookingCode">#IAC-SCUBA-882</span></p>
-        <p class="text-[11px] text-scrap-ink/60 mt-1">Munira's finance desk will verify your payment slip via WhatsApp.</p>
       </div>
     </div>
   </div>
 </main>
+`;
