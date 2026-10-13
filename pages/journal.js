@@ -2,7 +2,7 @@
 window.JOURNAL_PAGE_TEMPLATE = `
 <main id="page-journal" class="page-view w-full h-[calc(100vh-64px)] relative overflow-hidden select-none bg-[#2B160B]">
   
-  <!-- 1. VIDEO VIEWPORT (Shifted up to object-[center_24%] so 2027 is fully visible) -->
+  <!-- 1. VIDEO VIEWPORT (Centered vertically to fully show 2026-2027; bottom-right corner cropped for watermark) -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
     <video 
       id="packingRoomVideo"
@@ -11,7 +11,7 @@ window.JOURNAL_PAGE_TEMPLATE = `
       muted 
       playsinline 
       preload="auto"
-      class="w-full h-[104%] object-cover object-[center_24%] origin-top scale-[1.015]"
+      class="w-full h-[105%] object-cover object-[center_16%] origin-bottom-left scale-[1.025]"
     >
       <source src="Journal_Page1.mp4" type="video/mp4">
       <source src="Jounral_Page1.mp4" type="video/mp4">
@@ -32,7 +32,6 @@ window.JOURNAL_PAGE_TEMPLATE = `
     <!-- Floating Luminous Prompt With Dark Ink Contour -->
     <div class="flex flex-col items-center pointer-events-none transition-transform duration-300 group-hover:-translate-y-1 mb-1">
       
-      <!-- Hand-drawn Cursive with Dark Ink Contour & Warm Sunlight Halo -->
       <span 
         class="font-hand font-bold text-xl sm:text-2xl text-[#FFF8E7] tracking-wider leading-none transition-all duration-300 group-hover:text-scrap-gold select-none"
         style="
@@ -59,7 +58,7 @@ window.JOURNAL_PAGE_TEMPLATE = `
       </svg>
     </div>
 
-    <!-- Transparent Hit Area Over Journal & Table (No box outline) -->
+    <!-- Transparent Hit Area Over Journal & Table -->
     <div class="w-full h-24 sm:h-32 rounded-2xl"></div>
 
   </div>
