@@ -17,11 +17,17 @@ function showPage(pageId) {
   const active = document.getElementById('page-' + pageId);
   if (active) active.classList.remove('hidden');
 
-  // Keep footer visible on all pages
+  // Hide the footer specifically on the journal tab for a clean full-screen room
   const footer = document.getElementById('globalFooter');
-  if (footer) footer.classList.remove('hidden');
+  if (footer) {
+    if (pageId === 'journal') {
+      footer.classList.add('hidden');
+    } else {
+      footer.classList.remove('hidden');
+    }
+  }
 
-  // Update Desktop Tabs
+  // Update Desktop Navigation Tabs
   document.querySelectorAll('.nav-tab').forEach(function(btn) {
     btn.classList.remove('bg-scrap-charcoal', 'text-white', 'shadow');
     btn.classList.add('text-scrap-charcoal');
@@ -32,7 +38,7 @@ function showPage(pageId) {
     activeTab.classList.remove('text-scrap-charcoal');
   }
 
-  // Update Mobile Tabs
+  // Update Mobile Navigation Tabs
   document.querySelectorAll('.nav-tab-m').forEach(function(btn) {
     btn.classList.remove('text-scrap-charcoal');
     btn.classList.add('text-scrap-ink/70');
