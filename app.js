@@ -53,6 +53,7 @@ function showPage(pageId) {
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
 // 3. 3D Journal Spreads Data & Preloader
 const masterJournalSpreads = [
   {
@@ -134,30 +135,37 @@ let isFlipping = false;
 function openMasterBookModal() {
   const modal = document.getElementById('journalModal');
   const spreadArea = document.getElementById('bookSpreadTouchArea');
-  const coverLeaf = document.getElementById('coverHingeLeaf');
   
   modal.classList.remove('hidden');
   modal.classList.add('flex');
+  document.documentElement.style.overflow = 'hidden';
   document.body.style.overflow = 'hidden';
 
   currentSpreadIdx = 0;
   renderCurrentSpread();
 
+  // Clean, subtle zoom into the two-page spread without any awkward cover flap
   spreadArea.classList.remove('anim-pov-zoom');
   void spreadArea.offsetWidth;
   spreadArea.classList.add('anim-pov-zoom');
-
-  coverLeaf.className = 'anim-cover-opening';
-  setTimeout(() => {
-    coverLeaf.className = '';
-  }, 1300);
 }
 
 function closeMasterBookModal() {
   const modal = document.getElementById('journalModal');
   modal.classList.add('hidden');
   modal.classList.remove('flex');
-  document.body.style.overflow = '';
+  
+  // Restore scroll behavior depending on active page
+  const homeVisible = !document.getElementById('page-home').classList.contains('hidden');
+  const scubaVisible = !document.getElementById('page-scuba').classList.contains('hidden');
+  
+  if (homeVisible || scubaVisible) {
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+  } else {
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  }
 }
 
 function handleBackdropClick(e) {
