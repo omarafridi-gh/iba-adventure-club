@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,6 +37,10 @@
     }
   </script>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: #FAF5EB;
       background-image: 
@@ -224,10 +228,8 @@
     <div id="page-journal-root"></div>
   </div>
 
-  <!-- FULL-SCREEN DARK FOCUS THEATER (ZERO-SCROLL, EXPANDED JOURNAL VIEW) -->
+  <!-- FULL-SCREEN DARK FOCUS THEATER -->
   <div id="journalModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex-col items-center justify-center p-2 sm:p-4 overflow-hidden select-none" onclick="handleBackdropClick(event)">
-    
-    <!-- High-Contrast Top Control Bar -->
     <div class="w-full max-w-6xl flex justify-between items-center mb-2 px-3 py-2 rounded-2xl bg-black/75 border border-white/20 backdrop-blur-md shadow-2xl">
       <div>
         <span class="font-mono text-xs sm:text-sm font-bold text-scrap-gold uppercase tracking-wider drop-shadow" id="modalCategory">EXPEDITION 01 • MARINE RECON</span>
@@ -245,20 +247,16 @@
       </div>
     </div>
 
-    <!-- 3D Book Stage (With Floating Side Paddles & Larger Dimensions) -->
+    <!-- 3D Book Stage -->
     <div class="w-full max-w-6xl book-3d-stage relative flex items-center justify-center">
-      
-      <!-- Floating Left Navigation Paddle -->
       <button onclick="prevSpread()" id="btnPrevModal" class="absolute -left-2 sm:-left-5 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/80 hover:bg-black text-scrap-gold border border-white/25 flex items-center justify-center text-lg sm:text-xl shadow-2xl transition disabled:opacity-20 disabled:pointer-events-none" title="Previous Spread">
         ←
       </button>
 
-      <!-- Turning Page Leaf -->
       <div id="turningPageLeaf">
         <div id="turningLeafContent" class="w-full h-full p-6 sm:p-9 flex flex-col justify-between"></div>
       </div>
 
-      <!-- Main Open 2-Page Spread Frame (Expanded to 82vh) -->
       <div id="bookSpreadTouchArea" class="w-full aspect-[16/10] max-h-[82vh] min-h-[420px] rounded-2xl open-book-spread relative overflow-hidden flex flex-col md:flex-row shadow-[0_25px_60px_rgba(0,0,0,0.95)] select-none">
         <div class="book-spine-crease hidden md:block"></div>
 
@@ -300,13 +298,10 @@
 
       </div>
 
-      <!-- Floating Right Navigation Paddle -->
       <button onclick="nextSpread()" id="btnNextModal" class="absolute -right-2 sm:-right-5 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/80 hover:bg-black text-scrap-gold border border-white/25 flex items-center justify-center text-lg sm:text-xl shadow-2xl transition disabled:opacity-20 disabled:pointer-events-none" title="Next Spread">
         →
       </button>
-
     </div>
-
   </div>
 
   <!-- LIGHTBOX MODAL -->
@@ -316,13 +311,13 @@
     <p id="lightboxCaption" class="mt-4 font-hand font-bold text-white tracking-wide text-center text-2xl"></p>
   </div>
 
-  <!-- GLOBAL FOOTER (VISIBLE ON HOME & SCUBA) -->
+  <!-- GLOBAL FOOTER -->
   <footer id="globalFooter" class="border-t-2 border-scrap-kraft bg-[#FAF6EE] py-8 px-6 text-center text-xs text-scrap-ink/70">
     <p class="font-display font-semibold">© 2026 IBA Adventure Club. Institute of Business Administration, Karachi.</p>
     <p class="font-hand text-xl text-scrap-rust mt-1 font-bold">New faces. Uncharted trails. Same wild spirit. ♡</p>
   </footer>
 
-  <!-- LOAD MODULAR PAGE TEMPLATES & APP ENGINE -->
+  <!-- SCRIPTS -->
   <script src="pages/home.js"></script>
   <script src="pages/scuba.js"></script>
   <script src="pages/journal.js"></script>
