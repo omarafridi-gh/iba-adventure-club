@@ -46,8 +46,8 @@ window.HOME_PAGE_TEMPLATE = `
 
       </div>
 
-      <!-- Right Column: Shifted slightly right to give comfortable balance -->
-      <div class="lg:col-span-6 relative flex items-center justify-center lg:justify-start pt-4 lg:pt-0 sm:translate-x-1 lg:translate-x-3">
+      <!-- Right Column: Nudged slightly more to the right -->
+      <div class="lg:col-span-6 relative flex items-center justify-center lg:justify-start pt-4 lg:pt-0 sm:translate-x-5 lg:translate-x-8">
         
         <!-- Bulletin Work Area -->
         <div class="relative w-full max-w-[490px] flex items-center justify-center py-6">
@@ -70,8 +70,8 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
           </div>
 
-          <!-- 3. STICKY NOTE: "Camping" (Shifted further right) -->
-          <div class="absolute top-28 -right-8 sm:-right-12 z-20 transform -rotate-3 hover:scale-105 transition-transform select-none pointer-events-none">
+          <!-- 3. STICKY NOTE: "Camping" (Shifted a little more to the right) -->
+          <div class="absolute top-28 -right-11 sm:-right-16 z-20 transform -rotate-3 hover:scale-105 transition-transform select-none pointer-events-none">
             <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/40 shadow-sm z-30 flex items-center justify-center">
               <span class="w-0.5 h-0.5 rounded-full bg-white/80 block"></span>
             </div>
@@ -98,7 +98,7 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
           </div>
 
-          <!-- OVERSIZED MAIN POLAROID PHOTO (Shifted right with the container) -->
+          <!-- OVERSIZED MAIN POLAROID PHOTO (Follows container rightward) -->
           <div 
             class="relative w-[350px] sm:w-[415px] cursor-pointer group z-10 transition-transform duration-300 transform group-hover:scale-[1.02]"
             onclick="showPage('scuba')" 
@@ -313,8 +313,8 @@ window.HOME_PAGE_TEMPLATE = `
                   <img src="neetu.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
-                    <span class="text-xs font-bold text-[#7ba632] uppercase tracking-wider block">Executive Council</span>
-                    <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-[#7ba632] truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
+                    <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
+                    <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-[#7ba632] truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
                   </div>
                 </div>
                 <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.4deg]">
