@@ -32,16 +32,16 @@ window.HOME_PAGE_TEMPLATE = `
           The faces rotate, the routes evolve, but the deep dive never stops. From the turquoise depths of Charna Island to high alpine mountain crossings, we take IBA students beyond campus gates into the untamed.
         </p>
 
-        <!-- CTAs Only -->
+        <!-- CTAs Only (Smooth Scroll Button Attached) -->
         <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
           <button onclick="showPage('scuba')" class="px-8 py-3.5 bg-scrap-teal hover:bg-scrap-teal/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md border-2 border-scrap-charcoal transition transform hover:-translate-y-0.5 flex items-center gap-2">
             <span>Explore Charna Scuba '26</span>
             <span>→</span>
           </button>
           
-          <a href="#council-section" class="px-7 py-3.5 bg-[#FAF3E3] hover:bg-[#F3E6C9] text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition inline-block">
+          <button onclick="scrollToCouncil()" class="px-7 py-3.5 bg-[#FAF3E3] hover:bg-[#F3E6C9] text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition inline-block cursor-pointer">
             Meet The Council ↓
-          </a>
+          </button>
         </div>
 
       </div>
@@ -52,7 +52,7 @@ window.HOME_PAGE_TEMPLATE = `
         <!-- Bulletin Work Area -->
         <div class="relative w-full max-w-[490px] flex items-center justify-center py-6">
 
-          <!-- 1. STICKY NOTE: "Hikes" (Kept in place) -->
+          <!-- 1. STICKY NOTE: "Hikes" -->
           <div class="hidden sm:flex absolute -top-3 left-0 sm:left-2 z-20 transform -rotate-6 hover:scale-105 transition-transform select-none pointer-events-none">
             <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-red-600 border border-black/40 shadow-sm z-30 flex items-center justify-center">
               <span class="w-1 h-1 rounded-full bg-white/70 block"></span>
@@ -62,7 +62,7 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
           </div>
 
-          <!-- 2. STICKY NOTE: "Trips" (Kept in place) -->
+          <!-- 2. STICKY NOTE: "Trips" -->
           <div class="absolute -top-3 right-8 sm:right-12 z-20 transform rotate-8 hover:scale-105 transition-transform select-none pointer-events-none">
             <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-9 h-3.5 bg-amber-200/80 border-l border-r border-dashed border-black/30 shadow-xs z-30 rotate-2"></div>
             <div class="px-4 py-1.5 bg-[#86B33C] text-scrap-charcoal rounded-md shadow-md border border-black/15">
@@ -70,7 +70,7 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
           </div>
 
-          <!-- 3. STICKY NOTE: "Camping" (Shifted a little more to the right) -->
+          <!-- 3. STICKY NOTE: "Camping" -->
           <div class="absolute top-28 -right-11 sm:-right-16 z-20 transform -rotate-3 hover:scale-105 transition-transform select-none pointer-events-none">
             <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/40 shadow-sm z-30 flex items-center justify-center">
               <span class="w-0.5 h-0.5 rounded-full bg-white/80 block"></span>
@@ -80,7 +80,7 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
           </div>
 
-          <!-- 4. STICKY NOTE: "Team Building" (Kept in place) -->
+          <!-- 4. STICKY NOTE: "Team Building" -->
           <div class="absolute top-44 -left-7 sm:-left-12 z-20 transform -rotate-4 hover:scale-105 transition-transform select-none pointer-events-none">
             <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-9 h-3.5 bg-[#198F9F]/70 border-l border-r border-dashed border-black/25 shadow-xs z-30 rotate-1"></div>
             <div class="px-4 py-1.5 bg-[#DE8435] text-white rounded-md shadow-md border border-black/15">
@@ -88,7 +88,7 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
           </div>
 
-          <!-- 5. STICKY NOTE: "Exploration" (Kept in place) -->
+          <!-- 5. STICKY NOTE: "Exploration" -->
           <div class="absolute -bottom-6 right-6 sm:right-10 z-20 transform -rotate-2 hover:scale-105 transition-transform select-none pointer-events-none">
             <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#198F9F] border border-black/40 shadow-sm z-30 flex items-center justify-center">
               <span class="w-0.5 h-0.5 rounded-full bg-white/80 block"></span>
@@ -98,7 +98,7 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
           </div>
 
-          <!-- OVERSIZED MAIN POLAROID PHOTO (Follows container rightward) -->
+          <!-- OVERSIZED MAIN POLAROID PHOTO -->
           <div 
             class="relative w-[350px] sm:w-[415px] cursor-pointer group z-10 transition-transform duration-300 transform group-hover:scale-[1.02]"
             onclick="showPage('scuba')" 
@@ -155,8 +155,8 @@ window.HOME_PAGE_TEMPLATE = `
     </div>
   </section>
 
-  <!-- COUNCIL HIERARCHY SECTION (Visible peek just below the fold) -->
-  <section id="council-section" class="px-4 sm:px-6 pt-12 pb-20 border-t-2 border-[#E0D2B8] relative">
+  <!-- COUNCIL HIERARCHY SECTION (Target of Smooth Scroll) -->
+  <section id="council-section" class="px-4 sm:px-6 pt-12 pb-20 border-t-2 border-[#E0D2B8] relative scroll-mt-16">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-4xl mx-auto mb-14">
         <span class="font-hand text-3xl sm:text-4xl text-scrap-rust font-bold block mb-1">Not just adventures, but a community ♡</span>
@@ -438,7 +438,6 @@ window.HOME_PAGE_TEMPLATE = `
               <p class="text-[11px] text-white/70 font-normal">A look back at the previous panel & expeditions across Pakistan.</p>
             </div>
             
-            <!-- Native HTML5 Video Player with Audio Controls -->
             <div class="w-full rounded-xl overflow-hidden border border-white/20 shadow-inner bg-black aspect-[9/16] max-h-[460px] flex items-center justify-center">
               <video 
                 controls 
@@ -475,7 +474,6 @@ window.HOME_PAGE_TEMPLATE = `
           </span>
         </div>
 
-        <!-- Textured Parchment Burlap Card -->
         <div class="crumpled-paper-card bg-[#FAF2DF] border-2 border-dashed border-[#DFCFAA] rounded-2xl p-8 pt-10 text-center relative w-full shadow-[0_8px_25px_rgba(53,54,48,0.1)] mt-2">
           <div class="washi-tape washi-tape-rust"></div>
 
