@@ -2,150 +2,140 @@
 window.HOME_PAGE_TEMPLATE = `
 <main id="page-home" class="page-view flex-grow">
   
-  <!-- HERO SECTION: Warm, Textured & Scrapbook-Themed -->
-  <section class="relative px-4 sm:px-6 pt-10 pb-20 max-w-7xl mx-auto overflow-hidden">
+  <!-- HERO SECTION: Compact & Balanced (Divider Visible Above Fold) -->
+  <section class="relative px-4 sm:px-6 pt-5 sm:pt-7 pb-8 sm:pb-10 max-w-7xl mx-auto overflow-hidden">
     
     <!-- Decorative Ambient Glows -->
     <div class="absolute -top-12 -left-12 w-72 h-72 rounded-full bg-scrap-gold/15 blur-3xl pointer-events-none"></div>
     <div class="absolute top-1/2 -right-12 w-96 h-96 rounded-full bg-scrap-teal/10 blur-3xl pointer-events-none"></div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center relative z-10">
       
       <!-- Left Column: Copy & CTAs -->
       <div class="lg:col-span-6 text-center lg:text-left">
         
         <!-- Top Tape Scrap Badge -->
-        <div class="inline-flex items-center gap-2 relative mb-4">
-          <span class="font-hand text-xl sm:text-2xl text-scrap-rust font-bold bg-[#F4EBD7] px-5 py-1.5 rounded-md border border-[#DFCFAA] shadow-[0_2px_8px_rgba(53,54,48,0.08)] inline-block transform -rotate-1">
+        <div class="inline-flex items-center gap-2 relative mb-3">
+          <span class="font-hand text-lg sm:text-xl text-scrap-rust font-bold bg-[#F4EBD7] px-4 py-1 rounded-md border border-[#DFCFAA] shadow-[0_2px_6px_rgba(53,54,48,0.08)] inline-block transform -rotate-1">
             "New faces. Uncharted trails. Same wild spirit. ♡"
           </span>
         </div>
 
-        <!-- Punchy Display Heading with Color Accents -->
-        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-scrap-charcoal leading-[1.08]">
+        <!-- Punchy Display Heading -->
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.25rem] font-black tracking-tight text-scrap-charcoal leading-[1.08]">
           Trade Your Laptop <br>
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-scrap-rust via-scrap-gold to-scrap-rust">For A Compass.</span>
         </h1>
 
         <!-- Subheading -->
-        <p class="mt-4 text-base sm:text-lg text-scrap-ink/85 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+        <p class="mt-3.5 text-sm sm:text-base text-scrap-ink/85 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
           The faces rotate, the routes evolve, but the deep dive never stops. From the turquoise depths of Charna Island to high alpine mountain crossings, we take IBA students beyond campus gates into the untamed.
         </p>
 
         <!-- CTAs -->
-        <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
-          <button onclick="showPage('scuba')" class="px-8 py-3.5 bg-scrap-teal hover:bg-scrap-teal/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md border-2 border-scrap-charcoal transition transform hover:-translate-y-0.5 flex items-center gap-2">
+        <div class="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
+          <button onclick="showPage('scuba')" class="px-7 py-3 bg-scrap-teal hover:bg-scrap-teal/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md border-2 border-scrap-charcoal transition transform hover:-translate-y-0.5 flex items-center gap-2">
             <span>Explore Charna Scuba '26</span>
             <span>→</span>
           </button>
           
-          <a href="#council-section" class="px-7 py-3.5 bg-[#FAF3E3] hover:bg-[#F3E6C9] text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition inline-block">
+          <a href="#council-section" class="px-6 py-3 bg-[#FAF3E3] hover:bg-[#F3E6C9] text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition inline-block">
             Meet The Council ↓
           </a>
         </div>
 
       </div>
 
-      <!-- Right Column: Tactile Bulletin Board with Pinned Sticky Sheets & Oversized Polaroid -->
-      <div class="lg:col-span-6 relative flex items-center justify-center pt-8 sm:pt-4">
+      <!-- Right Column: Tactile Bulletin Board with Tight, Pinned Swatches -->
+      <div class="lg:col-span-6 relative flex items-center justify-center pt-4">
         
-        <!-- Corkboard Bulletin Work Area -->
-        <div class="relative w-full max-w-[500px] h-[480px] sm:h-[530px] flex items-center justify-center">
+        <!-- Bulletin Work Area -->
+        <div class="relative w-full max-w-[460px] flex items-center justify-center py-5">
 
-          <!-- 1. STICKY SHEET: "Hikes" (Top Left Pinned Card) -->
-          <div class="absolute top-2 left-0 sm:-left-4 z-20 transform -rotate-6 transition-transform hover:scale-105 select-none pointer-events-none">
-            <!-- Red Thumbpin -->
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-red-600 border-2 border-black/40 shadow-md z-30 flex items-center justify-center">
+          <!-- 1. STICKY SHEET: "Hikes" (Top Left Corner of Frame) -->
+          <div class="absolute -top-1 left-2 sm:left-4 z-20 transform -rotate-6 transition-transform hover:scale-105 select-none pointer-events-none">
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-red-600 border border-black/40 shadow-sm z-30 flex items-center justify-center">
               <span class="w-1 h-1 rounded-full bg-white/70 block"></span>
             </div>
-            <!-- Note Body -->
-            <div class="px-4 py-2 bg-[#198F9F] text-white rounded-md shadow-[3px_6px_15px_rgba(0,0,0,0.18)] border border-black/15 flex flex-col items-center">
-              <span class="font-hand font-bold text-2xl tracking-wide leading-none">Hikes</span>
-              <span class="text-[9px] font-mono uppercase tracking-widest text-white/80">trails ✦</span>
+            <div class="px-3.5 py-1.5 bg-[#198F9F] text-white rounded shadow-md border border-black/15 flex flex-col items-center">
+              <span class="font-hand font-bold text-xl tracking-wide leading-none">Hikes</span>
+              <span class="text-[8px] font-mono uppercase tracking-widest text-white/80">trails ✦</span>
             </div>
           </div>
 
-          <!-- 2. STICKY SHEET: "Trips" (Top Right Diagonal Washi Note) -->
-          <div class="absolute top-0 right-4 sm:right-2 z-20 transform rotate-8 transition-transform hover:scale-105 select-none pointer-events-none">
-            <!-- Washi Tape Pinning Top -->
-            <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-10 h-3.5 bg-amber-200/80 backdrop-blur-xs border-l border-r border-dashed border-black/30 shadow-xs z-30 rotate-2"></div>
-            <!-- Note Body -->
-            <div class="px-4 py-1.5 bg-[#86B33C] text-scrap-charcoal rounded-md shadow-[3px_6px_14px_rgba(0,0,0,0.16)] border border-black/15">
-              <span class="font-hand font-bold text-2xl tracking-wide leading-none">Trips ♡</span>
+          <!-- 2. STICKY SHEET: "Trips" (Top Right Pinned Tape) -->
+          <div class="absolute -top-2 right-4 sm:right-6 z-20 transform rotate-6 transition-transform hover:scale-105 select-none pointer-events-none">
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-3 bg-amber-200/80 border-l border-r border-dashed border-black/30 shadow-xs z-30 rotate-2"></div>
+            <div class="px-3.5 py-1 bg-[#86B33C] text-scrap-charcoal rounded shadow-md border border-black/15">
+              <span class="font-hand font-bold text-xl tracking-wide leading-none">Trips ♡</span>
             </div>
           </div>
 
-          <!-- 3. STICKY SHEET: "Camping" (Center Right Pinned Note) -->
-          <div class="absolute top-36 -right-2 sm:-right-6 z-20 transform -rotate-3 transition-transform hover:scale-105 select-none pointer-events-none">
-            <!-- Brass Pushpin -->
-            <div class="absolute -top-2.5 right-3 w-4 h-4 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/40 shadow-md z-30 flex items-center justify-center">
-              <span class="w-1 h-1 rounded-full bg-white/80 block"></span>
+          <!-- 3. STICKY SHEET: "Camping" (Upper-Right Edge) -->
+          <div class="absolute top-28 -right-1 sm:-right-3 z-20 transform rotate-3 transition-transform hover:scale-105 select-none pointer-events-none">
+            <div class="absolute -top-2 right-2 w-3.5 h-3.5 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/40 shadow-sm z-30 flex items-center justify-center">
+              <span class="w-0.5 h-0.5 rounded-full bg-white/80 block"></span>
             </div>
-            <!-- Note Body -->
-            <div class="px-4 py-2 bg-[#EDB136] text-scrap-charcoal rounded-md shadow-[3px_6px_14px_rgba(0,0,0,0.18)] border border-black/15">
-              <span class="font-hand font-bold text-2xl tracking-wide leading-none">Camping ⛺</span>
+            <div class="px-3.5 py-1.5 bg-[#EDB136] text-scrap-charcoal rounded shadow-md border border-black/15">
+              <span class="font-hand font-bold text-xl tracking-wide leading-none">Camping ⛺</span>
             </div>
           </div>
 
-          <!-- 4. STICKY SHEET: "Team Building" (Bottom Left Taped Memo) -->
-          <div class="absolute bottom-6 -left-3 sm:-left-6 z-20 transform rotate-4 transition-transform hover:scale-105 select-none pointer-events-none">
-            <!-- Corner Washi Tape -->
-            <div class="absolute -top-2 -left-2 w-8 h-3.5 bg-[#198F9F]/60 backdrop-blur-xs border-l border-r border-dashed border-black/25 shadow-xs z-30 -rotate-45"></div>
-            <!-- Note Body -->
-            <div class="px-4 py-2 bg-[#DE8435] text-white rounded-md shadow-[3px_6px_15px_rgba(0,0,0,0.2)] border border-black/15">
-              <span class="font-hand font-bold text-2xl tracking-wide leading-none">Team Building</span>
+          <!-- 4. STICKY SHEET: "Team Building" (Bottom-Left Corner) -->
+          <div class="absolute -bottom-3 left-4 sm:left-6 z-20 transform rotate-3 transition-transform hover:scale-105 select-none pointer-events-none">
+            <div class="absolute -top-1.5 left-2 w-7 h-3 bg-[#198F9F]/60 border-l border-r border-dashed border-black/25 shadow-xs z-30 -rotate-45"></div>
+            <div class="px-3.5 py-1.5 bg-[#DE8435] text-white rounded shadow-md border border-black/15">
+              <span class="font-hand font-bold text-xl tracking-wide leading-none">Team Building</span>
             </div>
           </div>
 
-          <!-- 5. STICKY SHEET: "Exploration" (Bottom Right Ribbon) -->
-          <div class="absolute -bottom-2 right-2 sm:right-6 z-20 transform -rotate-4 transition-transform hover:scale-105 select-none pointer-events-none">
-            <!-- Blue Pin -->
-            <div class="absolute -top-2.5 left-3 w-4 h-4 rounded-full bg-[#198F9F] border border-black/40 shadow-md z-30 flex items-center justify-center">
-              <span class="w-1 h-1 rounded-full bg-white/80 block"></span>
+          <!-- 5. STICKY SHEET: "Exploration" (Bottom-Right Corner) -->
+          <div class="absolute -bottom-3 right-4 sm:right-6 z-20 transform -rotate-3 transition-transform hover:scale-105 select-none pointer-events-none">
+            <div class="absolute -top-2 left-2 w-3.5 h-3.5 rounded-full bg-[#198F9F] border border-black/40 shadow-sm z-30 flex items-center justify-center">
+              <span class="w-0.5 h-0.5 rounded-full bg-white/80 block"></span>
             </div>
-            <!-- Note Body -->
-            <div class="px-5 py-2 bg-[#A44200] text-[#FFF8E7] rounded-md shadow-[3px_6px_16px_rgba(0,0,0,0.22)] border border-black/20">
-              <span class="font-hand font-bold text-2xl tracking-wide leading-none">Exploration 🧭</span>
+            <div class="px-4 py-1.5 bg-[#A44200] text-[#FFF8E7] rounded shadow-md border border-black/20">
+              <span class="font-hand font-bold text-xl tracking-wide leading-none">Exploration 🧭</span>
             </div>
           </div>
 
-          <!-- 6. MAIN LARGER PINNED POLAROID PHOTO -->
+          <!-- 6. MAIN POLAROID PHOTO -->
           <div 
-            class="relative w-[340px] sm:w-[410px] cursor-pointer group z-10 transition-transform duration-300 transform group-hover:scale-[1.02]"
+            class="relative w-[320px] sm:w-[360px] cursor-pointer group z-10 transition-transform duration-300 transform group-hover:scale-[1.02]"
             onclick="showPage('scuba')" 
             title="Click to view Charna Scuba expedition and form"
           >
             <!-- Metallic Center Thumbpin at Top -->
-            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none">
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[#EDA531] to-[#A44200] border-2 border-black/50 shadow-md flex items-center justify-center">
-                <span class="w-1.5 h-1.5 rounded-full bg-white/80 block"></span>
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none">
+              <div class="w-4 h-4 rounded-full bg-gradient-to-br from-[#EDA531] to-[#A44200] border border-black/50 shadow-md flex items-center justify-center">
+                <span class="w-1 h-1 rounded-full bg-white/80 block"></span>
               </div>
-              <div class="w-0.5 h-2 bg-black/60 -mt-0.5"></div>
+              <div class="w-0.5 h-1.5 bg-black/60 -mt-0.5"></div>
             </div>
 
-            <!-- Polaroid Base Container with Organic Tilt -->
-            <div class="polaroid transform rotate-1 group-hover:rotate-0 transition-all duration-300 shadow-[0_20px_45px_rgba(53,54,48,0.25)] group-hover:shadow-[0_25px_55px_rgba(53,54,48,0.32)] border-2 border-[#DFCFAA] bg-[#FAF5EB] p-4 sm:p-5 pb-7 sm:pb-8">
+            <!-- Polaroid Base Container -->
+            <div class="polaroid transform rotate-1 group-hover:rotate-0 transition-all duration-300 shadow-[0_16px_36px_rgba(53,54,48,0.22)] group-hover:shadow-[0_22px_45px_rgba(53,54,48,0.28)] border-2 border-[#DFCFAA] bg-[#FAF5EB] p-3.5 sm:p-4 pb-5 sm:pb-6">
               
-              <!-- Real Scrap Washi Tape across Top Header -->
+              <!-- Washi Tape across Top Header -->
               <div class="washi-tape washi-tape-teal"></div>
               
-              <!-- Large Photo Area -->
+              <!-- Photo Area -->
               <div class="aspect-[4/3] w-full overflow-hidden rounded-sm bg-scrap-kraft relative border border-black/15 shadow-inner">
                 <img id="heroPolaroidImg" src="hasan_scuba.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80';" alt="Charna Scuba" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 
                 <!-- In-Image Reservation Pill -->
-                <div class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-sm text-white px-3.5 py-1.5 rounded-full text-xs font-bold font-mono tracking-wider border border-white/30 flex items-center gap-1.5 opacity-95 group-hover:bg-scrap-teal transition shadow-lg">
+                <div class="absolute bottom-2.5 right-2.5 bg-black/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-[10px] font-bold font-mono tracking-wider border border-white/30 flex items-center gap-1 opacity-95 group-hover:bg-scrap-teal transition shadow-md">
                   <span>RESERVE DIVE</span>
                   <span>↗</span>
                 </div>
               </div>
 
               <!-- Polaroid Caption Footer -->
-              <div class="mt-4 text-center">
-                <p class="font-hand text-2xl sm:text-3xl text-scrap-charcoal font-bold group-hover:text-scrap-rust transition leading-tight">
+              <div class="mt-3 text-center">
+                <p class="font-hand text-2xl text-scrap-charcoal font-bold group-hover:text-scrap-rust transition leading-tight">
                   Charna Island Scuba '26 ♡
                 </p>
-                <p class="text-xs sm:text-sm uppercase font-bold text-scrap-teal tracking-widest mt-1 flex items-center justify-center gap-1.5">
+                <p class="text-[11px] sm:text-xs uppercase font-bold text-scrap-teal tracking-widest mt-0.5 flex items-center justify-center gap-1">
                   <span>Slots Now Open • Tap to Join</span>
                 </p>
               </div>
@@ -153,7 +143,7 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
 
             <!-- Stamped Compass Medallion on Bottom Corner -->
-            <div class="absolute -bottom-3 -left-3 w-13 h-13 rounded-full border-2 border-dashed border-scrap-gold text-scrap-gold flex items-center justify-center font-bold text-xl bg-[#FAF4E5] shadow-lg transform -rotate-12 pointer-events-none">
+            <div class="absolute -bottom-2 -left-2 w-10 h-10 rounded-full border border-dashed border-scrap-gold text-scrap-gold flex items-center justify-center font-bold text-base bg-[#FAF4E5] shadow-md transform -rotate-12 pointer-events-none">
               🧭
             </div>
 
@@ -166,8 +156,8 @@ window.HOME_PAGE_TEMPLATE = `
     </div>
   </section>
 
-  <!-- COUNCIL HIERARCHY SECTION -->
-  <section id="council-section" class="px-4 sm:px-6 pt-16 pb-20 border-t-2 border-[#E0D2B8] relative">
+  <!-- COUNCIL HIERARCHY SECTION (Now clearly visible just below the fold) -->
+  <section id="council-section" class="px-4 sm:px-6 pt-12 pb-20 border-t-2 border-[#E0D2B8] relative">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-4xl mx-auto mb-14">
         <span class="font-hand text-3xl sm:text-4xl text-scrap-rust font-bold block mb-1">Not just adventures, but a community ♡</span>
