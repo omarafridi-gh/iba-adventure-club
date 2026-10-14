@@ -66,6 +66,20 @@ function showPage(pageId) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// 2b. Smooth Scroll to Council Section (Accounts for 64px sticky navbar)
+function scrollToCouncil() {
+  const council = document.getElementById('council-section');
+  if (!council) return;
+  const headerOffset = 70; // 64px header + small breathing margin
+  const elementPosition = council.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth'
+  });
+}
+
 // 3. 3D Journal Spreads Data & Preloader
 const masterJournalSpreads = [
   {
@@ -156,12 +170,10 @@ function openMasterBookModal() {
   currentSpreadIdx = 0;
   renderCurrentSpread();
 
-  // Clean, subtle zoom into the two-page spread without any awkward cover flap
   spreadArea.classList.remove('anim-pov-zoom');
   void spreadArea.offsetWidth;
   spreadArea.classList.add('anim-pov-zoom');
 
-  // Automatically start ambient lo-fi music on open if not already playing
   const audio = document.getElementById('journalAudio');
   if (audio && audio.paused) {
     toggleJournalMusic();
@@ -173,7 +185,6 @@ function closeMasterBookModal() {
   modal.classList.add('hidden');
   modal.classList.remove('flex');
   
-  // Restore scroll behavior depending on active page
   const homeVisible = !document.getElementById('page-home').classList.contains('hidden');
   const scubaVisible = !document.getElementById('page-scuba').classList.contains('hidden');
   
@@ -267,7 +278,7 @@ function toggleJournalMusic() {
   if (!audio) return;
 
   if (audio.paused) {
-    audio.volume = 0.45; // Comfortable lo-fi background volume
+    audio.volume = 0.45;
     audio.play().then(() => {
       if (btnText) btnText.innerText = "Playing Room Beats ♪";
       if (waves) waves.classList.remove('hidden');
