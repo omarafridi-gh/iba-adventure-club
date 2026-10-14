@@ -2,16 +2,27 @@
 window.HOME_PAGE_TEMPLATE = `
 <main id="page-home" class="page-view flex-grow">
   
-  <!-- HERO SECTION: Compact & Balanced (Divider Visible Above Fold) -->
-  <section class="relative px-4 sm:px-6 pt-5 sm:pt-7 pb-8 sm:pb-10 max-w-7xl mx-auto overflow-hidden">
+  <!-- HERO SECTION: Open Corkboard Layout with Scattered Sticky Sheets -->
+  <section class="relative px-4 sm:px-8 pt-5 sm:pt-8 pb-10 sm:pb-12 max-w-7xl mx-auto overflow-hidden">
     
     <!-- Decorative Ambient Glows -->
-    <div class="absolute -top-12 -left-12 w-72 h-72 rounded-full bg-scrap-gold/15 blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-12 -left-12 w-80 h-80 rounded-full bg-scrap-gold/15 blur-3xl pointer-events-none"></div>
     <div class="absolute top-1/2 -right-12 w-96 h-96 rounded-full bg-scrap-teal/10 blur-3xl pointer-events-none"></div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center relative z-10">
+    <!-- FLOATING STICKY NOTE: "Hikes" (Floating in the space between headline & polaroid) -->
+    <div class="hidden md:flex absolute top-6 left-[46%] lg:left-[48%] z-30 transform -rotate-6 hover:scale-105 transition-transform select-none pointer-events-none">
+      <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-red-600 border border-black/40 shadow-md z-40 flex items-center justify-center">
+        <span class="w-1 h-1 rounded-full bg-white/70 block"></span>
+      </div>
+      <div class="px-4 py-1.5 bg-[#198F9F] text-white rounded-md shadow-[3px_6px_16px_rgba(0,0,0,0.18)] border border-black/15 flex flex-col items-center">
+        <span class="font-hand font-bold text-2xl tracking-wide leading-none">Hikes</span>
+        <span class="text-[9px] font-mono uppercase tracking-widest text-white/80">trails ✦</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
       
-      <!-- Left Column: Copy & CTAs -->
+      <!-- Left Column: Copy & Scattered Pinned CTAs -->
       <div class="lg:col-span-6 text-center lg:text-left">
         
         <!-- Top Tape Scrap Badge -->
@@ -22,7 +33,7 @@ window.HOME_PAGE_TEMPLATE = `
         </div>
 
         <!-- Punchy Display Heading -->
-        <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.25rem] font-black tracking-tight text-scrap-charcoal leading-[1.08]">
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.35rem] font-black tracking-tight text-scrap-charcoal leading-[1.08]">
           Trade Your Laptop <br>
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-scrap-rust via-scrap-gold to-scrap-rust">For A Compass.</span>
         </h1>
@@ -32,8 +43,9 @@ window.HOME_PAGE_TEMPLATE = `
           The faces rotate, the routes evolve, but the deep dive never stops. From the turquoise depths of Charna Island to high alpine mountain crossings, we take IBA students beyond campus gates into the untamed.
         </p>
 
-        <!-- CTAs -->
-        <div class="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
+        <!-- CTAs with Neighboring Sticky Note: "Team Building" -->
+        <div class="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-4 relative">
+          
           <button onclick="showPage('scuba')" class="px-7 py-3 bg-scrap-teal hover:bg-scrap-teal/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md border-2 border-scrap-charcoal transition transform hover:-translate-y-0.5 flex items-center gap-2">
             <span>Explore Charna Scuba '26</span>
             <span>→</span>
@@ -42,71 +54,63 @@ window.HOME_PAGE_TEMPLATE = `
           <a href="#council-section" class="px-6 py-3 bg-[#FAF3E3] hover:bg-[#F3E6C9] text-scrap-charcoal font-display font-bold text-xs uppercase tracking-wider rounded-xl border-2 border-scrap-charcoal shadow-sm transition inline-block">
             Meet The Council ↓
           </a>
+
+          <!-- STICKY NOTE: "Team Building" (Sitting in the gap next to Meet The Council) -->
+          <div class="relative transform rotate-3 hover:scale-105 transition-transform select-none">
+            <div class="absolute -top-2 left-2 w-7 h-3 bg-[#198F9F]/60 border-l border-r border-dashed border-black/25 shadow-xs z-30 -rotate-45"></div>
+            <div class="px-4 py-1.5 bg-[#DE8435] text-white rounded-md shadow-[3px_6px_14px_rgba(0,0,0,0.18)] border border-black/15">
+              <span class="font-hand font-bold text-xl sm:text-2xl tracking-wide leading-none">Team Building</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- STICKY NOTE: "Exploration" (Sitting below the buttons with room to breathe) -->
+        <div class="mt-4 flex justify-center lg:justify-start">
+          <div class="relative transform -rotate-2 hover:scale-105 transition-transform select-none">
+            <div class="absolute -top-2 left-3 w-3.5 h-3.5 rounded-full bg-[#198F9F] border border-black/40 shadow-sm z-30 flex items-center justify-center">
+              <span class="w-0.5 h-0.5 rounded-full bg-white/80 block"></span>
+            </div>
+            <div class="px-5 py-1.5 bg-[#A44200] text-[#FFF8E7] rounded-md shadow-[3px_6px_15px_rgba(0,0,0,0.2)] border border-black/20 flex items-center gap-2">
+              <span class="font-hand font-bold text-xl sm:text-2xl tracking-wide leading-none">Exploration 🧭</span>
+            </div>
+          </div>
         </div>
 
       </div>
 
-      <!-- Right Column: Tactile Bulletin Board with Tight, Pinned Swatches -->
-      <div class="lg:col-span-6 relative flex items-center justify-center pt-4">
+      <!-- Right Column: Oversized Polaroid with Floating Accents -->
+      <div class="lg:col-span-6 relative flex items-center justify-center pt-2 lg:pt-0">
         
         <!-- Bulletin Work Area -->
-        <div class="relative w-full max-w-[460px] flex items-center justify-center py-5">
+        <div class="relative w-full max-w-[500px] flex items-center justify-center py-4">
 
-          <!-- 1. STICKY SHEET: "Hikes" (Top Left Corner of Frame) -->
-          <div class="absolute -top-1 left-2 sm:left-4 z-20 transform -rotate-6 transition-transform hover:scale-105 select-none pointer-events-none">
-            <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-red-600 border border-black/40 shadow-sm z-30 flex items-center justify-center">
-              <span class="w-1 h-1 rounded-full bg-white/70 block"></span>
-            </div>
-            <div class="px-3.5 py-1.5 bg-[#198F9F] text-white rounded shadow-md border border-black/15 flex flex-col items-center">
-              <span class="font-hand font-bold text-xl tracking-wide leading-none">Hikes</span>
-              <span class="text-[8px] font-mono uppercase tracking-widest text-white/80">trails ✦</span>
+          <!-- STICKY NOTE: "Trips" (Top Right Open Space) -->
+          <div class="absolute -top-3 right-2 sm:right-6 z-20 transform rotate-8 hover:scale-105 transition-transform select-none pointer-events-none">
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-9 h-3.5 bg-amber-200/80 border-l border-r border-dashed border-black/30 shadow-xs z-30 rotate-2"></div>
+            <div class="px-4 py-1.5 bg-[#86B33C] text-scrap-charcoal rounded-md shadow-[3px_6px_14px_rgba(0,0,0,0.16)] border border-black/15">
+              <span class="font-hand font-bold text-2xl tracking-wide leading-none">Trips ♡</span>
             </div>
           </div>
 
-          <!-- 2. STICKY SHEET: "Trips" (Top Right Pinned Tape) -->
-          <div class="absolute -top-2 right-4 sm:right-6 z-20 transform rotate-6 transition-transform hover:scale-105 select-none pointer-events-none">
-            <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-3 bg-amber-200/80 border-l border-r border-dashed border-black/30 shadow-xs z-30 rotate-2"></div>
-            <div class="px-3.5 py-1 bg-[#86B33C] text-scrap-charcoal rounded shadow-md border border-black/15">
-              <span class="font-hand font-bold text-xl tracking-wide leading-none">Trips ♡</span>
-            </div>
-          </div>
-
-          <!-- 3. STICKY SHEET: "Camping" (Upper-Right Edge) -->
-          <div class="absolute top-28 -right-1 sm:-right-3 z-20 transform rotate-3 transition-transform hover:scale-105 select-none pointer-events-none">
-            <div class="absolute -top-2 right-2 w-3.5 h-3.5 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/40 shadow-sm z-30 flex items-center justify-center">
+          <!-- STICKY NOTE: "Camping" (Outer Right Margin) -->
+          <div class="absolute top-36 -right-2 sm:-right-4 z-20 transform -rotate-3 hover:scale-105 transition-transform select-none pointer-events-none">
+            <div class="absolute -top-2 right-2 w-4 h-4 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/40 shadow-sm z-30 flex items-center justify-center">
               <span class="w-0.5 h-0.5 rounded-full bg-white/80 block"></span>
             </div>
-            <div class="px-3.5 py-1.5 bg-[#EDB136] text-scrap-charcoal rounded shadow-md border border-black/15">
-              <span class="font-hand font-bold text-xl tracking-wide leading-none">Camping ⛺</span>
+            <div class="px-4 py-1.5 bg-[#EDB136] text-scrap-charcoal rounded-md shadow-[3px_6px_15px_rgba(0,0,0,0.18)] border border-black/15">
+              <span class="font-hand font-bold text-2xl tracking-wide leading-none">Camping ⛺</span>
             </div>
           </div>
 
-          <!-- 4. STICKY SHEET: "Team Building" (Bottom-Left Corner) -->
-          <div class="absolute -bottom-3 left-4 sm:left-6 z-20 transform rotate-3 transition-transform hover:scale-105 select-none pointer-events-none">
-            <div class="absolute -top-1.5 left-2 w-7 h-3 bg-[#198F9F]/60 border-l border-r border-dashed border-black/25 shadow-xs z-30 -rotate-45"></div>
-            <div class="px-3.5 py-1.5 bg-[#DE8435] text-white rounded shadow-md border border-black/15">
-              <span class="font-hand font-bold text-xl tracking-wide leading-none">Team Building</span>
-            </div>
-          </div>
-
-          <!-- 5. STICKY SHEET: "Exploration" (Bottom-Right Corner) -->
-          <div class="absolute -bottom-3 right-4 sm:right-6 z-20 transform -rotate-3 transition-transform hover:scale-105 select-none pointer-events-none">
-            <div class="absolute -top-2 left-2 w-3.5 h-3.5 rounded-full bg-[#198F9F] border border-black/40 shadow-sm z-30 flex items-center justify-center">
-              <span class="w-0.5 h-0.5 rounded-full bg-white/80 block"></span>
-            </div>
-            <div class="px-4 py-1.5 bg-[#A44200] text-[#FFF8E7] rounded shadow-md border border-black/20">
-              <span class="font-hand font-bold text-xl tracking-wide leading-none">Exploration 🧭</span>
-            </div>
-          </div>
-
-          <!-- 6. MAIN POLAROID PHOTO -->
+          <!-- OVERSIZED MAIN POLAROID PHOTO -->
           <div 
-            class="relative w-[320px] sm:w-[360px] cursor-pointer group z-10 transition-transform duration-300 transform group-hover:scale-[1.02]"
+            class="relative w-[360px] sm:w-[430px] cursor-pointer group z-10 transition-transform duration-300 transform group-hover:scale-[1.02]"
             onclick="showPage('scuba')" 
             title="Click to view Charna Scuba expedition and form"
           >
-            <!-- Metallic Center Thumbpin at Top -->
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none">
+            <!-- Center Thumbpin at Top -->
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none">
               <div class="w-4 h-4 rounded-full bg-gradient-to-br from-[#EDA531] to-[#A44200] border border-black/50 shadow-md flex items-center justify-center">
                 <span class="w-1 h-1 rounded-full bg-white/80 block"></span>
               </div>
@@ -114,7 +118,7 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
 
             <!-- Polaroid Base Container -->
-            <div class="polaroid transform rotate-1 group-hover:rotate-0 transition-all duration-300 shadow-[0_16px_36px_rgba(53,54,48,0.22)] group-hover:shadow-[0_22px_45px_rgba(53,54,48,0.28)] border-2 border-[#DFCFAA] bg-[#FAF5EB] p-3.5 sm:p-4 pb-5 sm:pb-6">
+            <div class="polaroid transform rotate-1 group-hover:rotate-0 transition-all duration-300 shadow-[0_20px_45px_rgba(53,54,48,0.22)] group-hover:shadow-[0_25px_55px_rgba(53,54,48,0.3)] border-2 border-[#DFCFAA] bg-[#FAF5EB] p-4 sm:p-5 pb-6 sm:pb-7">
               
               <!-- Washi Tape across Top Header -->
               <div class="washi-tape washi-tape-teal"></div>
@@ -124,18 +128,18 @@ window.HOME_PAGE_TEMPLATE = `
                 <img id="heroPolaroidImg" src="hasan_scuba.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80';" alt="Charna Scuba" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 
                 <!-- In-Image Reservation Pill -->
-                <div class="absolute bottom-2.5 right-2.5 bg-black/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-[10px] font-bold font-mono tracking-wider border border-white/30 flex items-center gap-1 opacity-95 group-hover:bg-scrap-teal transition shadow-md">
+                <div class="absolute bottom-2.5 right-2.5 bg-black/80 backdrop-blur-sm text-white px-3.5 py-1 rounded-full text-[11px] font-bold font-mono tracking-wider border border-white/30 flex items-center gap-1 opacity-95 group-hover:bg-scrap-teal transition shadow-md">
                   <span>RESERVE DIVE</span>
                   <span>↗</span>
                 </div>
               </div>
 
               <!-- Polaroid Caption Footer -->
-              <div class="mt-3 text-center">
-                <p class="font-hand text-2xl text-scrap-charcoal font-bold group-hover:text-scrap-rust transition leading-tight">
+              <div class="mt-3.5 text-center">
+                <p class="font-hand text-2xl sm:text-3xl text-scrap-charcoal font-bold group-hover:text-scrap-rust transition leading-tight">
                   Charna Island Scuba '26 ♡
                 </p>
-                <p class="text-[11px] sm:text-xs uppercase font-bold text-scrap-teal tracking-widest mt-0.5 flex items-center justify-center gap-1">
+                <p class="text-xs uppercase font-bold text-scrap-teal tracking-widest mt-0.5 flex items-center justify-center gap-1">
                   <span>Slots Now Open • Tap to Join</span>
                 </p>
               </div>
@@ -143,7 +147,7 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
 
             <!-- Stamped Compass Medallion on Bottom Corner -->
-            <div class="absolute -bottom-2 -left-2 w-10 h-10 rounded-full border border-dashed border-scrap-gold text-scrap-gold flex items-center justify-center font-bold text-base bg-[#FAF4E5] shadow-md transform -rotate-12 pointer-events-none">
+            <div class="absolute -bottom-2.5 -left-2.5 w-11 h-11 rounded-full border border-dashed border-scrap-gold text-scrap-gold flex items-center justify-center font-bold text-lg bg-[#FAF4E5] shadow-md transform -rotate-12 pointer-events-none">
               🧭
             </div>
 
@@ -156,7 +160,7 @@ window.HOME_PAGE_TEMPLATE = `
     </div>
   </section>
 
-  <!-- COUNCIL HIERARCHY SECTION (Now clearly visible just below the fold) -->
+  <!-- COUNCIL HIERARCHY SECTION (Visible peek just below the fold) -->
   <section id="council-section" class="px-4 sm:px-6 pt-12 pb-20 border-t-2 border-[#E0D2B8] relative">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-4xl mx-auto mb-14">
@@ -314,7 +318,7 @@ window.HOME_PAGE_TEMPLATE = `
                   <img src="neetu.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
-                    <span class="text-xs font-bold text-[#7ba632] uppercase tracking-wider block">Executive Council</span>
+                    <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
                     <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-[#7ba632] truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
                   </div>
                 </div>
