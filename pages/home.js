@@ -9,18 +9,15 @@ window.HOME_PAGE_TEMPLATE = `
     <div class="absolute -top-12 -left-12 w-72 h-72 rounded-full bg-scrap-gold/15 blur-3xl pointer-events-none"></div>
     <div class="absolute top-1/2 -right-12 w-80 h-80 rounded-full bg-scrap-teal/10 blur-3xl pointer-events-none"></div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
       
       <!-- Left Column: Copy & CTAs -->
       <div class="lg:col-span-7 text-center lg:text-left">
         
-        <!-- Top Tape Scrap Badge -->
+        <!-- Top Tape Scrap Badge (EST badge removed) -->
         <div class="inline-flex items-center gap-2 relative mb-4">
           <span class="font-hand text-xl sm:text-2xl text-scrap-rust font-bold bg-[#F4EBD7] px-5 py-1.5 rounded-md border border-[#DFCFAA] shadow-[0_2px_8px_rgba(53,54,48,0.08)] inline-block transform -rotate-1">
             "New faces. Uncharted trails. Same wild spirit. ♡"
-          </span>
-          <span class="hidden sm:inline-block px-2.5 py-0.5 rounded-full bg-scrap-teal/15 text-scrap-teal border border-scrap-teal/30 font-mono text-[11px] font-bold uppercase tracking-wider">
-            EST. 2026–27
           </span>
         </div>
 
@@ -49,37 +46,82 @@ window.HOME_PAGE_TEMPLATE = `
 
       </div>
 
-      <!-- Right Column: Interactive Clickable Polaroid -->
-      <div class="lg:col-span-5 relative flex justify-center">
+      <!-- Right Column: Standout Polaroid + Scrapbook Brush Strokes Stack -->
+      <div class="lg:col-span-5 relative flex items-center justify-center">
         
-        <div class="relative w-80 sm:w-96 cursor-pointer group" onclick="showPage('scuba')" title="Click to view Charna Scuba expedition and form">
+        <!-- Scrapbook Cluster Container -->
+        <div class="relative w-full max-w-[420px] flex items-center justify-center py-4">
           
-          <div class="polaroid transform -rotate-2 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300 shadow-xl group-hover:shadow-2xl">
+          <!-- MOOD BOARD BRUSH SWATCHES (Positioned artfully behind / beside the polaroid) -->
+          <div class="hidden sm:flex flex-col gap-2 absolute -left-8 md:-left-12 z-20 pointer-events-none select-none">
             
-            <div class="washi-tape washi-tape-teal"></div>
-            
-            <div class="aspect-[4/3] w-full overflow-hidden rounded bg-scrap-kraft relative">
-              <img id="heroPolaroidImg" src="hasan_scuba.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80';" alt="Charna Scuba" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-              
-              <div class="absolute bottom-2.5 right-2.5 bg-black/75 backdrop-blur-sm text-white px-3 py-1 rounded-full text-[10px] font-bold font-mono tracking-wider border border-white/30 flex items-center gap-1 opacity-90 group-hover:opacity-100 group-hover:bg-scrap-teal transition">
-                <span>RESERVE DIVE</span>
-                <span>↗</span>
-              </div>
+            <!-- Hikes (Teal) -->
+            <div class="relative px-5 py-1.5 rounded-lg bg-[#198F9F] text-white font-hand font-bold text-xl sm:text-2xl shadow-md transform -rotate-3 border border-black/15">
+              <span>Hikes</span>
+              <!-- Doodles -->
+              <span class="absolute -right-5 -top-3 text-scrap-charcoal text-xs font-mono font-bold">彡</span>
             </div>
 
-            <div class="mt-4 text-center">
-              <p class="font-hand text-2xl text-scrap-charcoal font-bold group-hover:text-scrap-rust transition">
-                Charna Island Scuba '26 ♡
-              </p>
-              <p class="text-xs uppercase font-bold text-scrap-teal tracking-widest mt-0.5 flex items-center justify-center gap-1">
-                <span>Slots Now Open • Tap to Join</span>
-              </p>
+            <!-- Trips (Moss Green) -->
+            <div class="px-6 py-1.5 rounded-lg bg-[#86B33C] text-scrap-charcoal font-hand font-bold text-xl sm:text-2xl shadow-md transform rotate-2 border border-black/10 -ml-1">
+              <span>Trips</span>
+            </div>
+
+            <!-- Camping (Gold/Yellow) -->
+            <div class="relative px-5 py-1.5 rounded-lg bg-[#EDB136] text-scrap-charcoal font-hand font-bold text-xl sm:text-2xl shadow-md transform -rotate-1 border border-black/10">
+              <span>Camping</span>
+              <span class="absolute -right-5 top-0 text-scrap-charcoal text-xs font-mono font-bold">彡</span>
+            </div>
+
+            <!-- Team Building (Warm Terracotta / Ochre) -->
+            <div class="px-5 py-1.5 rounded-lg bg-[#DE8435] text-white font-hand font-bold text-xl sm:text-2xl shadow-md transform rotate-1 border border-black/15 -ml-1">
+              <span>Team Building</span>
+            </div>
+
+            <!-- Exploration (Deep Rust) -->
+            <div class="px-6 py-1.5 rounded-lg bg-[#A44200] text-[#FFF7E8] font-hand font-bold text-xl sm:text-2xl shadow-md transform -rotate-2 border border-black/20">
+              <span>Exploration</span>
             </div>
 
           </div>
 
-          <div class="absolute -bottom-4 -left-4 w-12 h-12 rounded-full border-2 border-dashed border-scrap-gold text-scrap-gold flex items-center justify-center font-bold text-lg bg-[#FAF4E5] shadow-md transform -rotate-12 pointer-events-none">
-            🧭
+          <!-- Interactive Standout Polaroid -->
+          <div class="relative w-72 sm:w-80 cursor-pointer group z-10 ml-auto sm:ml-20" onclick="showPage('scuba')" title="Click to view Charna Scuba expedition and form">
+            
+            <!-- Polaroid Shadow & Paper Base -->
+            <div class="polaroid transform rotate-2 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300 shadow-[0_15px_35px_rgba(53,54,48,0.2)] group-hover:shadow-[0_22px_45px_rgba(53,54,48,0.28)] border-2 border-[#DFD1B3] bg-[#FAF5EB]">
+              
+              <!-- Crisp Washi Tape at Top -->
+              <div class="washi-tape washi-tape-teal"></div>
+              
+              <!-- Polaroid Image Frame -->
+              <div class="aspect-[4/3] w-full overflow-hidden rounded bg-scrap-kraft relative border border-black/10 shadow-inner">
+                <img id="heroPolaroidImg" src="hasan_scuba.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80';" alt="Charna Scuba" class="w-full h-full object-cover group-hover:scale-108 transition duration-500">
+                
+                <!-- Floating 'Click to Book' Badge -->
+                <div class="absolute bottom-2.5 right-2.5 bg-black/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-[10px] font-bold font-mono tracking-wider border border-white/30 flex items-center gap-1 opacity-90 group-hover:opacity-100 group-hover:bg-scrap-teal transition shadow">
+                  <span>RESERVE DIVE</span>
+                  <span>↗</span>
+                </div>
+              </div>
+
+              <!-- Polaroid Hand-script Caption -->
+              <div class="mt-4 text-center">
+                <p class="font-hand text-2xl text-scrap-charcoal font-bold group-hover:text-scrap-rust transition leading-tight">
+                  Charna Island Scuba '26 ♡
+                </p>
+                <p class="text-xs uppercase font-bold text-scrap-teal tracking-widest mt-0.5 flex items-center justify-center gap-1">
+                  <span>Slots Now Open • Tap to Join</span>
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Compass Badge Stamped onto Bottom Corner -->
+            <div class="absolute -bottom-3 -left-3 w-12 h-12 rounded-full border-2 border-dashed border-scrap-gold text-scrap-gold flex items-center justify-center font-bold text-lg bg-[#FAF4E5] shadow-lg transform -rotate-12 pointer-events-none">
+              🧭
+            </div>
+
           </div>
 
         </div>
@@ -247,7 +289,7 @@ window.HOME_PAGE_TEMPLATE = `
                   <img src="neetu.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
-                    <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
+                    <span class="text-xs font-bold text-[#7ba632] uppercase tracking-wider block">Executive Council</span>
                     <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-[#7ba632] truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
                   </div>
                 </div>
