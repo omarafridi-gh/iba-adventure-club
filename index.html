@@ -108,9 +108,9 @@
       pointer-events: none;
     }
 
-    /* 3D FULLSCREEN MODAL & FLIP VIEWER */
+    /* 3D FULLSCREEN MODAL & FLIP STAGE */
     .book-3d-stage {
-      perspective: 3200px;
+      perspective: 3000px;
       perspective-origin: 50% 50%;
       transform-style: preserve-3d;
       position: relative;
@@ -147,43 +147,62 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
+    /* ZERO-POP DUAL-SIDED REAL TURNING LEAF */
     #turningPageLeaf {
       position: absolute;
       top: 0;
       bottom: 0;
       width: 50%;
-      background: #FAF4E5;
-      border: 2px solid #DFCEAA;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-      z-index: 45;
+      z-index: 60;
       display: none;
       pointer-events: none;
       transform-style: preserve-3d;
+      backface-visibility: hidden;
+      will-change: transform;
+    }
+
+    .leaf-face {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      background-color: #FAF4E5;
+      border: 2px solid #DFCEAA;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
       overflow: hidden;
     }
 
-    .turn-page-slow-forward {
+    .leaf-face-back {
+      transform: rotateY(180deg);
+      background-color: #F7EED9;
+    }
+
+    /* FORWARD FLIP: Rotates right leaf from 0 to -180 deg around Left Center */
+    .turn-forward-anim {
       display: block !important;
       right: 0;
       transform-origin: left center;
-      animation: turnForward3D 0.88s cubic-bezier(0.22, 0.85, 0.3, 1) forwards;
+      animation: flipForwardReal 0.72s cubic-bezier(0.35, 0, 0.2, 1) forwards;
     }
-    @keyframes turnForward3D {
-      0% { transform: rotateY(0deg); box-shadow: -8px 0 28px rgba(0,0,0,0.35); filter: brightness(1); }
-      48% { filter: brightness(0.92); box-shadow: -30px 10px 45px rgba(0,0,0,0.25); }
-      100% { transform: rotateY(-180deg); box-shadow: 10px 0 25px rgba(0,0,0,0.1); filter: brightness(1); }
+    @keyframes flipForwardReal {
+      0% { transform: rotateY(0deg); box-shadow: -10px 0 30px rgba(0,0,0,0.3); }
+      50% { box-shadow: -35px 15px 50px rgba(0,0,0,0.25); }
+      100% { transform: rotateY(-180deg); box-shadow: 10px 0 25px rgba(0,0,0,0.1); }
     }
 
-    .turn-page-slow-backward {
+    /* BACKWARD FLIP: Rotates left leaf from 0 to 180 deg around Right Center */
+    .turn-backward-anim {
       display: block !important;
       left: 0;
       transform-origin: right center;
-      animation: turnBackward3D 0.88s cubic-bezier(0.22, 0.85, 0.3, 1) forwards;
+      animation: flipBackwardReal 0.72s cubic-bezier(0.35, 0, 0.2, 1) forwards;
     }
-    @keyframes turnBackward3D {
-      0% { transform: rotateY(0deg); box-shadow: 8px 0 28px rgba(0,0,0,0.35); filter: brightness(1); }
-      48% { filter: brightness(0.92); box-shadow: 30px 10px 45px rgba(0,0,0,0.25); }
-      100% { transform: rotateY(180deg); box-shadow: -10px 0 25px rgba(0,0,0,0.1); filter: brightness(1); }
+    @keyframes flipBackwardReal {
+      0% { transform: rotateY(0deg); box-shadow: 10px 0 30px rgba(0,0,0,0.3); }
+      50% { box-shadow: 35px 15px 50px rgba(0,0,0,0.25); }
+      100% { transform: rotateY(180deg); box-shadow: -10px 0 25px rgba(0,0,0,0.1); }
     }
   </style>
 </head>
@@ -228,7 +247,7 @@
     <div id="page-journal-root"></div>
   </div>
 
-  <!-- FULL-SCREEN DARK FOCUS THEATER -->
+  <!-- FULL-SCREEN DARK FOCUS THEATER (DUAL-SIDED HARDWARE ACCELERATED LEAF) -->
   <div id="journalModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex-col items-center justify-center p-2 sm:p-4 overflow-hidden select-none" onclick="handleBackdropClick(event)">
     <div class="w-full max-w-6xl flex justify-between items-center mb-2 px-3 py-2 rounded-2xl bg-black/75 border border-white/20 backdrop-blur-md shadow-2xl">
       <div>
@@ -249,14 +268,17 @@
 
     <!-- 3D Book Stage -->
     <div class="w-full max-w-6xl book-3d-stage relative flex items-center justify-center">
-      <button onclick="prevSpread()" id="btnPrevModal" class="absolute -left-2 sm:-left-5 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/80 hover:bg-black text-scrap-gold border border-white/25 flex items-center justify-center text-lg sm:text-xl shadow-2xl transition disabled:opacity-20 disabled:pointer-events-none" title="Previous Spread">
+      <button onclick="prevSpread()" id="btnPrevModal" class="absolute -left-2 sm:-left-5 z-50 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/80 hover:bg-black text-scrap-gold border border-white/25 flex items-center justify-center text-lg sm:text-xl shadow-2xl transition disabled:opacity-20 disabled:pointer-events-none" title="Previous Spread">
         ←
       </button>
 
+      <!-- REAL DUAL-SIDED TURNING LEAF (ZERO POP) -->
       <div id="turningPageLeaf">
-        <div id="turningLeafContent" class="w-full h-full p-6 sm:p-9 flex flex-col justify-between"></div>
+        <div id="leafFront" class="leaf-face p-5 sm:p-8 flex flex-col justify-between"></div>
+        <div id="leafBack" class="leaf-face leaf-face-back p-5 sm:p-8 flex flex-col justify-between"></div>
       </div>
 
+      <!-- MAIN OPEN 2-PAGE SPREAD -->
       <div id="bookSpreadTouchArea" class="w-full aspect-[16/10] max-h-[82vh] min-h-[420px] rounded-2xl open-book-spread relative overflow-hidden flex flex-col md:flex-row shadow-[0_25px_60px_rgba(0,0,0,0.95)] select-none">
         <div class="book-spine-crease hidden md:block"></div>
 
@@ -298,7 +320,7 @@
 
       </div>
 
-      <button onclick="nextSpread()" id="btnNextModal" class="absolute -right-2 sm:-right-5 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/80 hover:bg-black text-scrap-gold border border-white/25 flex items-center justify-center text-lg sm:text-xl shadow-2xl transition disabled:opacity-20 disabled:pointer-events-none" title="Next Spread">
+      <button onclick="nextSpread()" id="btnNextModal" class="absolute -right-2 sm:-right-5 z-50 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/80 hover:bg-black text-scrap-gold border border-white/25 flex items-center justify-center text-lg sm:text-xl shadow-2xl transition disabled:opacity-20 disabled:pointer-events-none" title="Next Spread">
         →
       </button>
     </div>
