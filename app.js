@@ -1,3 +1,13 @@
+// Force browser to always start at the very top on reload
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
+// Strip hash anchors from URL if present on reload
+if (window.location.hash) {
+  history.replaceState(null, null, window.location.pathname + window.location.search);
+}
 // app.js
 
 // 1. Mount Modular Page Templates into index.html
