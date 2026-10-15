@@ -1,8 +1,3 @@
-<video controls playsinline preload="metadata" class="w-full h-full object-cover rounded-xl">
-  <source src="IAC Archives.mp4?v=2" type="video/mp4">
-  <source src="IAC%20Archives.mp4?v=2" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
   // pages/home.js
 window.HOME_PAGE_TEMPLATE = `
 <main id="page-home" class="page-view flex-grow">
