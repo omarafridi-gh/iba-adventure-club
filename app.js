@@ -122,7 +122,7 @@ const masterJournalSpreads = [
       img: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=900&q=80",
       date: "BORIT SUSPENSION BRIDGE",
       heading: "Testing Campus Nerves",
-      note: "Narrow wooden slats over roaring glacial torrents. Shaky knees, high fives at the far end, and memories for life."
+      note: "Narrow wooden slats over roaring glacial torrents. Shaky knees, high vibes at the far end, and memories for life."
     }
   },
   {
@@ -159,7 +159,7 @@ const masterJournalSpreads = [
   }
 ];
 
-// Preload photos
+// Preload and cache all photos in memory immediately
 masterJournalSpreads.forEach(sp => {
   const imgL = new Image(); imgL.src = sp.left.img;
   const imgR = new Image(); imgR.src = sp.right.img;
@@ -167,6 +167,24 @@ masterJournalSpreads.forEach(sp => {
 
 let currentSpreadIdx = 0;
 let isFlipping = false;
+
+// Helper: Generates static page HTML for the zero-pop dual leaf
+function buildPageFaceHTML(pageData, pageNum, tapeClass) {
+  return `
+    <div class="washi-tape ${tapeClass}"></div>
+    <div>
+      <div class="aspect-[16/10] w-full rounded-xl overflow-hidden border-2 border-white shadow-md bg-scrap-kraft relative">
+        <img src="${pageData.img}" alt="Polaroid" class="w-full h-full object-cover">
+      </div>
+      <p class="font-mono text-[10px] sm:text-xs text-scrap-rust font-bold mt-2.5 uppercase tracking-widest">${pageData.date}</p>
+      <h4 class="font-display font-bold text-lg sm:text-xl text-scrap-charcoal mt-0.5 leading-snug">${pageData.heading}</h4>
+    </div>
+    <div class="mt-2 pt-2 border-t border-[#DFCFAA] flex items-end justify-between">
+      <p class="font-hand text-lg sm:text-xl text-scrap-ink/90 leading-snug">${pageData.note}</p>
+      <span class="font-mono text-[10px] text-scrap-ink/50 ml-2 whitespace-nowrap">Page ${pageNum}</span>
+    </div>
+  `;
+}
 
 // 4. Modal Open & Flip Flow
 function openMasterBookModal() {
@@ -236,48 +254,84 @@ function renderCurrentSpread() {
   document.getElementById('btnNextModal').disabled = (currentSpreadIdx >= masterJournalSpreads.length - 1);
 }
 
+// ZERO-POP FORWARD FLIP:
+// Leaf Front: Current Right Page
+// Leaf Back: Next Left Page
+// Underneath: Next Right Page pre-rendered *before* animation begins!
 function nextSpread() {
   if (isFlipping || currentSpreadIdx >= masterJournalSpreads.length - 1) return;
   isFlipping = true;
 
+  const currentSp = masterJournalSpreads[currentSpreadIdx];
+  const nextSp = masterJournalSpreads[currentSpreadIdx + 1];
+
   const leaf = document.getElementById('turningPageLeaf');
-  const leafContent = document.getElementById('turningLeafContent');
-  leafContent.innerHTML = document.getElementById('rightPageContent').innerHTML;
+  const leafFront = document.getElementById('leafFront');
+  const leafBack = document.getElementById('leafBack');
 
-  leaf.className = 'turn-page-slow-forward';
+  // 1. Populate the two faces of the turning physical sheet
+  leafFront.innerHTML = buildPageFaceHTML(currentSp.right, currentSpreadIdx * 2 + 2, 'washi-tape-rust');
+  leafBack.innerHTML = buildPageFaceHTML(nextSp.left, (currentSpreadIdx + 1) * 2 + 1, 'washi-tape-teal');
 
+  // 2. Pre-render the next right page UNDERNEATH right now so there is zero pop
+  document.getElementById('modalRightImg').src = nextSp.right.img;
+  document.getElementById('modalRightDate').innerText = nextSp.right.date;
+  document.getElementById('modalRightHeading').innerText = nextSp.right.heading;
+  document.getElementById('modalRightNote').innerText = nextSp.right.note;
+  document.getElementById('modalRightPageNum').innerText = `Page ${(currentSpreadIdx + 1) * 2 + 2}`;
+
+  // 3. Trigger GPU accelerated 3D turn
+  leaf.className = 'turn-forward-anim';
+
+  // 4. When the page finishes landing across the spine (720ms), finalize DOM state
   setTimeout(() => {
     currentSpreadIdx++;
     renderCurrentSpread();
-  }, 440);
-
-  setTimeout(() => {
     leaf.className = '';
-    leafContent.innerHTML = '';
+    leafFront.innerHTML = '';
+    leafBack.innerHTML = '';
     isFlipping = false;
-  }, 880);
+  }, 720);
 }
 
+// ZERO-POP BACKWARD FLIP:
+// Leaf Front: Current Left Page
+// Leaf Back: Previous Right Page
+// Underneath: Previous Left Page pre-rendered *before* animation begins!
 function prevSpread() {
   if (isFlipping || currentSpreadIdx <= 0) return;
   isFlipping = true;
 
+  const currentSp = masterJournalSpreads[currentSpreadIdx];
+  const prevSp = masterJournalSpreads[currentSpreadIdx - 1];
+
   const leaf = document.getElementById('turningPageLeaf');
-  const leafContent = document.getElementById('turningLeafContent');
-  leafContent.innerHTML = document.getElementById('leftPageContent').innerHTML;
+  const leafFront = document.getElementById('leafFront');
+  const leafBack = document.getElementById('leafBack');
 
-  leaf.className = 'turn-page-slow-backward';
+  // 1. Populate the two faces of the turning physical sheet
+  leafFront.innerHTML = buildPageFaceHTML(currentSp.left, currentSpreadIdx * 2 + 1, 'washi-tape-teal');
+  leafBack.innerHTML = buildPageFaceHTML(prevSp.right, (currentSpreadIdx - 1) * 2 + 2, 'washi-tape-rust');
 
+  // 2. Pre-render the previous left page UNDERNEATH right now so there is zero pop
+  document.getElementById('modalLeftImg').src = prevSp.left.img;
+  document.getElementById('modalLeftDate').innerText = prevSp.left.date;
+  document.getElementById('modalLeftHeading').innerText = prevSp.left.heading;
+  document.getElementById('modalLeftNote').innerText = prevSp.left.note;
+  document.getElementById('modalLeftPageNum').innerText = `Page ${(currentSpreadIdx - 1) * 2 + 1}`;
+
+  // 3. Trigger GPU accelerated 3D turn
+  leaf.className = 'turn-backward-anim';
+
+  // 4. When page finishes landing, finalize DOM state
   setTimeout(() => {
     currentSpreadIdx--;
     renderCurrentSpread();
-  }, 440);
-
-  setTimeout(() => {
     leaf.className = '';
-    leafContent.innerHTML = '';
+    leafFront.innerHTML = '';
+    leafBack.innerHTML = '';
     isFlipping = false;
-  }, 880);
+  }, 720);
 }
 
 // 5. Lo-Fi Ambient Audio Controls
