@@ -49,7 +49,7 @@ window.HOME_PAGE_TEMPLATE = `
       <!-- Right Column: Centered on mobile, offset right on desktop -->
       <div class="lg:col-span-6 relative flex items-center justify-center lg:justify-start pt-4 lg:pt-0 sm:translate-x-3 lg:translate-x-8">
         
-        <!-- Bulletin Work Area: adapts max-width between mobile and desktop -->
+        <!-- Bulletin Work Area -->
         <div class="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[500px] flex items-center justify-center py-6">
 
           <!-- 1. STICKY NOTE: "Hikes" -->
@@ -70,8 +70,8 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
           </div>
 
-          <!-- 3. STICKY NOTE: "Camping" -->
-          <div class="absolute top-24 -right-3 sm:-right-8 lg:-right-14 z-20 transform -rotate-3 hover:scale-105 transition-transform select-none pointer-events-none">
+          <!-- 3. STICKY NOTE: "Camping" (Shifted outward on mobile to avoid covering diver) -->
+          <div class="absolute top-24 -right-6 sm:-right-9 lg:-right-14 z-20 transform -rotate-3 hover:scale-105 transition-transform select-none pointer-events-none">
             <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/40 shadow-sm z-30 flex items-center justify-center">
               <span class="w-0.5 h-0.5 rounded-full bg-white/80 block"></span>
             </div>
@@ -80,8 +80,8 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
           </div>
 
-          <!-- 4. STICKY NOTE: "Team Building" -->
-          <div class="absolute top-36 sm:top-40 lg:top-44 -left-3 sm:-left-8 lg:-left-12 z-20 transform -rotate-4 hover:scale-105 transition-transform select-none pointer-events-none">
+          <!-- 4. STICKY NOTE: "Team Building" (Shifted outward on mobile to avoid covering diver) -->
+          <div class="absolute top-36 sm:top-40 lg:top-44 -left-6 sm:-left-9 lg:-left-12 z-20 transform -rotate-4 hover:scale-105 transition-transform select-none pointer-events-none">
             <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-8 sm:w-9 h-3 sm:h-3.5 bg-[#198F9F]/70 border-l border-r border-dashed border-black/25 shadow-xs z-30 rotate-1"></div>
             <div class="px-3 sm:px-4 py-1 sm:py-1.5 bg-[#DE8435] text-white rounded-md shadow-md border border-black/15">
               <span class="font-hand font-bold text-lg sm:text-2xl tracking-wide leading-none">Team Building</span>
@@ -314,7 +314,7 @@ window.HOME_PAGE_TEMPLATE = `
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
                     <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
-                    <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-[#7ba632] truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
+                    <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
                   </div>
                 </div>
                 <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.4deg]">
@@ -322,7 +322,7 @@ window.HOME_PAGE_TEMPLATE = `
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Alina Kashif</h4>
                     <span class="text-xs font-semibold text-[#7ba632]/80 uppercase tracking-wider block">Director Safety</span>
-                    <a href="mailto:alinakashif2007@gmail.com" class="text-xs text-scrap-ink/70 hover:text-[#7ba632] truncate block mt-0.5">alinakashif2007@gmail.com</a>
+                    <a href="mailto:alinakashif2007@gmail.com" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">alinakashif2007@gmail.com</a>
                   </div>
                 </div>
               </div>
