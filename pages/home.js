@@ -1,9 +1,9 @@
-  // pages/home.js
+// pages/home.js
 window.HOME_PAGE_TEMPLATE = `
 <main id="page-home" class="page-view flex-grow">
   
-  <!-- HERO SECTION: Clean Left CTAs & Open Corkboard Layout -->
-  <section class="relative px-4 sm:px-6 pt-6 sm:pt-8 pb-10 sm:pb-12 max-w-7xl mx-auto overflow-hidden">
+  <!-- HERO SECTION: Clean Left CTAs & Responsive Corkboard Layout -->
+  <section class="relative px-4 sm:px-6 pt-5 sm:pt-8 pb-10 sm:pb-12 max-w-7xl mx-auto overflow-hidden">
     
     <!-- Decorative Ambient Glows -->
     <div class="absolute -top-12 -left-12 w-80 h-80 rounded-full bg-scrap-gold/15 blur-3xl pointer-events-none"></div>
@@ -32,7 +32,7 @@ window.HOME_PAGE_TEMPLATE = `
           The faces rotate, the routes evolve, but the deep dive never stops. From the turquoise depths of Charna Island to high alpine mountain crossings, we take IBA students beyond campus gates into the untamed.
         </p>
 
-        <!-- CTAs Only (Smooth Scroll Button Attached) -->
+        <!-- CTAs Only -->
         <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
           <button onclick="showPage('scuba')" class="px-8 py-3.5 bg-scrap-teal hover:bg-scrap-teal/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl shadow-md border-2 border-scrap-charcoal transition transform hover:-translate-y-0.5 flex items-center gap-2">
             <span>Explore Charna Scuba '26</span>
@@ -46,61 +46,61 @@ window.HOME_PAGE_TEMPLATE = `
 
       </div>
 
-      <!-- Right Column: Nudged slightly more to the right -->
-      <div class="lg:col-span-6 relative flex items-center justify-center lg:justify-start pt-4 lg:pt-0 sm:translate-x-5 lg:translate-x-8">
+      <!-- Right Column: Perfectly Centered on Mobile, Shifted on Desktop -->
+      <div class="lg:col-span-6 relative flex items-center justify-center pt-6 lg:pt-0 translate-x-0 lg:translate-x-8">
         
         <!-- Bulletin Work Area -->
-        <div class="relative w-full max-w-[490px] flex items-center justify-center py-6">
+        <div class="relative w-full max-w-[440px] flex items-center justify-center py-6 px-2">
 
-          <!-- 1. STICKY NOTE: "Hikes" -->
-          <div class="hidden sm:flex absolute -top-3 left-0 sm:left-2 z-20 transform -rotate-6 hover:scale-105 transition-transform select-none pointer-events-none">
-            <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-red-600 border border-black/40 shadow-sm z-30 flex items-center justify-center">
+          <!-- 1. STICKY NOTE: "Hikes" (Now visible on mobile!) -->
+          <div class="flex absolute -top-4 left-0 sm:left-2 z-20 transform -rotate-6 hover:scale-105 transition-transform select-none pointer-events-none">
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-red-600 border border-black/40 shadow-sm z-30 flex items-center justify-center">
               <span class="w-1 h-1 rounded-full bg-white/70 block"></span>
             </div>
-            <div class="px-4 py-1.5 bg-[#198F9F] text-white rounded-md shadow-md border border-black/15 flex items-center justify-center">
-              <span class="font-hand font-bold text-2xl tracking-wide leading-none">Hikes</span>
+            <div class="px-3 sm:px-4 py-1 sm:py-1.5 bg-[#198F9F] text-white rounded-md shadow-md border border-black/15 flex items-center justify-center">
+              <span class="font-hand font-bold text-xl sm:text-2xl tracking-wide leading-none">Hikes</span>
             </div>
           </div>
 
           <!-- 2. STICKY NOTE: "Trips" -->
-          <div class="absolute -top-3 right-8 sm:right-12 z-20 transform rotate-8 hover:scale-105 transition-transform select-none pointer-events-none">
-            <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-9 h-3.5 bg-amber-200/80 border-l border-r border-dashed border-black/30 shadow-xs z-30 rotate-2"></div>
-            <div class="px-4 py-1.5 bg-[#86B33C] text-scrap-charcoal rounded-md shadow-md border border-black/15">
-              <span class="font-hand font-bold text-2xl tracking-wide leading-none">Trips ♡</span>
+          <div class="absolute -top-4 right-1 sm:right-8 z-20 transform rotate-8 hover:scale-105 transition-transform select-none pointer-events-none">
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-8 sm:w-9 h-3 sm:h-3.5 bg-amber-200/80 border-l border-r border-dashed border-black/30 shadow-xs z-30 rotate-2"></div>
+            <div class="px-3 sm:px-4 py-1 sm:py-1.5 bg-[#86B33C] text-scrap-charcoal rounded-md shadow-md border border-black/15">
+              <span class="font-hand font-bold text-xl sm:text-2xl tracking-wide leading-none">Trips ♡</span>
             </div>
           </div>
 
           <!-- 3. STICKY NOTE: "Camping" -->
-          <div class="absolute top-28 -right-11 sm:-right-16 z-20 transform -rotate-3 hover:scale-105 transition-transform select-none pointer-events-none">
-            <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/40 shadow-sm z-30 flex items-center justify-center">
+          <div class="absolute top-24 -right-2 sm:-right-8 z-20 transform -rotate-3 hover:scale-105 transition-transform select-none pointer-events-none">
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/40 shadow-sm z-30 flex items-center justify-center">
               <span class="w-0.5 h-0.5 rounded-full bg-white/80 block"></span>
             </div>
-            <div class="px-4 py-1.5 bg-[#EDB136] text-scrap-charcoal rounded-md shadow-md border border-black/15">
-              <span class="font-hand font-bold text-2xl tracking-wide leading-none">Camping ⛺</span>
+            <div class="px-3 sm:px-4 py-1 sm:py-1.5 bg-[#EDB136] text-scrap-charcoal rounded-md shadow-md border border-black/15">
+              <span class="font-hand font-bold text-xl sm:text-2xl tracking-wide leading-none">Camping ⛺</span>
             </div>
           </div>
 
           <!-- 4. STICKY NOTE: "Team Building" -->
-          <div class="absolute top-44 -left-7 sm:-left-12 z-20 transform -rotate-4 hover:scale-105 transition-transform select-none pointer-events-none">
-            <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-9 h-3.5 bg-[#198F9F]/70 border-l border-r border-dashed border-black/25 shadow-xs z-30 rotate-1"></div>
-            <div class="px-4 py-1.5 bg-[#DE8435] text-white rounded-md shadow-md border border-black/15">
-              <span class="font-hand font-bold text-xl sm:text-2xl tracking-wide leading-none">Team Building</span>
+          <div class="absolute top-40 -left-2 sm:-left-10 z-20 transform -rotate-4 hover:scale-105 transition-transform select-none pointer-events-none">
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-8 sm:w-9 h-3 sm:h-3.5 bg-[#198F9F]/70 border-l border-r border-dashed border-black/25 shadow-xs z-30 rotate-1"></div>
+            <div class="px-3 sm:px-4 py-1 sm:py-1.5 bg-[#DE8435] text-white rounded-md shadow-md border border-black/15">
+              <span class="font-hand font-bold text-lg sm:text-2xl tracking-wide leading-none">Team Building</span>
             </div>
           </div>
 
           <!-- 5. STICKY NOTE: "Exploration" -->
-          <div class="absolute -bottom-6 right-6 sm:right-10 z-20 transform -rotate-2 hover:scale-105 transition-transform select-none pointer-events-none">
+          <div class="absolute -bottom-4 right-2 sm:right-8 z-20 transform -rotate-2 hover:scale-105 transition-transform select-none pointer-events-none">
             <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#198F9F] border border-black/40 shadow-sm z-30 flex items-center justify-center">
               <span class="w-0.5 h-0.5 rounded-full bg-white/80 block"></span>
             </div>
-            <div class="px-5 py-1.5 bg-[#A44200] text-[#FFF8E7] rounded-md shadow-md border border-black/20 flex items-center gap-1.5">
-              <span class="font-hand font-bold text-xl sm:text-2xl tracking-wide leading-none">Exploration 🧭</span>
+            <div class="px-4 sm:px-5 py-1 sm:py-1.5 bg-[#A44200] text-[#FFF8E7] rounded-md shadow-md border border-black/20 flex items-center gap-1.5">
+              <span class="font-hand font-bold text-lg sm:text-2xl tracking-wide leading-none">Exploration 🧭</span>
             </div>
           </div>
 
-          <!-- OVERSIZED MAIN POLAROID PHOTO -->
+          <!-- RESPONSIVE POLAROID PHOTO -->
           <div 
-            class="relative w-[350px] sm:w-[415px] cursor-pointer group z-10 transition-transform duration-300 transform group-hover:scale-[1.02]"
+            class="relative w-[295px] sm:w-[350px] lg:w-[415px] cursor-pointer group z-10 transition-transform duration-300 transform group-hover:scale-[1.02]"
             onclick="showPage('scuba')" 
             title="Click to view Charna Scuba expedition and form"
           >
@@ -113,7 +113,7 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
 
             <!-- Polaroid Base Container -->
-            <div class="polaroid transform rotate-1 group-hover:rotate-0 transition-all duration-300 shadow-[0_20px_45px_rgba(53,54,48,0.22)] group-hover:shadow-[0_25px_55px_rgba(53,54,48,0.3)] border-2 border-[#DFCFAA] bg-[#FAF5EB] p-4 sm:p-5 pb-6 sm:pb-7">
+            <div class="polaroid transform rotate-1 group-hover:rotate-0 transition-all duration-300 shadow-[0_18px_40px_rgba(53,54,48,0.22)] group-hover:shadow-[0_25px_55px_rgba(53,54,48,0.3)] border-2 border-[#DFCFAA] bg-[#FAF5EB] p-3 sm:p-5 pb-5 sm:pb-7">
               
               <!-- Washi Tape across Top Header -->
               <div class="washi-tape washi-tape-teal"></div>
@@ -123,18 +123,18 @@ window.HOME_PAGE_TEMPLATE = `
                 <img id="heroPolaroidImg" src="hasan_scuba.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80';" alt="Charna Scuba" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 
                 <!-- In-Image Reservation Pill -->
-                <div class="absolute bottom-2.5 right-2.5 bg-black/80 backdrop-blur-sm text-white px-3.5 py-1 rounded-full text-[11px] font-bold font-mono tracking-wider border border-white/30 flex items-center gap-1 opacity-95 group-hover:bg-scrap-teal transition shadow-md">
+                <div class="absolute bottom-2 right-2 bg-black/80 backdrop-blur-sm text-white px-2.5 sm:px-3.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold font-mono tracking-wider border border-white/30 flex items-center gap-1 opacity-95 group-hover:bg-scrap-teal transition shadow-md">
                   <span>RESERVE DIVE</span>
                   <span>↗</span>
                 </div>
               </div>
 
               <!-- Polaroid Caption Footer -->
-              <div class="mt-3.5 text-center">
-                <p class="font-hand text-2xl sm:text-3xl text-scrap-charcoal font-bold group-hover:text-scrap-rust transition leading-tight">
+              <div class="mt-3 text-center">
+                <p class="font-hand text-xl sm:text-2xl lg:text-3xl text-scrap-charcoal font-bold group-hover:text-scrap-rust transition leading-tight">
                   Charna Island Scuba '26 ♡
                 </p>
-                <p class="text-xs uppercase font-bold text-scrap-teal tracking-widest mt-0.5 flex items-center justify-center gap-1">
+                <p class="text-[10px] sm:text-xs uppercase font-bold text-scrap-teal tracking-widest mt-0.5 flex items-center justify-center gap-1">
                   <span>Slots Now Open • Tap to Join</span>
                 </p>
               </div>
@@ -142,7 +142,7 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
 
             <!-- Stamped Compass Medallion on Bottom Corner -->
-            <div class="absolute -bottom-2.5 -left-2.5 w-11 h-11 rounded-full border border-dashed border-scrap-gold text-scrap-gold flex items-center justify-center font-bold text-lg bg-[#FAF4E5] shadow-md transform -rotate-12 pointer-events-none">
+            <div class="absolute -bottom-2 -left-2 w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-dashed border-scrap-gold text-scrap-gold flex items-center justify-center font-bold text-base sm:text-lg bg-[#FAF4E5] shadow-md transform -rotate-12 pointer-events-none">
               🧭
             </div>
 
@@ -155,7 +155,7 @@ window.HOME_PAGE_TEMPLATE = `
     </div>
   </section>
 
-  <!-- COUNCIL HIERARCHY SECTION (Target of Smooth Scroll) -->
+  <!-- COUNCIL HIERARCHY SECTION -->
   <section id="council-section" class="px-4 sm:px-6 pt-12 pb-20 border-t-2 border-[#E0D2B8] relative scroll-mt-16">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-4xl mx-auto mb-14">
@@ -313,7 +313,7 @@ window.HOME_PAGE_TEMPLATE = `
                   <img src="neetu.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
                   <div class="min-w-0">
                     <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
-                    <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
+                    <span class="text-xs font-bold text-[#7ba632] uppercase tracking-wider block">Executive Council</span>
                     <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-[#7ba632] truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
                   </div>
                 </div>
@@ -403,7 +403,7 @@ window.HOME_PAGE_TEMPLATE = `
           </div>
         </div>
 
-        <!-- Advisor & Native Archive Video (IAC Archives.mp4) -->
+        <!-- Advisor & Native Archive Video -->
         <div class="lg:col-span-4 space-y-6">
           <div class="flex flex-col items-center mb-6">
             <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-rust text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow">
