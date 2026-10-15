@@ -70,7 +70,7 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
           </div>
 
-          <!-- 3. STICKY NOTE: "Camping" (Shifted outward on mobile to avoid covering diver) -->
+          <!-- 3. STICKY NOTE: "Camping" -->
           <div class="absolute top-24 -right-6 sm:-right-9 lg:-right-14 z-20 transform -rotate-3 hover:scale-105 transition-transform select-none pointer-events-none">
             <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-gradient-to-br from-[#FFD275] to-[#B37B24] border border-black/40 shadow-sm z-30 flex items-center justify-center">
               <span class="w-0.5 h-0.5 rounded-full bg-white/80 block"></span>
@@ -80,7 +80,7 @@ window.HOME_PAGE_TEMPLATE = `
             </div>
           </div>
 
-          <!-- 4. STICKY NOTE: "Team Building" (Shifted outward on mobile to avoid covering diver) -->
+          <!-- 4. STICKY NOTE: "Team Building" -->
           <div class="absolute top-36 sm:top-40 lg:top-44 -left-6 sm:-left-9 lg:-left-12 z-20 transform -rotate-4 hover:scale-105 transition-transform select-none pointer-events-none">
             <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-8 sm:w-9 h-3 sm:h-3.5 bg-[#198F9F]/70 border-l border-r border-dashed border-black/25 shadow-xs z-30 rotate-1"></div>
             <div class="px-3 sm:px-4 py-1 sm:py-1.5 bg-[#DE8435] text-white rounded-md shadow-md border border-black/15">
@@ -216,251 +216,234 @@ window.HOME_PAGE_TEMPLATE = `
         </div>
       </div>
 
-      <!-- Connector Line -->
-      <div class="hidden lg:block w-full max-w-6xl mx-auto my-3">
-        <svg class="w-full h-16" viewBox="0 0 1152 64" fill="none" preserveAspectRatio="none">
-          <path d="M 576 0 L 576 34" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
-          <path d="M 384 34 L 960 34" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
-          <path d="M 384 34 L 384 64" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
-          <path d="M 960 34 L 960 64" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
-          <circle cx="576" cy="34" r="5" fill="#A44200" />
-          <circle cx="384" cy="34" r="4.5" fill="#A44200" />
-          <circle cx="960" cy="34" r="4.5" fill="#A44200" />
+      <!-- Connector Line from Office Bearers to Advisor -->
+      <div class="w-full flex justify-center my-4">
+        <svg class="w-8 h-12" viewBox="0 0 32 48" fill="none">
+          <path d="M 16 0 L 16 44" stroke="#A44200" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round" />
+          <circle cx="16" cy="44" r="4" fill="#A44200" />
         </svg>
       </div>
 
-      <!-- Hierarchy Level 2: Executive Council & Advisor -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
-        <div class="lg:col-span-8 space-y-6">
-          <div class="flex flex-col items-center mb-6">
-            <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow">
-              EXECUTIVE COUNCIL & DIRECTORS
-            </span>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <!-- Marketing & Creatives -->
-            <div class="crumpled-paper-card rounded-2xl p-6 relative">
-              <div class="washi-tape washi-tape-teal"></div>
-              <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
-                <h3 class="font-display font-bold text-xl text-scrap-charcoal">Marketing & Creatives</h3>
-                <span class="font-hand text-scrap-teal text-lg font-bold">3 Explorers ♡</span>
-              </div>
-              <div class="space-y-3.5">
-                <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
-                  <img src="muntazir.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>MH</div>'" alt="Muntazir" onclick="openLightbox(this.src, 'Muntazir Hassan — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                  <div class="min-w-0">
-                    <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muntazir Hassan</h4>
-                    <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
-                    <a href="mailto:m.hassan.30002@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.hassan.30002@khi.iba.edu.pk</a>
-                  </div>
-                </div>
-                <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
-                  <img src="rayyan.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>RR</div>'" alt="Rayyan" onclick="openLightbox(this.src, 'Rayyan Rafique — Director Media & Design')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                  <div class="min-w-0">
-                    <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Rayyan Rafique</h4>
-                    <span class="text-xs font-semibold text-scrap-teal/80 uppercase tracking-wider block">Director Media & Design</span>
-                    <a href="mailto:r.rafique.30530@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">r.rafique.30530@khi.iba.edu.pk</a>
-                  </div>
-                </div>
-                <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
-                  <img src="meerub.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>MH</div>'" alt="Meerub" onclick="openLightbox(this.src, 'Meerub Haider — Director Content Planning')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                  <div class="min-w-0">
-                    <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Meerub Haider</h4>
-                    <span class="text-xs font-semibold text-scrap-teal/70 uppercase tracking-wider block">Director Content Planning</span>
-                    <a href="mailto:m.haider.33279@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.haider.33279@khi.iba.edu.pk</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Corporate & Comms -->
-            <div class="crumpled-paper-card rounded-2xl p-6 relative">
-              <div class="washi-tape washi-tape-rust"></div>
-              <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
-                <h3 class="font-display font-bold text-xl text-scrap-charcoal">Corporate & Comms</h3>
-                <span class="font-hand text-scrap-rust text-lg font-bold">2 Explorers ♡</span>
-              </div>
-              <div class="space-y-3.5">
-                <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
-                  <img src="abdullah.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>AG</div>'" alt="Abdullah" onclick="openLightbox(this.src, 'Abdullah Asif Gul — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                  <div class="min-w-0">
-                    <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Abdullah Asif Gul</h4>
-                    <span class="text-xs font-bold text-scrap-rust uppercase tracking-wider block">Executive Council</span>
-                    <a href="mailto:a.asifgul.32679@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-rust truncate block mt-0.5">a.asifgul.32679@khi.iba.edu.pk</a>
-                  </div>
-                </div>
-                <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
-                  <img src="osama.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>OS</div>'" alt="Osama" onclick="openLightbox(this.src, 'Osama — Director Corporate & Communications')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                  <div class="min-w-0">
-                    <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Osama</h4>
-                    <span class="text-xs font-semibold text-scrap-rust/70 uppercase tracking-wider block">Director Corporate & Comms</span>
-                    <span class="text-xs text-scrap-ink/70 block mt-0.5">Executive Director</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Safety & Inclusivity -->
-            <div class="crumpled-paper-card rounded-2xl p-6 relative">
-              <div class="washi-tape washi-tape-moss"></div>
-              <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
-                <h3 class="font-display font-bold text-xl text-scrap-charcoal">Safety & Inclusivity</h3>
-                <span class="font-hand text-[#7ba632] text-lg font-bold">2 Explorers ♡</span>
-              </div>
-              <div class="space-y-3.5">
-                <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.6deg]">
-                  <img src="neetu.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                  <div class="min-w-0">
-                    <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
-                    <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
-                    <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
-                  </div>
-                </div>
-                <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.4deg]">
-                  <img src="alina.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>AK</div>'" alt="Alina" onclick="openLightbox(this.src, 'Alina Kashif — Director Safety')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                  <div class="min-w-0">
-                    <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Alina Kashif</h4>
-                    <span class="text-xs font-semibold text-[#7ba632]/80 uppercase tracking-wider block">Director Safety</span>
-                    <a href="mailto:alinakashif2007@gmail.com" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">alinakashif2007@gmail.com</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Operations & Logistics -->
-            <div class="crumpled-paper-card rounded-2xl p-6 relative">
-              <div class="washi-tape washi-tape-rust"></div>
-              <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
-                <h3 class="font-display font-bold text-xl text-scrap-charcoal">Operations & Logistics</h3>
-                <span class="font-hand text-scrap-rust text-lg font-bold">2 Explorers ♡</span>
-              </div>
-              <div class="space-y-3.5">
-                <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
-                  <img src="kashaf.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>KS</div>'" alt="Kashaf" onclick="openLightbox(this.src, 'Kashaf — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                  <div class="min-w-0">
-                    <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Kashaf</h4>
-                    <span class="text-xs font-bold text-scrap-rust uppercase tracking-wider block">Executive Council</span>
-                    <a href="mailto:k.safdar.32149@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-rust truncate block mt-0.5">k.safdar.32149@khi.iba.edu.pk</a>
-                  </div>
-                </div>
-                <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
-                  <img src="najiba.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>NZ</div>'" alt="Najiba" onclick="openLightbox(this.src, 'Najiba Zia — Director Ops & Logistics')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                  <div class="min-w-0">
-                    <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Najiba Zia</h4>
-                    <span class="text-xs font-semibold text-scrap-rust/70 uppercase tracking-wider block">Director Ops & Logistics</span>
-                    <a href="mailto:n.zia.33420@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-rust truncate block mt-0.5">n.zia.33420@khi.iba.edu.pk</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Recruitment -->
-            <div class="crumpled-paper-card rounded-2xl p-6 relative">
-              <div class="washi-tape"></div>
-              <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
-                <h3 class="font-display font-bold text-xl text-scrap-charcoal">Recruitment</h3>
-                <span class="font-hand text-scrap-gold text-lg font-bold">1 Explorer ♡</span>
-              </div>
-              <div class="space-y-3.5">
-                <div class="sticky-note-item bg-[#FFF8E2] border-[#EDA531]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
-                  <img src="divyansh.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>DK</div>'" alt="Divyansh" onclick="openLightbox(this.src, 'Divyansh — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                  <div class="min-w-0">
-                    <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Divyansh</h4>
-                    <span class="text-xs font-bold text-scrap-gold uppercase tracking-wider block">Executive Council</span>
-                    <a href="mailto:d.kumar.33177@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-gold truncate block mt-0.5">d.kumar.33177@khi.iba.edu.pk</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- General Affairs -->
-            <div class="crumpled-paper-card rounded-2xl p-6 relative">
-              <div class="washi-tape washi-tape-teal"></div>
-              <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
-                <h3 class="font-display font-bold text-xl text-scrap-charcoal">General Affairs</h3>
-                <span class="font-hand text-scrap-teal text-lg font-bold">2 Explorers ♡</span>
-              </div>
-              <div class="space-y-3.5">
-                <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
-                  <img src="omar.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-black text-sm text-scrap-charcoal\\'>OA</div>'" alt="Omar" onclick="openLightbox(this.src, 'Muhammad Omar Afridi — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                  <div class="min-w-0">
-                    <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Omar Afridi</h4>
-                    <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
-                    <a href="mailto:m.afridi.26220@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.afridi.26220@khi.iba.edu.pk</a>
-                  </div>
-                </div>
-                <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
-                  <img src="hasan.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>HK</div>'" alt="Hasan" onclick="openLightbox(this.src, 'Muhammad Hasan Khan — Director General Affairs')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
-                  <div class="min-w-0">
-                    <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Hasan Khan</h4>
-                    <span class="text-xs font-semibold text-scrap-teal/80 uppercase tracking-wider block">Director General Affairs</span>
-                    <a href="mailto:m.khan.30910@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.khan.30910@khi.iba.edu.pk</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <!-- Hierarchy Level 2: Advisor to the Panel (Now First) -->
+      <div class="max-w-md mx-auto mb-6 text-center">
+        <div class="inline-block relative mb-6">
+          <span class="px-8 py-2.5 rounded-xl bg-scrap-rust text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow">
+            ADVISOR TO THE PANEL
+          </span>
         </div>
 
-        <!-- Advisor & Native Archive Video -->
-        <div class="lg:col-span-4 space-y-6">
-          <div class="flex flex-col items-center mb-6">
-            <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-rust text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow">
-              ADVISOR TO THE PANEL
-            </span>
+        <div class="crumpled-paper-card rounded-2xl p-7 relative">
+          <div class="washi-tape washi-tape-rust"></div>
+          <div class="text-center flex flex-col items-center">
+            <div class="relative mb-4">
+              <img src="advisor.png" onerror="this.outerHTML='<div class=\\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow\\'>MU</div>'" alt="Mustafa" onclick="openLightbox(this.src, 'Mustafa — Advisor to the Panel')" class="w-32 h-32 rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
+            </div>
+            <h4 class="font-display font-bold text-2xl text-scrap-charcoal">Mustafa</h4>
+            <span class="text-xs font-bold text-scrap-rust uppercase tracking-wider mt-1 px-3 py-1 bg-scrap-rust/10 rounded-full border border-scrap-rust/20">Advisor to the Panel</span>
+            <p class="text-sm text-scrap-ink/80 mt-3 leading-relaxed">Senior counsel, strategic oversight & institutional advisory to the society leadership.</p>
           </div>
-          <div class="crumpled-paper-card rounded-2xl p-7 relative">
+        </div>
+      </div>
+
+      <!-- Connector Line to Executive Council -->
+      <!-- Desktop Wide Fork Connector -->
+      <div class="hidden lg:block w-full max-w-6xl mx-auto my-3">
+        <svg class="w-full h-16" viewBox="0 0 1152 64" fill="none" preserveAspectRatio="none">
+          <path d="M 576 0 L 576 34" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
+          <path d="M 192 34 L 960 34" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
+          <path d="M 192 34 L 192 64" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
+          <path d="M 576 34 L 576 64" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
+          <path d="M 960 34 L 960 64" stroke="#A44200" stroke-width="3.5" stroke-dasharray="7 7" stroke-linecap="round" />
+          <circle cx="576" cy="34" r="5" fill="#A44200" />
+          <circle cx="192" cy="60" r="4.5" fill="#A44200" />
+          <circle cx="576" cy="60" r="4.5" fill="#A44200" />
+          <circle cx="960" cy="60" r="4.5" fill="#A44200" />
+        </svg>
+      </div>
+
+      <!-- Mobile Dotted Connector (Shows on phones) -->
+      <div class="block lg:hidden w-full flex justify-center my-3">
+        <svg class="w-8 h-12" viewBox="0 0 32 48" fill="none">
+          <path d="M 16 0 L 16 44" stroke="#A44200" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round" />
+          <circle cx="16" cy="44" r="4" fill="#A44200" />
+        </svg>
+      </div>
+
+      <!-- Hierarchy Level 3: Executive Council & Directors -->
+      <div class="max-w-6xl mx-auto mb-10">
+        <div class="flex flex-col items-center mb-8">
+          <span class="inline-block px-8 py-2.5 rounded-xl bg-scrap-charcoal text-white font-display text-sm sm:text-base font-bold uppercase tracking-wider shadow">
+            EXECUTIVE COUNCIL & DIRECTORS
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Marketing & Creatives -->
+          <div class="crumpled-paper-card rounded-2xl p-6 relative">
+            <div class="washi-tape washi-tape-teal"></div>
+            <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
+              <h3 class="font-display font-bold text-xl text-scrap-charcoal">Marketing & Creatives</h3>
+              <span class="font-hand text-scrap-teal text-lg font-bold">3 Explorers ♡</span>
+            </div>
+            <div class="space-y-3.5">
+              <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
+                <img src="muntazir.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>MH</div>'" alt="Muntazir" onclick="openLightbox(this.src, 'Muntazir Hassan — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                <div class="min-w-0">
+                  <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muntazir Hassan</h4>
+                  <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
+                  <a href="mailto:m.hassan.30002@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.hassan.30002@khi.iba.edu.pk</a>
+                </div>
+              </div>
+              <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
+                <img src="rayyan.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>RR</div>'" alt="Rayyan" onclick="openLightbox(this.src, 'Rayyan Rafique — Director Media & Design')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                <div class="min-w-0">
+                  <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Rayyan Rafique</h4>
+                  <span class="text-xs font-semibold text-scrap-teal/80 uppercase tracking-wider block">Director Media & Design</span>
+                  <a href="mailto:r.rafique.30530@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">r.rafique.30530@khi.iba.edu.pk</a>
+                </div>
+              </div>
+              <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
+                <img src="meerub.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>MH</div>'" alt="Meerub" onclick="openLightbox(this.src, 'Meerub Haider — Director Content Planning')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                <div class="min-w-0">
+                  <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Meerub Haider</h4>
+                  <span class="text-xs font-semibold text-scrap-teal/70 uppercase tracking-wider block">Director Content Planning</span>
+                  <a href="mailto:m.haider.33279@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.haider.33279@khi.iba.edu.pk</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Corporate & Comms -->
+          <div class="crumpled-paper-card rounded-2xl p-6 relative">
             <div class="washi-tape washi-tape-rust"></div>
-            <div class="text-center flex flex-col items-center">
-              <div class="relative mb-4">
-                <img src="advisor.png" onerror="this.outerHTML='<div class=\\'w-32 h-32 mx-auto rounded-full bg-scrap-kraft border-2 border-scrap-charcoal flex items-center justify-center font-display font-black text-2xl text-scrap-charcoal shadow\\'>MU</div>'" alt="Mustafa" onclick="openLightbox(this.src, 'Mustafa — Advisor to the Panel')" class="w-32 h-32 rounded-full object-cover border-4 border-scrap-charcoal hover:scale-105 transition cursor-pointer shadow block">
+            <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
+              <h3 class="font-display font-bold text-xl text-scrap-charcoal">Corporate & Comms</h3>
+              <span class="font-hand text-scrap-rust text-lg font-bold">2 Explorers ♡</span>
+            </div>
+            <div class="space-y-3.5">
+              <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
+                <img src="abdullah.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>AG</div>'" alt="Abdullah" onclick="openLightbox(this.src, 'Abdullah Asif Gul — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                <div class="min-w-0">
+                  <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Abdullah Asif Gul</h4>
+                  <span class="text-xs font-bold text-scrap-rust uppercase tracking-wider block">Executive Council</span>
+                  <a href="mailto:a.asifgul.32679@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-rust truncate block mt-0.5">a.asifgul.32679@khi.iba.edu.pk</a>
+                </div>
               </div>
-              <h4 class="font-display font-bold text-2xl text-scrap-charcoal">Mustafa</h4>
-              <span class="text-xs font-bold text-scrap-rust uppercase tracking-wider mt-1 px-3 py-1 bg-scrap-rust/10 rounded-full border border-scrap-rust/20">Advisor to the Panel</span>
-              <p class="text-sm text-scrap-ink/80 mt-3 leading-relaxed">Senior counsel, strategic oversight & institutional advisory to the society leadership.</p>
+              <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
+                <img src="osama.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>OS</div>'" alt="Osama" onclick="openLightbox(this.src, 'Osama — Director Corporate & Communications')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                <div class="min-w-0">
+                  <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Osama</h4>
+                  <span class="text-xs font-semibold text-scrap-rust/70 uppercase tracking-wider block">Director Corporate & Comms</span>
+                  <span class="text-xs text-scrap-ink/70 block mt-0.5">Executive Director</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Video Edit with Native Audio -->
-          <div class="rounded-2xl p-5 relative mt-8 bg-scrap-charcoal text-white shadow-2xl border-2 border-[#55564E] transform rotate-1 hover:rotate-0 transition duration-300">
-            <div class="pushpin"></div>
-            <div class="flex items-center justify-between border-b border-white/20 pb-3 mb-3">
-              <div class="flex items-center gap-2">
-                <span class="text-xs font-mono uppercase tracking-widest text-scrap-gold font-bold">IAC ARCHIVES</span>
+          <!-- Safety & Inclusivity -->
+          <div class="crumpled-paper-card rounded-2xl p-6 relative">
+            <div class="washi-tape washi-tape-moss"></div>
+            <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
+              <h3 class="font-display font-bold text-xl text-scrap-charcoal">Safety & Inclusivity</h3>
+              <span class="font-hand text-[#7ba632] text-lg font-bold">2 Explorers ♡</span>
+            </div>
+            <div class="space-y-3.5">
+              <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.6deg]">
+                <img src="neetu.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>NK</div>'" alt="Neetu" onclick="openLightbox(this.src, 'Neetu Kumari — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                <div class="min-w-0">
+                  <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Neetu Kumari</h4>
+                  <span class="text-xs font-bold text-[#7ba632] uppercase tracking-wider block">Executive Council</span>
+                  <a href="mailto:n.kumari.32195@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-[#7ba632] truncate block mt-0.5">n.kumari.32195@khi.iba.edu.pk</a>
+                </div>
               </div>
-              <span class="px-2.5 py-0.5 rounded-full bg-scrap-rust text-white font-mono text-[10px] font-bold border border-white/20">
-                Official Edit
-              </span>
+              <div class="sticky-note-item bg-[#EEF7DE] border-[#7ba632]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.4deg]">
+                <img src="alina.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>AK</div>'" alt="Alina" onclick="openLightbox(this.src, 'Alina Kashif — Director Safety')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                <div class="min-w-0">
+                  <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Alina Kashif</h4>
+                  <span class="text-xs font-semibold text-[#7ba632]/80 uppercase tracking-wider block">Director Safety</span>
+                  <a href="mailto:alinakashif2007@gmail.com" class="text-xs text-scrap-ink/70 hover:text-[#7ba632] truncate block mt-0.5">alinakashif2007@gmail.com</a>
+                </div>
+              </div>
             </div>
-            <div class="mb-2">
-              <h4 class="font-hand text-xl text-scrap-gold font-bold leading-tight">Panel & Expeditions Edit ♡</h4>
-              <p class="text-[11px] text-white/70 font-normal">A look back at the previous panel & expeditions across Pakistan.</p>
-            </div>
-            
-            <div class="w-full rounded-xl overflow-hidden border border-white/20 shadow-inner bg-black aspect-[9/16] max-h-[460px] flex items-center justify-center">
-              <video 
-                controls 
-                playsinline 
-                preload="metadata"
-                class="w-full h-full object-cover rounded-xl"
-              >
-                <source src="IAC Archives.mp4" type="video/mp4">
-                <source src="IAC%20Archives.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
+          </div>
 
-            <div class="mt-3 pt-2.5 border-t border-white/15 flex items-center justify-between text-[11px] text-white/70">
-              <span class="font-mono text-scrap-gold">● REEL ARCHIVE</span>
-              <span class="font-hand text-white/90 text-sm">Tap play to listen with sound ♡</span>
+          <!-- Operations & Logistics -->
+          <div class="crumpled-paper-card rounded-2xl p-6 relative">
+            <div class="washi-tape washi-tape-rust"></div>
+            <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
+              <h3 class="font-display font-bold text-xl text-scrap-charcoal">Operations & Logistics</h3>
+              <span class="font-hand text-scrap-rust text-lg font-bold">2 Explorers ♡</span>
+            </div>
+            <div class="space-y-3.5">
+              <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
+                <img src="kashaf.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>KS</div>'" alt="Kashaf" onclick="openLightbox(this.src, 'Kashaf — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                <div class="min-w-0">
+                  <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Kashaf</h4>
+                  <span class="text-xs font-bold text-scrap-rust uppercase tracking-wider block">Executive Council</span>
+                  <a href="mailto:k.safdar.32149@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-rust truncate block mt-0.5">k.safdar.32149@khi.iba.edu.pk</a>
+                </div>
+              </div>
+              <div class="sticky-note-item bg-[#FCEFE6] border-[#A44200]/50 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.5deg]">
+                <img src="najiba.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>NZ</div>'" alt="Najiba" onclick="openLightbox(this.src, 'Najiba Zia — Director Ops & Logistics')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                <div class="min-w-0">
+                  <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Najiba Zia</h4>
+                  <span class="text-xs font-semibold text-scrap-rust/70 uppercase tracking-wider block">Director Ops & Logistics</span>
+                  <a href="mailto:n.zia.33420@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-rust truncate block mt-0.5">n.zia.33420@khi.iba.edu.pk</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recruitment -->
+          <div class="crumpled-paper-card rounded-2xl p-6 relative">
+            <div class="washi-tape"></div>
+            <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
+              <h3 class="font-display font-bold text-xl text-scrap-charcoal">Recruitment</h3>
+              <span class="font-hand text-scrap-gold text-lg font-bold">1 Explorer ♡</span>
+            </div>
+            <div class="space-y-3.5">
+              <div class="sticky-note-item bg-[#FFF8E2] border-[#EDA531]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.4deg]">
+                <img src="divyansh.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>DK</div>'" alt="Divyansh" onclick="openLightbox(this.src, 'Divyansh — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                <div class="min-w-0">
+                  <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Divyansh</h4>
+                  <span class="text-xs font-bold text-scrap-gold uppercase tracking-wider block">Executive Council</span>
+                  <a href="mailto:d.kumar.33177@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-gold truncate block mt-0.5">d.kumar.33177@khi.iba.edu.pk</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- General Affairs -->
+          <div class="crumpled-paper-card rounded-2xl p-6 relative">
+            <div class="washi-tape washi-tape-teal"></div>
+            <div class="flex items-center justify-between border-b border-[#DECFA9] pb-3 mb-5">
+              <h3 class="font-display font-bold text-xl text-scrap-charcoal">General Affairs</h3>
+              <span class="font-hand text-scrap-teal text-lg font-bold">2 Explorers ♡</span>
+            </div>
+            <div class="space-y-3.5">
+              <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform -rotate-[0.5deg]">
+                <img src="omar.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-black text-sm text-scrap-charcoal\\'>OA</div>'" alt="Omar" onclick="openLightbox(this.src, 'Muhammad Omar Afridi — Executive Council')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                <div class="min-w-0">
+                  <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Omar Afridi</h4>
+                  <span class="text-xs font-bold text-scrap-teal uppercase tracking-wider block">Executive Council</span>
+                  <a href="mailto:m.afridi.26220@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.afridi.26220@khi.iba.edu.pk</a>
+                </div>
+              </div>
+              <div class="sticky-note-item bg-[#E3F4F6] border-[#198F9F]/60 p-3.5 rounded-xl flex items-center gap-4 transform rotate-[0.6deg]">
+                <img src="hasan.png" onerror="this.outerHTML='<div class=\\'w-14 h-14 shrink-0 rounded-full bg-scrap-kraft border border-scrap-charcoal flex items-center justify-center font-display font-bold text-sm text-scrap-charcoal\\'>HK</div>'" alt="Hasan" onclick="openLightbox(this.src, 'Muhammad Hasan Khan — Director General Affairs')" class="w-14 h-14 shrink-0 rounded-full object-cover border-2 border-scrap-charcoal cursor-pointer shadow">
+                <div class="min-w-0">
+                  <h4 class="font-display font-bold text-base text-scrap-charcoal truncate">Muhammad Hasan Khan</h4>
+                  <span class="text-xs font-semibold text-scrap-teal/80 uppercase tracking-wider block">Director General Affairs</span>
+                  <a href="mailto:m.khan.30910@khi.iba.edu.pk" class="text-xs text-scrap-ink/70 hover:text-scrap-teal truncate block mt-0.5">m.khan.30910@khi.iba.edu.pk</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Management Team Section -->
-      <div class="w-full max-w-5xl mx-auto mt-6 flex flex-col items-center">
+      <!-- Hierarchy Level 4: Management Team Section -->
+      <div class="w-full max-w-5xl mx-auto mt-8 flex flex-col items-center">
         <div class="flex justify-center">
           <svg class="w-8 h-14" viewBox="0 0 32 56" fill="none">
             <path d="M 16 0 L 16 52" stroke="#A44200" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round" />
@@ -483,6 +466,51 @@ window.HOME_PAGE_TEMPLATE = `
           <p class="text-sm text-scrap-ink/85 max-w-2xl mx-auto mt-2 leading-relaxed font-medium">
             Operating directly under the Executive Council and Directors. Inducted annually for the tenure to drive on-ground execution across expeditions, basecamps, and campus drives.
           </p>
+        </div>
+      </div>
+
+      <!-- Connector Line to Video Archive Showcase at the Bottom -->
+      <div class="w-full flex justify-center mt-10 mb-4">
+        <svg class="w-8 h-14" viewBox="0 0 32 56" fill="none">
+          <path d="M 16 0 L 16 52" stroke="#A44200" stroke-width="3.5" stroke-dasharray="6 6" stroke-linecap="round" />
+          <circle cx="16" cy="52" r="4.5" fill="#A44200" />
+        </svg>
+      </div>
+
+      <!-- VIDEO ARCHIVE CARD: Positioned at the end of the council page -->
+      <div class="max-w-xl mx-auto">
+        <div class="rounded-2xl p-5 sm:p-6 relative bg-scrap-charcoal text-white shadow-2xl border-2 border-[#55564E] transform hover:scale-[1.01] transition duration-300">
+          <div class="pushpin"></div>
+          <div class="flex items-center justify-between border-b border-white/20 pb-3 mb-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-mono uppercase tracking-widest text-scrap-gold font-bold">IAC ARCHIVES</span>
+            </div>
+            <span class="px-2.5 py-0.5 rounded-full bg-scrap-rust text-white font-mono text-[10px] font-bold border border-white/20">
+              Official Edit
+            </span>
+          </div>
+          <div class="mb-3">
+            <h4 class="font-hand text-2xl text-scrap-gold font-bold leading-tight">Panel & Expeditions Edit ♡</h4>
+            <p class="text-xs text-white/70 font-normal">A look back at the previous panel & expeditions across Pakistan.</p>
+          </div>
+          
+          <div class="w-full rounded-xl overflow-hidden border border-white/20 shadow-inner bg-black aspect-[9/16] max-h-[500px] flex items-center justify-center">
+            <video 
+              controls 
+              playsinline 
+              preload="metadata"
+              class="w-full h-full object-cover rounded-xl"
+            >
+              <source src="IAC Archives.mp4" type="video/mp4">
+              <source src="IAC%20Archives.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="mt-3 pt-2.5 border-t border-white/15 flex items-center justify-between text-xs text-white/70">
+            <span class="font-mono text-scrap-gold">● REEL ARCHIVE</span>
+            <span class="font-hand text-white/90 text-sm">Tap play to listen with sound ♡</span>
+          </div>
         </div>
       </div>
 
